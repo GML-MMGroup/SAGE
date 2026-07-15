@@ -1,0 +1,1322 @@
+[
+  {
+    "tool_name": "add_recipe_to_menu",
+    "description": "Add a recipe to the user's daily menu.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe to add",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "user_id",
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "remove_recipe_from_menu",
+    "description": "Remove a recipe from the user's daily menu.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe to remove",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "user_id",
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_current_menu",
+    "description": "Retrieve the user's current menu, i.e. the recipes currently planned for that user today.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    }
+  },
+  {
+    "tool_name": "tally_total_nutritional_characteristics",
+    "description": "Aggregate nutritional characteristics for specified recipes in the menu.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "recipes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Chicken & Broccoli Stir-fry",
+              "Salmon & Quinoa Bowl",
+              "Beef & Black Bean Stew",
+              "Yogurt & Berry Parfait",
+              "Turkey & Apple Soup",
+              "Pork & Red Bell Pepper Skillet",
+              "Roasted Chickpeas & Vegetables",
+              "Oat & Banana Pancakes",
+              "Lamb & Potato Stew",
+              "Egg & Spinach Frittata",
+              "Shrimp & Asparagus Stir-fry",
+              "Mushroom & Thyme Roast Chicken",
+              "Cod & Lemon Dill Bake",
+              "Duck & Cherry Salad",
+              "Tofu Soup",
+              "Potato & Greens Salad",
+              "Roasted Tomato Salmon",
+              "Pork & Chive Dumplings",
+              "Green Pepper Chicken",
+              "Custom Seasoned Noodles",
+              "Deep-fried Meat Platter"
+            ]
+          },
+          "description": "List of recipe names to calculate nutritional characteristics for"
+        }
+      },
+      "required": [
+        "user_id",
+        "recipes"
+      ]
+    }
+  },
+  {
+    "tool_name": "tally_total_tastes",
+    "description": "Aggregate taste characteristics for specified recipes in the menu.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "recipes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Chicken & Broccoli Stir-fry",
+              "Salmon & Quinoa Bowl",
+              "Beef & Black Bean Stew",
+              "Yogurt & Berry Parfait",
+              "Turkey & Apple Soup",
+              "Pork & Red Bell Pepper Skillet",
+              "Roasted Chickpeas & Vegetables",
+              "Oat & Banana Pancakes",
+              "Lamb & Potato Stew",
+              "Egg & Spinach Frittata",
+              "Shrimp & Asparagus Stir-fry",
+              "Mushroom & Thyme Roast Chicken",
+              "Cod & Lemon Dill Bake",
+              "Duck & Cherry Salad",
+              "Tofu Soup",
+              "Potato & Greens Salad",
+              "Roasted Tomato Salmon",
+              "Pork & Chive Dumplings",
+              "Green Pepper Chicken",
+              "Custom Seasoned Noodles",
+              "Deep-fried Meat Platter"
+            ]
+          },
+          "description": "List of recipe names to calculate tastes for"
+        }
+      },
+      "required": [
+        "user_id",
+        "recipes"
+      ]
+    }
+  },
+  {
+    "tool_name": "add_to_shopping_list",
+    "description": "Add ingredients with quantities to the shopping list.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient to add",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Quantity to add (in units of 100g, must be greater than 0)"
+        }
+      },
+      "required": [
+        "user_id",
+        "ingredient_name",
+        "quantity"
+      ]
+    }
+  },
+  {
+    "tool_name": "remove_from_shopping_list",
+    "description": "Remove a specific ingredient from the shopping list.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient to remove",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "user_id",
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "compute_total_nutritions",
+    "description": "Calculate total nutritional values for specified ingredients in the shopping list.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ingredient_name": {
+                "type": "string",
+                "description": "Name of the ingredient",
+                "enum": [
+                  "Broccoli",
+                  "Potatoes",
+                  "Green Bell Pepper",
+                  "Carrots",
+                  "Garlic Chives",
+                  "Yellow Onions",
+                  "Spinach",
+                  "Red Bell Pepper",
+                  "Green Peas",
+                  "Celery",
+                  "Asparagus",
+                  "Lemon",
+                  "Tomatoes",
+                  "Mushrooms",
+                  "Beef",
+                  "Chicken",
+                  "Pork",
+                  "Salmon",
+                  "Turkey",
+                  "Lamb",
+                  "Shrimp",
+                  "Cod",
+                  "Duck",
+                  "Eggs",
+                  "Milk",
+                  "Butter",
+                  "Cheese",
+                  "Yogurt",
+                  "Cream",
+                  "Tofu",
+                  "Rice",
+                  "Spaghetti",
+                  "Instant Noodles",
+                  "Flour",
+                  "Oats",
+                  "Quinoa",
+                  "Chickpeas",
+                  "Cornmeal",
+                  "Black Beans",
+                  "Salt",
+                  "Black Pepper",
+                  "Olive Oil",
+                  "Peanut Oil",
+                  "Garlic Powder",
+                  "Cinnamon",
+                  "Ketchup",
+                  "Mayonnaise",
+                  "Mustard",
+                  "Balsamic Vinegar",
+                  "Soy Sauce",
+                  "Thyme",
+                  "Dill",
+                  "Apple",
+                  "Banana",
+                  "Strawberry",
+                  "Cherries",
+                  "Orange Juice",
+                  "Apple Juice",
+                  "Coffee",
+                  "Tea",
+                  "Cocoa Powder"
+                ]
+              },
+              "quantity": {
+                "type": "number",
+                "description": "Quantity (in units of 100g)"
+              }
+            },
+            "required": [
+              "ingredient_name",
+              "quantity"
+            ]
+          },
+          "description": "List of ingredients with quantities to calculate nutrition for"
+        }
+      },
+      "required": [
+        "user_id",
+        "ingredients"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_cooking_steps",
+    "description": "Retrieve detailed step-by-step instructions for a recipe.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_recipe_allergens",
+    "description": "Retrieve allergen information for a specific recipe.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_recipes_by_allergen",
+    "description": "Find all recipes containing a specific allergen.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "allergen": {
+          "type": "string",
+          "enum": [
+            "soy",
+            "gluten",
+            "fish",
+            "dairy",
+            "eggs"
+          ],
+          "description": "Allergen name. Use the enum value exactly; use 'eggs' instead of 'egg'."
+        }
+      },
+      "required": [
+        "allergen"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_recipe_taste",
+    "description": "Retrieve taste profile for a specific recipe.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_recipes_by_taste",
+    "description": "Find all recipes matching a specific taste profile.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "taste": {
+          "type": "string",
+          "enum": [
+            "savory",
+            "mild",
+            "umami",
+            "rich",
+            "sweet",
+            "sour",
+            "salty"
+          ],
+          "description": "Taste profile to search for"
+        }
+      },
+      "required": [
+        "taste"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_recipe_ingredients",
+    "description": "Retrieve the list of ingredients and quantities required for a recipe. Returned ingredient quantities are in units of 100g.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_recipes_by_ingredient",
+    "description": "Find all recipes that require a specific ingredient.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_ingredient_shelf_life",
+    "description": "Retrieve the expiration date for a specific ingredient.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_ingredients_by_expiry_date",
+    "description": "Find ingredients expiring after a specific date.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Target date in YYYY-MM-DD format (e.g., '2025-12-11')"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_ingredient_location",
+    "description": "Retrieve the storage location for a specific ingredient.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ],
+          "description": "Standard ingredient name from the ingredient catalog. Do not pass prepared dish phrases or composite step descriptions such as 'Salmon with tomatoes'; resolve them to standard recipe ingredients first."
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_ingredients_by_location",
+    "description": "Find all ingredients stored in a specific location.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "enum": [
+            "fridge",
+            "pantry",
+            "freezer",
+            "countertop",
+            "spice_rack"
+          ],
+          "description": "Storage location to search for. In kitchen benchmark wording, \"storage cabinet\", \"cabinet\", and \"cupboard\" refer to \"pantry\"; \"spice rack\" and \"seasoning rack\" refer to \"spice_rack\"."
+        }
+      },
+      "required": [
+        "location"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_ingredient_nutrition",
+    "description": "Retrieve detailed nutritional facts for a specific ingredient.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_ingredient_quantity",
+    "description": "Retrieve the current stock quantity of a specific ingredient. The returned quantity is in units of 100g.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_all_recipe_names",
+    "description": "Retrieve the names of all available recipes.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "tool_name": "get_ingredients_by_category",
+    "description": "Retrieve ingredients belonging to a specific category.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Ingredient category. Use one of the enum values. Use 'dairy/egg/soy' for dairy, egg, milk, cheese, yogurt, or soy ingredients/products; use 'carbs/grains' for staple, dry goods, grains, or powders; use 'seasoning' for condiments, spices, sauces, or seasonings.",
+          "enum": [
+            "vegetable",
+            "meat",
+            "dairy/egg/soy",
+            "carbs/grains",
+            "seasoning",
+            "fruits",
+            "drinks"
+          ]
+        }
+      },
+      "required": [
+        "category"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_ingredient_category",
+    "description": "Find the canonical category of a specific ingredient. Category aliases: use 'carbs/grains' for staple, dry goods, grains, or powders; use 'dairy/egg/soy' for dairy, egg, milk, cheese, yogurt, or soy products; use 'seasoning' for condiments, spices, sauces, or seasonings.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "ingredient_name": {
+          "type": "string",
+          "description": "Name of the ingredient",
+          "enum": [
+            "Broccoli",
+            "Potatoes",
+            "Green Bell Pepper",
+            "Carrots",
+            "Garlic Chives",
+            "Yellow Onions",
+            "Spinach",
+            "Red Bell Pepper",
+            "Green Peas",
+            "Celery",
+            "Asparagus",
+            "Lemon",
+            "Tomatoes",
+            "Mushrooms",
+            "Beef",
+            "Chicken",
+            "Pork",
+            "Salmon",
+            "Turkey",
+            "Lamb",
+            "Shrimp",
+            "Cod",
+            "Duck",
+            "Eggs",
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Yogurt",
+            "Cream",
+            "Tofu",
+            "Rice",
+            "Spaghetti",
+            "Instant Noodles",
+            "Flour",
+            "Oats",
+            "Quinoa",
+            "Chickpeas",
+            "Cornmeal",
+            "Black Beans",
+            "Salt",
+            "Black Pepper",
+            "Olive Oil",
+            "Peanut Oil",
+            "Garlic Powder",
+            "Cinnamon",
+            "Ketchup",
+            "Mayonnaise",
+            "Mustard",
+            "Balsamic Vinegar",
+            "Soy Sauce",
+            "Thyme",
+            "Dill",
+            "Apple",
+            "Banana",
+            "Strawberry",
+            "Cherries",
+            "Orange Juice",
+            "Apple Juice",
+            "Coffee",
+            "Tea",
+            "Cocoa Powder"
+          ]
+        }
+      },
+      "required": [
+        "ingredient_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_current_shopping_list",
+    "description": "Retrieve the user's current shopping list. Returned item quantities are in units of 100g.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_recipe_nutritional_characteristics",
+    "description": "Retrieve nutritional characteristic tags for a specific recipe.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipe_name": {
+          "type": "string",
+          "description": "Name of the recipe",
+          "enum": [
+            "Chicken & Broccoli Stir-fry",
+            "Salmon & Quinoa Bowl",
+            "Beef & Black Bean Stew",
+            "Yogurt & Berry Parfait",
+            "Turkey & Apple Soup",
+            "Pork & Red Bell Pepper Skillet",
+            "Roasted Chickpeas & Vegetables",
+            "Oat & Banana Pancakes",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry",
+            "Mushroom & Thyme Roast Chicken",
+            "Cod & Lemon Dill Bake",
+            "Duck & Cherry Salad",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Green Pepper Chicken",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      },
+      "required": [
+        "recipe_name"
+      ]
+    }
+  },
+  {
+    "tool_name": "find_recipes_by_nutritional_characteristics",
+    "description": "Find all recipes matching specific nutritional characteristics.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "type": "string",
+          "description": "Nutritional characteristic tag (e.g., 'high_protein', 'low_fat', 'high_fiber', 'gluten_free', 'vegan')",
+          "enum": [
+            "high_protein",
+            "high_fiber",
+            "low_fat",
+            "gluten_free",
+            "low_sugar",
+            "low_calories",
+            "moderate_carbs",
+            "vegan",
+            "moderate_protein",
+            "moderate_calories",
+            "high_fat",
+            "high_calories",
+            "low_carbs",
+            "high_calcium",
+            "high_sodium"
+          ]
+        }
+      },
+      "required": [
+        "characteristic"
+      ]
+    }
+  },
+  {
+    "tool_name": "get_all_ingredient_names",
+    "description": "Retrieve the names of all available ingredients.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+]

@@ -1,0 +1,814 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "add_product",
+      "description": "Add or update a product in the global catalog. Product is keyed by 'name'. Price is tax-inclusive. Discount is a factor (1.0 = full price).",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string",
+            "description": "Unique product name (primary key)."
+          },
+          "category": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Shelf price including tax."
+          },
+          "tax_rate": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Tax rate (e.g., 0.08 for 8%)."
+          },
+          "discount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.0,
+            "description": "Discount factor: final amount = price * discount."
+          },
+          "nutritional_characteristics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "low_calories",
+                "low_fat",
+                "low_sugar",
+                "low_sodium",
+                "no_additives",
+                "high_fiber",
+                "high_protein",
+                "high_calcium",
+                "sugar_free",
+                "gluten_free",
+                "vegan",
+                "high_calories",
+                "high_fat",
+                "high_sodium",
+                "high_sugar"
+              ]
+            },
+            "description": "Nutritional/health tags."
+          },
+          "taste": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "sweet",
+                "salty",
+                "spicy",
+                "sour",
+                "bitter",
+                "umami",
+                "mild",
+                "savory",
+                "creamy",
+                "dry",
+                "minty",
+                "nutty",
+                "strong",
+                "tangy",
+                "·"
+              ]
+            },
+            "description": "Taste profiles."
+          },
+          "country_of_origin": {
+            "type": "string",
+            "description": "Country where the product originates."
+          },
+          "nutrition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "PER_100G",
+                  "PER_SERVING"
+                ]
+              },
+              "serving_size_g": {
+                "type": "number"
+              },
+              "calories_kcal": {
+                "type": "number"
+              },
+              "protein_g": {
+                "type": "number"
+              },
+              "fat_g": {
+                "type": "number"
+              },
+              "carbs_g": {
+                "type": "number"
+              },
+              "sugar_g": {
+                "type": "number"
+              },
+              "sodium_mg": {
+                "type": "number"
+              },
+              "fiber_g": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "basis"
+            ]
+          },
+          "allergens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "product_name",
+          "category",
+          "price",
+          "tax_rate",
+          "discount",
+          "nutritional_characteristics",
+          "taste",
+          "country_of_origin"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "delete_product",
+      "description": "Delete a product from the catalog by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_nutritional_characteristic",
+      "description": "Find all products that include a specific nutritional characteristic tag.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "characteristic": {
+            "type": "string",
+            "enum": [
+              "low_calories",
+              "low_fat",
+              "low_sugar",
+              "low_sodium",
+              "no_additives",
+              "high_fiber",
+              "high_protein",
+              "high_calcium",
+              "sugar_free",
+              "gluten_free",
+              "vegan",
+              "high_calories",
+              "high_fat",
+              "high_sodium",
+              "high_sugar"
+            ]
+          }
+        },
+        "required": [
+          "characteristic"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_nutritional_characteristics",
+      "description": "Get nutrition-related tags for a product, such as high_sugar. This tool does not check allergens.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_taste",
+      "description": "Find all products that include a specific taste profile.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "taste": {
+            "type": "string",
+            "enum": [
+              "sweet",
+              "salty",
+              "spicy",
+              "sour",
+              "bitter",
+              "umami",
+              "mild",
+              "savory",
+              "creamy",
+              "dry",
+              "minty",
+              "nutty",
+              "strong",
+              "tangy",
+              "·"
+            ]
+          }
+        },
+        "required": [
+          "taste"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_country_of_origin",
+      "description": "Find all products from a specific country of origin (exact match).",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "type": "string",
+            "description": "Canonical country of origin name.",
+            "enum": [
+              "Argentina",
+              "Australia",
+              "Austria",
+              "Belgium",
+              "Brazil",
+              "Chile",
+              "Denmark",
+              "France",
+              "Germany",
+              "Greece",
+              "Italy",
+              "Jamaica",
+              "Japan",
+              "Netherlands",
+              "New Zealand",
+              "Peru",
+              "Philippines",
+              "Portugal",
+              "Puerto Rico",
+              "Scotland",
+              "South Africa",
+              "Spain",
+              "Switzerland",
+              "USA",
+              "United Kingdom",
+              "United States"
+            ]
+          }
+        },
+        "required": [
+          "country"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_category",
+      "description": "Find all products in a specific category (exact match).",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Canonical product category name. Use singular values only.",
+            "enum": [
+              "beer",
+              "champagne",
+              "cheese",
+              "chocolate",
+              "cookie",
+              "liquor",
+              "sparkling wine",
+              "spirits",
+              "vermouth",
+              "wine"
+            ]
+          }
+        },
+        "required": [
+          "category"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_price",
+      "description": "Get only the current shelf price (including tax) for a specific product by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_price_range",
+      "description": "Find all products with a price within a specified inclusive range.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "min_price": {
+            "type": "number",
+            "minimum": 0
+          },
+          "max_price": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "min_price",
+          "max_price"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_tax_rate",
+      "description": "Get the tax rate of a product by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_category",
+      "description": "Get the category of a product by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_country_of_origin",
+      "description": "Get the country of origin for a product by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_taste",
+      "description": "Get the taste profile list of a product by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_discount",
+      "description": "Get the discount factor of a product by name. Discount factor is a price multiplier: lower factor means a larger discount; 1.0 means no discount. When asked for the highest/largest/biggest discount rate, choose the minimum discount factor.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_nutrition",
+      "description": "Get numeric nutrition facts for a product by name. These numeric nutrition facts do not indicate nutritional characteristic tags, e.g., high_protein, low_fat, high_sugar, or low_sugar.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_products_by_allergen",
+      "description": "Find all products that contain a specific allergen.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "allergen": {
+            "type": "string",
+            "enum": [
+              "alcohol",
+              "barley",
+              "coconut",
+              "egg",
+              "garlic",
+              "gluten",
+              "grapes",
+              "milk",
+              "nut",
+              "soy",
+              "sulfites"
+            ]
+          }
+        },
+        "required": [
+          "allergen"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "list_discounted_products",
+      "description": "Return all product names where discount < 1.0.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "add_to_cart",
+      "description": "Add quantity of a product to a user's cart.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "category": {
+            "type": "string",
+            "description": "Canonical product category name. Use singular values only.",
+            "enum": [
+              "beer",
+              "champagne",
+              "cheese",
+              "chocolate",
+              "cookie",
+              "liquor",
+              "sparkling wine",
+              "spirits",
+              "vermouth",
+              "wine"
+            ]
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Shelf price including tax."
+          },
+          "tax_rate": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Tax rate (e.g., 0.08 for 8%)."
+          },
+          "discount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.0,
+            "description": "Discount factor: final amount = price * discount."
+          }
+        },
+        "required": [
+          "user_id",
+          "product_name",
+          "qty",
+          "category",
+          "price",
+          "tax_rate",
+          "discount"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_cart",
+      "description": "Get all items in a user's cart. When comparing it with the shopping list, an item is satisfied only if it is present and the cart quantity reaches the shopping-list quantity.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "remove_from_cart",
+      "description": "Remove a specified quantity of a product from the user's cart. If the user asks to remove an item/product from the cart without specifying a quantity, use the product's current cart quantity so the whole cart item is removed; use a smaller or specific quantity only when explicitly requested.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "user_id",
+          "product_name",
+          "qty"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "clear_cart",
+      "description": "Remove all items from a user's cart.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "compute_total_payment",
+      "description": "Compute total payable amount for the specified products: sum(tax-inclusive price * discount * qty). The returned total_payment is already tax-inclusive; do not add compute_total_tax to total_payment. compute_total_tax only reports the tax portion included inside total_payment.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "The unique identifier of the user"
+          },
+          "products": {
+            "type": "array",
+            "description": "List of products to calculate total payment for",
+            "items": {
+              "type": "object",
+              "properties": {
+                "product_name": {
+                  "type": "string",
+                  "description": "Name of the product"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "description": "Quantity of the product to purchase"
+                }
+              },
+              "required": [
+                "product_name",
+                "quantity"
+              ]
+            }
+          }
+        },
+        "required": [
+          "user_id",
+          "products"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "compute_total_tax",
+      "description": "Compute total tax amount for the specified products. Since price is tax-inclusive, tax per item = (price * tax_rate / (1 + tax_rate)) * discount * qty.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "The unique identifier of the user"
+          },
+          "products": {
+            "type": "array",
+            "description": "List of products to calculate total tax for",
+            "items": {
+              "type": "object",
+              "properties": {
+                "product_name": {
+                  "type": "string",
+                  "description": "Name of the product"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "description": "Quantity of the product to purchase"
+                }
+              },
+              "required": [
+                "product_name",
+                "quantity"
+              ]
+            }
+          }
+        },
+        "required": [
+          "user_id",
+          "products"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "compute_total_nutrition",
+      "description": "Compute total nutrition values across all items for the specified products.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "The unique identifier of the user"
+          },
+          "products": {
+            "type": "array",
+            "description": "List of products to calculate total nutrition values for",
+            "items": {
+              "type": "object",
+              "properties": {
+                "product_name": {
+                  "type": "string",
+                  "description": "Name of the product"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "description": "Quantity of the product to purchase"
+                }
+              },
+              "required": [
+                "product_name",
+                "quantity"
+              ]
+            }
+          }
+        },
+        "required": [
+          "user_id",
+          "products"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_shopping_list",
+      "description": "Retrieve the user's current shopping list from backend state by user_id.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      }
+    }
+  }
+]

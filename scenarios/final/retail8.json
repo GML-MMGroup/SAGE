@@ -1,0 +1,1344 @@
+[
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_123). Focus on the first orange cookies you are pointing at on the second shelf. You need to ask the AI Service Agent to check their nutritional features. Next, ask the AI Service Agent to check whether that box of dark brown rectangular cookies with a yellow lemon pattern on the third shelf has a \"sour taste\". If it indeed has a sour taste and its fat content is less than 20 grams, ask the AI Service Agent to add one box to your cart. If this condition is not met, ask the AI Service Agent to search the current product database for other products that share the same country of origin as that dark brown box, have a \"sweet taste\", and have a discount factor better than 0.9 (discount factor < 0.9). If there are any, ask the AI Service Agent to add two boxes of the product with the highest calories among them to your cart. If there are multiple products tied for the highest calories among those that meet the conditions, you want two boxes of each of them to be added. Finally, ask the AI Service Agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Check the nutritional features of the orange cookies on the second shelf that you are pointing at first.\n\n2. Check whether the dark brown rectangular cookies with a yellow lemon pattern on the third shelf have a \"sour taste\".\n\n3. If they have a sour taste and the fat content is less than 20 grams, add one piece to your cart.\n\n4. If these conditions are not met, search the product database for items that share the same country of origin as that dark brown box, have a \"sweet taste\", and have a discount factor better than 0.9. If any are found, add 2 pieces of the item with the highest calorie content to your cart. If there are multiple items tied for the highest calorie content among those that meet the conditions, you want 2 pieces of each of them to be added.\n\n5. Calculate the total tax for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_nutrition",
+        "parameters": {
+          "product_name": "St Michel Le Sablé de Reims Coconut"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Choco Fit Chocolate",
+          "qty": 2,
+          "category": "cookie",
+          "price": 79.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Choco Fit Chocolate",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious parent (User ID: user_202). Please ask the AI Service Agent to check the prices of the first cookie you are pointing at and the box of dark brown rectangular cookies with a yellow lemon pattern on the third shelf. If the dark brown box is cheaper than the orange box and the tax rate is lower than 0.1, ask the AI Service Agent to add two items of the dark brown box to your cart; otherwise, add three items of the orange box to your cart. Next, ask the AI Service Agent to check whether either of these two products has the nutritional feature \"high sugar\". If so, ask the AI Service Agent to search the current product catalog for all items explicitly labeled with the \"gluten\" allergen, select the cheapest one, and add one to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items. Subsequently, ask the AI Service Agent to check the shopping list and add any missing items. Finally, ask the AI Service Agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Query the prices of the first cookie you are pointing at (orange box) and the dark brown rectangular cookie with a yellow lemon pattern on the third shelf.\n\n2. If the dark brown box is cheaper than the orange box and has a tax rate below 0.1, add 2 units of the dark brown cookie to your cart; otherwise, add 3 units of the orange cookie to your cart.\n\n3. Check if either of these two items has the \"high sugar\" attribute. If so, search the product database for items explicitly labeled \"contains gluten\", and add one unit of the cheapest item to your cart. If multiple items are tied for the lowest price, add one unit of each of those tied items.\n\n4. Check the shopping list and add any missing items to the cart.\n\n5. Calculate the total amount payable for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 3,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 1,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 3,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "St Michel Dark Chocolate Cookie",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.8,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Teddy Bear",
+          "qty": 2,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Dukan Chocolate Chip Cookie",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 3
+            },
+            {
+              "product_name": "Dukan Chocolate Bar",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 3
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_303). Please ask the AI service agent to check whether the third box of brown cookies directly below the first cookie you are pointing at contains the \"gluten\" allergen. If it contains gluten, ask the AI service agent to check whether the box of hazelnut cookies to the right of the dark brown rectangular cookies with a yellow lemon pattern on the third shelf is gluten-free. If that box of hazelnut cookies also contains gluten and is priced over 20 yuan, ask the AI service agent to search the current product database for cookies that are from France, have a \"sweet\" flavor, and contain the gluten allergen. If such cookies exist, ask the AI service agent to add one of the cookies with the highest protein content to your cart. If there are multiple cookies tied for the highest protein content among those that meet the conditions, you want one of each of them to be added. If no such cookies exist, ask the AI service agent to add one of the purple cookies directly below the first cookie you are pointing at to your cart. Finally, ask the AI service agent to calculate the total tax amount for the items in your cart.",
+    "analysis": "1. Check whether the third box of brown cookies directly below the first cookie you are pointing at contains \"gluten\".\n2. If it does contain gluten, check whether the hazelnut cookies to the right of the dark brown cookies with a yellow lemon pattern on the third layer are gluten-free.\n3. If the hazelnut cookies also contain gluten and are priced over 20 yuan, search the product database for cookies that are from France, have a \"sweet\" flavor, and contain gluten.\n4. If any are found, add one unit of the cookie with the highest protein content to the cart. If there are multiple cookies tied for the highest protein content, add one unit of each of them. If none are found, add one unit of the purple cookie directly below the first cookie you are pointing at to the cart.\n5. Finally, calculate the total tax amount for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "St Michel La Galette All Butter",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Classic"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: user_456). Please ask the AI Service Agent to query the sugar content of the orange cookies on the second shelf that you are pointing at first, and the box of blue cookies in the middle directly below them. If the sugar content of the orange box is higher than that of the blue box and neither contains the \"soy\" allergen, ask the AI Service Agent to add one unit of the blue box product to the cart; otherwise, ask the AI Service Agent to add one unit of the orange box product to the cart. Next, ask the AI Service Agent to search the current product database for items that are from the same country as the selected product, have the \"high protein\" feature, and are currently on sale. If there are any, ask the AI Service Agent to add the item with the lowest price to the cart. If multiple items tie for the lowest price, add all of them. Additionally, ask the AI Service Agent to check if the average sugar content of the cart items is higher than 30. If so, ask the AI Service Agent to remove the item with the highest sugar content. If multiple items tie for the highest sugar content, remove all of them. Finally, ask the AI Service Agent to calculate the total carbohydrate content of all items in the cart.",
+    "analysis": "1. Query the sugar content of the orange cookies on the second shelf at the first location you point to, and the blue cookies in the middle directly below them.\n\n2. If the orange cookies have a higher sugar content than the blue ones and neither contains \"soy\", add 1 blue cookie to the cart; otherwise, add 1 orange cookie to the cart.\n\n3. Search the product database for items that are from the same country as the selected product, have the \"high protein\" attribute, and are on sale. If any exist, add the cheapest one to the cart. If multiple items tie for the lowest price, add all of them.\n\n4. Check the shopping cart. If the average sugar content is higher than 30, remove the item with the highest sugar content. If multiple items tie for the highest sugar content, remove all of them.\n\n5. Calculate the total carbohydrate content of all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Dukan Chocolate Chip Cookie",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.05,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Dukan Chocolate Chip Cookie",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Crispy Cups Cookies & Cream"
+    ]
+  },
+  {
+    "Instruction": "You are a gift buyer (User ID: user_505). Ask the AI Service Agent to check the allergens for the orange cookies on the second shelf you are pointing at first, and the dark brown rectangular cookies with a yellow lemon pattern on the box located on the third shelf. If both products are nut-free and both have discount factors equal to or better than 0.8, have the AI Service Agent add two of the orange box items to your cart. If one of them contains nuts, have the AI Service Agent add two of the other nut-free item to your cart. If both contain nuts, have the AI Service Agent search the current product database for the lowest-priced \"nut-free\" cookies from any country and add two of that item to your cart. If there are multiple cookies tied for the lowest price, add two of each of those tied items. Next, have the AI Service Agent check the historical shopping list and fill in any unpurchased items. Finally, have the AI Service Agent calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Check the allergens for the first orange cookie on the second shelf and the dark brown rectangular cookie with a yellow lemon pattern on the third shelf that you are pointing at.\n\n2. If both are nut-free and have a discount factor worse than 0.8, add 2 units of the orange cookie to the cart.\n\n3. If one contains nuts, add 2 units of the other nut-free cookie to the cart.\n\n4. If both contain nuts, search the product database for the nut-free cookie(s) with the lowest price. Add 2 units of each qualifying item to the cart. If there are multiple cookies tied for the lowest price, add 2 units of each of those tied items.\n\n5. Check the historical shopping list and add any items that have not been purchased yet.\n\n6. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Pallets Biscuits",
+          "qty": 3,
+          "category": "cookie",
+          "price": 33.6,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Desobry Speculoos",
+          "qty": 1,
+          "category": "cookie",
+          "price": 33.8,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Crispy Cups Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Pallets Biscuits",
+              "quantity": 3
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a cooking student (User ID: user_101). Ask the AI Service Agent to retrieve the flavor characteristics of the orange cookies on the second shelf (the first item you pointed at) and the dark brown rectangular cookies with a yellow lemon pattern on the third shelf. If the dark brown box has a \"sour\" flavor and contains no \"milk\" allergens, instruct the AI Service Agent to add one unit of this product to the cart. Next, have the AI Service Agent search the current inventory for all products produced in the same country as the dark brown box, with a \"sweet\" flavor, and priced below 30. If there are qualifying products, instruct the AI Service Agent to add the product with the highest protein content to the cart. If multiple products tie for the highest protein content among those that meet the conditions, add all of them. If there are no qualifying products, instruct the AI Service Agent to add the orange box to the cart. Finally, ask the AI Service Agent to calculate the total tax for the items in the cart.",
+    "analysis": "1. Retrieve the flavor characteristics of the first orange cookie pointed at on the second layer and the dark brown rectangular cookie with a yellow lemon pattern on the third layer.\n\n2. If the dark brown cookie's flavor is \"Sour\" and it does not contain \"Milk\", add one piece of the dark brown cookie to the cart.\n\n3. Search for products produced in the same country as the dark brown cookie, with a \"Sweet\" flavor, and priced below 30 yuan. If any are found, add the product with the highest protein content to the cart. If multiple products tie for the highest protein, add all of them. If none are found, add the orange cookie to the cart.\n\n4. Calculate the total tax for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "find_products_by_taste",
+        "parameters": {
+          "taste": "sweet"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Grisbi Chocolate Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: user_303). Ask the AI Service Agent to query the sugar and carbohydrate content of the orange biscuits on the second shelf that you are pointing at first and the first box of purple biscuits directly below them. If the total sugar and carbohydrate content of the orange box is lower than that of the purple box and the price is between 15 and 40 yuan, ask the AI Service Agent to add two units of this item to your cart. If the total content of the purple box is lower and it has the \"high oil\" feature, ask the AI Service Agent to add two units of this item to your cart. If the total contents of both are equal, ask the AI Service Agent to search the current product database for the cheapest product with less than 10 grams of sugar from any country, and add two units of this product to your cart. If there are multiple products tied for the cheapest price among those that meet the conditions, you want two units of each of them to be added. Additionally, ask the AI Service Agent to check the shopping cart and remove the box of St Michel Le Petit Beurre biscuits. After removal, if the average sugar content of the items in the cart is higher than 30, ask the AI Service Agent to remove the item with the highest sugar content. If multiple items tie for the highest sugar content, remove all of them together. Finally, ask the AI Service Agent to calculate the total amount payable.",
+    "analysis": "1. Query the sugar and carbohydrate content of the first orange cookies you are pointing at on the second layer and the first box of purple cookies directly below them.\n\n2. If the orange cookies have a lower total sugar and carbohydrate content and are priced between 15 and 40 yuan, add 2 pieces of the orange cookies to the cart.\n\n3. If the purple cookies have a lower total content and are \"high oil\", add 2 pieces of the purple cookies to the cart.\n\n4. If the total contents of both are equal, search the product database for the cheapest product(s) from any country with sugar content below 10 grams. Add 2 pieces of each qualifying product to the cart. If multiple products tie for the cheapest price among those meeting the conditions, add 2 pieces of each of those tied products.\n\n5. Check the shopping cart. If the average sugar content is higher than 30, remove the item with the highest sugar content.\n\n6. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 2,
+          "category": "cookie\n",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Crispy Cups Happy",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "St Michel La Galette All Butter",
+              "quantity": 3
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemo",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a nutrition consultant (User ID: user_456). Please ask the AI Service Agent to query the protein and fat content of the orange biscuits on the second shelf that you point at first, and the box of hazelnut biscuits on the third shelf located to the right of the rectangular biscuits with a yellow lemon pattern. If the orange biscuits have a protein content exceeding 8g per 100g and are produced in the UK, ask the AI Service Agent to add them to your cart. If the hazelnut biscuits have a fat content exceeding 30g per 100g and contain the \"nuts\" allergen, ask the AI Service Agent to add them to your cart. If neither condition is met, ask the AI Service Agent to search the current product database for items with the \"contains gluten\" tag and priced between 20 and 80 yuan, and add the item with the highest sugar content to your cart. If there are multiple items tied for the highest sugar content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Query the protein and fat content of the hazelnut cookie located to the right of the first pointed orange cookie on the second shelf and the rectangular cookie with a yellow lemon pattern on the third shelf.\n\n2. If the orange cookie's protein content exceeds 8g per 100g and it is produced in the UK, add it to the cart.\n\n3. If the hazelnut cookie's fat content exceeds 30g per 100g and it contains \"nuts\", add it to the cart.\n\n4. If neither condition is met, search for items that contain gluten and are priced between 20 and 80 yuan, and add the item with the highest sugar content to the cart. If there are multiple items tied for the highest sugar content among those that meet the conditions, add all of them to the cart.\n\n5. Calculate the total tax for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Strawberry",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_123). Ask the AI Service Agent to confirm the nutritional characteristics of the orange cookies on the second shelf that you point to first, and check whether the box of hazelnut cookies to the right of the rectangular cookies with a yellow lemon pattern on the third shelf has the \"nutty\" characteristic. If the orange cookies are classified as \"high sugar\" and the hazelnut cookies indeed have a nutty flavor, ask the AI Service Agent to check if there are any items on sale that share the same country of origin as the hazelnut cookies. If there are, ask the AI Service Agent to find the discounted items with the lowest fat content in the current product database and add two boxes of the lowest fat item to the cart. If multiple items are tied for the lowest fat content among those that meet the conditions, you want two boxes of each of those tied items to be added. If there are no such discounted items, ask the AI Service Agent to add one box of the hazelnut cookies themselves to the cart. Finally, ask the AI Service Agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Confirm the nutritional features of the first orange cookie you point to on the second layer, and check if the hazelnut cookie to the right of the rectangular cookie on the third layer has the \"nutty\" feature.\n\n2. If the orange cookie is \"high sugar\" and the hazelnut cookie has a nutty flavor, check for any items that share the same country of origin as the hazelnut cookie and are on discount. If such items exist, add 2 units of the item(s) with the lowest fat content to the cart. If multiple items tie for the lowest fat content among the qualifying items, add 2 units of each of those tied items. If no such discounted items exist, add 1 unit of the hazelnut cookie itself to the cart.\n\n3. Calculate the total tax for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Choco Fit Lemon",
+          "qty": 2,
+          "category": "cookie",
+          "price": 15.9,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Cookies & Cream",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a food allergy patient (User ID: user_789). Please ask the AI Service Agent to retrieve the allergen information for the box of dark brown rectangular cookies with a yellow lemon pattern on the third shelf. If the item contains \"nuts\", ask the AI Service Agent to search the current product database for items that do not contain nuts but have a \"sour\" flavor. If such items exist, ask the AI Service Agent to add the highest-priced product to the cart. If there are multiple items tied for the highest price, add one of each of those tied items to the cart. If no such items exist, ask the AI Service Agent to add the first orange cookie on the second shelf that you point to to the cart. If the item does not contain \"nuts\", add it to the cart. Subsequently, ask the AI Service Agent to check if any items in the cart have a tax rate higher than 0.1; if so, remove them from the cart. Additionally, ask the AI Service Agent to check if there are any products in the current cart that contain nut allergens, and if so, remove them. Finally, ask the AI Service Agent to calculate the total payable amount for the items in the cart after discounts.",
+    "analysis": "1. Retrieve the allergen information for the dark brown rectangular cookie with a yellow lemon pattern on the third shelf.\n\n2. If it contains \"nuts\", search for items that are nut-free and have a \"sour\" flavor. If such items exist, add the most expensive one to your cart. If there are multiple items tied for the highest price among those that meet the conditions, add all of them. If no such items exist, add one of the orange cookies on the second shelf that you are pointing at first to your cart.\n\n3. Check the shopping cart and remove any items with a tax rate higher than 0.1.\n\n4. Check the shopping cart and remove any products containing nut allergens.\n\n5. Calculate the total payable amount for the items in the cart after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Choco Fit Chocolate",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Dukan Nutrition Pour Tous Original",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Pallets Biscuits",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_123). Focus on the first orange cookies you point at on the second shelf. You need to ask the AI Service Agent to confirm their nutritional characteristics. Then, ask the AI Service Agent to verify whether the dark brown rectangular cookies with a yellow lemon pattern on the third shelf have a \"sour\" or \"bitter\" taste. If they have that taste and the sugar content exceeds 40 grams, ask the AI Service Agent to search the current product database for cookies that are from the same country of origin as that dark brown box and are currently on sale, and add two of the cookie with the highest protein content among those found to your cart. If there are multiple cookies tied for the highest protein content among those that meet the conditions, you want two of each of them to be added. If the conditions are not met, ask the AI Service Agent to add the dark brown box itself to the cart. Subsequently, ask the AI Service Agent to check the shopping list and add any missing items to the cart. Finally, ask the AI Service Agent to calculate the total tax for all items in the shopping cart.",
+    "analysis": "1. Confirm the nutritional features of the first orange cookie pointed to on the second layer, and verify whether the dark brown rectangular cookie on the third layer has a \"sour\" or \"bitter\" taste.\n\n2. If it features that taste and contains more than 40 grams of sugar, search for cookies that share the same country of origin as the dark brown cookie and are on sale. Add 2 pieces of the cookie(s) with the highest protein content. If multiple cookies tie for the highest protein content, add 2 pieces of each of those tied items. If these conditions are not met, add the dark brown cookie itself to the cart.\n\n3. Check the list and add any missing items to the cart.\n\n4. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "get_nutrition",
+        "parameters": {
+          "product_name": "St Michel Le Sablé de Reims Coconut"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Bahlsen",
+          "qty": 3,
+          "category": "cookie",
+          "price": 32.8,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Desobry Speculoos",
+          "qty": 1,
+          "category": "cookie",
+          "price": 33.8,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Choco Fit Hazelnut",
+          "qty": 2,
+          "category": "cookie",
+          "price": 69.8,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Choco Fit Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 79.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 3
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Chocolate",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness enthusiast (User ID: user_101). Ask the AI Service Agent to first calculate the total calories if the first orange cookie you are pointing at on the second shelf and the dark brown rectangular cookie with a yellow lemon pattern on the third shelf are both added to the cart. Then, ask the AI Service Agent to check whether either of these two products has a \"high_protein\" label and originates from Germany, Denmark, or Japan. If so, ask the AI Service Agent to add that product to your cart. If not, ask the AI Service Agent to compare the two and add the one with the higher protein content, provided its price is between 15 and 40 yuan (skip if the price does not match). If both items tie for the highest protein content among those meeting the conditions, add both of them to the cart. Next, ask the AI Service Agent to find items containing gluten recorded in the list within the current product database and add them to the cart. Finally, ask the AI Service Agent to calculate the total carbohydrate content of all items in the cart.",
+    "analysis": "1. Calculate the total calories for adding the first pointed item (second-layer orange cookies) and the third-layer dark brown rectangular cookies to the cart.\n\n2. Check if either of the two items has a \"High Protein\" label and originates from Germany, Denmark, or Japan. If so, add the qualifying product(s) to the cart.\n\n3. If neither item meets these criteria, compare the two items and add the one with the higher protein content to the cart, provided its price is between 15 and 40 yuan (skip adding if the price condition is not met). If both items tie for the highest protein content and meet the price requirement, add both to the cart.\n\n4. Search the list for items containing gluten and add them to the cart.\n\n5. Calculate the total carbohydrates of the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 3,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Crispy Cups Strawberry",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 3
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious baker (User ID: user_123). Ask the AI Service Agent to confirm the nutritional properties of the orange cookies on the second shelf that you point to first. Then, have the AI Service Agent check whether the fat content of the dark brown rectangular cookies with a yellow lemon pattern on the third shelf is lower than that of the orange box. If the fat content is lower and the item is from France, instruct the AI Service Agent to add two units of the dark brown box item to your cart. If not, instruct the AI Service Agent to check if the orange box contains the \"milk\" allergen; if it does, add one orange box to your cart. Afterwards, have the AI Service Agent check your current cart to ensure there are no duplicate additions. Finally, ask the AI Service Agent to calculate the total protein content of the items in the cart and calculate the total amount payable.",
+    "analysis": "1. Confirm the nutritional properties of the first orange cookie pointed at on the second layer, and check whether the fat content of the dark brown rectangular cookie on the third layer is lower than that of the orange cookie.\n\n2. If the fat content is lower and the cookie originates from France, add 2 pieces of the dark brown cookie to the shopping cart.\n\n3. Otherwise, check whether the orange cookie contains \"milk\"; if it does, add 1 piece of the orange cookie to the shopping cart.\n\n4. Check the shopping cart to ensure there are no duplicate additions.\n\n5. Calculate the total protein content and the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Crispy Cups Classic"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness coach (User ID: user_202). Ask the AI Service Agent to query the price of the first box of brown cookies from the left on the third shelf. Then, have the AI Service Agent check whether the price of the hazelnut cookies situated to the right of the dark brown rectangular cookies with a yellow lemon pattern on the third shelf is within 5% of the brown box's price. If it is, and the hazelnut cookies have a \"High Protein\" label, ask the AI Service Agent to add one unit of the hazelnut cookies to your cart. If it is not, ask the AI Service Agent to search for discounted cookies made in Italy priced between 15-40 yuan in the current product database, and add the item with the lowest calories to your cart. If there are multiple items tied for the lowest calories among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to check if your shopping list already contains any of the aforementioned items and remove all duplicates from the shopping cart. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Query the price of the first box of brown cookies from the left on the third shelf, and check whether the price of the hazelnut cookies to the right of the dark brown rectangular cookies is within 5% of that price.\n\n2. If yes, and the hazelnut cookies are \"high protein\", add one unit of hazelnut cookies to the cart.\n\n3. If no, search for cookies made in Italy, priced between 15 and 40 yuan, and currently on sale. Add the cookie with the lowest calories to the cart. If multiple cookies tie for the lowest calories among those that meet the conditions, add one of each of those tied items.\n\n4. Check the list and remove any duplicate items from the shopping cart.\n\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Choco Fit Lemon",
+          "qty": 1,
+          "category": "cookie",
+          "price": 15.9,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "get_shopping_list",
+        "parameters": {
+          "user_id": "user_202"
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Dukan Chocolate Chip Cookie",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut"
+    ]
+  },
+  {
+    "Instruction": "You are a pastry chef (User ID: user_303). Ask the AI Service Agent to query the country of origin of the orange cookies on the second shelf that you point to first. Then, ask the AI Service Agent to check whether the dark brown rectangular cookies with a yellow lemon pattern on the third shelf are from the same country. If they are from the same country and both contain the \"nuts\" allergen, ask the AI Service Agent to add two units of the dark brown box to your cart. If not, ask the AI Service Agent to search the current product database for French-made cookies with the same flavor as the orange box, and add the one with the highest unit price to your cart. If there are multiple cookies tied for the highest price among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to check your cart to ensure there are no duplicate items, and calculate the total amount payable after discounts.",
+    "analysis": "1. Query the country of origin of the first orange biscuit on the second layer that you are pointing at, and check whether the dark brown rectangular biscuit on the third layer is from the same country.\n2. If they are from the same country and both contain \"nuts\", add 2 pieces of the dark brown biscuits to your cart.\n3. If not, search for French-produced biscuits that have the same flavor as the orange one, and add the qualifying biscuit with the highest unit price to your cart. If there are multiple biscuits tied for the highest price among those that meet the conditions, add one of each tied item.\n4. Check your cart to ensure there are no duplicate items.\n5. Calculate the total amount payable after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Lu Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 36.8,
+          "tax_rate": 0.15,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel La Galette All Butter",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: user_404). Ask the AI Service Agent to check the flavor characteristics of the first box of purple cookies from the left on the third shelf. Next, ask the AI Service Agent to check whether the *** hazelnut cookies to the right of the dark brown rectangular cookies with a yellow lemon pattern on the third shelf have the \"nutty\" characteristic. If yes and their sugar content exceeds 50 grams, ask the AI Service Agent to add one unit of that hazelnut cookie to your cart. If not, ask the AI Service Agent to add one unit of the purple box to your cart (provided it has a discount factor better than 0.9 and a price no higher than 30). Afterwards, ask the AI Service Agent to check your shopping list, add any products on the list that are not yet in the cart to the cart, and ask the AI Service Agent to calculate the total carbohydrates of all items in the cart.",
+    "analysis": "1. Check whether the first box of purple cookies from the left on the third shelf and the hazelnut cookies located to the right of the dark brown rectangular cookies have the \"nutty\" feature.\n\n2. If they possess this feature and the sugar content exceeds 50 grams, add 1 unit of the hazelnut cookies to the cart.\n\n3. If not, add 1 unit of the purple cookies, provided the discount factor is less than 0.8.\n\n4. Check the shopping list and add any items that have not yet been placed in the shopping cart.\n\n5. Calculate the total carbohydrate content.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Choco Fit Lemon",
+          "qty": 2,
+          "category": "cookie",
+          "price": 15.9,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 1,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 1,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_404",
+          "products": [
+            {
+              "name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "name": "Dukan Chocolate Bar",
+              "quantity": 1
+            },
+            {
+              "name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "name": "Choco Fit Hazelnut",
+              "quantity": 1
+            },
+            {
+              "name": "Crispy Cups Happy",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_505). Ask the AI Service Agent to check the allergen ingredients of the orange cookies on the second shelf that you are pointing at first. Next, ask the AI Service Agent to check whether the dark brown rectangular cookies with a yellow lemon pattern on the third shelf contain fewer types of allergens than the orange box. If they have fewer allergens and are from the UK, ask the AI Service Agent to add one unit of the dark brown box to your cart. If not, ask the AI Service Agent to search for cookies in the current product database that are labeled \"High Fat\" and contain gluten allergens, and add the cheapest one to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to check your cart to ensure there are no duplicates and calculate the total amount payable.",
+    "analysis": "1. Check the allergens of the first orange cookie you point to on the second layer, and compare them with the allergen types of the dark brown rectangular cookies on the third layer to determine if the dark brown cookies have fewer allergen types.\n\n2. If they have fewer allergen types and are produced in the UK, add one piece of the dark brown cookie to your cart.\n\n3. If not, search for cookies tagged with \"High Fat\" and containing gluten, and add the cheapest qualifying cookie to the cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, add one of each of those tied items.\n\n4. Check the shopping cart to ensure there are no duplicate items.\n\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 1,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Dukan Chocolate Bar",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Sablé de Reims Coconut",
+      "Grisbi Limone Citron"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a nutritionist (User ID: user_606). Ask the AI Service Agent to check the sugar content of the blue cookies located in the middle directly below the first pointed-at product, then have the AI Service Agent check whether the sugar content of the dark brown rectangular cookies with a yellow lemon pattern on the third shelf is lower than that of the blue package. If it is lower and does not contain the \"soy\" allergen, ask the AI Service Agent to add two items of the dark brown package to your cart. If not, ask the AI Service Agent to search the current product database for items similar in flavor to the blue package and currently on discount, and add one of the lowest-calorie options to the cart. If multiple items tie for the lowest calorie count, add one of each tied item. Afterwards, ask the AI Service Agent to check your shopping list to confirm that the item has not yet been included in the purchase plan, and have the AI Service Agent calculate the total tax for the items in the cart.",
+    "analysis": "1. Check the sugar content of the blue cookie directly below the first pointer, and verify whether the sugar content of the dark brown rectangular cookie on the third layer is lower than that of the blue cookie.\n2. If it is lower and does not contain \"soy\", add 2 pieces of the dark brown cookie to the cart.\n3. If not, search for discounted items with a flavor similar to the blue cookie, and add 1 piece of the item with the lowest calories. If multiple items tie for the lowest calorie count, add 1 piece of each of those tied items.\n4. Check the shopping list to ensure there are no duplicate items.\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Grisbi Limone Citron",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "Grisbi Nocciola Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Milk Chocolate Cookie",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 1
+            },
+            {
+              "product_name": "Dukan Chocolate Bar",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "retail8",
+    "image_path": "retail8.mp4",
+    "image_description": "You point first at a row of orange boxes on the second shelf, then move your finger down and right to a dark brown rectangular box on the third shelf—its shape is wide and flat, with a glossy front panel showing a cookie and nut. You hold your finger there briefly before lowering your hand.",
+    "key": "product_name",
+    "value": [
+      "Grisbi Limone Citron"
+    ]
+  }
+]

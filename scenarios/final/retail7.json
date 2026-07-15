@@ -1,0 +1,3430 @@
+[
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_789) with a gluten allergy. Ask the AI Service Agent to confirm whether the first box of cookies you picked up and put down contains \"gluten\". If it contains gluten, instruct the AI Service Agent to search the current product database for items that share the same country of origin as that cookie and have the \"has gluten\" allergen, and add the item with the highest protein content to your cart. If there are multiple items tied for the highest protein content, add all of them. If it does not contain gluten, instruct the AI Service Agent to check the box of cookies with a rooster logo on the shelf above the red cookies. If this box of cookies has a tax rate higher than 0.06 and contains the \"milk\" allergen, instruct the AI Service Agent to search the current product database for gluten-containing cookies with a \"nutty\" flavor originating from Germany, Denmark, or Japan, and add the cheapest one to your cart. If there are multiple items tied for the lowest price, add all of them. Additionally, instruct the AI Service Agent to check if the average calorie count of the items in your cart exceeds 500 kcal. If so, have the AI Service Agent remove the item with the highest calorie count (if multiple items share the highest calorie count, remove all of them). Finally, ask the AI Service Agent to calculate the total calories of all items in your cart.",
+    "analysis": "1. Confirm whether the box of cookies that was first picked up and then put down contains \"gluten\".\n\n2. If it contains gluten, search the current product database for items that share the same country of origin as that cookie and have \"gluten\" as an allergen, and add the item with the highest protein content to your cart. If multiple items tie for the highest protein content, add all of them.\n\n3. If it does not contain gluten, check the box of cookies with a rooster logo on the shelf layer above the red cookies. If its tax rate is higher than 0.06 and it contains the \"milk\" allergen, search the product database for gluten-containing cookies originating from Germany, Denmark, or Japan with a \"nutty\" flavor, and add the lowest-priced item to your cart. If multiple items tie for the lowest price, add all of them.\n\n4. Check the shopping cart. If the average calorie count of the items is higher than 500 calories, remove the item with the highest calorie content. If multiple items tie for the highest calorie content, remove all of them.\n\n5. Calculate the total calories of all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Crispy Cups Strawberry",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious student (User ID: user_123). Ask the AI Service Agent to check the price of the box of red plaid cookies that were picked up and put down for the first time. If the price is below 30 yuan and it is discounted, have the AI Service Agent add it directly to your cart. If the price is 30 yuan or higher, have the AI Service Agent check the price of the orange cookies with a square wavy edge pattern; if they are below 30 yuan and do not contain the \"soy\" allergen, add them to your cart. If neither option meets the conditions, have the AI Service Agent search the current product inventory for items originating from France and priced below 30 yuan, and add the item with the lowest sodium content to your cart. If there are multiple items tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Subsequently, have the AI Service Agent check the shopping list and add any items on the list that have not yet been purchased to the cart. Finally, have the AI Service Agent calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price of the box of red plaid cookies directly below the cookies that were picked up and put down for the second time.\n\n2. If the price is below 30 yuan and the item is on discount, add it directly to the shopping cart.\n\n3. If the price is greater than or equal to 30 yuan, check the price of the orange cookies with a square wavy edge pattern. If the price is below 30 yuan and the item does not contain the \"soy\" allergen, add it to the shopping cart.\n\n4. If neither item meets the conditions, search the current product inventory for items originating from France and priced below 30 yuan, and add the item with the lowest sodium content to the shopping cart. If multiple items tie for the lowest sodium content among those that meet the conditions, add all of them.\n\n5. Check the shopping list and add any items not yet purchased to the shopping cart.\n\n6. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "St Michel Le Palmier Crispy Caramel",
+          "qty": 2,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 3,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 3
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a parent (User ID: user_456). Please ask the AI Service Agent to check the sugar content of the second box of blue cookies to the right of the red holiday plaid cookies. If its sugar content per 100g exceeds 30g and it has a \"High Calorie\" label, instruct the AI Service Agent to skip it and check the box of cookies that was picked up and put down first. If the latter's tax rate is lower than 0.14 and the flavor is \"Sweet\", have the AI Service Agent add it to your cart; otherwise, have the AI Service Agent search the current product database for cookies originating from Italy and featuring a \"High Sugar\" attribute, and add the one with the lowest unit price to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want one of each of them to be added. Finally, ask the AI Service Agent to calculate the total tax amount for the items in your cart.",
+    "analysis": "1. Query the sugar content of the second box of blue cookies to the right of the red holiday plaid cookies.\n\n2. If the sugar content per 100g exceeds 30g and it carries a \"high calorie\" label, check the box of cookies that was picked up and put down for the first time. If its tax rate is below 0.14 and the flavor is \"sweet\", add it to your cart.\n\n3. Otherwise, search the current product database for cookies that are from Italy and have the \"high protein\" feature, and add the item with the lowest unit price to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, add one of each of them to the cart.\n\n4. Calculate the total tax amount for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Choco Fit Lemon",
+          "qty": 1,
+          "category": "cookie",
+          "price": 15.9,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "St Michel Milk Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Cookies & Cream"
+    ]
+  },
+  {
+    "Instruction": "You are a sweets lover (User ID: user_202). Please ask the AI Service Agent to confirm whether the third box of brown cookies to the right of the red holiday plaid cookies has a \"Sweet\" label. If it is sweet and has a sugar content exceeding 50 grams, ask the AI Service Agent to add it to your cart. If not, ask the AI Service Agent to check the box of cookies that was picked up and put down for the second time. If its flavor is \"Sweet\" and it contains the \"Nuts\" allergen, add it to your cart. If neither condition is met, ask the AI Service Agent to search the current inventory for sweet cookies originating from Denmark, Japan, or Germany with a discount factor between 0.7 and 0.9, and add the lowest-priced option to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Verify whether the third box of brown cookies to the right of the red holiday plaid cookies has a \"Sweet\" label and check its sugar content.\n2. If it is sweet and the sugar content exceeds 50 grams, add it to your cart.\n3. If not, check the cookie that was picked up and put down for the second time. If its flavor is \"Sweet\" and it contains the \"Nuts\" allergen, add it to your cart.\n4. If neither condition is met, search the product database for sweet cookies originating from Denmark, Japan, or Germany with a discount factor between 0.7 and 0.9. Add the cheapest qualifying cookie to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, add one of each of those tied items.\n5. Calculate the total tax for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Leibniz Keks",
+          "qty": 1,
+          "category": "cookie",
+          "price": 16.9,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Leibniz Keks",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a cost-conscious shopper (User ID: user_303). Ask the AI Service Agent to check whether the box of orange cookies on the shelf directly above the red cookies is on discount. If it is on discount and its country of origin is Germany, Denmark, or Japan, have the AI Service Agent add two boxes to your cart. If it is not on discount, ask the AI Service Agent to check the box of cookies that was picked up and put down first. If that box is on discount and belongs to \"high-calorie\" items, add two boxes of it to your cart as well. If both boxes are on discount and are from different countries of origin, ask the AI Service Agent to search the current product database for discounted cookies that share the same country of origin as the first box (the orange cookies) and have a tax rate higher than 0.06. From these, select the lowest-priced items. If multiple items tie for the lowest price, add two boxes of each of those tied items to your cart. Additionally, have the AI Service Agent check if the average price of the items in the cart is higher than 30. If so, have the AI Service Agent remove the most expensive item; if multiple items tie for the highest price, remove all of them. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the discount status and country of origin of the orange cookies on the shelf directly above the red cookies.\n2. If they are on discount and originate from Germany, Denmark, or Japan, add 2 units of them to the cart.\n3. If there is no discount, query the cookies that were picked up and put down for the first time. If those are on discount and classified as \"high calorie\", add 2 units of them to the cart.\n4. If neither of the above has a discount, search the product database for cookies that share the same country of origin as the first box, have a tax rate higher than 0.06, and are on discount. Identify the two models with the lowest prices and add 2 units of each to the cart. If there are multiple models tied for the lowest prices among those that meet the conditions, add 2 units of each of those tied models.\n5. If the average price of the items in the cart exceeds 30, remove the most expensive item. If multiple items share the highest price, remove all of them.\n6. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "St Michel Caramel Filled Cookies",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "St Michel La Galette All Butter",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "St Michel Le Sablé de Reims Coconut",
+          "qty": 2,
+          "category": "cookie",
+          "price": 22.9,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Caramel Filled Cookies",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel La Galette All Butter",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Classic"
+    ]
+  },
+  {
+    "Instruction": "You are a food critic (User ID: user_404). Ask the AI Service Agent to check the sodium content of the first box of purple cookies to the right of the red holiday plaid cookies. If its sodium content exceeds 170mg and the price is between 15 and 40 yuan, have the AI Service Agent add it to your cart. If not, have the AI Service Agent check the orange cookies with a square wavy-edge cookie pattern. If their sodium content exceeds 150mg and they do not contain \"gluten\", add them to your cart. If neither meets the criteria, have the AI Service Agent search the current inventory for high-sodium cookies from France with a \"bitter\" flavor, and add the one with the highest sodium content to your cart. If there are multiple cookies tied for the highest sodium content among those that meet the conditions, you want all of them to be added. Afterwards, have the AI Service Agent check the shopping list and add any items not yet purchased to your cart. Finally, have the AI Service Agent calculate the total nutritional value of all items in the cart.",
+    "analysis": "1. Check the sodium content and price of the first box of purple cookies to the right of the red holiday plaid cookies.\n\n2. If the sodium content exceeds 170mg and the price is between 15 and 40 yuan, add it to the cart.\n\n3. If this condition is not met, check the orange cookies with square wavy edge patterns; if the sodium exceeds 150mg and they do not contain \"gluten\", add them to the cart.\n\n4. If neither condition is met, search the product database for cookies produced in France with a \"bitter\" flavor and high sodium content, and add the cookie with the highest sodium content to the cart. If there are multiple cookies tied for the highest sodium content among those that meet the conditions, add all of them.\n\n5. Check the shopping list and add any items not yet purchased to the cart.\n\n6. Calculate the total nutritional value of the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Bahlsen",
+          "qty": 2,
+          "category": "cookie",
+          "price": 32.8,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_404",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Original",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a shopper (User ID: user_505). Ask the AI Service Agent to check whether the box of red plaid cookies that were picked up and put down for the first time has the \"high fat\" feature. If it is high fat and the tax rate is between 0.05 and 0.13, instruct the AI Service Agent to add it to your cart. If not, instruct the AI Service Agent to check the second box of blue cookies to the right of the red holiday plaid cookies. If it is high fat and produced in Scotland, add it to your cart. If neither item meets the conditions, instruct the AI Service Agent to search the current product database for items produced in the same country as the second box of blue cookies and labeled with \"high sugar,\" and add the item with the lowest price to your cart. If there are multiple items tied for the lowest price, add one of each of those tied items. Finally, ask the AI Service Agent to calculate the total tax amount for the items in the cart.",
+    "analysis": "1. Check the box of red plaid cookies directly below the cookie that was picked up and put down for the second time to determine if it is \"high fat\" and to check its tax rate.\n\n2. If it is high fat and the tax rate is between 0.05 and 0.13, add it to the cart.\n\n3. If not, check the second box of blue cookies to the right of the red holiday plaid cookies. If it is high fat and originates from Scotland, add it to the cart.\n\n4. If neither condition is satisfied, search the product database for items that share the same country of origin as the second box and bear a \"high sugar\" label. Add the item with the lowest price to the cart. If multiple items tie for the lowest price among those that meet the conditions, add all of them.\n\n5. Calculate the total tax amount for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Classic",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Mint",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Strawberry",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Vanilla",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 3
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Vanilla",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a shop clerk (User ID: user_606). Please ask the AI Service Agent to check the tax rate of the box of cookies that was picked up and put down first. If its tax rate is higher than 5% and the flavor includes \"bitter\", add it to the customer's shopping cart. Otherwise, ask the AI Service Agent to check the box of cookies with a rooster logo on the shelf above the red cookies. If its tax rate is higher than 5% and the price is between 20 and 80 yuan, add it to the shopping cart. If neither of these two items meets the conditions, ask the AI Service Agent to search the current product database for cookies produced in the same country as the first item and containing \"nuts\" allergens, and add the most expensive one to the shopping cart. If there are multiple cookies tied for the highest price among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check the shopping list and add any missing items to the shopping cart. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Check the tax rate and flavor of the first cookie that was picked up and then put back.\n2. If the tax rate is higher than 5% and the flavor contains \"bitter\", add it to the cart.\n3. Otherwise, check the cookies with a rooster label on the shelf above the red cookies; if the tax rate is higher than 5% and the price is between 20 and 80 yuan, add them to the cart.\n4. If neither condition is met, search for cookies produced in the same country as the first cookie that contain a \"nut\" allergen, and add the most expensive one to the cart. If there are multiple cookies tied for the highest price, add all of them.\n5. Check the shopping list and add any missing items to the cart.\n6. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_789). Ask the AI Service Agent to query the country of origin of the third box of brown cookies to the right of the red festive plaid cookies and the orange cookies with a square wavy edge pattern. If they are from different countries and the former has a discount factor better than 0.85, ask the AI Service Agent to add 3 boxes of the brown cookies to your cart. If they are from the same country, ask the AI Service Agent to add 2 boxes of the orange cookies to your cart, and at the same time, ask the AI Service Agent to search the current product database for other items produced in that country with the \"high sugar\" characteristic, and add the one with the lowest price to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total calories of all items in your cart.",
+    "analysis": "1. Query the country of origin for the third box of brown cookies to the right of the red holiday plaid cookies, and for the orange cookies with a wavy edge pattern.\n\n2. If the two countries are different and the discount factor for the brown cookies is less than 0.8, add 3 units of the brown cookies to the cart.\n\n3. If they are from the same country, add 2 units of the orange cookies to the cart. At the same time, search the product database for items produced in that country that are labeled \"high sugar,\" and add the lowest-priced item to the cart. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items to the cart.\n\n4. Calculate the total calories for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Crispy Cups Classic",
+          "qty": 3,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious parent (User ID: user_123). Ask the AI Service Agent to check the discount status of the box of cookies that was picked up and put down for the first time, and the first box of purple cookies to the right of the red holiday plaid cookies. If neither has a discount and both tax rates are below 0.1, ask the AI Service Agent to add the cheaper one to the cart with a quantity of 2. If there are multiple items tied for the lower price, add 2 of each of those tied items. If one of them has a discount and is from the UK, ask the AI Service Agent to add the discounted item to the cart with a quantity of 3. If neither condition is met, ask the AI Service Agent to search the current product database for cookies with a \"sweet\" flavor and add the one with the lowest sugar content to the cart. If there are multiple cookies tied for the lowest sugar content, add one of each. Finally, ask the AI Service Agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Query the discount and tax rate for the cookie that was first picked up and put down, and the first box of purple cookies to the right of the red holiday plaid cookies.\n\n2. If neither item has a discount and both have a tax rate below 0.1, add 2 pieces of the lower-priced item to the cart. If both items are tied for the lower price, add 2 pieces of each.\n\n3. If either item has a discount and is from the UK, add 3 pieces of the discounted item to the cart. If both items meet these conditions, add 3 pieces of each.\n\n4. If neither condition is met, search the product database for cookies with a \"Sweet\" flavor and add the item with the lowest sugar content to the cart. If multiple items are tied for the lowest sugar content, add one of each tied item.\n\n5. Calculate the total amount payable for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Classic",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_456). Ask the AI service agent to check whether the cookie that was picked up and put down first and the box of cookies with the rooster logo both have the \"high calorie\" attribute. If both meet this condition and neither contains the \"milk\" allergen, ask the AI service agent to add 1 unit of the cookie that was picked up and put down first to the cart, and ask the AI service agent to search the current product database for an item with the \"high protein\" attribute and add 1 unit. If at least one does not meet the conditions, ask the AI service agent to add 2 units of orange cookies to the cart. Next, ask the AI service agent to check the shopping list and add any items from the list that have not yet been added to the cart. Finally, ask the AI service agent to calculate the total tax amount for the items in the cart.",
+    "analysis": "1. Check whether the red checkered cookie and the cookie with the rooster logo located directly beneath the cookie that was picked up and put down for the second time are both \"high-calorie\" and do not contain \"milk\".\n\n2. If both meet the criteria, add 1 red checkered cookie to the cart, and search the product database for a \"high-protein\" item to add 1 piece.\n\n3. If at least one does not meet the criteria, add 2 orange cookies to the cart.\n\n4. Review the shopping list and add any missing items to the cart.\n\n5. Calculate the total tax amount.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 1,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Classic",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "St Michel Milk Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a chef (User ID: user_101). Ask the AI Service Agent to determine whether the second box of blue cookies to the right of the red holiday plaid cookies and the box of cookies that was picked up and put down first are both from European countries. If both are from Europe and priced between 15 and 40 yuan, add 2 boxes of the blue cookies to the cart. Then, ask the AI Service Agent to search the current inventory for items with a \"sweet\" taste and the highest calorie content, and add 1 item to the cart. If there are multiple items tied for the highest calories among those that meet the conditions, you want 1 of each of those tied items to be added. If both are not from Europe, ask the AI Service Agent to search the current inventory for items containing gluten allergens and originating from Japan, Germany, or Denmark, and add 3 items of the cheapest qualifying product to the cart. If there are multiple items tied for the lowest price among those that meet the conditions, you want 3 of each of those tied items to be added. Additionally, ask the AI Service Agent to check if the average calorie content of the items in the cart exceeds 500 kcal. If it does, ask the AI Service Agent to remove the item with the highest calorie content; if multiple items tie for the highest calories, remove all of them. Finally, ask the AI Service Agent to calculate the total protein content of the items in the cart.",
+    "analysis": "1. Determine whether the second box of blue cookies to the right of the red holiday plaid cookies and the cookies that were first picked up and then put down are both from Europe, and check their prices.\n\n2. If both are from Europe and their prices are between 15 and 40 yuan, add 2 units of the blue cookies to the cart. Then, search the product database for items with the flavor \"Sweet\" and the highest calorie content, and add 1 unit to the cart. If multiple items tie for the highest calories, add 1 unit of each of those tied items.\n\n3. If neither are from Europe, search the product database for items containing gluten that originate from Japan, Germany, or Denmark, and add the cheapest ones to the cart (3 units each). If multiple items tie for the lowest price, add 3 units of each of those tied items.\n\n4. If the average calorie content of the items in the cart is higher than 500 kcal, remove the item with the highest calories. If multiple items tie for the highest calories, remove all of them.\n\n5. Calculate the total protein content.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Choco Fit Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 79.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Choco Fit Chocolate",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: user_202). Please ask the AI Service Agent to query the sugar content of the box of red plaid cookies that were picked up and put down for the first time and the first box of purple cookies to the right of the red holiday plaid cookies. If the orange box has a higher sugar content than the purple box and is labeled \"High Fat\", have the AI Service Agent add 2 units of the orange box to the cart. If the purple box has a higher sugar content, add 1 unit of the purple box. Regardless of the outcome, ask the AI Service Agent to search the current product database for items with a \"High Calorie\" label and \"nutty\" flavor, and add 1 unit of the item with the largest discount to the cart. If multiple items tie for the largest discount, add 1 unit of each of those tied items. Subsequently, have the AI Service Agent check the shopping list and add any missing items that are \"High Fat\". Finally, have the AI Service Agent calculate the total carbohydrates of all products in the shopping cart.",
+    "analysis": "1. Query the sugar content of the orange cookie on the layer above the red cookie and the first box of purple cookie to the right of the red plaid cookie.\n\n2. If the orange cookie has high sugar content and is \"high fat\", add 2 pieces of the orange cookie to the cart.\n\n3. If the purple cookie has high sugar content, add 1 piece of the purple cookie to the cart.\n\n4. Regardless of the results, search the product database for items that are \"high calorie\" and have a \"nutty\" flavor. Add 1 piece of the item with the largest discount. If multiple items tie for the largest discount, add 1 piece of each of those tied items.\n\n5. Check the list and add any missing \"high fat\" items.\n\n6. Calculate the total carbohydrates.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Crispy Cups Classic",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Teddy Bear",
+          "qty": 1,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Choco Fit Hazelnut",
+          "qty": 3,
+          "category": "cookie",
+          "price": 69.8,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Cookies & Cream",
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a gift purchaser (User ID: user_303). Ask the AI Service Agent to check the prices of the box of cookies that was picked up and put down first, and the third box of brown cookies to the right of the red holiday plaid cookies. If both items cost more than 29 yuan and have a tax rate lower than 0.08, ask the AI Service Agent to add the red box to your cart with a quantity of 1. If neither item costs more than 29 yuan, ask the AI Service Agent to add the higher-priced one to your cart with a quantity of 3. Otherwise, ask the AI Service Agent to add both boxes of cookies to your cart, each with a quantity of 1. Additionally, ask the AI Service Agent to search the current product inventory for items that contain the \"nuts\" allergen and are on discount, and add the cheapest qualifying item to your cart with a quantity of 1. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price and tax rate of the red cookies that were picked up and put down for the first time, as well as the third box of brown cookies to the right of the red plaid cookies.\n2. If both exceed 29 yuan and have a tax rate below 0.08, add one piece of the red cookies to the shopping cart.\n3. If neither exceeds 29 yuan, add three pieces of the higher-priced option to the shopping cart.\n4. Search the product database for discounted items containing \"nuts\", and add one piece of the lowest-priced item to the cart. If multiple items tie for the lowest price, add one piece of each of those tied items.\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Crispy Cups Classic",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Grisbi Chocolate Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 3
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a professional taster (User ID: user_404). Ask the AI Service Agent to examine the box of red plaid cookies and the orange cookies featuring a square wavy-edge cookie pattern located directly beneath the cookies that were picked up and put down for the second time. If both contain the \"milk\" allergen and originate from Germany, Denmark, or Japan, ask the AI Service Agent to add the red box to the cart with a quantity of 1, and ask the AI Service Agent to find an item containing \"gluten\" with the lowest fat content in the current product database and add 1 piece of it as well. If there are multiple items tied for the lowest fat content, add one of each of those tied items. If at least one of them does not contain milk, ask the AI Service Agent to add the orange box to the cart with a quantity of 2. If both contain milk but do not originate from Germany, Denmark, or Japan, ask the AI Service Agent to add the red box to the cart with a quantity of 2. Additionally, ask the AI Service Agent to check if the average sugar content of the items in the cart is higher than 30. If so, ask the AI Service Agent to remove the item with the highest sugar content (if multiple items share the same highest value, remove them all). Finally, ask the AI Service Agent to calculate the total tax for the items in the cart.",
+    "analysis": "1. Check whether the red checkered cookie and the orange cookie with wavy edges located beneath the cookie that was picked up and put down for the second time both contain \"Milk\" and are from Germany, Denmark, or Japan.\n\n2. If the conditions are met, add 1 red cookie to the cart, and search the product database for an item containing \"Gluten\" with the lowest fat content to add 1 item. If multiple items tie for the lowest fat content, add 1 item of each of those tied items.\n\n3. If at least one of the cookies does not contain \"Milk\", add 2 orange cookies to the cart.\n\n4. If the average sugar content in the shopping cart is higher than 30, remove the item with the highest sugar content.\n\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_404",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Original",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "Crispy Cups Classic"
+    ]
+  },
+  {
+    "Instruction": "You are a store manager (User ID: user_505). Please ask the AI Service Agent to check the first box of purple cookies to the right of the red festive plaid cookies and the box of cookies that was picked up and put down for the first time. If the purple cookies have the \"high calorie\" attribute and are priced between 20 and 80 yuan, ask the AI Service Agent to add one box to your cart, and ask the AI Service Agent to find another item from the same origin with the lowest price in the current product database and add it. If there are multiple items tied for the lowest price, add one of each of those tied items. If the red cookies have the \"high sugar\" attribute, add them to the cart with a quantity of 2. If neither condition is met, add both of these items to the cart with a quantity of 1 each. Finally, ask the AI Service Agent to calculate the total calories of the items added to the cart.",
+    "analysis": "1. Check the properties and price of the first box of purple cookies to the right of the red plaid cookies, and the red cookies that were picked up and put down for the first time.\n\n2. If the purple cookies are \"high calorie\" and priced between 20-80 yuan, add 1 item. Then, search the product database for another item from the same origin with the lowest price and add it. If multiple items tie for the lowest price among those from the same origin, add one of each tied item.\n\n3. If the red cookies are \"high sugar\", add 2 items of the red cookies.\n\n4. If neither meets the above conditions, add 1 item of each type.\n\n5. Calculate the total calories of the items added to the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Classic",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Strawberry",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Vanilla",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Mint",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 3
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a culinary student (User ID: user_606). Ask the AI Service Agent to confirm the country of origin for the box of orange cookies on the shelf above the red cookies and the second box of blue cookies to the right of the red holiday plaid cookies. If both items originate from non-Asian countries and have a discount factor worse than 0.9, instruct the AI Service Agent to add 1 unit of the orange box to the cart. If both items originate from Asian countries, instruct the AI Service Agent to search the current product inventory for items containing \"soy\" with a \"bitter\" flavor, and add 3 units of the most expensive qualifying item to the cart. If there are multiple items tied for the highest price among those that meet the conditions, you want 3 units of each of them to be added. If neither of the above conditions is met, instruct the AI Service Agent to add 1 unit of the blue box to the cart. Additionally, ask the AI Service Agent to check your shopping list and add any items that have not yet been purchased to the cart. Finally, ask the AI Service Agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Confirm the country of origin and discount factor for the orange cookie on the layer above the red cookie and the second box of blue cookies to the right of the red plaid cookie.\n\n2. If both items are from non-Asian countries and have discount factors worse than 0.9, add 1 piece of the orange cookie to the cart.\n\n3. If both items are from Asian countries, search the product database for items containing \"soy\" with a \"bitter\" flavor, and add 3 pieces of the most expensive item(s). If there are multiple items tied for the highest price among those that meet the conditions, add 3 pieces of each of them.\n\n4. Check the shopping list and add any items that have not been purchased yet.\n\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy",
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a customer with a gluten allergy (User ID: user_707). Ask the AI service agent to check the allergens of the box of cookies that was picked up and put down first, and the box of cookies with the rooster logo. If both contain gluten and their tax rate is higher than 0.06, ask the AI service agent to search for items in the current product database that have \"gluten\" as an allergen and are produced in France, and add 2 pieces of the cheapest qualifying item to your shopping cart. If there are multiple items tied for the lowest price among those that meet the conditions, add 2 pieces of each of those tied items. If at least one does not contain gluten, ask the AI service agent to add 3 pieces of the gluten-free option to your shopping cart. Finally, ask the AI service agent to calculate the total protein content of all items in your shopping cart.",
+    "analysis": "1. Check the allergens and tax rates for both the cookie that was first picked up and put down, and the cookie with the rooster logo.\n\n2. If both contain gluten and have a tax rate higher than 0.06, search the product database for items that contain gluten and are made in France. Add 2 pieces of the cheapest option. If there are multiple items tied for the lowest price among those that meet the conditions, add 2 pieces of each of those tied items.\n\n3. If at least one does not contain gluten, add 3 pieces of each gluten-free cookie identified.\n\n4. Calculate the total protein content.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_707",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 2,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_707",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Bar",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Petit Beurre",
+      "Crispy Cups Cookies & Cream"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_123). Ask the AI service agent to verify whether the box of red plaid cookies that were picked up and put down for the first time is classified as \"high fat\". If it is indeed high fat and priced below 40 yuan, ask the AI service agent to add 2 boxes of it to your cart. If it does not meet these conditions, ask the AI service agent to check the third box of brown cookies to the right of the red holiday plaid cookies. If it is high in oil and sugar, add 1 box of it to your cart. If neither box meets the conditions, ask the AI service agent to search for items with a \"bitter\" taste in the current product database and add the item with the highest calories to your cart. If there are multiple items tied for the highest calories among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI service agent to check the shopping list and add any missing items. Finally, ask the AI service agent to calculate the total tax and fees for the items in your cart.",
+    "analysis": "1. Verify whether the red checkered cookie located below the second cookie you picked up is \"high fat\" and check its price.\n2. If it is high fat and costs less than 40 yuan, add 2 boxes to the cart.\n3. If not, check the third brown cookie box to the right of the red checkered one. If it is high oil and high sugar, add 1 box to the cart.\n4. If neither box meets the conditions, search for items with the flavor \"bitter\" and add the one with the highest calories to the cart. If multiple items are tied for the highest calories, add all of them.\n5. Check the list and ensure all required items are added.\n6. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious student (User ID: user_456). Ask the AI Service Agent to check the price of the box of cookies that was picked up and put down for the first time. Then, ask the AI Service Agent to search the current product database for all cookies priced within ±10% of that price. If any of them are from France and have a \"High Calorie\" label, add the cheapest box among them to your cart. If there are multiple boxes tied for the lowest price among those that meet the conditions, add all of them. If there are no qualifying French cookies, ask the AI Service Agent to check the orange cookies with a square wavy-edge cookie pattern, and if their tax rate is lower than 0.1, add them to your cart. Additionally, ask the AI Service Agent to check if the average price of items in the cart is higher than 30 calories; if so, ask the AI Service Agent to remove the item with the highest price (if multiple items share the highest price, remove all of them). Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price of the cookie that was first picked up and then put down, and search the product database for cookies within ±10% of that price.\n\n2. If any of these cookies are from France and are \"high calorie\", add the cheapest box to the cart. If multiple boxes tie for the lowest price, add one of each of those tied boxes.\n\n3. If no matching French cookies are found, check the orange cookie with a wavy edge pattern; if the tax rate is below 0.1, add it to the cart.\n\n4. If the average price in the shopping cart is higher than 30, remove the item with the highest price.\n\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "St Michel Le Palmier Crispy Caramel",
+          "qty": 1,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Milk Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_789). Ask the AI service agent to confirm the flavor profile of the first box of purple cookies to the right of the red holiday plaid cookies. Next, have the AI service agent search the current product database for all cookies with the same flavor profile. If any of these cookies share the same country of origin as the box of cookies on the shelf above the red cookies and are on discount, have the AI service agent add the one with the highest protein content to your cart. If there are multiple cookies tied for the highest protein content among those that meet the conditions, add one of each of those tied items to the cart. If no such cookies exist, have the AI service agent add the purple cookies to the cart. Afterwards, have the AI service agent compare against your historical shopping list and add any missing items to the cart. Finally, have the AI service agent calculate the total carbohydrates of all items in the cart.",
+    "analysis": "1. Confirm the flavor of the first box of purple cookies to the right of the red plaid pattern and search the product database for cookies of the same flavor.\n2. If any of these cookies share the same country of origin as the cookie on the layer above the red cookie and are currently discounted, add the box with the highest protein content to the shopping cart. If multiple boxes tie for the highest protein content, add all of them.\n3. If none meet these criteria, add the purple cookie to the shopping cart.\n4. Compare against the history list and add any missing items.\n5. Calculate the total carbohydrates.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a gift purchaser (User ID: user_101). Please ask the AI service agent to check whether the first box of cookies you picked up and put down is on sale. If it is on sale and contains the \"nuts\" allergen, ask the AI service agent to add 3 boxes of this item to your cart. If not, ask the AI service agent to check the second box of blue cookies to the right of the red holiday plaid cookies. If it is on sale and the tax rate is higher than 0.05, add 2 boxes to your cart. If neither has a discount, ask the AI service agent to search the current product database for high-sugar cookies that are from the same country as the first box and priced lower than it, and add the cheapest one to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total amount for the items in your cart.",
+    "analysis": "Results:\n1. Check whether the first cookie that was picked up and then put down is on sale and whether it contains \"nuts\".\n2. If it is on sale and contains \"nuts\", add 3 boxes to the cart.\n3. If not, check the second box of blue cookies to the right of the red plaid pattern. If it is on sale and has a tax rate higher than 0.05, add 2 boxes to the cart.\n4. If neither item is on discount, search for high-sugar cookies that are from the same country as the first cookie and priced lower than it. Add the cheapest qualifying cookie to the cart. If multiple cookies tie for the lowest price among those that meet the conditions, add all of them.\n5. Calculate the total amount.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a parent (User ID: user_202). Please ask the AI Service Agent to check the sodium content per 100g of the box of red plaid cookies that were picked up and put down for the first time. If the sodium content exceeds 150mg and the country of origin is Scotland, then ask the AI Service Agent to check the box of cookies with the rooster logo. If the sodium content of the second box also exceeds 150mg, ask the AI Service Agent to search the current product database for items originating from Denmark, Japan, or Germany, priced between 15 and 40 yuan, and add the item(s) with the lowest fat content to the cart. If there are multiple items tied for the lowest fat content among those that meet the conditions, add all of them. If the sodium content of the second box is acceptable, add it to the cart. Next, ask the AI Service Agent to add any items from the shopping list that have not yet been added to the cart. Finally, ask the AI Service Agent to calculate the total tax for the items in the cart.",
+    "analysis": "1. Query the sodium content and country of origin of the red checkered cookie located beneath the cookie that was picked up for the second time.\n\n2. If the sodium exceeds 150mg and it is from Scotland, query the sodium content of the cookie with the rooster logo.\n\n3. If the sodium content of the second box also exceeds 150mg, search for items originating from Denmark, Japan, or Germany priced between 15 and 40 yuan, and add the item with the lowest fat content to the cart. If multiple items tie for the lowest fat content among those that meet the conditions, add all of them.\n\n4. If the sodium content of the second box is within the acceptable limit, add it directly to the cart.\n\n5. Complete any missing items on the shopping list.\n\n6. Calculate the total taxes and fees.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Leibniz Keks",
+          "qty": 1,
+          "category": "cookie",
+          "price": 16.9,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Leibniz Keks",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are on a gluten-containing diet (User ID: user_303). Ask the AI Service Agent to determine whether the first box of cookies that was picked up and put down contains gluten. If it contains gluten and has a \"Sweet\" flavor, ask the AI Service Agent to add 2 boxes of this item to your cart. If not, ask the AI Service Agent to check the third box of brown cookies to the right of the red holiday plaid cookies. If that box contains gluten and is priced below 40 yuan, add 1 box. If neither box contains gluten, ask the AI Service Agent to search the current product database for all cookies that share the same origin as the first box and carry the \"High Protein\" tag, and add the most expensive option to the cart. If there are multiple cookies tied for the highest price among those that meet the conditions, you want all of them to be added. Additionally, ask the AI Service Agent to check whether all items in the cart contain gluten, and remove any products that do not contain gluten. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Determine whether the first cookie that was picked up and then put down contains gluten and identify its flavor.\n2. If it contains gluten and the flavor is \"sweet\", add 2 units to the cart.\n3. Otherwise, check the third box of brown cookies to the right of the red plaid pattern. If it contains gluten and costs less than 40 yuan, add 1 unit to the cart.\n4. If neither contains gluten, search for cookies that share the same origin as the first box and carry a \"high protein\" label. Add the qualifying cookie with the highest price to the cart. If there are multiple cookies tied for the highest price, add one of each tied item.\n5. Check the shopping cart and remove any products that do not contain gluten.\n6. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "get_cart",
+        "parameters": {
+          "user_id": "user_303"
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a calorie counter (User ID: user_404). Ask the AI Service Agent to find the calorie content of the box of cookies with a rooster logo located on the shelf above the red cookies. If the calories exceed 500 kcal per 100g and the tax rate is between 0.05 and 0.1, ask the AI Service Agent to add the box of cookies that was picked up and put down first to your cart. If the calories do not exceed 500 kcal, ask the AI Service Agent to search the current product database for items containing \"soy\" with a discount factor better than 0.8, and add the item with the highest calorie content to your cart. If there are multiple items tied for the highest calories among those that meet the conditions, you want all of them to be added. After adding is complete, ask the AI Service Agent to check your shopping cart and shopping list, and add any missing items to the cart. Finally, ask the AI Service Agent to calculate the total nutritional value of all items in the shopping cart.",
+    "analysis": "1. Find the calories and tax rate of the cookie with a rooster logo on the layer above the red cookie.\n\n2. If the calories exceed 500 kcal and the tax rate is between 0.05 and 0.1, add the cookie that was picked up and put down for the first time to the shopping cart.\n\n3. If the calories do not exceed 500 kcal, search for items containing \"soy\" with a discount factor better than 0.8, and add the item with the highest calories to the shopping cart. If there are multiple items tied for the highest calories, add all of them.\n\n4. Check the list and add any missing items.\n\n5. Calculate the total nutritional value.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Bahlsen",
+          "qty": 2,
+          "category": "cookie",
+          "price": 32.8,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_404",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_404",
+          "products": [
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Original",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a shopper comparing products (User ID: user_505). Ask the AI Service Agent to query the fat content of the first box of purple cookies to the right of the red holiday plaid cookies, and compare it with the box of cookies that was picked up and put down for the second time. If the purple box has lower fat content and is from France, ask the AI Service Agent to add 1 box of the purple product to your cart. If the orange box has lower fat content and is priced between 20 and 80 yuan, ask the AI Service Agent to add 1 box of the orange product. If neither meets the conditions, ask the AI Service Agent to search the current product database for items with the \"High Sodium\" label and \"nutty\" flavor, and add the cheapest one to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Check the fat content of the first box of purple cookies to the right of the red plaid pattern and compare it with the cookie picked up the second time (orange).\n\n2. If the purple cookies have lower fat content and are from France, add 1 box of the purple cookies to the cart.\n\n3. If the orange cookies have lower fat content and the price is between 20 and 80 yuan, add 1 box of the orange cookies to the cart.\n\n4. If neither condition is met, search for items labeled \"High Sodium\" with a \"nutty\" flavor and add the cheapest one to the cart. If multiple items tie for the lowest price, add one of each of those tied items to the cart.\n\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a shopper concerned with product origin (User ID: user_606). Ask the AI Service Agent to determine the country of origin of the box of brown cookies directly below the cookies that were picked up and put down for the second time. If it is classified as a \"high sugar\" product, add 2 units of the product with the lowest calories from the same country of origin to the cart. If multiple products tie for the lowest calories, add 2 units of each of those tied products. Ask the AI Service Agent to check the second box of blue cookies to the right of the red holiday plaid cookies. If it does not contain \"milk\", add 1 unit. Then, ask the AI Service Agent to search the current product database for items originating from the UK and priced under 30 yuan, and add the item with the highest sodium content to the cart. If multiple items tie for the highest sodium content, add one of each of those tied items. Next, ask the AI Service Agent to add any missing items from the shopping list to the cart. Finally, ask the AI Service Agent to calculate the total tax for the items in the cart.",
+    "analysis": "1. Determine the country of origin and whether it is classified as \"high sugar\" for the red checkered cookie located below the cookie that was picked up for the second time.\n\n2. If it is \"high sugar\", find the product with the lowest calories from the same country of origin and add 2 pieces to the cart. If multiple products tie for the lowest calories, add 2 pieces of each of those tied items.\n\n3. Check the second box of blue cookies to the right of the red checkered cookie; if it does not contain \"milk\", add 1 to the cart.\n\n4. Search for products produced in the UK with a price greater than 30 yuan, and add the item with the highest sodium content to the shopping cart. If multiple items tie for the highest sodium content, add each of them to the cart.\n\n5. Complete any missing items on the shopping list.\n\n6. Calculate the total taxes and fees.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Classic",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Vanilla",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Mint",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "find_products_by_allergen",
+        "parameters": {
+          "allergen": "milk"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: user_707). Ask the AI service agent to check the price of the first box of cookies that was picked up and then put down. Then, have the AI service agent search the current inventory for all cookies priced higher than that price. If any of these cookies share the same origin as the box of cookies on the shelf layer above the red cookies and are on discount, ask the AI service agent to add the box with the highest protein content to your cart. If there are multiple boxes tied for the highest protein content among those that meet the conditions, you want all of them to be added. If none meet the conditions, ask the AI service agent to add one box of the first box you picked up (the red box) to the cart. Additionally, ask the AI service agent to check if the average price of the items in the cart is higher than 25. If so, have the AI service agent remove the most expensive item. If multiple items share the highest price, remove all of them. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price of the first cookie that was picked up and then put back, and find all cookies priced higher than that.\n2. Among these, if any cookies share the same origin as the layer above the red cookie and are on discount, add the box with the highest protein content to your cart. If there are multiple boxes tied for the highest protein content, add all of them to your cart.\n3. If no items meet these conditions, add one box of the first cookie box you picked up (the red one) to your cart.\n4. If the average price of the items in the cart exceeds 25, remove the most expensive item.\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_707",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_707",
+          "product_name": "Crispy Cups Choco Vanilla",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_707",
+          "products": [
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_123). Ask the AI Service Agent to check the box of red festive plaid cookies that was first picked up and put down. If these cookies have the \"high fat\" nutritional feature and the tax rate is below 0.1, ask the AI Service Agent to add one item to your cart. Otherwise, ask the AI Service Agent to check the third box of brown cookies to the right of the red festive plaid cookies. If they contain the \"milk\" allergen, ask the AI Service Agent to search for items in the current product database that are from Scotland and on discount, and add the cheapest qualifying item to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items. Additionally, ask the AI Service Agent to check if the average sugar content of the items in the cart is higher than 30. If so, ask the AI Service Agent to remove the item with the highest sugar content (if multiple items share the highest sugar content, remove all of them). Finally, ask the AI Service Agent to calculate the total tax amount for all items in your cart.",
+    "analysis": "1. Check the first red plaid cookie you picked up to determine if it is \"high fat\" and note its tax rate.\n2. If it is \"high fat\" and the tax rate is below 0.1, add one piece to the cart.\n3. Otherwise, check the third box of brown cookies to the right of the red plaid cookie. If it contains \"nuts\", search for items that are produced in Scotland and are on discount, and add the item with the lowest price to the cart. If multiple items tie for the lowest price among those meeting the criteria, add one of each of those tied items.\n4. If the average sugar content of the items in the cart is higher than 30, remove the item with the highest sugar content.\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 1,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious parent (User ID: user_456). Please ask the AI service agent to check the price of the orange cookies with a rooster logo that were picked up and put down for the second time. If the price of this item is higher than 25 yuan and the flavor is \"Sweet\", ask the AI service agent to find other cookies in the current inventory that are from France and have a tax rate between 0.05 and 0.1, and add the one with the highest protein content to your cart. If there are multiple cookies tied for the highest protein content among those that meet the conditions, you want all of them to be added. If these conditions are not met, ask the AI service agent to check the second box of blue cookies to the right of the red holiday plaid cookies. If its discount factor is better than 0.9, add it to your cart. Next, ask the AI service agent to check your shopping list and add any items on the list that are not yet in your cart to the cart. Finally, ask the AI service agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Query the price and flavor of the orange cookie with the rooster logo that was picked up for the second time.\n\n2. If the price is higher than 25 yuan and the flavor is \"Sweet\", search for cookies produced in France with a tax rate between 0.05 and 0.1, and add the cookie with the highest protein content to the shopping cart. If multiple cookies tie for the highest protein content, add all of them.\n\n3. If these conditions are not met, check the second box of blue cookies to the right of the red plaid pattern; if the discount factor is less than 0.9, add it to the shopping cart.\n\n4. Check the shopping list and replenish any missing items.\n\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 1,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Crispy Cups Classic",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Milk Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a shopper with diabetes (User ID: user_789). Please ask the AI Service Agent to check the sugar content of the red festive plaid cookies that were picked up and put down for the first time. If the sugar content exceeds 30g per 100g and the origin is Scotland, ask the AI Service Agent to search the current product inventory for low-sugar items that are also from Scotland and do not contain the \"Milk\" allergen, and add the item with the lowest sugar content to your cart. If there are multiple items tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to check the box of orange cookies on the shelf above the red cookies. If its price is between 15 and 40 yuan and it carries a \"High Calorie\" label, ask the AI Service Agent to search the current product inventory for items with a \"nutty\" flavor and add the item with the highest protein content to your cart. If there are multiple items tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total carbohydrates of all items in your cart.",
+    "analysis": "1. Check the sugar content and origin of the first red checkered biscuit you pick up.\n\n2. If the sugar content exceeds 30g/100g and it is from Scotland, search for low-sugar items also from Scotland that do not contain \"milk\", and add the item with the lowest sugar content to your cart. If multiple items tie for the lowest sugar content, add one of each.\n\n3. Otherwise, check the orange biscuit on the layer above the red biscuit. If the price is between 15 and 40 yuan and it is \"high calorie\", search for items with a \"nutty\" flavor, and add the item with the highest protein content to your cart. If multiple items tie for the highest protein content, add one of each.\n\n4. Calculate the total carbohydrates.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Choco Fit Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 69.8,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Grisbi Chocolate Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_101). Ask the AI Service Agent to retrieve the complete nutritional information for the red festive plaid cookies that were picked up and put down first, and the orange cookies with a rooster logo that were picked up and put down second. If the red box has higher calories than the orange box and has the \"high sugar\" feature, ask the AI Service Agent to add the red box to your cart. Otherwise, if the orange box is from France, ask the AI Service Agent to add it to your cart. If neither condition is met, ask the AI Service Agent to search the current product database for cookies explicitly labeled with the \"has gluten\" allergen and add the lowest-priced one to your cart. If multiple cookies tie for the lowest price among those that meet the conditions, add one of each of those tied items. Finally, ask the AI Service Agent to calculate the total taxes and fees for all items in your cart.",
+    "analysis": "1. Retrieve the nutritional information for the first cookie picked up (red plaid) and the second cookie picked up (orange with a rooster logo).\n\n2. If the red cookie has higher calories than the orange cookie and is labeled \"High Sugar\", add the red cookie.\n\n3. Otherwise, if the orange cookie originates from France, add the orange cookie.\n\n4. If neither condition is met, search for cookies labeled \"Contains Gluten\" and add the cheapest one to the cart. If multiple cookies tie for the lowest price, add all of them to the cart.\n\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a gift buyer (User ID: user_202). Please ask the AI Service Agent to check the discount status of the first box of purple cookies to the right of the red holiday plaid cookies, and the box of orange cookies on the shelf above the shelf where the red cookies are located. If either of these items is on sale and originates from Germany, Denmark, or the UK, ask the AI Service Agent to add the cheaper item to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. If both items are at their original price, ask the AI Service Agent to search the current inventory for items with a \"bitter\" flavor and priced below 40 yuan, and add the item with the lowest fat content to your cart. If there are multiple items tied for the lowest fat content, you want all of them to be added. Additionally, ask the AI Service Agent to check the shopping list and complete any missing items. Next, ask the AI Service Agent to check the items in the cart; if any item has a tax rate higher than 0.1, remove the one with the highest tax rate. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the discount and origin of the first box of purple cookies to the right of the red plaid pattern and the orange cookies on the layer above the red cookies.\n\n2. If either item has a discount factor better than 0.9 and originates from Germany, Denmark, or Japan, add the one with the better discount to the cart. If there are multiple items tied for the best discount among those that meet the conditions, add all of them to the cart.\n\n3. If both items are at original price, search for items with a \"bitter\" flavor priced below 40 yuan, and add the one with the lowest fat content to the cart. If there are multiple items tied for the lowest fat content, add all of them to the cart.\n\n4. Check and complete the shopping list.\n\n5. If there are items in the cart with a tax rate higher than 0.1, remove the one with the highest tax rate.\n\n6. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Crispy Cups Classic",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Teddy Bear",
+          "qty": 1,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Choco Fit Hazelnut",
+          "qty": 3,
+          "category": "cookie",
+          "price": 69.8,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Hazelnut",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a chef (User ID: user_303). Ask the AI Service Agent to query the fat content of the box of red festive plaid cookies and the orange cookies with square wavy edge patterns that were picked up and put down for the first time. If the red box has a higher fat content than the orange box and both contain \"gluten\", ask the AI Service Agent to add the red box to your cart. Otherwise, ask the AI Service Agent to check the third box of brown cookies to the right of the red festive plaid cookies. If it originates from Italy and is priced between 20 and 80 yuan, ask the AI Service Agent to search the current product database for items from the same country of origin with a discount factor worse than 0.8, and add the item with the highest calorie count to your cart. If multiple items tie for the highest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Query the fat content and whether they contain \"gluten\" for the red checkered cookie and the wavy-edged orange cookie that were picked up first.\n\n2. If the red cookie's fat content is higher than the orange cookie's and both contain \"gluten\", add the red cookie to the cart.\n\n3. Otherwise, check the third box of brown cookies to the right of the red checkered cookie. If it is produced in Italy and priced between 20 and 80 yuan, search for items from the same country of origin with a discount factor worse than 0.8, and add the item with the highest calories to the shopping cart. If multiple items tie for the highest calories among those meeting the conditions, add all of them to the cart.\n\n4. Calculate the total taxes and fees.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness coach (User ID: user_404). Ask the AI Service Agent to check whether the red festive plaid cookie that was picked up and put down first has the \"high protein\" attribute. If it does not have this label and its sugar content exceeds 30 grams, instruct the AI Service Agent to search the current product database for items produced in the same country as the red box that also carry the \"high protein\" label, and add the item with the lowest unit price to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them. If it does have the high protein label, instruct the AI Service Agent to check the second box of blue cookies to the right of the red festive plaid cookie; if its flavor is \"bitter\", add it to your cart. Next, have the AI Service Agent determine if any product in your cart exceeds 600 kcal per 100g, and if so, remove it. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Check the first red plaid cookie picked up to verify if it is labeled \"high protein\" and determine its sugar content.\n2. If it lacks this label and the sugar content exceeds 30 grams, search for products produced in the same country that are labeled \"high protein\", and add the item(s) with the lowest unit price to the cart. If multiple items tie for the lowest price among those that meet the conditions, add all of them.\n3. If it has the \"high protein\" label, check the second box of blue cookies to the right of the red plaid cookie; if the flavor is \"bitter\", add it to the cart.\n4. Check if there are any products in the cart with more than 600 kcal per 100 grams, and remove them.\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_404",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Original",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are an event planner (User ID: user_505). Please ask the AI Service Agent to check the prices of the red holiday plaid cookies that were picked up and put down first, and the orange cookies with a rooster logo that were picked up and put down second. If the total price of both is below 60 yuan and both have tax rates below 0.08, ask the AI Service Agent to add both to the cart; otherwise, ask the AI Service Agent to add only the cheaper one. If both items are tied for the lowest price, add both of them. Subsequently, ask the AI Service Agent to check whether the items in the cart include a \"nutty\" flavor. If not, ask the AI Service Agent to search the current product database for cookies with a \"nutty\" flavor and containing a \"milk\" allergen, and add the one with the highest discount to the cart. If multiple items are tied for the highest discount, add all of them. Additionally, ask the AI Service Agent to check if the average tax rate of the items in the cart is higher than 0.07. If so, ask the AI Service Agent to remove the item with the highest tax rate; if multiple items share the highest tax rate, remove all of them. Finally, ask the AI Service Agent to calculate the total calories of all items in the cart.",
+    "analysis": "1. Query the price and tax rate of the red plaid cookie picked up first and the orange cookie with a rooster picked up second.\n\n2. If the total price is below 60 yuan and both tax rates are below 0.08, add both to the shopping cart.\n\n3. Otherwise, add the cheaper one. If both items are tied for the lower price, add both of them.\n\n4. Check if there is any \"nutty\" flavor item in the shopping cart. If not, search for cookies with \"nutty\" flavor that contain \"milk\", and add the one with the largest discount to the cart. If multiple items are tied for the largest discount, add all of them.\n\n5. If the average tax rate is higher than 0.07, remove the item with the highest tax rate.\n\n6. Calculate the total calories.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1
+        }
+      },
+      {
+        "tool_name": "remove_from_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Crispy Cups Mint",
+          "qty": 2
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a price-sensitive shopper (User ID: user_606). Please ask the AI Service Agent to compare the price of the first box of purple cookies to the right of the red holiday plaid cookies with the price of the third box of brown cookies to the right of the red holiday plaid cookies. If the purple box is cheaper and originates from Scotland, ask the AI Service Agent to add one purple item to your cart. If the brown box is cheaper and does not contain the \"soy\" allergen, ask the AI Service Agent to add one brown item to your cart. If the prices are the same, ask the AI Service Agent to search for discounted items in the current product database priced between 15 and 40 yuan, and add the item with the highest calories to your cart. If there are multiple items tied for the highest calories among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check the shopping list and add any missing items. Subsequently, if any item in the cart costs more than 30 yuan, ask the AI Service Agent to remove the most expensive one. Finally, ask the AI Service Agent to calculate the total amount payable.",
+    "analysis": "1. Compare the prices of the first box of purple biscuits and the third box of brown biscuits located to the right of the red plaid.\n\n2. If the purple box is cheaper and originates from Scotland, add 1 piece of the purple biscuits to the cart.\n\n3. If the brown box is cheaper and does not contain \"soy\", add 1 piece of the brown biscuits to the cart.\n\n4. If they are the same price, search for discounted items priced between 15 and 40 yuan, and add the item(s) with the highest calories to the cart. If multiple items tie for the highest calories among those that meet the conditions, add one of each.\n\n5. Verify and complete any missing items from the shopping list.\n\n6. If there are items in the cart priced over 30 yuan, remove the one with the highest price.\n\n7. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Happy",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "Crispy Cups Cookies & Cream",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a parent with a child who is allergic to nuts (User ID: user_707). Ask the AI Service Agent to check whether the red cookie that was initially picked up and put down, and the box of orange cookies on the shelf layer above the red cookie, contain the \"nuts\" allergen. If neither contains nuts and both have the \"high sugar\" characteristic, ask the AI Service Agent to add the one with the lower sugar content to your cart. If one of them contains nuts, ask the AI Service Agent to add the other one to your cart. If both contain nuts, ask the AI Service Agent to search the current product database for cookies that are from France and nut-free, and add the cheapest one to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for all items in the shopping cart.",
+    "analysis": "1. Check whether the first red cookie you picked up and the orange cookie from the upper layer contain \"nuts\" and whether they are \"high sugar\".\n\n2. If neither contains nuts and both are \"high sugar\", add the one with the lower sugar content to the cart. If there is a tie in sugar content, add both of them.\n\n3. If only one contains nuts, add the other one to the cart.\n\n4. If both contain nuts, search for nut-free cookies made in France and add the cheapest one to the cart. If multiple cookies tie for the lowest price, add all of them.\n\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_707",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_707",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy",
+      "Crispy Cups Classic"
+    ]
+  },
+  {
+    "Instruction": "You are a baking enthusiast (User ID: user_789). Ask the AI service agent to analyze the nutritional value of the first red holiday plaid cookie that was picked up and put down. If its tax rate is higher than 0.05 and its carbohydrate content exceeds 60 grams, instruct the AI service agent to add 3 boxes of this cookie to your cart. Otherwise, instruct the AI service agent to check the second box of blue cookies to the right of the red holiday plaid cookie. If it has a \"High Oil\" label, instruct the AI service agent to search the current product database for cookies that are from the same country of origin as the blue cookie and are currently on sale, and then add 2 boxes of the cheapest qualifying cookie to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want 2 boxes of each of those tied items to be added. Finally, instruct the AI service agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Get the tax rate and carbohydrate content of the first red plaid cookie picked up.\n2. If the tax rate is higher than 0.05 and the carbohydrate content exceeds 60 grams, add 3 boxes to the cart.\n3. Otherwise, check the second box of blue cookies to the right of the red plaid cookie. If it is labeled \"high oil\", search for cookies from the same country of origin that are on sale, and add 2 boxes of the cheapest option. If there are multiple cookies tied for the lowest price among those that meet the conditions, add 2 boxes of each of them.\n4. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_789",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 3,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_789",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment",
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: user_101). Ask the AI Service Agent to check the country of origin and flavor profile of the box of red cookies that was picked up and put down first. Then, ask the AI Service Agent to search the current product database for other cookies that share the same flavor profile and are explicitly labeled \"contains gluten\". If such cookies are found and have a tax rate lower than 0.1, add the cheapest one to your cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, you want all of them to be added. If no such cookies are found, ask the AI Service Agent to check the orange cookies with a square wavy edge pattern that were picked up and put down second. If they feature \"high calorie\" and originate from the UK, ask the AI Service Agent to add them to your cart. Next, ask the AI Service Agent to check your shopping list and add any missing items. Finally, ask the AI Service Agent to calculate the total tax amount for the items in your cart.",
+    "analysis": "1. Check the country of origin and flavor of the first red cookie you picked up. Search for cookies that share the same flavor and are labeled \"contains gluten\".\n2. If any are found and the tax rate is below 0.1, add the cheapest one(s) to the shopping cart. If there are multiple cookies tied for the lowest price among those that meet the conditions, add one of each.\n3. If none qualify, check the second orange cookie with wavy edges that you picked up. If it is \"high calorie\" and originates from the UK, add it to the shopping cart.\n4. Check and complete the shopping list.\n5. Calculate the total tax amount.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 1,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Grisbi Chocolate Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Dukan Chocolate Bar",
+          "qty": 2,
+          "category": "chocolate",
+          "price": 14.8,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Crispy Cups Happy",
+          "qty": 3,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_101",
+          "product_name": "Bahlsen",
+          "qty": 1,
+          "category": "cookie",
+          "price": 32.8,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_101",
+          "products": [
+            {
+              "product_name": "Dukan Chocolate Bar",
+              "quantity": 3
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 3
+            },
+            {
+              "product_name": "Crispy Cups Happy",
+              "quantity": 3
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Grisbi Limone Citron",
+              "quantity": 2
+            },
+            {
+              "product_name": "Desobry Speculoos",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 40,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious parent (User ID: user_456). Ask the AI Service Agent to check the price of the red festival plaid cookies that were picked up and put down for the first time. If the price is between 15 and 30 yuan and they have a \"sweet\" flavor, have the AI Service Agent add 2 boxes to your cart. If the price exceeds the budget, have the AI Service Agent check the third box of brown cookies to the right of the red festival plaid cookies. If its price is within budget and it has no \"nuts\" allergen, add 1 box to your cart. If neither condition is met, have the AI Service Agent search the current product database for items that share the same origin as the orange cookies with a rooster logo and have a tax rate lower than 0.08, and add two units of the cheapest qualifying item to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, add two units of each of them. Finally, have the AI Service Agent calculate the total calories for all items in the cart.",
+    "analysis": "1. Check the price and flavor of the first red plaid cookie you pick up.\n2. If the price is between 15 and 30 yuan and it has a \"sweet\" flavor, add 2 boxes to the cart.\n3. If the price exceeds the budget, check the third box of brown cookies to the right of the red plaid cookie. If it is within budget and does not contain \"nuts\", add 1 box to the cart.\n4. If neither condition is met, search for items that originate from the same place as the orange cookie with the rooster logo and have a tax rate lower than 0.08. Add 2 pieces of the cheapest qualifying item. If multiple items tie for the lowest price, add 2 pieces of each of those tied items.\n5. Calculate the total calories.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_456",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 2,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_456",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 41,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: user_202). Ask the AI Service Agent to retrieve the total calories of the first box of purple cookies to the right of the red holiday plaid cookies. Next, have the AI Service Agent check if the protein content of the orange rooster cookies on the shelf above the red cookies is higher than that of the purple box. If it is higher and the orange box is priced below 40 yuan, ask the AI Service Agent to add the orange box to your cart. If not, ask the AI Service Agent to check whether the purple box contains the \"milk\" allergen. If it does, ask the AI Service Agent to search for low-sugar alternative products in the current product database that originate from Denmark, Japan, or Germany, and add the item with the lowest sodium content to your cart. If there are multiple items tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total payable amount for all items in the cart.",
+    "analysis": "1. Get the total calories of the first box of purple cookies to the right of the red plaid pattern. Check whether the protein content of the orange rooster crackers on the layer above is higher than that of the purple cookies.\n\n2. If the protein content is higher and the orange crackers are priced below 40 yuan, add the orange crackers to the cart.\n\n3. If not, check whether the purple cookies contain \"milk\". If they do, search for low-sugar products originating from Denmark, Japan, or Germany, and add the item with the lowest sodium content to the cart. If there are multiple items tied for the lowest sodium content among those that meet the conditions, add all of them to the cart.\n\n4. Finally, calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_202",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_202",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 1
+            },
+            {
+              "product_name": "Choco Fit Lemon",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Dark Chocolate Cookie",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 42,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a gift buyer with dietary restrictions (User ID: user_303). Please ask the AI Service Agent to confirm the allergen information for the red holiday plaid cookie that was picked up and put down first. If this cookie contains gluten allergens and has calories not less than 500 kcal, ask the AI Service Agent to check the orange cookie with a rooster logo that was picked up and put down second. If the orange cookie is explicitly labeled \"Contains Gluten\" and originates from Germany, Denmark, or Japan, then ask the AI Service Agent to add 1 box of it to your cart. If the orange box also contains gluten, then ask the AI Service Agent to search the current product database for items labeled \"Contains Gluten\" with a \"nutty\" flavor, and add the cheapest qualifying item to your cart. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items to the cart. Finally, ask the AI Service Agent to calculate the total taxes and fees for the items in the shopping cart.",
+    "analysis": "1. Check the allergens and calorie content of the first red plaid cookie you picked up.\n\n2. If it contains gluten and has more than 500 kcal, examine the second orange cookie with a rooster logo that you picked up.\n\n3. If the orange cookie is labeled \"contains gluten\" and originates from Germany, Denmark, or Japan, add 1 box to the cart.\n\n4. If the orange cookie also contains gluten (but does not meet the previous condition), search for products labeled \"contains gluten\" with a \"nutty\" flavor, and add the cheapest qualifying product to the cart. If there are multiple products tied for the lowest price among those that meet the conditions, add one of each to the cart.\n\n5. Calculate the total tax.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Grisbi Chocolate Hazelnut",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_303",
+          "product_name": "Grisbi Nocciola",
+          "qty": 1,
+          "category": "cookie",
+          "price": 22.8,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_303",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Classic",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            },
+            {
+              "product_name": "Bahlsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Strawberry",
+              "quantity": 1
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Chocolate Hazelnut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grisbi Nocciola",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 43,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Crispy Cups Happy"
+    ]
+  },
+  {
+    "Instruction": "You are a diabetic patient (User ID: user_505). Ask the AI service agent to check the sugar content per 100g of the box of red cookies that was picked up and put down for the first time. If the sugar content is greater than or equal to 30 grams, then ask the AI service agent to check the second box of blue cookies to the right of the red holiday plaid cookies. If the blue box's sugar content also exceeds 30 grams and it carries a \"High Fat\" label, ask the AI service agent to search the current product database for items originating from France with a sugar content below 30 grams, and add the product with the highest protein content to your cart. If there are multiple products tied for the highest protein content among those that meet the conditions, you want all of them to be added. If the sugar content is below 30 grams, add the blue box directly to your cart. Next, ask the AI service agent to check your historical shopping list and add any missing items to your cart. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Check the sugar content per 100 grams of the first red cookie you pick up.\n\n2. If it exceeds 30 grams, check the sugar content and label of the second box of blue cookies to the right of the red plaid one.\n\n3. If the blue cookie's sugar content also exceeds 30 grams and is labeled \"high fat\", search for products originating from France that are low in sugar, and add the product with the highest protein content to your cart. If there are multiple products tied for the highest protein content among those that meet the conditions, add all of them to your cart.\n\n4. If the blue cookie's sugar content is below 30 grams, add it directly to your cart.\n\n5. Check the history list and fill in any missing items.\n\n6. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Dukan Nutrition Pour Tous Chocolate",
+          "qty": 1,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_505",
+          "product_name": "Lu Petit Beurre",
+          "qty": 2,
+          "category": "cookie",
+          "price": 36.8,
+          "tax_rate": 0.15,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_505",
+          "products": [
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 1
+            },
+            {
+              "product_name": "Crispy Cups Mint",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lu Petit Beurre",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Nutrition Pour Tous Chocolate",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 44,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a gift buyer (User ID: user_606). Ask the AI service agent to confirm whether the box of cookies with the rooster logo on the shelf above the red cookies is from France. If it is from France and currently on discount, ask the AI service agent to add 2 boxes of it to your cart. If it is not from France or not on discount, ask the AI service agent to check the first box of purple cookies to the right of the red holiday plaid cookies. If the purple cookies have the \"high sugar\" feature and are priced between 20 and 80 yuan, ask the AI service agent to add 1 box of them to your cart. If neither condition is met, ask the AI service agent to search the current product database for items that are from France and have a \"sweet\" flavor, and add the item with the highest calories to your cart. If there are multiple items tied for the highest calories among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Confirm whether the cookie with the rooster logo on the layer above the red cookie is from France and is on discount.\n2. If it is from France and has a discount, add 2 boxes to the cart.\n3. If not, or if there is no discount, check the first box of purple cookies to the right of the red plaid pattern. If it is \"high sugar\" and priced between 20 and 80 yuan, add 1 box to the cart.\n4. If neither condition is met, search for items originating from France with a \"sweet\" flavor. Add the item with the highest calorie count to the shopping cart. If multiple items tie for the highest calorie count, add one of each of those tied items.\n5. Calculate the total amount payable.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_606",
+          "product_name": "St Michel Le Petit Beurre",
+          "qty": 2,
+          "category": "cookie",
+          "price": 29.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "user_606",
+          "products": [
+            {
+              "product_name": "St Michel Le Petit Beurre",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 45,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness coach (User ID: user_707). Please ask the AI Service Agent to check the nutritional features of the box of red plaid cookies that was picked up and put down first. If this product does not meet low-fat criteria and explicitly carries a \"high calorie\" label, then next ask the AI Service Agent to check the tax rate of the orange cookies with a wavy edge pattern that was picked up and put down second. If the orange cookies' tax rate is lower than 0.06 and their origin is Japan, Germany, or Denmark, then ask the AI Service Agent to add 1 box of orange cookies to the cart; if the tax rate is higher than 0.06, then ask the AI Service Agent to search the current product database for items that share the same country of origin as the red box and contain the \"milk\" allergen, and add the item with the lowest unit price to the cart. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items. Subsequently, ask the AI Service Agent to calculate the total protein content of all items in the cart.",
+    "analysis": "1. Check the nutritional features of the first red plaid cookie you picked up.\n2. If it is not low-fat and carries a \"high calorie\" label, check the tax rate and origin of the second orange cookie with wavy edges that you picked up.\n3. If the tax rate is lower than 0.06 and the origin is Japan, Germany, or Denmark, add 1 box of the orange cookie to your cart.\n4. If the tax rate is higher than 0.06, search for items that share the same country of origin as the red cookie and contain \"nuts\", and add the item with the lowest unit price to your cart. If there are multiple items tied for the lowest unit price among those that meet the conditions, add one of each of those tied items to the cart.\n5. Calculate the total protein content of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_707",
+          "product_name": "Highland Speciality Shortbread Mini",
+          "qty": 1,
+          "category": "cookie",
+          "price": 17.6,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "user_707",
+          "products": [
+            {
+              "product_name": "Grisbi Chocolate",
+              "quantity": 2
+            },
+            {
+              "product_name": "St Michel Le Sablé de Reims Coconut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Choco Vanilla",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Mini",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 46,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "St Michel Le Petit Beurre"
+    ]
+  },
+  {
+    "Instruction": "You are a food critic (User ID: user_123). Please ask the AI Service Agent to check the fat content value of the box of red cookies that was picked up and put down for the first time, and the sugar content value of the orange rooster cookies on the shelf layer above the red cookies. If the fat content of the red cookies is numerically higher than the sugar content of the orange cookies, and the red cookies are classified as \"sweet\", ask the AI Service Agent to add 1 box of red cookies to the cart. Otherwise, if the orange cookies are on discount, ask the AI Service Agent to add 1 box of orange cookies to the cart. If neither condition is met, ask the AI Service Agent to search for cookies in the current product database that are made in Italy and priced between 15 and 40 yuan, and add the cookie with the lowest calories to the shopping cart. If there are multiple cookies tied for the lowest calories among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to fill in any missing items from the shopping list and add them to the cart. Finally, ask the AI Service Agent to calculate the total tax and fees for the items in the shopping cart.",
+    "analysis": "1. Compare the fat content of the first red cookie picked up with the sugar content value of the orange rooster cookie on the upper shelf.\n2. If the red cookie's fat value is higher than the orange cookie's sugar value and it is of the \"sweet\" flavor, add 1 box of the red cookie.\n3. Otherwise, if the orange cookie is on discount, add 1 box of the orange cookie.\n4. If neither condition is met, search for cookies produced in Italy priced between 15 and 40 yuan, and add the cookie with the lowest calories to the shopping cart. If multiple cookies tie for the lowest calorie count among those meeting the criteria, add one box of each of those tied items.\n5. Fill in any missing items on the shopping list.\n6. Calculate the total tax amount.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Highland Speciality Shortbread Assortment",
+          "qty": 1,
+          "category": "cookie",
+          "price": 28.6,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "St Michel Le Palmier Crispy Caramel",
+          "qty": 2,
+          "category": "cookie",
+          "price": 26.8,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "user_123",
+          "product_name": "Dukan Chocolate Wafer",
+          "qty": 3,
+          "category": "cookie",
+          "price": 29.5,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "user_123",
+          "products": [
+            {
+              "product_name": "Highland Speciality Shortbread Teddy Bear",
+              "quantity": 2
+            },
+            {
+              "product_name": "Highland Speciality Shortbread Assortment",
+              "quantity": 2
+            },
+            {
+              "product_name": "Crispy Cups Cookies & Cream",
+              "quantity": 1
+            },
+            {
+              "product_name": "St Michel Le Palmier Crispy Caramel",
+              "quantity": 2
+            },
+            {
+              "product_name": "Dukan Chocolate Wafer",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 47,
+    "image_name": "retail7",
+    "image_path": "retail7.mp4",
+    "image_description": "You reach out and pick up a red box of cookies from the shelf. The box is rectangular, with a festive plaid pattern on its side and images of golden, buttery biscuits on the front. As you move your hand away, you scan the other products nearby. You then pick up an orange box of cookies. This box is also rectangular, featuring a classic design with images of the iconic square, scalloped-edge biscuits and the brand’s rooster logo. You hold it for a moment, examining the packaging before placing it back on the shelf.",
+    "key": "product_name",
+    "value": [
+      "Highland Speciality Shortbread Assortment"
+    ]
+  }
+]
