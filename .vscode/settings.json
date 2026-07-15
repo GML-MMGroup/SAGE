@@ -1,0 +1,6 @@
+{
+"python-envs.defaultEnvManager": "ms-python.python:conda",
+"python-envs.terminal.autoActivationType": "command",
+"python.terminal.activateEnvironment": true,
+"python-envs.defaultPackageManager": "ms-python.python:conda"
+}

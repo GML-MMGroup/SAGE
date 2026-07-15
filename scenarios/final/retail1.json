@@ -1,0 +1,1748 @@
+[
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: alice_wong_456), browsing wine shelves. Focus on the third bottle of wine you just pointed at with your right index finger. First, ask the AI Service Agent to confirm the price of this wine. Then, ask the AI Service Agent to search for other wines from the same country of origin that are priced lower than this wine. If such wines exist, ask the AI Service Agent to add the cheapest one among them to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If no such wines exist, ask the AI Service Agent to add the wine you pointed at to your cart. Finally, ask the AI Service Agent to calculate the total calorie content of all items currently in your cart.",
+    "analysis": "1. Confirm the price of the third wine bottle you are pointing at.\n2. Check if there are other wines from the same country of origin that are priced lower than this bottle.\n3. If there are, add the cheapest one to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them to the cart.\n4. If there are not, add the wine you are pointing at to the shopping cart.\n5. Calculate the total calorie content of all items currently in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alice_wong_456",
+          "product_name": "CRYSTAL VISTEUX Bordeaux",
+          "qty": 1,
+          "category": "wine",
+          "price": 115,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "alice_wong_456",
+          "products": [
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Souda Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Pachy White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "ZONIN Chianti",
+              "quantity": 2
+            },
+            {
+              "product_name": "Cabernet Sauvignon Reserve",
+              "quantity": 2
+            },
+            {
+              "product_name": "CRYSTAL VISTEUX Bordeaux",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a sommelier (User ID: john_smith_123) planning a wine tasting selection. Focus on the second bottle of wine you are pointing at on the middle shelf. Ask the AI Service Agent to confirm its country of origin. Then, ask the AI Service Agent to search for all wines that share the exact same flavor profile as this bottle. Next, ask the AI Service Agent to check if any of these wines have the same country of origin as the original bottle and are currently on sale. If such wines exist, ask the AI Service Agent to add the one with the largest discount to your cart. If there are multiple wines tied for the largest discount among those that meet the conditions, you want all of them to be added. If no such wine exists, ask the AI Service Agent to add the bottle you originally pointed to to your cart. Additionally, ask the AI Service Agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Confirm the country of origin of the second bottle of wine you are pointing at.\n2. Search for all wines that share the same flavor profile as this bottle.\n3. Among the wines found, determine if any originate from the same country as that bottle and are currently on sale.\n4. If such wines exist, add the wine with the largest discount to the cart. If multiple wines tie for the largest discount, add all of them.\n5. If no such wines exist, add the bottle you pointed at to the cart.\n6. Calculate the total tax for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "john_smith_123",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "john_smith_123",
+          "products": [
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 2
+            },
+            {
+              "product_name": "Duc de Guiche",
+              "quantity": 2
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious consumer (User ID: emma_clark_654) looking for low-sugar wine. Among the three bottles you are pointing at, focus on the one with the dark label. You need to ask the AI service agent to first identify the nutritional information of this wine, and then check if it is labeled as \"low sugar\". If it is, ask the AI service agent to add one bottle to your cart. If it is not, ask the AI service agent to search among all wines to the right of this bottle in the same row for the cheapest wine labeled as \"low sugar\", and add it to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want one of each of those tied items to be added. Finally, ask the AI service agent to calculate the total nutritional value of all items in your cart.",
+    "analysis": "1. Query the nutritional information of the wine with the dark label among the three bottles you are pointing at.\n2. Check whether this wine is labeled as \"Low Sugar\".\n3. If it is labeled as \"Low Sugar\", add one bottle of this wine to the cart.\n4. If it is not labeled as \"Low Sugar\", search among all wines to the right of this bottle in the same row for \"Low Sugar\" wines. Identify the lowest-priced option(s) and add them to the cart. If there are multiple wines tied for the lowest price, add one of each of those tied items.\n5. Calculate the total nutritional value of all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_nutrition",
+        "parameters": {
+          "product_name": "Kim Crawford Sauvignon Blanc"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "products": [
+            {
+              "product_name": "FIFTEEN YEAR OLD Brandy",
+              "quantity": 2
+            },
+            {
+              "product_name": "Cabernet Sauvignon Reserve",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 2
+            },
+            {
+              "product_name": "Riumi Moscato",
+              "quantity": 2
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a cost-conscious parent (User ID: david_jones_987) shopping for a family gathering. You have just pointed at the first bottle of wine. Ask the AI Service Agent to check the price and discount information of this wine, and then find all wines that are currently on sale and priced lower than this bottle. Among these wines, ask the AI Service Agent to add the one from New Zealand with the biggest discount to your cart. If there are multiple wines tied for the biggest discount among those that meet the conditions, add all of them to your cart. If no such wine exists, ask the AI Service Agent to add the bottle you just pointed at to your cart. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price and discount information of the first bottle of wine you are pointing at.\n2. Find all wines that are currently on sale and priced lower than that bottle.\n3. Among these discounted wines, add the New Zealand wine with the largest discount to the shopping cart. If multiple wines tie for the largest discount, add all of them.\n4. If no discounted wines from New Zealand are found, add the initially pointed wine to the shopping cart.\n5. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_discount",
+        "parameters": {
+          "product_name": "Merlot Oyster Bay"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "product_name": "GLITZ Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 79,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "products": [
+            {
+              "product_name": "Napa Valley Cabernet",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 3
+            },
+            {
+              "product_name": "ABVDOCK Cabernet Sauvignon",
+              "quantity": 1
+            },
+            {
+              "product_name": "HUNTER VALLEY Shiraz",
+              "quantity": 1
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a wine club member (User ID: lisa_taylor_321) who hopes to explore new wine regions. Regarding the bottle of wine with a brown capsule that you are pointing at, you would like the AI service agent to first confirm the wine's country of origin, and then search for all wines from that country with a \"sour\" taste profile. Among these wines, have the AI service agent determine if there are any on discount. If there are, have the AI service agent add the wine with a tax rate less than 0.09 and the lowest price to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If there are no discounted wines, have the AI service agent add the bottle you are pointing at to your cart. Finally, have the AI service agent calculate the total calories for all wines in your cart.",
+    "analysis": "1. Confirm the country of origin of the wine bottle with the brown capsule that you are pointing at.\n2. Search for all wines from that country of origin that have a \"sweet\" taste profile.\n3. Determine whether any of these \"sweet\" wines are on discount.\n4. If there are discounted wines, add the lowest-priced one to the shopping cart. If multiple wines tie for the lowest price among those that meet the conditions, add all of them.\n5. If there are no discounted wines, add the originally pointed bottle to your cart.\n6. Calculate the total calories for all wines in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "GLITZ Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 79,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "products": [
+            {
+              "product_name": "LA VIGNA Malbec",
+              "quantity": 2
+            },
+            {
+              "product_name": "Duc de Guiche",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a wine critic (User ID: jane_doe_201) evaluating value for money. You have just pointed to a wine on the middle shelf that features a white circle logo on its label. Ask the AI Service Agent to confirm the name, price, and discount information of this bottle. Then, ask the AI Service Agent to find all wines with a discount factor greater than or equal to 0.9 and a price lower than this bottle. Among these wines, ask the AI Service Agent to add the Italian wine with the highest calorie count to your cart. If there are multiple wines tied for the highest calorie count among those that meet the conditions, you want all of them to be added. If no qualifying wines are found, ask the AI Service Agent to add the bottle you just pointed to to your cart. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Identify the wine you are pointing at that has a white circle on its label indicating its price and discount information.\n2. Search for all wines with a discount factor greater than or equal to 0.9 and priced lower than that wine.\n3. Among the qualifying wines, add the Italian wine with the highest calorie count to your cart. If there are multiple wines tied for the highest calorie count among those that meet the conditions, you want all of them to be added.\n4. If no qualifying wines are found, add the previously identified wine to your cart.\n5. Calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jane_doe_201",
+          "product_name": "LAND MARSALA",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "jane_doe_201",
+          "products": [
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 1
+            },
+            {
+              "product_name": "Souda Red Wine",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a careful shopper (User ID: mark_taylor_789), currently comparing prices. Focus on the first bottle of wine you just pointed at, which has a very distinctive label shape. You need to ask the AI Service Agent to retrieve the price and country of origin for this bottle, and then find all wines from the same country that are priced higher than this bottle. Among these wines, if any carry a \"low_sugar\" tag, ask the AI Service Agent to add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want one of each of those tied wines to be added. If there are no wines meeting these conditions, ask the AI Service Agent to add two bottles of the wine you pointed at to your cart. Finally, ask the AI Service Agent to calculate the total tax for all items in your cart.",
+    "analysis": "1. Get the price and country of origin information for the first bottle of wine being pointed at.\n2. Find all wines from the same country of origin that are priced higher than that bottle.\n3. Check if any of these wines have a \"low_sugar\" label.\n4. If yes, add the bottle with the lowest price among them to the shopping cart. If multiple items tie for the lowest price, add one of each of those tied items to the cart.\n5. If no, add two bottles of the pointed wine to the shopping cart.\n6. Calculate the total tax for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_taylor_789",
+          "product_name": "Pinot Noir Reserve",
+          "qty": 1,
+          "category": "wine",
+          "price": 260,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "mark_taylor_789",
+          "products": [
+            {
+              "product_name": "Pinot Noir Reserve",
+              "quantity": 1
+            },
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 2
+            },
+            {
+              "product_name": "Pachy White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Framboise Rouge",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 2
+            },
+            {
+              "product_name": "ZONIN Chianti",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: lisa_taylor_321) selecting wine for a party. Focus on the bottle with the gold foil cap that you are pointing at. You need to ask the AI Service Agent to confirm the price and nutritional information of this wine. Ask the AI Service Agent to determine if the wine is classified as \"low sugar\". If it is, have the AI Service Agent add two bottles to your cart. If it is not, ask the AI Service Agent to check its country of origin. If the country of origin is Australia, have the AI Service Agent add one bottle to your cart. Finally, ask the AI Service Agent to calculate the total tax amount for all items in your cart.",
+    "analysis": "1. Confirm the price and nutritional information for the wine bottle you are pointing at that has a gold cap.\n2. If this wine is classified as \"low sugar\", add two bottles of it to the cart.\n3. If this wine is not classified as \"low sugar\", check its country of origin.\n4. If the country of origin is New Zealand, add one bottle of it to the cart.\n5. Calculate the total taxes and fees for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "products": [
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 1
+            },
+            {
+              "product_name": "LA VIGNA Malbec",
+              "quantity": 2
+            },
+            {
+              "product_name": "Duc de Guiche",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a wine collector who values French origin (User ID: mark_taylor_789). Focus on the first bottle of wine you are pointing at. You need to ask the AI service agent to verify its origin by checking whether it is from France. If it is from France, ask the AI service agent to add one bottle to your cart. If it is not from France, ask the AI service agent to look for other wines that are from France, priced below 200 yuan, and currently on sale (discount factor < 1.0), and then add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Confirm whether the origin of the first bottle of wine you are pointing at is France.\n2. If the origin is France, add that bottle of wine to the cart.\n3. If the origin is not France, search for other wines that are from France, priced below 200 yuan, and currently on sale (discount factor < 1.0).\n4. Add the cheapest bottle of wine meeting these conditions to the cart. If there are multiple bottles tied for the lowest price among those that meet the conditions, add one of each of those tied items.\n5. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_taylor_789",
+          "product_name": "CRYSTAL VISTEUX Bordeaux",
+          "qty": 1,
+          "category": "wine",
+          "price": 115,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "mark_taylor_789",
+          "products": [
+            {
+              "product_name": "CRYSTAL VISTEUX Bordeaux",
+              "quantity": 1
+            },
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 2
+            },
+            {
+              "product_name": "Pachy White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Framboise Rouge",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 2
+            },
+            {
+              "product_name": "ZONIN Chianti",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious consumer (User ID: emma_brown_123) looking for low-calorie wines. Among the three bottles you are pointing at, focus on the one with a predominantly white label and a gold cap. You need to ask the AI service agent to confirm the nutritional information of this wine. Ask the AI service agent to check if it is labeled as \"low_calories\". If it is, ask the AI service agent to add one bottle to your cart. If it is not, ask the AI service agent to search the database for wines that are \"bitter\" and have less than 100 kcal per 100g, and then add the wine with the lowest calorie count among them to your cart. If there are multiple wines tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total nutritional value of all items in your cart.",
+    "analysis": "1. Verify the nutritional information of the wine among those you are pointing at that features a predominantly white label and a gold cap.\n2. If this wine is labeled as \"low calorie,\" add one bottle to your cart.\n3. If it is not labeled as \"low calorie,\" search the database for wines that have a \"bitter taste\" and contain less than 100 kcal per 100g.\n4. From the qualifying wines, select the one with the lowest calorie count and add one bottle to your cart. If multiple wines tie for the lowest calorie count among those that meet the conditions, add one bottle of each of those tied wines.\n5. Calculate the total nutritional value of all items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_brown_123",
+          "product_name": "Mystere Cabernet Sauvignon",
+          "qty": 1,
+          "category": "wine",
+          "price": 150,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "emma_brown_123",
+          "products": [
+            {
+              "product_name": "Mystere Cabernet Sauvignon",
+              "quantity": 1
+            },
+            {
+              "product_name": "VINO DI CANTINA Rosso",
+              "quantity": 2
+            },
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "ZONIN Chianti",
+              "quantity": 2
+            },
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 1
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 2
+            },
+            {
+              "product_name": "Pinot Noir Reserve",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: tom_harris_123) comparing the price of a specific wine. Regarding the second bottle of wine you are pointing at, ask the AI Service Agent to confirm its price. Then, ask the AI Service Agent to search for all wines from Australia priced between 120 and 160 yuan. Ask the AI Service Agent to select the cheapest wine from these results and add two bottles to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want two bottles of each of those tied items to be added. Finally, ask the AI Service Agent to recalculate the total tax for the newly added items.",
+    "analysis": "1. Confirm the price of the second bottle of wine you are pointing at.\n2. Find all wines originating from Australia priced between 120 and 160 yuan.\n3. Select the wine with the lowest price from the qualifying wines.\n4. Add the selected wine to the shopping cart with a quantity of two bottles. If multiple wines are tied for the lowest price, add two bottles of each tied item to the cart.\n5. Recalculate the total tax for the newly added items.",
+    "ground_truth": [
+      {
+        "tool_name": "get_price",
+        "parameters": {
+          "product_name": "RIVER TERRACE Chardonnay"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_123",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 2,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_123",
+          "product_name": "HUNTER VALLEY Shiraz",
+          "qty": 2,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "tom_harris_123",
+          "products": [
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 2
+            },
+            {
+              "product_name": "HUNTER VALLEY Shiraz",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: sarah_liu_789), looking for wine with specific taste characteristics for a dinner party. Focus on the first bottle of wine you are pointing at. You need to ask the AI service agent to confirm its taste characteristics. Ask the AI service agent to determine whether its taste includes \"sweetness\". If it does, ask the AI service agent to add one bottle to your cart. If it does not, ask the AI service agent to search for wines that are from New Zealand, have a \"mild\" taste, and are currently on sale (discount factor < 1.0), and add one bottle of each such wine to your cart. Afterwards, ask the AI service agent to check if the item \"CHATEAU DE L'ETANG Rosé\" exists in your cart. If it exists, ask the AI service agent to remove it. Finally, ask the AI service agent to calculate the total nutritional value of all items in the cart.",
+    "analysis": "1. Confirm the taste characteristics of the first bottle of wine you are pointing at.\n2. If the wine's taste includes \"sweet\", add one bottle to the cart.\n3. If the wine's taste does not include \"sweet\", search for wines from New Zealand with a \"mild\" mouthfeel and a discount factor less than 1.0, and add one bottle of each such wine to the cart.\n4. Check if the item \"CHATEAU DE L'ETANG Rosé\" exists in the shopping cart.\n5. If \"CHATEAU DE L'ETANG Rosé\" exists, remove it from the shopping cart.\n6. Calculate the total nutritional value of all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "product_name": "GLITZ Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 79,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "product_name": "SILVER BAY Pinot Noir",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "product_name": "TASTING ROOM Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "products": [
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 1
+            },
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 1
+            },
+            {
+              "product_name": "TASTING ROOM Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "CHATEAU ROSE Cabernet Sauvignon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Mouton Cadet",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: david_chen_456) interested in a wine bottle with a unique label. The bottle you are pointing at is the one with a white circle on the middle shelf. Please ask the AI Service Agent to query the price, discount, and nutrition information of this product. Instruct the AI Service Agent to add one bottle to your cart if the discount is less than 1.0. If the discount is equal to 1.0, ask the AI Service Agent to find other wines from the same origin with a discount less than 1.0, and add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Query the price, discount, and nutrition information of the wine bottle marked with a white circle on the middle shelf you are pointing at.\n2. If the discount for this product is less than 1.0, add one bottle to the cart.\n3. If the discount for this product is equal to 1.0, search for other wines from the same origin that have a discount less than 1.0.\n4. From the qualifying wines, add the bottle with the lowest price to the cart. If multiple wines tie for the lowest price among those that meet the conditions, add one of each of those tied items.\n5. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_price",
+        "parameters": {
+          "product_name": "Kim Crawford Sauvignon Blanc"
+        }
+      },
+      {
+        "tool_name": "get_nutrition",
+        "parameters": {
+          "product_name": "Kim Crawford Sauvignon Blanc"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_chen_456",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "david_chen_456",
+          "products": [
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 1
+            },
+            {
+              "product_name": "Sangiovese Riserva",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: bill_donk_143) who wants to ensure you get value for money. Focus on the second bottle of wine you are pointing at. Ask the AI Service Agent to query the price of that wine. Then, ask the AI Service Agent to find all wines priced between 120 and 160 yuan. Among these wines, ask the AI Service Agent to further filter for those with a taste leaning towards 'sour'. From the filtered results, ask the AI Service Agent to find the wine with the lowest price and add two bottles to your cart. If there are multiple wines tied for the lowest price, you want two bottles of each of those tied items to be added to your cart. Finally, ask the AI Service Agent to calculate the total nutritional value of all items in your shopping cart.",
+    "analysis": "1. Query the price of the second bottle of wine you are pointing at.\n2. Find all wines priced between 120 and 160 yuan.\n3. From the wines priced between 120 and 160 yuan, filter for those with a taste profile leaning towards \"sour\".\n4. Among the filtered wines, identify the one with the lowest price.\n5. Add the lowest-priced wine to your cart, adding two bottles. If multiple wines tie for the lowest price, add two bottles of each of those tied items to the cart.\n6. Calculate the total nutritional value of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_price",
+        "parameters": {
+          "product_name": "RIVER TERRACE Chardonnay"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "LAND MARSALA",
+          "qty": 2,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "products": [
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: john_doe_123) looking to complete a purchase. You want to buy the bottle with the yellow cap among the bottles you pointed at. You have been informed that the shopping cart cannot contain more than 5 bottles in total. Please ask the AI service agent to query the current items in your cart. Instruct the AI service agent that if the cart already contains 4 bottles or more, no items should be added; if it contains fewer than 4 bottles, add two bottles of the desired wine to the cart. Afterwards, ask the AI service agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Check the current items in the shopping cart.\n2. If the cart already contains 4 bottles or more, do not add any items.\n3. If the cart contains fewer than 4 bottles, add two bottles of the wine with the yellow cap from among the three bottles you pointed at. If multiple pointed bottles tie for having a yellow cap, add two bottles of each of those tied items.\n4. Calculate the total tax for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cart",
+        "parameters": {
+          "user_id": "john_doe_123"
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "john_doe_123",
+          "products": [
+            {
+              "product_name": "MOUNTAIN HILL Cabernet Sauvignon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zinfandel Estate",
+              "quantity": 2
+            },
+            {
+              "product_name": "CHATEAU DE L'ETANG Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a sommelier (User ID: john_doe_123), selecting wines to pair with a seafood dinner. Focus on the first bottle of wine you are pointing at. You need to ask the AI service agent to identify the taste profile and country of origin of this bottle. Ask the AI service agent to determine if the wine has a \"sour\" taste, and if so, verify its origin. If it originates from Australia, add two bottles of this wine to your cart. If it does not originate from Australia, ask the AI service agent to check the database for other \"sour\" wines from Australia, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want one bottle of each of them to be added. If no such wine exists, ask the AI service agent to add the initial bottle you picked to your cart. Finally, ask the AI service agent to calculate the total nutritional value of all items in the cart.",
+    "analysis": "1. Identify the taste characteristics and country of origin of the first bottle of wine you are pointing at.\n2. If the wine has a \"sour\" taste, confirm its origin.\n3. If the wine is from Australia, add two bottles of it to your cart.\n4. If the wine is not from Australia, check the database for other wines that are from Australia and have a \"sour\" taste.\n5. If such wines exist, add the one with the lowest price to your cart. If there are multiple wines tied for the lowest price, add one of each of those tied items.\n6. If no such wines exist, add the originally selected bottle to your cart.\n7. Calculate the total nutritional value of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "john_doe_123",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "john_doe_123",
+          "products": [
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 1
+            },
+            {
+              "product_name": "MOUNTAIN HILL Cabernet Sauvignon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zinfandel Estate",
+              "quantity": 2
+            },
+            {
+              "product_name": "CHATEAU DE L'ETANG Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: lisa_wong_456) selecting wines for a party. Among the bottles you are pointing at, focus on the one with the dark green cap. Ask the AI Service Agent to first check if this bottle is on sale, and then compare its price with other wines from the same origin. If the bottle is on sale, ask the AI Service Agent to add two bottles of it to your cart. If the bottle is not on sale, ask the AI Service Agent to check if there are other wines from the same origin with prices within 10% of this bottle's price. If such wines exist, ask the AI Service Agent to add the cheapest one among them to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want one of each of those tied items to be added. If no such wines exist, ask the AI Service Agent to add the bottle you are pointing at with the dark green cap to your cart. Finally, ask the AI Service Agent to calculate the total tax for all items in your cart.",
+    "analysis": "1. Among the three bottles you are pointing at, check whether the bottle with the dark green cap is on sale.\n2. Compare the price of this bottle with other wines from the same origin.\n3. If this bottle is on sale, add two bottles of it to your cart.\n4. If this bottle is not on sale, search for other wines from the same origin with a price within 10% of this bottle's price.\n5. If such wines exist, add the cheapest one among them to your cart. If multiple wines tie for the lowest price, add one of each tied item.\n6. If no such wines exist, add the bottle with the dark green cap to your cart.\n7. Calculate the total tax for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_wong_456",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 2,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "lisa_wong_456",
+          "products": [
+            {
+              "product_name": "Riumi Moscato",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious consumer (User ID: alice_park_456) selecting low-sugar wines. Focus on the wine with a white label that you pointed at. You need to ask the AI service agent to confirm whether it has the \"low-sugar\" nutritional property. If it does, ask the AI service agent to add two bottles of this wine to your cart. If it does not, ask the AI service agent to check the bottle immediately to its right to see if it possesses this property. If it does, ask the AI service agent to add that bottle to your cart. If neither bottle has this property, ask the AI service agent to add the initially selected bottle to your cart. Finally, ask the AI service agent to calculate the total nutritional value of all items in the cart.",
+    "analysis": "First, confirm whether the selected wine you pointed at, which has a white label, possesses the \"low sugar\" nutritional property. If this wine has the \"low sugar\" property, add two bottles of it to your cart. If it does not, check whether the bottle immediately to its right has the \"low sugar\" property. If the wine on the right has this property, add that bottle to your cart. If neither bottle has the \"low sugar\" property, add the originally selected bottle to your cart. Finally, calculate the total nutritional value of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alice_park_456",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "alice_park_456",
+          "products": [
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "Syrah Vieilles Vignes",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a gift shopper (User ID: sarah_liu_789), selecting a wine for a friend. Focus on the bottle with the gold cap among the bottles you are pointing at. Ask the AI service agent to check if this wine is currently on sale. If it is on sale, ask the AI service agent to add two bottles to your cart. If it is not on sale, ask the AI service agent to look for wines that are from the same country and have a similar taste, and then add the lowest-priced option to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want one of each of them to be added. If no such wine exists, ask the AI service agent to add the originally selected bottle to your cart. Finally, ask the AI service agent to calculate the total nutritional content of all items in the cart.",
+    "analysis": "1. Check whether the selected wine with a gold cap is currently on sale.\n2. If the wine is on sale, add two bottles of it to the cart.\n3. If the wine is not on sale, search for wines from the same country of origin that have a similar taste profile.\n4. Among the wines from the same country with a similar taste, add the cheapest one to the cart. If multiple wines are tied for the lowest price, add one of each of those tied items.\n5. If no wines from the same country with a similar taste exist, add the originally selected bottle to the cart.\n6. Calculate the total nutritional content of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "product_name": "HUNTER VALLEY Shiraz",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "sarah_liu_789",
+          "products": [
+            {
+              "product_name": "CHATEAU ROSE Cabernet Sauvignon",
+              "quantity": 2
+            },
+            {
+              "product_name": "Mouton Cadet",
+              "quantity": 1
+            },
+            {
+              "product_name": "HUNTER VALLEY Shiraz",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are an experienced wine enthusiast (User ID: mike_roberts_234) selecting wines for a high-end event. You are interested in the third bottle of wine you are pointing at. Ask the AI service agent to confirm its taste characteristics and nutritional content. Instruct the AI service agent to determine if this bottle has a \"bitter\" taste and is \"low sugar\". If it does, have the AI service agent add two bottles of this wine to your cart. Otherwise, have the AI service agent check if the bottle immediately to its right meets the same conditions. If it does, have the AI service agent add that bottle to your cart. If neither bottle meets the conditions, have the AI service agent add the initial bottle to your cart. Finally, ask the AI service agent to calculate the total tax amount for all items in the cart.",
+    "analysis": "1. Verify the taste characteristics and nutritional content of the third bottle of wine.\n2. If this bottle has a \"bitter\" taste and is classified as \"low sugar\", add two bottles of this wine to the cart.\n3. Otherwise, check whether the bottle immediately to its right has a \"bitter\" taste and is classified as \"low sugar\".\n4. If the bottle immediately to the right meets the conditions, add that bottle to the cart.\n5. If neither bottle meets the conditions, add the original bottle to the cart.\n6. Calculate the total tax for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_nutrition",
+        "parameters": {
+          "product_name": "Kim Crawford Sauvignon Blanc"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mike_roberts_234",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "mike_roberts_234",
+          "products": [
+            {
+              "product_name": "CHATEAU ROSE Cabernet Sauvignon",
+              "quantity": 1
+            },
+            {
+              "product_name": "Rosé de Provence",
+              "quantity": 1
+            },
+            {
+              "product_name": "GRAND CRU Chardonnay",
+              "quantity": 2
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: alice_wong_456), browsing the wine section. Focus on the second bottle of wine you are pointing at. You need to ask the AI service agent to confirm the name and price of this wine, and then check whether it has nutritional properties such as \"low sugar\" or \"low calorie\". If it does, ask the AI service agent to add one bottle to your cart. If it does not, ask the AI service agent to check the adjacent wine bottle on its right. Ask the AI service agent to determine if that wine has a tax rate less than 0.1 and carries a \"low sugar\" or \"low calorie\" label. If so, ask the AI service agent to add one bottle of that wine to your cart instead. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Confirm the name and price of the second bottle of wine indicated by your finger.\n2. Check whether this wine has \"low sugar\" or \"low calorie\" nutritional attributes.\n3. If it has \"low sugar\" or \"low calorie\" attributes, add one bottle of this wine to the cart.\n4. If it does not have the above attributes, check the price and label of the wine bottle immediately to its right.\n5. If the wine bottle to the right is cheaper and has \"low sugar\" or \"low calorie\" labels, add one bottle of that wine to the cart.\n6. Calculate the total payable amount for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_price",
+        "parameters": {
+          "product_name": "RIVER TERRACE Chardonnay"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alice_wong_456",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "alice_wong_456",
+          "products": [
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Souda Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Pachy White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "ZONIN Chianti",
+              "quantity": 2
+            },
+            {
+              "product_name": "Cabernet Sauvignon Reserve",
+              "quantity": 2
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a wine collector (User ID: david_jones_987) who prefers Spanish wines. You are currently viewing the first bottle of wine you are pointing at. You need to ask the AI service agent to confirm its origin. If it is from Spain, ask the AI service agent to check its taste characteristics. If the taste includes \"bitterness\", ask the AI service agent to add one bottle to your cart. Next, ask the AI service agent to check for other wines that are from Spain, have a \"bitter\" taste, and are currently on sale. If there are any, ask the AI service agent to add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Confirm the origin of the first selected red wine.\n2. If it is from Spain, query the taste characteristics of this wine.\n3. If the taste includes \"bitterness\", add this bottle to your cart.\n4. Check if there are other wines that are from Spain, have a \"bitter\" taste, and are currently on sale.\n5. If there are such wines, add the one with the lowest price to your cart. If multiple wines tie for the lowest price among those that meet the conditions, add all of them to your cart.\n6. Calculate the total tax and fees for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "product_name": "Lerpin Merlot",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.09,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "products": [
+            {
+              "product_name": "Napa Valley Cabernet",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 2
+            },
+            {
+              "product_name": "ABVDOCK Cabernet Sauvignon",
+              "quantity": 1
+            },
+            {
+              "product_name": "HUNTER VALLEY Shiraz",
+              "quantity": 1
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 2
+            },
+            {
+              "product_name": "Lerpin Merlot",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: jane_doe_201) looking for wines with specific nutrition labels. You are interested in the first bottle of wine you are pointing at. You want the AI service agent to confirm the name of this bottle and check its nutritional properties. If it has the \"low_sugar\" label, ask the AI service agent to add two bottles of this wine to your cart. If it does not have this label, ask the AI service agent to check the taste profile of the bottle to the left on the shelf. If that bottle's taste is \"savory\", ask the AI service agent to add two bottles of that wine to your cart. Finally, ask the AI service agent to calculate the total nutrition content of all items in your cart.",
+    "analysis": "1. Identify the name of the first bottle of wine pointed at by the finger.\n2. Check the nutritional characteristics of this wine.\n3. If this wine does not have a \"low sugar\" label, add two bottles of it to your cart.\n4. If there is no \"low sugar\" label, check the taste characteristics of the bottle to its left.\n5. If the bottle to its left has a \"savory\" taste, add two bottles of that wine to your cart.\n6. Finally, calculate the total nutritional content of all items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jane_doe_201",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 2,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "jane_doe_201",
+          "products": [
+            {
+              "product_name": "Souda Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a wine expert (User ID: lisa_taylor_321), currently examining three bottles of wine on the middle shelf. You pointed at the three bottles one after another with your finger. You want the AI Service Agent to check whether any of these wines have a \"sweet\" taste. If any do, ask the AI Service Agent to add one bottle of the sweetest wine (highest sugar content) to your cart. If there are multiple bottles tied for the highest sugar content, you want one bottle of each of those tied items to be added. If none of them are sweet, ask the AI Service Agent to add one bottle of each wine to your cart. Finally, ask the AI Service Agent to calculate the total nutritional value of all items in the cart.",
+    "analysis": "1. Check if any of these three bottles of wine have a \"sweet\" taste.\n2. If there are wines with a sweet taste, add one bottle of the wine with the highest sugar content to the cart. If multiple wines tie for the highest sugar content, add one bottle of each of those tied wines.\n3. If none of the wines have a sweet taste, add one bottle of each wine to the cart.\n4. Calculate the total nutritional value of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "products": [
+            {
+              "product_name": "LA VIGNA Malbec",
+              "quantity": 2
+            },
+            {
+              "product_name": "Duc de Guiche",
+              "quantity": 2
+            },
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 1
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay",
+      "River Terrace",
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a culinary student (User ID: emma_clark_654) selecting wines for a tasting class. Focus on the second-to-last bottle among the several bottles you pointed at. Ask the AI Service Agent to confirm the name and nutritional features of this wine. If the wine is labeled \"low_sodium\", ask the AI Service Agent to add one bottle of it to your cart. Otherwise, ask the AI Service Agent to check the taste features of the bottle immediately to its right. If that wine's taste is \"sour\", ask the AI Service Agent to add one bottle of it to your cart. Additionally, ask the AI Service Agent to check for any wines that are from France and currently on sale. If there are any such wines, add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for all items in your cart.",
+    "analysis": "1. Confirm the nutritional features of the second-to-last bottle among the three bottles you pointed at.\n2. If this wine is labeled \"low_sodium\", add one bottle of it to your cart.\n3. If this wine is not labeled \"low_sodium\", check the taste features of the wine bottle immediately to its right.\n4. If the taste of the bottle on the right is \"sour\", add one bottle of it to your cart.\n5. Check if there are any wines from France that are currently on sale.\n6. If there are wines from France that are on sale, add the bottle with the lowest price to your cart. If multiple bottles tie for the lowest price among those that meet the conditions, add one of each of those tied bottles.\n7. Calculate the total amount payable for all items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "product_name": "CRYSTAL VISTEUX Bordeaux",
+          "qty": 1,
+          "category": "wine",
+          "price": 115,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "products": [
+            {
+              "product_name": "FIFTEEN YEAR OLD Brandy",
+              "quantity": 2
+            },
+            {
+              "product_name": "Cabernet Sauvignon Reserve",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 2
+            },
+            {
+              "product_name": "Riumi Moscato",
+              "quantity": 2
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 1
+            },
+            {
+              "product_name": "CRYSTAL VISTEUX Bordeaux",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a shopper keen on finding deals (User ID: bill_donk_143), looking for the best value items. Focus on the first bottle of wine your finger pointed at. Ask the AI Service Agent to confirm the name of this bottle, and then check if it is on sale. If this wine is on sale, ask the AI Service Agent to find other wines produced in the same country that are also on sale, and add the one with the lowest price and sour taste to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If this wine is not on sale, ask the AI Service Agent to check the price of the last bottle of wine your finger pointed at. Ask the AI Service Agent to determine if that bottle is on sale and priced below 150 yuan. If so, ask the AI Service Agent to add one bottle of it to your cart. Finally, ask the AI Service Agent to calculate the total tax for all items in the cart.",
+    "analysis": "1. Check whether the second bottle of wine is on sale.\n2. If the wine is on sale, search for other discounted wines produced in the same country, and add the cheapest bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add one of each of those tied items.\n3. If the wine is not on sale, check the price of the bottle on the top shelf.\n4. If the wine on the top shelf is on sale and priced below 150 yuan, add one bottle to your cart.\n5. Calculate the total tax for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "GLITZ Sauvignon Blanc",
+          "qty": 1,
+          "category": "wine",
+          "price": 79,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "products": [
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  },
+  {
+    "Instruction": "You are a wine sommelier (User ID: tom_harris_123) conducting a blind tasting. You are currently examining the bottles of wine on the middle shelf that you have pointed at. Ask the AI Service Agent to identify the names of these three bottles. Then, ask the AI Service Agent to check if any of them are from Australia. If there are Australian wines, ask the AI Service Agent to add one bottle of the lowest-priced Australian wine to your cart. If multiple Australian wines tie for the lowest price, add one bottle of each of them. If there are no Australian wines, ask the AI Service Agent to add one bottle of each of these three wines to your cart. Finally, ask the AI Service Agent to calculate the total nutritional content of all items in the cart.",
+    "analysis": "1. Identify the names of the three bottles of wine pointed at on the middle shelf.\n2. Check whether any of these three bottles are from Australia.\n3. If there are wines from Australia, add one bottle of the cheapest one to your cart. If multiple bottles tie for the lowest price, add one bottle of each of those tied items.\n4. If there are no wines from Australia, add one bottle of each of these three wines to your cart.\n5. Calculate the total nutritional content of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_123",
+          "product_name": "RIVER TERRACE Chardonnay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "tom_harris_123",
+          "products": [
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "BROOKSIDE Merlot",
+              "quantity": 1
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay",
+      "River Terrace",
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a wine professional (User ID: david_jones_987) conducting quality checks. Focus on the rightmost bottle among the several bottles you just pointed at. You need to ask the AI Service Agent to confirm whether this bottle has a \"bitter\" taste characteristic and is from Spain. If both conditions are met, ask the AI Service Agent to add one bottle to your cart. If not, ask the AI Service Agent to check the third bottle from the right on the same shelf—it should have a blue label. Ask the AI Service Agent to verify whether this bottle is on sale and if its country of origin is New Zealand. If both conditions are satisfied, ask the AI Service Agent to add one bottle to your cart. Finally, ask the AI Service Agent to calculate the total payable amount for the items in your cart.",
+    "analysis": "First, confirm whether the first bottle of wine you are pointing at has the \"low sugar\" nutritional feature. If this wine is low sugar, add 2 bottles to the shopping cart. If it is not low sugar, check whether the wine adjacent to its left has the \"low calorie\" feature. If the wine on the left is also not low calorie, add 1 bottle of the wine on the right to the shopping cart. Finally, calculate the total tax amount for all items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "david_jones_987",
+          "products": [
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 1
+            },
+            {
+              "product_name": "Napa Valley Cabernet",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 2
+            },
+            {
+              "product_name": "ABVDOCK Cabernet Sauvignon",
+              "quantity": 1
+            },
+            {
+              "product_name": "HUNTER VALLEY Shiraz",
+              "quantity": 1
+            },
+            {
+              "product_name": "RIVER TERRACE Chardonnay",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: emma_clark_654) focusing on low-sugar foods. You are pointing at three bottles of wine placed in the center of the middle shelf, specifically the first bottle indicated by your finger. You need to ask the AI Service Agent to confirm whether this wine has the \"low-sugar\" nutritional feature. If it does, ask the AI Service Agent to add 2 bottles to your cart. If it does not, ask the AI Service Agent to check the wine immediately to its left and confirm whether it has the \"low-calorie\" feature. If that wine is also not low-calorie, ask the AI Service Agent to add 1 bottle of the wine on the right to your cart, regardless of its specific features, because this is the only other option you are considering. Finally, ask the AI Service Agent to calculate the total tax amount for all items in the cart.",
+    "analysis": "1. Determine whether the wine bottle with a dark label pointed to by the left hand is on sale.\n2. If this wine is on sale, add 3 bottles of it to the cart.\n3. If this wine is not on sale, check the tax rate of the wine immediately to the left of this bottle.\n4. If the tax rate of the wine on the left is lower than 0.08, add 2 bottles of it to the cart.\n5. Otherwise, add 1 bottle of wine located to the right of the purple-labeled wine bottle to the cart.\n6. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 2,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "emma_clark_654",
+          "products": [
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 2
+            },
+            {
+              "product_name": "FIFTEEN YEAR OLD Brandy",
+              "quantity": 2
+            },
+            {
+              "product_name": "Cabernet Sauvignon Reserve",
+              "quantity": 2
+            },
+            {
+              "product_name": "GLITZ Sauvignon Blanc",
+              "quantity": 1
+            },
+            {
+              "product_name": "SILVER BAY Pinot Noir",
+              "quantity": 2
+            },
+            {
+              "product_name": "Riumi Moscato",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a value-conscious buyer (User ID: john_smith_123). Focus on the wine bottle with a dark label on the middle shelf that you are pointing at with your left hand. You need to ask the AI service agent to determine whether this wine is on sale. If it is on sale, ask the AI service agent to add 3 bottles to your cart. If it is not on sale, ask the AI service agent to check the bottle immediately to the left of that wine bottle. If that wine's tax rate is lower than 0.08, ask the AI service agent to add 2 bottles to the cart; otherwise, ask the AI service agent to add 1 bottle of the wine located to the right of the purple label wine bottle to the cart. Finally, ask the AI service agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Determine whether the leftmost bottle among those tapped by the right hand originates from New Zealand.\n2. If it originates from New Zealand, add one bottle to the shopping cart.\n3. If it does not originate from New Zealand, check whether the second bottle from the right on the same shelf is currently on sale.\n4. If that bottle is on sale, add two bottles to the shopping cart.\n5. Retrieve the shopping list.\n6. Check whether any of the wines just added are already present in the shopping list.\n7. If any are not in the list, add them to the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "john_smith_123",
+          "product_name": "Kim Crawford Sauvignon Blanc",
+          "qty": 3,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "john_smith_123",
+          "products": [
+            {
+              "product_name": "Kim Crawford Sauvignon Blanc",
+              "quantity": 3
+            },
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "LAND MARSALA",
+              "quantity": 2
+            },
+            {
+              "product_name": "Duc de Guiche",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Kim Crawford Sauvignon Blanc"
+    ]
+  },
+  {
+    "Instruction": "You are a collector of New Zealand wines (User ID: lisa_taylor_321). Focus on the leftmost bottle of wine you tapped with your right finger. You want to know if this bottle is from New Zealand. Ask the AI Service Agent to determine whether this bottle is from New Zealand. If it is from New Zealand, ask the AI Service Agent to add 1 bottle to your cart. If it is not, ask the AI Service Agent to check the second bottle from the right on the same shelf. Have the AI Service Agent determine if that bottle is on sale. If it is on sale, ask the AI Service Agent to add 2 bottles to your cart. Finally, regardless of what you just added, ask the AI Service Agent to retrieve your shopping list, and have the AI Service Agent check if any of the wines you just added already exist in the list. If they are already in the list, no action is needed. If not, ask the AI Service Agent to add them to your cart.",
+    "analysis": "Results:\n1. Determine whether the bottle of wine you pointed at, featuring a light-colored label and a gold-bronze badge, originates from France.\n2. If it originates from France, add one bottle of this wine to the cart.\n3. If it does not originate from France, check whether this wine is on discount.\n4. If it is on discount, add one bottle of this wine to the cart.\n5. If there is no discount, examine the bottle immediately to its left.\n6. If the taste of the bottle immediately to the left is \"Sweet\", add one bottle of this wine to the cart.\n7. Finally, calculate the total amount payable for all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_321",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "Merlot Oyster Bay"
+    ]
+  },
+  {
+    "Instruction": "You are a person preparing for a dinner party (User ID: sarah_green_567). Focus on the bottle of wine with a light-colored label and a gold-brown badge that you pointed at. You need to ask the AI service agent to determine whether this bottle is from France. If it is from France, ask the AI service agent to add one bottle to your cart. If it is not from France, ask the AI service agent to check if it has a discount. If it has a discount, ask the AI service agent to add one bottle of this wine to your cart. If it does not have a discount, ask the AI service agent to check the bottle immediately to its left. If that bottle's taste is \"Sweet\", ask the AI service agent to add one bottle of that wine to your cart. Finally, ask the AI service agent to calculate the total amount payable for all items in the cart.",
+    "analysis": "1. Among the bottles touched by hand, determine whether the current price of the second bottle from the right is below 150 yuan.\n2. If the price of this wine is below 150 yuan, add 2 bottles of it to the cart.\n3. If the price of this wine is not below 150 yuan, check the bottle immediately to its left.\n4. Determine whether the wine on the left originates from Australia.\n5. If the wine on the left originates from Australia, add 1 bottle of it to the cart.\n6. If the wine on the left does not originate from Australia, add 1 bottle of the wine directly above the original bottle to the cart.\n7. Calculate the total nutritional value of all items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_567",
+          "product_name": "Merlot Oyster Bay",
+          "qty": 1,
+          "category": "wine",
+          "price": 139,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "sarah_green_567",
+          "products": [
+            {
+              "product_name": "Merlot Oyster Bay",
+              "quantity": 1
+            },
+            {
+              "product_name": "QUINTA EMILIA White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Framboise Rouge",
+              "quantity": 1
+            },
+            {
+              "product_name": "Gewürztraminer",
+              "quantity": 1
+            },
+            {
+              "product_name": "ABVDOCK Cabernet Sauvignon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "retail1",
+    "image_path": "retail1.mp4",
+    "image_description": "You are currently in front of a wine shelf and have pointed to three bottles of wine in succession.",
+    "key": "product_name",
+    "value": [
+      "River Terrace"
+    ]
+  }
+]

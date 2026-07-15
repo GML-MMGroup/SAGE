@@ -1,0 +1,3401 @@
+[
+  {
+    "Instruction": "You are a wine enthusiast (User ID: charlie_lee_202). Ask the AI Service Agent to confirm whether the first bottle placed back on the shelf has a discount. If it does, ask the AI Service Agent to search for wines that originate from France, have a tax rate below 0.13, and feature a \"mild\" taste. Add the wine with the lowest unit price to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it does not, ask the AI Service Agent to identify the origin of the wine with orange liquid. Then, search for wines from that same origin that have a \"low-fat\" attribute and a discount factor not better than 0.85. Add the wine with the highest protein content to your cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax amount for the items in your cart.A174:A223",
+    "analysis": "1. Check whether the first wine placed back on the shelf has a discount.\n\n2. If it has a discount, search for wines that are from France, have a tax rate below 0.13, and taste \"mild\". Add the one with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If it does not have a discount, find the origin of the wine with orange liquid. Then search for wines from that origin that have the \"low fat\" feature and a discount factor not better than 0.85. Add the one with the highest protein content to the cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add all of them.\n\n4. Calculate the total tax for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "products": [
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            },
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine enthusiast (User ID: frank_zhang_888). Please ask the AI Service Agent to check the calorie content of the bottle with the copper-colored capsule on the left  of the first wine you picked up. If it is less than 120 calories per 100g, ask the AI Service Agent to find wines that are also \"low-calorie\" and from Spain, and add the wine with the lowest sodium content to your cart. If there are multiple wines tied for the lowest sodium content among those that meet the conditions, add all of them. If the calories exceed the limit, ask the AI Service Agent to check whether the first wine picked up has the \"low-sugar\" feature. If so, ask the AI Service Agent to find wines from Italy with a tax rate between 0.05 and 0.1, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them. Subsequently, ask the AI Service Agent to review the shopping list and the shopping cart to identify any wines on the list that have not been purchased or are not fully purchased, and add the missing or incomplete wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total protein content of the items in the shopping cart.",
+    "analysis": "1. Check the calorie content of the wine with the copper-colored cap.\n\n2. If it is below 120 calories per 100g, search for wines that also have the \"low calorie\" feature and are from Spain, and add the one with the lowest sodium content to the cart. If multiple wines tie for the lowest sodium content, add all of them.\n\n3. If the calorie content exceeds this limit, check if the first wine picked up has the \"low sugar\" feature. If so, search for wines from Italy with a tax rate between 0.05 and 0.1, and add the cheapest one to the cart. If multiple wines tie for the lowest price, add all of them.\n\n4. Check the shopping list and the cart, and add any wines from the list that are missing or not fully purchased to the cart.\n\n5. Calculate the total protein content of the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "San Miguel Pale Pilsen",
+          "qty": 1,
+          "category": "beer",
+          "price": 50,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Chandon Rosé",
+          "qty": 3,
+          "category": "champagne",
+          "price": 160,
+          "tax_rate": 0.09,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Chateau White Wine",
+          "qty": 2,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.15,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chandon Rosé",
+              "quantity": 3
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a sommelier (User ID: sarah_green_888). Ask the AI Service Agent to confirm whether both the wine with green liquid picked up first and the wine with a dark body directly above it have a \"bitter\" taste. If so, ask the AI Service Agent to search for wines originating from either of these two countries, with a unit price below 250 yuan and a \"gluten-free\" feature, and add the one with the largest discount to the shopping cart. If there are multiple wines tied for the largest discount among those that meet the conditions, you want all of them to be added. If not, ask the AI Service Agent to find wines originating from Australia, with a \"savory\" taste, and a tax rate higher than 0.08, and add the one with the lowest carbohydrate content. If there are multiple wines tied for the lowest carbohydrate content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in the shopping cart.",
+    "analysis": "1. Confirm whether the wine with green liquid that was picked up first and the wine with a dark body directly above it both have a \"bitter\" taste.\n\n2. If both do, search for wines originating from either of these two countries, with a unit price below 250 yuan and a \"gluten-free\" attribute. Add the item with the largest discount to the shopping cart. If multiple items tie for the largest discount, add one of each of those tied items to the cart.\n\n3. If not, search for wines originating from Australia, with a \"savory\" taste and a tax rate higher than 0.08. Add the item with the lowest carbohydrate content to the shopping cart. If multiple items tie for the lowest carbohydrate content, add one of each of those tied items to the cart.\n\n4. Calculate the total nutritional content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "L'Oréal Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "products": [
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Savino Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a wine collector (User ID: diana_park_456). Please ask the AI Service Agent to check the price of the second bottle of wine that was put back. If the price is below 300 yuan, ask the AI Service Agent to search for wines originating from France, with a tax rate lower than 0.12, and featuring \"low sodium,\" then add the wine with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. If the price is above 300 yuan, ask the AI Service Agent to check whether the bottle to the left of the first bottle that was picked up has a discount. If it does, ask the AI Service Agent to find wines from New Zealand with a \"sweet\" taste and a discount factor not better than 0.7, and add the most expensive one. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to check the shopping list and the shopping cart to see which wines on the list have not been purchased or are insufficient in quantity, and ask the AI Service Agent to add any missing or insufficient wines to the shopping cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Check the price of the second bottle of wine that was put back.\n\n2. If the price is below 300 yuan, search for wines from France with a tax rate below 0.12 and the \"Low Sodium\" feature, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them.\n\n3. If the price is above 300 yuan, check whether the bottle to the left of the first bottle that was picked up has a discount. If it does, search for wines from New Zealand with a \"Sweet\" taste and a discount factor no better than 0.7, and add the most expensive one to your cart. If there are multiple wines tied for the highest price among those that meet the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased to your cart according to the list.\n\n5. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Heineken Beer",
+          "qty": 1,
+          "category": "beer",
+          "price": 60,
+          "tax_rate": 0.11,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Scaviango Prosecco",
+          "qty": 2,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.12,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Moscato d'Asti",
+          "qty": 2,
+          "category": "wine",
+          "price": 100,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Red Stripe Lager",
+          "qty": 2,
+          "category": "beer",
+          "price": 55,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "products": [
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Napoleon Champagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Reserve",
+              "quantity": 1
+            },
+            {
+              "product_name": "Heineken Beer",
+              "quantity": 1
+            },
+            {
+              "product_name": "Scaviango Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Moscato d'Asti",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine merchant (User ID: tom_harris_999). Ask the AI service agent to determine whether the wine with orange liquid has the \"low sugar\" characteristic. If it does, ask the AI service agent to search for wines that originate from the same country as that wine, have a tax rate between 0.05 and 0.10, and have a \"mild\" taste, and then add the cheapest qualifying wine to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it does not, ask the AI service agent to check whether the wine with a copper cap is \"low calorie\". If it is, ask the AI service agent to find wines produced in Spain and add the one with the highest carbohydrate content to the cart. If there are multiple wines tied for the highest carbohydrate content, you want all of them to be added. Finally, ask the AI service agent to calculate the total spending amount for the items in the cart.",
+    "analysis": "First, determine whether the wine with orange liquid has the \"low sugar\" characteristic. If it does, search for wines from the same country of origin, with a tax rate between 0.05 and 0.10, and a \"mild\" taste. Add the cheapest qualifying wine to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If the orange wine does not have the \"low sugar\" characteristic, check whether the wine with a copper cap is \"low calorie\". If it is, search for wines produced in Spain and add the one with the highest carbohydrate content to the cart. If there are multiple wines tied for the highest carbohydrate content among those that meet the conditions, you want all of them to be added. Finally, calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "Celeste Roble",
+          "qty": 1,
+          "category": "sparkling wine",
+          "price": 135,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "products": [
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 1
+            },
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine critic (User ID: olivia_white_1010). Ask the AI Service Agent to confirm whether the wine with green liquid is from Spain and has a \"bitter\" taste. If it is, ask the AI Service Agent to look for wines from Spain, priced between 100 and 500 yuan, with a \"low-fat\" characteristic, and add the one with the highest calorie content to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, you want all of them to be added. If it is not, ask the AI Service Agent to check whether the bottle directly above the first wine picked up is on sale. If it is, ask the AI Service Agent to find wines from Italy with a tax rate below 0.14 and a \"sour\" taste, and add the one with the lowest sugar content. If there are multiple wines tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sugar content of the items in the cart.",
+    "analysis": "1. Verify whether the wine with green liquid originates from Spain and has a \"bitter\" taste.\n2. If so, search for wines from Spain priced between 100 and 500 yuan with a \"low fat\" attribute, and add the item with the highest calorie content to your cart. If multiple items tie for the highest calories, add all of them.\n3. If not, check whether the bottle directly above the first wine you picked up is on sale. If it is, search for wines from Italy with a tax rate below 0.14 and a \"sour\" taste, and add the item with the lowest sugar content to your cart. If multiple items tie for the lowest sugar content, add all of them.\n4. Calculate the total sugar content of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "product_name": "VALDO Rosé Sparkling",
+          "qty": 1,
+          "category": "wine",
+          "price": 90,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "products": [
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 1
+            },
+            {
+              "product_name": "Riunite Moscato",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine novice (User ID: bill_donk_143). Please ask the AI Service Agent to check whether the first bottle returned to the shelf and the second bottle picked up both possess the \"low-calorie\" attribute. If both do, ask the AI Service Agent to search for wines from New Zealand with a \"sweet\" taste and a unit price below 150 yuan, and add the one with the largest discount to the cart. If there are multiple wines tied for the largest discount among those that meet the conditions, you want all of them to be added. If not both have the attribute, ask the AI Service Agent to find wines from France with a tax rate between 0.06 and 0.1 and the \"low-sodium\" attribute, and add the one with the lowest calories. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the shopping cart to identify which wines on the list have not been purchased or are incomplete, and ask the AI Service Agent to add any missing or insufficient wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total nutritional value of the items in the shopping cart.",
+    "analysis": "1. Check whether both the first bottle returned to the shelf and the second bottle picked up possess the \"low calorie\" attribute.\n\n2. If both do, search for wines from New Zealand with a \"sweet\" taste and a unit price below 150 yuan. Add the wine with the largest discount to the cart. If there are multiple wines tied for the largest discount among those that meet the conditions, add all of them.\n\n3. If not, search for wines from France with a tax rate between 0.06 and 0.1 and the \"low sodium\" attribute. Add the wine with the lowest calories to the cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines from the list that are missing or not fully purchased to the cart.\n\n5. Calculate the total nutritional value of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Chateau Manderie",
+          "qty": 1,
+          "category": "wine",
+          "price": 185,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Kressmann Saint-Julien",
+          "qty": 1,
+          "category": "wine",
+          "price": 388,
+          "tax_rate": 0.08,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Sangre de Toro(Orange)",
+          "qty": 1,
+          "category": "wine",
+          "price": 88,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Chateau Etoile",
+          "qty": 2,
+          "category": "wine",
+          "price": 179,
+          "tax_rate": 0.07,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Chateau Rosé",
+          "qty": 2,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Bacardi Rum",
+          "qty": 3,
+          "category": "spirits",
+          "price": 155,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "products": [
+            {
+              "product_name": "Chateau Manderie",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kressmann Saint-Julien",
+              "quantity": 1
+            },
+            {
+              "product_name": "Sangre de Toro(Orange)",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            },
+            {
+              "product_name": "Mouton Cadet",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Etoile",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Bacardi Rum",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine enthusiast (User ID: jane_smith_222). Ask the AI service agent to confirm whether the bottle with the copper-colored capsule on the left of the first wine you picked up is on sale. If so, ask the AI service agent to look for wines from the same country as that bottle, with a \"savory\" taste profile and \"low sugar\" characteristics, and add the most expensive one to the shopping cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If not, ask the AI service agent to check the tax rate of the second returned wine. If it is lower than 0.1, ask the AI service agent to find wines from Australia, with \"gluten-free\" characteristics, and a unit price below 500 yuan, and add the one with the highest protein content. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total tax for the items in the shopping cart.",
+    "analysis": "1. Check whether the wine bottle with the copper-colored capsule is on discount.\n\n2. If so, search for wines from the same country as that bottle, with a \"savory\" taste and \"low sugar\" feature, and add the most expensive one to the shopping cart. If multiple wines tie for the highest price, add one of each of those tied items.\n\n3. If not, check the tax rate of the second wine that was put back. If the rate is below 0.1, search for wines from Australia with a \"gluten-free\" feature and a unit price below 500 yuan, and add the one with the highest protein content to the shopping cart. If multiple wines tie for the highest protein content, add one of each of those tied items.\n\n4. Calculate the total tax for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jane_smith_222",
+          "product_name": "Chateau Bellington",
+          "qty": 1,
+          "category": "wine",
+          "price": 178,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "jane_smith_222",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a wine connoisseur (User ID: alex_wilson_333). Ask the AI Service Agent to confirm whether the first wine picked up with an orange seal is from France and has a \"bitter\" taste. If so, ask the AI Service Agent to look for wines that are from France, have a discount factor better than 0.85, and feature \"low-fat\", and then add the wine with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If not, ask the AI Service Agent to check the taste of the dark-bodied wine above the first wine you picked up. If it is \"sweet\", ask the AI Service Agent to find wines from Italy with a tax rate lower than 0.08 and a unit price lower than 300 yuan, and add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Confirm whether the first wine picked up with an orange seal is from France and has a \"bitter\" taste.\n\n2. If so, search for wines from France with a discount factor better than 0.85 and a \"low-fat\" feature, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them.\n\n3. If not, check the taste of the dark-bodied wine bottle above. If it is \"sweet\", search for wines from Italy with a tax rate below 0.08 and a unit price below 300 yuan, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "L'Oréal Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine expert (User ID: lisa_taylor_444). Ask the AI Service Agent to check whether the wine with a white label and dark body above the first wine you picked up has the \"low fat\" attribute. If it does, ask the AI Service Agent to search for wines from Spain with a \"mild\" taste and priced between 100 and 250 yuan, and add the one with the lowest carbohydrate content to the cart. If there are multiple wines tied for the lowest carbohydrate content, you want all of them to be added. If it does not, ask the AI Service Agent to check the tax rate of the wine with orange liquid. If it is higher than 0.07, ask the AI Service Agent to find wines from New Zealand with \"low sodium\" attributes and a discount factor less than 0.9, and add the one with the highest protein content. If there are multiple wines tied for the highest protein content, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional value of the items in the cart.",
+    "analysis": "1. Check whether the wine bottle above with a white label and dark body has the \"low fat\" attribute.\n\n2. If it does, search for wines originating from Spain with a \"mild\" taste and priced between 100 and 250 yuan. Add the wine with the lowest carbohydrate content to your cart. If there are multiple wines tied for the lowest carbohydrate content among those that meet the conditions, add all of them.\n\n3. If it does not, check the tax rate of the wine with orange liquid. If it is higher than 0.07, search for wines from New Zealand that have the \"low sodium\" attribute and a discount factor less than 0.9. Add the wine with the highest protein content to your cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add all of them.\n\n4. Calculate the total nutritional value of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "Celeste Roble",
+          "qty": 1,
+          "category": "sparkling wine",
+          "price": 135,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "products": [
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 1
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 2
+            },
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a health-conscious customer (User ID: sarah_green_888). Ask the AI Service Agent to verify whether the first bottle placed back on the shelf is \"low-calorie\" and whether the second bottle picked up is \"low-sugar\". If both conditions are met, ask the AI Service Agent to search for wines that are from France, have a tax rate below 0.14, and taste \"sour\", and add the wine with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If the conditions are not met, ask the AI Service Agent to find all wines in the inventory that are both \"low-calorie\" and \"low-sugar\", originate from Italy, and have a discount factor better than 0.9, and add the most expensive wine to the cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to check the shopping list and the shopping cart to identify any wines on the list that haven't been purchased or haven't been purchased in sufficient quantity, and add any missing or incomplete wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total carbohydrate content of the items in the shopping cart.",
+    "analysis": "1. Check whether the first bottle of wine placed back on the shelf is \"low-calorie\" and whether the second bottle of wine picked up is \"low-sugar\".\n\n2. If both conditions are met, search for wines from France with a tax rate below 0.14 and a \"sour\" taste, and add the one with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If not, search the database for all wines that are both \"low-calorie\" and \"low-sugar\", originate from Italy, and have a discount factor better than 0.9, and add the one with the highest price to the cart. If there are multiple wines tied for the highest price, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased according to the list to the cart.\n\n5. Calculate the total carbohydrate content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Savino Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 130,
+          "tax_rate": 0.13,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chateau de la Cote",
+          "qty": 1,
+          "category": "wine",
+          "price": 156,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Napoleon Champagne",
+          "qty": 1,
+          "category": "champagne",
+          "price": 190,
+          "tax_rate": 0.05,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chandon Brut",
+          "qty": 2,
+          "category": "champagne",
+          "price": 150,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "products": [
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Savino Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau de la Cote",
+              "quantity": 1
+            },
+            {
+              "product_name": "Napoleon Champagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: tom_harris_999). Please ask the AI Service Agent to check the discount information for the wine with the copper-colored cap on the left  of the first wine you picked up and the wine with green liquid that was picked up first. If both have discounts, ask the AI Service Agent to search for wines from Spain that are \"gluten-free\" and priced under 250 yuan, and add the one with the highest calories to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find wines from France with a tax rate between 0.05 and 0.12, a discount factor better than 0.9, and a \"sweet\" taste, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Check the discount information for the wine with the bronze cap on the left and the wine with green liquid that was picked up first.\n\n2. If both wines have discounts, search for wines that originate from Spain, feature \"Gluten-free\", and are priced below 250 yuan. Add the wine with the highest calorie content to the cart. If there are multiple wines tied for the highest calorie count among those that meet the conditions, add all of them to the cart.\n\n3. Otherwise, search for wines that originate from New Zealand, have a tax rate between 0.05 and 0.12, and feature a \"savory\" taste. Add the cheapest wine to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them to the cart.\n\n4. Calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "L'Oréal Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 3
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble",
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a Spanish wine enthusiast (User ID: frank_zhang_888). Please ask the AI Service Agent to confirm whether the dark-bodied wine above the first wine you picked up and the orange-colored wine are both from Spain. If they are, have the AI Service Agent search for wines from Spain that feature \"low sodium\" and have a \"sweet\" taste, and add the item with the lowest unit price to the shopping cart. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. If they are not, have the AI Service Agent search for wines from Australia with a tax rate below 0.12 and a discount factor less than 0.85, and add the item with the lowest calories. If there are multiple items tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, have the AI Service Agent calculate the total tax amount for the items in the shopping cart.",
+    "analysis": "1. Confirm whether both the dark-bodied wine above and the wine with the orange liquid are from Spain.\n\n2. If both are from Spain, search for wines from Spain that have the \"low sodium\" characteristic and a \"sweet\" taste, and add the one with the lowest unit price to the shopping cart. If there are multiple wines tied for the lowest price, add all of them.\n\n3. If not, search for wines from Australia with a tax rate below 0.12 and a discount factor better than 0.85, and add the one with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories, add all of them.\n\n4. Calculate the total tax for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Chateau Grange",
+          "qty": 1,
+          "category": "wine",
+          "price": 318,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Grange",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a taste explorer (User ID: emma_davis_666). Please ask the AI Service Agent to query the taste characteristics of the second wine that was put back. If it has \"bitterness\", ask the AI Service Agent to search for wines produced in Italy with a tax rate below 0.13 and a \"low sugar\" characteristic, and add the wine with the highest protein content to the shopping cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. If it does not have bitterness, ask the AI Service Agent to check if the first wine picked up has \"sourness\". If it does, ask the AI Service Agent to find wines produced in France with a unit price below 200 yuan, and add the wine with the lowest calories to the cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Query the taste characteristics of the second wine that was put back.\n\n2. If it has a \"bitter\" taste, search for wines originating from Italy with a tax rate lower than 0.13 and a \"low sugar\" characteristic. Add the wine with the highest protein content to the cart. If multiple wines tie for the highest protein content, add all of them.\n\n3. Otherwise, check if the first wine picked up has a \"sour\" taste. If so, search for wines from France with a unit price below 200 yuan. Add the wine with the lowest calorie content to the cart. If multiple wines tie for the lowest calorie content, add all of them.\n\n4. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Arneis Zerobianco",
+          "qty": 1,
+          "category": "wine",
+          "price": 85,
+          "tax_rate": 0.1,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Zonin Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 110,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Scaviango Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.12,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Trento DOC",
+          "qty": 1,
+          "category": "wine",
+          "price": 165,
+          "tax_rate": 0.05,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Pellegrino Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "products": [
+            {
+              "product_name": "Arneis Zerobianco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Scaviango Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Trento DOC",
+              "quantity": 1
+            },
+            {
+              "product_name": "Pellegrino Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Cabernet",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine investor (User ID: diana_park_456). Please ask the AI Service Agent to query the tax rate of the wine with green liquid. If it is higher than 0.08, ask the AI Service Agent to find wines from the same country as that wine, with \"low-fat\" characteristics and a \"mild\" taste, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it is higher than 0.08, ask the AI Service Agent to check the origin of the white-label dark-bodied wine on the left the first wine you picked up. Ask the AI Service Agent to find wines from that origin with a discount factor better than 1 (discount < 1.0) and a unit price below 300 yuan, and add the one with the lowest tax rate to the cart. If there are multiple wines tied for the lowest tax rate among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the cart to see which wines on the list have not been purchased or are incomplete in quantity, and ask the AI Service Agent to add any missing or incomplete wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total tax amount for the items in the cart.",
+    "analysis": "1. Query the tax rate of the wine with green liquid.\n\n2. If it is higher than 0.08, search for wines from the same country as that wine, featuring \"low fat\" and with a \"mild\" taste, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. Next, check the origin of the white-labeled dark-bodied wine on the left. Search for wines from that origin with a discount factor less than 1.0 and a unit price below 300 yuan, and add the one with the lowest tax rate to the cart. If there are multiple wines tied for the lowest tax rate among those that meet the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased according to the list to the cart.\n\n5. Calculate the total tax amount for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Heineken Beer",
+          "qty": 1,
+          "category": "beer",
+          "price": 60,
+          "tax_rate": 0.11,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Scaviango Prosecco",
+          "qty": 2,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.12,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Moscato d'Asti",
+          "qty": 2,
+          "category": "wine",
+          "price": 100,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "Red Stripe Lager",
+          "qty": 2,
+          "category": "beer",
+          "price": 55,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "products": [
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Heineken Beer",
+              "quantity": 1
+            },
+            {
+              "product_name": "Scaviango Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Moscato d'Asti",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Napoleon Champagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Reserve",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: jack_huang_666). Ask the AI Service Agent to query the sodium content of the first wine placed back on the shelf. If it is lower than 5mg/100g, ask the AI Service Agent to look for wines that originate from Italy, have a \"sweet\" taste, and a tax rate no higher than 0.07, and add the one with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If the sodium content is not lower than 5mg/100g, ask the AI Service Agent to check whether the second wine picked up has the \"low sodium\" characteristic. If it does, ask the AI Service Agent to find wines from Spain with a unit price below 150 yuan and a discount factor better than 0.85, and add the one with the highest protein to the cart. If there are multiple wines tied for the highest protein among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in the shopping cart.",
+    "analysis": "1. Query the sodium content of the first wine bottle placed back on the shelf.\n\n2. If it is below 5mg/100g, search for wines originating from New Zealand with a \"Sweet\" taste and a tax rate lower than 0.07, and add the one with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them to the cart.\n\n3. If it is not below 5mg/100g, check whether the second wine bottle picked up has the \"Low Sodium\" feature. If yes, search for wines originating from Spain with a unit price below 150 yuan and a discount factor better than 0.85, and add the one with the highest protein to the shopping cart. If there are multiple wines tied for the highest protein among those that meet the conditions, add all of them to the cart.\n\n4. Calculate the total nutritional content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jack_huang_666",
+          "product_name": "Ferrarelle Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 140,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jack_huang_666",
+          "product_name": "Pellegrino Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.07,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "jack_huang_666",
+          "products": [
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Pellegrino Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Domaine de la Vigne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a gift purchaser (User ID: lisa_taylor_444). Ask the AI Service Agent to confirm whether the wine with a dark body above the first wine you picked up and the wine with a copper capsule on the left of the first wine you picked up are on discount. If either bottle is on discount, ask the AI Service Agent to search for wines produced in France, with a tax rate below 0.1, and having the \"gluten-free\" feature, and add the most expensive one to the shopping cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If neither bottle is on discount, ask the AI Service Agent to find wines produced in Italy, having the \"low-calorie\" feature, and priced below 200 yuan, and add the one with the largest discount to the cart. If there are multiple wines tied for the largest discount among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Confirm whether the bottle with the dark body above and the bottle with the copper cap on the left have discounts.\n\n2. If they have discounts, search for wines from France with a tax rate below 0.1 and the \"Gluten-free\" feature, and add the most expensive one to the cart. If there are multiple wines tied for the highest price among those that meet the conditions, add all of them.\n\n3. If they do not have discounts, search for wines from Italy with the \"Low-calorie\" feature and a unit price below 200 yuan, and add the one with the largest discount to the cart. If there are multiple wines tied for the largest discount among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "Kressmann Saint-Julien",
+          "qty": 1,
+          "category": "wine",
+          "price": 388,
+          "tax_rate": 0.08,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "products": [
+            {
+              "product_name": "Kressmann Saint-Julien",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 1
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature",
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a cost-conscious customer (User ID: bill_donk_143). Ask the AI Service Agent to query the prices of wines with an orange seal and green liquid and wines with orange liquid. If the latter is cheaper, ask the AI Service Agent to look for wines that are from Australia, have a tax rate between 0.05 and 0.1, and feature \"low sugar\", and then add the wine with the lowest sodium content to your cart. If there are multiple wines tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. If not, ask the AI Service Agent to find wines that are from Spain, have a \"sour\" taste, and have a discount factor better than or equal to 0.9, and then add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax amount for the items in your cart.",
+    "analysis": "1. Query the prices of wines with orange seals and green liquid, and wines with orange liquid.\n\n2. If the latter is cheaper, search for wines originating from Australia with a tax rate between 0.05 and 0.1 and featuring \"low sugar,\" then add the wine with the lowest sodium content to your cart. If there are multiple wines tied for the lowest sodium content among those that meet the conditions, add all of them.\n\n3. Otherwise, search for wines originating from Spain with a \"savory\" taste and a discount factor of 0.9 or better, then add the cheapest wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total tax for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "bill_donk_143",
+          "products": [
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            },
+            {
+              "product_name": "Mouton Cadet",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a quality-focused retailer (User ID: charlie_lee_202). Please ask the AI Service Agent to check whether the country of origin of the first wine picked up is the same as that of the second wine picked up. If they are the same, ask the AI Service Agent to find wines from that country with a unit price below 250 yuan and a \"low fat\" feature, and add the one with the highest calories to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, you want all of them to be added. If they are different, ask the AI Service Agent to find all wines with a \"high protein\" feature, originating from France, and with a tax rate below 0.08, and add the one with the largest discount. If there are multiple wines tied for the largest discount among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the shopping cart to see which wines on the list have not been purchased or have not been purchased in full quantity, and ask the AI Service Agent to add any missing or incomplete wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total nutritional value of the items in the shopping cart.",
+    "analysis": "1. Check whether the country of origin of the first wine picked up is the same as that of the second wine picked up.\n\n2. If they are the same, search for wines from that country of origin with a unit price below 250 yuan and the \"low fat\" feature. Add the wine with the highest calorie count to the cart. If there are multiple wines tied for the highest calories among those meeting the conditions, add all of them.\n\n3. If they are different, search for all wines with the \"high protein\" feature, originating from France, and with a tax rate below 0.08. Add the wine with the largest discount to the cart. If there are multiple wines tied for the largest discount among those meeting the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart. Add any wines from the list that are missing or not fully purchased to the cart.\n\n5. Calculate the total nutritional value of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Kressmann Margaux",
+          "qty": 1,
+          "category": "wine",
+          "price": 199,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Granbeau",
+          "qty": 1,
+          "category": "wine",
+          "price": 155,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau de la Cote",
+          "qty": 1,
+          "category": "wine",
+          "price": 156,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Reserve",
+          "qty": 1,
+          "category": "wine",
+          "price": 249,
+          "tax_rate": 0.05,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Montagne",
+          "qty": 1,
+          "category": "wine",
+          "price": 118,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Sangre de Toro(Orange)",
+          "qty": 1,
+          "category": "wine",
+          "price": 88,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Grand Bateau",
+          "qty": 1,
+          "category": "wine",
+          "price": 245,
+          "tax_rate": 0.15,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "MICHEL Lynch nature",
+          "qty": 1,
+          "category": "wine",
+          "price": 129,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau D'Or",
+          "qty": 3,
+          "category": "wine",
+          "price": 185,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Moscato d'Asti",
+          "qty": 2,
+          "category": "wine",
+          "price": 100,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "VALDO Rosé Sparkling",
+          "qty": 1,
+          "category": "wine",
+          "price": 90,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Caprieraus",
+          "qty": 1,
+          "category": "wine",
+          "price": 285,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "products": [
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 3
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 3
+            },
+            {
+              "product_name": "Moscato d'Asti",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Caprieraus",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kressmann Margaux",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Granbeau",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau de la Cote",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Reserve",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Montagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Sangre de Toro(Orange)",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 1
+            },
+            {
+              "product_name": "MICHEL Lynch nature",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a junior sommelier (User ID: alex_wilson_333). Ask the AI Service Agent to retrieve the taste characteristics of the wine with the copper-colored cap on the left of the first wine you picked up, and the wine with the dark body above the first wine you picked up. If both have a \"sweet\" taste, ask the AI Service Agent to search for wines from Italy, with a unit price below 150 yuan, and with \"low sodium\" characteristics, and add the wine with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If not both have this characteristic, ask the AI Service Agent to find wines from Italy with a tax rate below 0.14 and a \"sour\" taste, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the cart to see which wines on the list have not been purchased or are incomplete in quantity, and ask the AI Service Agent to add any missing or incomplete wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total payable amount for the items in the shopping cart.",
+    "analysis": "1. Retrieve the taste characteristics of the wine with the copper-colored cap on the left and the wine with the dark body above.\n\n2. If both have a \"sweet\" taste, search for wines originating from Italy, priced under 150 yuan per unit, and featuring \"low sodium.\" Add the wine with the lowest calories to your cart. If multiple wines tie for the lowest calories among those that meet the conditions, add all of them.\n\n3. If not all have a \"sweet\" taste, search for wines originating from New Zealand with a tax rate below 0.14 and a \"sour\" taste. Add the cheapest wine to your cart. If multiple wines tie for the lowest price among those that meet the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines that haven't been purchased or aren't fully purchased according to the list to your cart.\n\n5. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Arneis Zerobianco",
+          "qty": 1,
+          "category": "wine",
+          "price": 85,
+          "tax_rate": 0.1,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "MICHEL Lynch nature",
+          "qty": 1,
+          "category": "wine",
+          "price": 129,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Chateau Portillo",
+          "qty": 3,
+          "category": "wine",
+          "price": 238,
+          "tax_rate": 0.13,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "MICHEL Lynch nature",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 3
+            },
+            {
+              "product_name": "Arneis Zerobianco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble",
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are an enthusiast who prefers Spanish wines (User ID: charlie_lee_202). Please ask the AI Service Agent to confirm whether the first bottle of wine placed back on the shelf is currently on sale. If it is, ask the AI Service Agent to look for wines that are from Spain, have a tax rate greater than or equal to 0.08, and possess the \"low calorie\" feature, and then add the one with the highest unit price to your cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If it is not, ask the AI Service Agent to check the origin of the wine with orange liquid. If it is from Spain, ask the AI Service Agent to find wines from Spain with a \"mild\" taste and priced below 200 yuan, and then add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sugar content of the items in your cart.",
+    "analysis": "1. Verify whether the first bottle of wine placed back on the shelf is on sale.\n\n2. If it is on sale, search for wines from Spain with a tax rate greater than or equal to 0.08 and the \"low calorie\" feature, and add the one with the highest unit price to the shopping cart. If there are multiple wines tied for the highest price among those that meet the conditions, add all of them.\n\n3. If it is not on sale, check the origin of the wine with orange liquid. If it is from Spain, search for wines from Spain with a \"mild\" taste and priced below 200 yuan, and add the cheapest one to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total sugar content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Celeste Roble",
+          "qty": 1,
+          "category": "sparkling wine",
+          "price": 135,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "products": [
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            },
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: frank_zhang_888). Ask the AI Service Agent to confirm whether the second wine you put back is from Spain and has a discount. If the conditions are met, ask the AI Service Agent to look for wines that are also from Spain, have the \"low sugar\" feature, and taste \"bitter\", and add the one with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If the conditions are not met, ask the AI Service Agent to find wines from France, with a tax rate below 0.07, and priced between 100 and 200 yuan, and add the one with the highest protein. If there are multiple wines tied for the highest protein among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax amount for the items in the shopping cart.",
+    "analysis": "1. Verify whether the second wine that was put back is from Spain and is on discount.\n\n2. If the conditions are met, search for wines that are also from Spain, have a \"low sugar\" characteristic, and a \"bitter\" taste. Add the wine with the lowest calories to the cart. If there are multiple wines tied for the lowest calories, add all of them.\n\n3. If the conditions are not met, search for wines from France with a tax rate below 0.07 and a unit price between 100 and 200 yuan. Add the wine with the highest protein content to the cart. If there are multiple wines tied for the highest protein content, add all of them.\n\n4. Calculate the total tax for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Chateau D'Or",
+          "qty": 1,
+          "category": "wine",
+          "price": 185,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: emma_davis_666). Ask the AI Service Agent to check whether the white-label dark-bodied wine on the left of the first wine you picked up and the white-label dark-bodied wine above the first wine you picked up are both on sale. If both are on sale, ask the AI Service Agent to find wines from Chile that have the \"low sodium\" characteristic and a unit price below 250 yuan, and add the one with the highest calories to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, you want all of them to be added. If only one is on sale or neither is on sale, ask the AI Service Agent to find wines from Australia with a tax rate below 0.13 and a \"sour\" taste, and add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total cost of the items in your cart.",
+    "analysis": "1. Check whether the wine on the left with a white label and dark body and the wine above with a white label and dark body are both on sale.\n\n2. If both are on sale, search for wines from Chile with a \"low sodium\" feature and a unit price below 250 yuan, and add the one with the highest calories to the cart. If there are multiple wines tied for the highest calories among those that meet the conditions, add all of them.\n\n3. If only one is on sale or neither is on sale, search for wines from New Zealand with a tax rate below 0.13 and a \"sour\" taste, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total cost of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Chateau Bellington",
+          "qty": 1,
+          "category": "wine",
+          "price": 178,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Cabernet",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble",
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious customer (User ID: david_brown_777). Ask the AI Service Agent to check whether the first picked wine with green liquid is low-calorie. If it is, ask the AI Service Agent to search for wines that are from Australia, have a tax rate higher than 0.06, and feature \"gluten-free\", and add the one with the lowest unit price to your cart. If there are multiple wines tied for the lowest unit price among those that meet the conditions, you want all of them to be added. If it is not, ask the AI Service Agent to check the origin of the second picked wine with orange liquid. Then, ask the AI Service Agent to find wines from that origin, with a discount factor better than 0.85, and a taste of \"savory\", and add the one with the highest protein content to your cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional value of the items in your cart.",
+    "analysis": "1. Check if the first wine picked, which contains green liquid, is low-calorie.\n\n2. If so, search for wines from Australia with a tax rate higher than 0.06 and a \"gluten-free\" feature. Add the wine with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If not, check the origin of the second wine picked, which contains orange liquid. Search for wines from that same origin with a discount factor better than 0.85 and a \"savory\" taste. Add the wine with the highest protein content to the cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add all of them.\n\n4. Calculate the total nutritional value of the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_brown_777",
+          "product_name": "Chateau Bellington",
+          "qty": 1,
+          "category": "wine",
+          "price": 178,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "david_brown_777",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Pellegrino Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chandon Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine collector (User ID: olivia_white_1010). Ask the AI Service Agent to confirm whether the first returned bottle and the second returned bottle are from the same country. If they are, ask the AI Service Agent to look for wines from that country with a tax rate higher than 0.08 and a unit price lower than 300 yuan, and add the wine with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If they are not, ask the AI Service Agent to find wines produced in Italy, with \"low-fat\" characteristics and a discount less than 0.9, and add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Confirm whether the first wine put back and the second wine put back are from the same country.\n\n2. If so, search for wines from that country with a tax rate higher than 0.08 and a unit price below 300 yuan, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added.\n\n3. If not, search for wines produced in Italy with the \"low fat\" feature and a discount factor less than 0.9, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added.\n\n4. Finally, calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "products": [
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            },
+            {
+              "product_name": "Riunite Moscato",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: alex_wilson_333). Ask the AI Service Agent to check whether the bottle to the left of the first bottle picked up has a discount. If there is a discount, ask the AI Service Agent to search for wines that are from France, have a tax rate below 0.14, and have a \"low sodium\" feature, and add the one with the lowest unit price to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If there is no discount, ask the AI Service Agent to check whether the bottle above the first bottle picked up has a discount. If so, ask the AI Service Agent to search for wines that are from Spain, have a \"sour\" taste, a tax rate below 0.08, and a unit price below 2000 yuan, and add the one with the highest calorie content to the shopping cart. If there are multiple wines tied for the highest calories among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total calorie content of the items in the shopping cart.",
+    "analysis": "1. Check whether the bottle to the left of the first bottle picked up has a discount.\n\n2. If there is a discount, search for wines that are from France, have a tax rate below 0.14, and feature \"low sodium\". Add the wine with the lowest unit price to the shopping cart. If multiple wines tie for the lowest price among those that meet the conditions, add all of them.\n\n3. If there is no discount, check whether the bottle above the first bottle picked up has a discount. If so, search for wines that are from Spain, have a \"sweet\" taste, and cost less than 2000 yuan per unit. Add the wine with the highest calorie content to the shopping cart. If multiple wines tie for the highest calories among those that meet the conditions, add all of them.\n\n4. Calculate the total calorie content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "products": [
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: tom_harris_999). Please ask the AI Service Agent to check whether the second bottle picked up is from Spain. If it is, ask the AI Service Agent to look for wines that are from Spain, have the \"low-calorie\" feature, and have a discount factor better than 0.85, and then add the most expensive qualifying wine to your cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If it is not from Spain, ask the AI Service Agent to search for wines from the Philippines with a tax rate between 0.05 and 0.1, featuring \"low-fat\", and having a \"mild\" taste, and then add the wine with the lowest unit price to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Check whether the second bottle of wine being picked up originates from Spain.\n\n2. If it does, search for wines that originate from Spain, have the \"low calorie\" feature, and have a discount factor better than 0.85 (discount factor < 0.85). Add the most expensive qualifying bottle to your cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added.\n\n3. If it does not, search for wines that originate from New Zealand, have a tax rate between 0.05 and 0.1, and have a \"mild\" taste. Add the qualifying bottle with the lowest unit price to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added.\n\n4. Calculate the total tax for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "San Miguel Pale Pilsen",
+          "qty": 1,
+          "category": "beer",
+          "price": 50,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "products": [
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: lisa_taylor_444). Please ask the AI service agent to confirm whether the wine with green liquid has a \"bitter\" taste. If it does, have the AI service agent look for wines produced in Italy, with a tax rate higher than 0.09, and featuring the \"gluten-free\" characteristic, and add the one with the lowest calories to the shopping cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If it does not have a bitter taste, have the AI service agent check the origin of the wine with orange liquid, then have the AI service agent find wines from that origin with a discount factor not better than 0.8 and a unit price not between 150 and 200 yuan, and add the one with the highest protein to the cart. If there are multiple wines tied for the highest protein among those that meet the conditions, you want all of them to be added. Subsequently, have the AI service agent check the shopping list and the shopping cart to see which wines on the list have not been purchased or not purchased in full quantity, and have the AI service agent add any unpurchased or incomplete wines to the shopping cart according to the shopping list. Finally, have the AI service agent calculate the total cost of the items in the shopping cart.",
+    "analysis": "1. Check if the wine with green liquid has a \"bitter\" taste.\n2. If yes, search for wines from Italy with a tax rate higher than 0.09 and a \"gluten-free\" feature, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them to your cart.\n3. If no, check the origin of the wine with orange liquid, search for wines from that origin with a discount factor not better than 0.8 and a unit price not between 150 and 200 yuan, and add the one with the highest protein to your cart. If there are multiple wines tied for the highest protein among those that meet the conditions, add all of them to your cart.\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased according to the list to your cart.\n5. Calculate the total cost of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "VALDO Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 28,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "MICHEL Lynch nature",
+          "qty": 1,
+          "category": "wine",
+          "price": 129,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "Scaviango Prosecco",
+          "qty": 2,
+          "category": "wine",
+          "price": 120,
+          "tax_rate": 0.12,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "Zonin Prosecco",
+          "qty": 2,
+          "category": "wine",
+          "price": 110,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "products": [
+            {
+              "product_name": "VALDO Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 1
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 2
+            },
+            {
+              "product_name": "MICHEL Lynch nature",
+              "quantity": 1
+            },
+            {
+              "product_name": "Scaviango Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: mark_jones_555). Ask the AI Service Agent to check whether the dark-bodied wine above the first wine you picked up has a discount. If it has a discount, ask the AI Service Agent to look for wines that are from Australia, have a tax rate higher than 0.07, and feature \"low sugar\", and then add the one with the highest unit price to the shopping cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If it does not have a discount, ask the AI Service Agent to find wines from the same country, with a unit price not between 100 and 200 yuan, and a \"sour\" taste, and then add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional value of the items in the shopping cart.",
+    "analysis": "1. Check whether the dark-bodied wine above is on discount.\n\n2. If there is a discount, search for wines originating from Australia with a tax rate above 0.07 and a \"low sugar\" feature, and add the one with the highest unit price to the cart. If multiple wines tie for the highest price, add one of each of those tied items.\n\n3. If there is no discount, search for wines from the same country as that bottle, with a unit price outside the 100 to 200 yuan range and a \"sour\" taste, and add the cheapest one to the cart. If multiple wines tie for the lowest price, add one of each of those tied items.\n\n4. Calculate the total nutritional value of the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "product_name": "Chateau Bellington",
+          "qty": 1,
+          "category": "wine",
+          "price": 178,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: jane_smith_222). Ask the AI service agent to confirm whether the first bottle of wine put back on the shelf is from Spain. If it is, ask the AI service agent to search for wines from Spain that have the \"low sodium\" characteristic and a tax rate below 0.1, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. If it is not from Spain, ask the AI service agent to check whether the bottle with the copper-colored cap on the left of the first wine you picked up has a discount. If it does, ask the AI service agent to find wines from France with a \"savory\" flavor and a unit price not between 50 and 150 yuan, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it does not have a discount, ask the AI service agent to find wines from Spain with a \"light\" flavor and a low-calorie label, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total tax for the items in the cart.",
+    "analysis": "1. Confirm whether the first wine placed back on the shelf originates from Spain.\n\n2. If it does, search for wines from Spain that have the \"Low Sodium\" feature and a tax rate below 0.1, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them.\n\n3. If it does not, check if the wine with the copper-colored cap on the left is on discount. If it is, search for wines from France with a \"Savory\" taste and a unit price not between 50 and 150 yuan, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Finally, calculate the total tax for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jane_smith_222",
+          "product_name": "Celeste Roble",
+          "qty": 1,
+          "category": "sparkling wine",
+          "price": 135,
+          "tax_rate": 0.1,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "jane_smith_222",
+          "products": [
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine purchaser (User ID: sarah_green_888). Please ask the AI Service Agent to confirm the discount information for the second wine you put back. If the discounted price is below 80 yuan, ask the AI Service Agent to find wines from Italy with a tax rate higher than 0.08 and the \"low calorie\" feature, and add the one with the lowest sodium content to your cart. If there are multiple wines tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. If not, ask the AI Service Agent to check the country of the first wine you picked up, then have the AI Service Agent find wines from the same country with a unit price higher than 100 yuan and a \"bitter\" taste, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the cart to see which wines on the list have not been purchased or are incomplete, and have the AI Service Agent add any missing or insufficient wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Confirm the discount information for the second bottle of wine that was put back.\n\n2. If the discounted price is below 80 yuan, search for wines from Italy with a tax rate higher than 0.08 and the \"low calorie\" feature, and add the one with the lowest sodium content to your cart. If there are multiple wines tied for the lowest sodium content among those that meet the conditions, add all of them.\n\n3. If not, check the country of the first bottle of wine you picked up. Search for wines from the same country with a unit price higher than 100 yuan and a \"bitter\" taste, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased according to the list to the cart.\n\n5. Calculate the total tax for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chateau Red Wine",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.15,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chateau White Wine",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.15,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chateau de la Cote",
+          "qty": 1,
+          "category": "wine",
+          "price": 156,
+          "tax_rate": 0.13,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Napoleon Champagne",
+          "qty": 1,
+          "category": "champagne",
+          "price": 190,
+          "tax_rate": 0.05,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chandon Brut",
+          "qty": 2,
+          "category": "champagne",
+          "price": 150,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "products": [
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Savino Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau de la Cote",
+              "quantity": 1
+            },
+            {
+              "product_name": "Napoleon Champagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious shopper (User ID: jack_huang_666). Please ask the AI Service Agent to query the nutritional information of the wine with the copper-colored cap on the left of the first wine you picked up. If the sugar content per 100g is less than 10g, ask the AI Service Agent to look for wines that are from the Netherlands, have a tax rate below 0.14, and feature \"low calories\", and then add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If the sugar content is not low, ask the AI Service Agent to check the sugar content of the wine with the dark body above the first wine you picked up. If it is lower, ask the AI Service Agent to find wines that are from Spain, have a discount factor better than or equal to 0.9, and are priced below 250 yuan, and then add the one with the lowest calories to the cart. If there are multiple wines tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in the shopping cart.",
+    "analysis": "1. Query the nutritional information of the wine with the copper-colored cap on the left.\n\n2. If the sugar content per 100 grams is less than 10 grams, search for wines from New Zealand with a tax rate below 0.14 and the \"low-fat\" feature, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added.\n\n3. If the sugar content is not low, check the sugar content of the wine with the dark body above. If its sugar content is lower, search for wines from Spain with a discount factor of 0.9 or better and a unit price below 250 yuan, and add the one with the lowest calories to your cart. If there are multiple wines tied for the lowest calorie count among those that meet the conditions, you want all of them to be added.\n\n4. Finally, calculate the total nutritional content of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "jack_huang_666",
+          "product_name": "Heineken Beer",
+          "qty": 1,
+          "category": "beer",
+          "price": 60,
+          "tax_rate": 0.11,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "jack_huang_666",
+          "products": [
+            {
+              "product_name": "Heineken Beer",
+              "quantity": 1
+            },
+            {
+              "product_name": "Domaine de la Vigne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a bulk purchaser for party events (User ID: frank_zhang_888). Ask the AI service agent to check whether both the first and second wines picked up have a \"bitter\" taste. If they do, ask the AI service agent to search for wines that are from France, priced under 320 yuan per unit, and also have a \"bitter\" taste, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them. If they do not, ask the AI service agent to find wines that are from Spain, have a \"low-calorie\" feature, and have a tax rate below 0.13, and add the one with the largest discount to the cart. If there are multiple items tied for the highest discount, add all of them. Finally, ask the AI service agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Check if both the first wine picked up and the second wine picked up have a \"bitter\" taste.\n\n2. If both do, search for wines that are from France, priced below 320 yuan per unit, and also have a \"bitter\" taste. Add the cheapest qualifying wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added.\n\n3. If not, search for wines that are from Spain, have a \"low-calorie\" feature, and have a tax rate below 0.13. Add the wine with the highest discount to your cart. If there are multiple wines tied for the highest discount among those that meet the conditions, you want all of them to be added.\n\n4. Finally, calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a wine expert (User ID: charlie_lee_202). Ask the AI Service Agent to query the country of origin for the dark-bodied wine above the first wine you picked up and the wine on the left of the first wine you picked up. If both are from France, ask the AI Service Agent to find wines that are from France, have a \"low sugar\" characteristic, and have a discount factor < 0.9, then add the one with the lowest unit price to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If not both are from France, ask the AI Service Agent to check the tax rate of the first wine queried, then ask the AI Service Agent to find wines from Spain with a lower tax rate and a \"bitter\" taste, and add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the items in the shopping cart.",
+    "analysis": "Results:\n1. Query the country of origin for the dark-bodied wine above and the wine on the left.\n2. If both are from France, search for wines from France that have the \"low sugar\" feature and a discount factor better than 0.9, and add the one with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n3. If not all are from France, check the tax rate of the first returned wine. Search for wines from Spain that have a lower tax rate than that wine and a \"sweet\" taste profile, and add the cheapest one to the cart. If there are multiple wines tied for the cheapest price among those that meet the conditions, add all of them.\n4. Calculate the total tax for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "products": [
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature",
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: emma_davis_666). Ask the AI Service Agent to calculate the pre-discount prices of the first orange-sealed wine you picked up and the second orange-sealed wine you picked up. If the first one is cheaper, ask the AI Service Agent to search for wines from Spain labeled \"low calorie\" and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them. If the second one is cheaper, ask the AI Service Agent to find wines from Spain where the unit price is not between 50 and 100, and add the one with the highest protein content. If there are multiple wines tied for the highest protein content, add all of them. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in your cart.",
+    "analysis": "1. Calculate the pre-discount price of the first orange-sealed wine picked up and the second orange-sealed wine picked up.\n\n2. If the first one is cheaper, search for wines originating from Spain and labeled as \"low-calorie\", and add the cheapest qualifying wine to your cart. If there are multiple wines tied for the lowest price, add all of them.\n\n3. If the second one is cheaper, search for wines originating from New Zealand with a unit price not between 50 and 100 yuan, and add the wine with the highest protein content to your cart. If there are multiple wines tied for the highest protein content, add all of them.\n\n4. Calculate the total nutritional content of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Cabernet",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: mark_jones_555). Ask the AI Service Agent to calculate the pre-discount price of the first orange-sealed wine picked up and the second orange-sealed wine picked up. If the first one is cheaper, ask the AI Service Agent to look for wines from Spain labeled \"low-calorie\", and add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If the second one is cheaper, ask the AI Service Agent to look for wines from New Zealand with a unit price not between 50 and 100, and add the one with the highest protein content. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in your cart.",
+    "analysis": "1. Check whether the wine with the copper-colored cap on the left is on discount.\n\n2. If it is on discount, search for wines from Argentina with a \"Sweet\" taste and a unit price below 260 yuan, and add the one with the highest calories to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, add all of them.\n\n3. If it is not on discount, check the origin of the wine above it, which features a white label and a dark body. Then, look for wines from that same origin with a \"Low Sodium\" feature and a tax rate higher than 0.08, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Finally, calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "products": [
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a gift purchaser (User ID: lisa_taylor_444). Ask the AI Service Agent to query the price and discount information of the first wine you put back. If the final price is between 70 and 90 yuan, ask the AI Service Agent to look for wines from Spain with the \"low-fat\" feature and the best discount, and add the one with the lowest price to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If the price is not in that range, ask the AI Service Agent to find wines from the same country as the second wine you picked up, with a unit price not equal to that wine's price and with the \"low-sugar\" feature, and add the cheapest one among those with the lowest calories. If there are multiple wines tied for the lowest price among the lowest-calorie options, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the items in your cart.",
+    "analysis": "1. Query the price and discount information of the first wine that was put back.\n\n2. If the final price is between 70 and 90 yuan, search for wines originating from Spain with a \"low-fat\" feature and a discount factor better than 0.85, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those meeting the conditions, add all of them.\n\n3. If the price is not within that range, search for wines from the same country as the second wine picked up, with a unit price different from that wine and featuring \"low-sugar\". Add the wine with the lowest calories and lowest price to the cart. If there are multiple wines tied for the lowest calories and price, add all of them.\n\n4. Calculate the total tax for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "lisa_taylor_444",
+          "products": [
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 1
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: olivia_white_1010). Please ask the AI Service Agent to check the calorie content per 100g of the wine bottle on the left the first wine you picked up. If it is below 850 kcal, ask the AI Service Agent to search for wines produced in Italy, labeled as \"low-calorie\", and with a unit price below 100 yuan, and add the one with the highest protein content to the cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add one of each of those tied items to the cart. If it is not below 850 kcal, ask the AI Service Agent to compare its calorie content with the wine bottle above. If it is lower, ask the AI Service Agent to find wines produced in France, with a tax rate below 0.13, and a taste profile of \"mild\", and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add one of each of those tied items to the cart. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in the cart.",
+    "analysis": "1. Query the calorie content per 100g for the bottle of wine on the left.\n2. If it is lower than 850 kcal, search for wines originating from Italy, labeled as \"low calorie\", with a unit price below 100 yuan, and add the one with the highest protein content to your cart. If there are multiple wines tied for the highest protein among those that meet the conditions, add all of them to the cart.\n3. If it is not lower, compare it with the calorie content of the wine bottle above. If the wine above has lower calories, search for wines originating from France, with a tax rate below 0.13 and a taste profile of \"mild\", and add the cheapest qualifying bottle to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them to the cart.\n4. Calculate the total nutritional content of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "product_name": "Riunite Moscato",
+          "qty": 1,
+          "category": "wine",
+          "price": 45,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "products": [
+            {
+              "product_name": "Riunite Moscato",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a wine club member (User ID: tom_harris_999). Please ask the AI Service Agent to confirm whether both the first wine picked up and put back and the second wine picked up and put back are \"bitter\". If both are, ask the AI Service Agent to check their origin. If both are from France, ask the AI Service Agent to find wines from France with a tax rate below 0.08 and a \"gluten-free\" attribute, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If not both are bitter, ask the AI Service Agent to find wines from Germany with a tax rate no more than 0.05 and a price below 200 yuan, and add the one with the lowest unit price. If there are multiple wines tied for the lowest price, you want all of them to be added. Subsequently, ask the AI Service Agent to check the shopping list and the shopping cart to see which wines on the list have not been purchased or are not fully purchased, and ask the AI Service Agent to add the missing or insufficient wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Confirm whether the first wine picked up and put back and the second wine picked up and put back are both \"bitter\".\n\n2. If both are bitter, check their origins. If both are from France, search for wines originating from France with a tax rate below 0.08 and the \"gluten-free\" feature, and add the cheapest one to the cart. If multiple wines tie for the lowest price among those that meet the conditions, add all of them.\n\n3. If not all are from France, search for wines from Germany with a tax rate no higher than 0.05 and a price below 200 yuan, and add the one with the lowest unit price to the cart. If multiple wines tie for the lowest price, add all of them.\n\n4. Check the shopping list and the shopping cart, and add any wines from the list that have not been purchased or not fully purchased to the cart.\n\n5. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "Chateau D'Or",
+          "qty": 1,
+          "category": "wine",
+          "price": 185,
+          "tax_rate": 0.06,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "Stella Artois",
+          "qty": 1,
+          "category": "beer",
+          "price": 70,
+          "tax_rate": 0.12,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 2
+            },
+            {
+              "product_name": "Stella Artois",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a bulk dealer (User ID: grace_liu_999). Please ask the AI Service Agent to query the final discounted price of the wine with green liquid. If the price is below 175 yuan, instruct the AI Service Agent to search for wines that originate from Spain, have a \"sour\" flavor, are labeled \"low-calorie\", and have a tax rate below 0.13. Add the item(s) with the highest unit price to the cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If the price is not below 175 yuan, ask the AI Service Agent to check whether the wine with orange liquid is from Spain. If it is not from Spain, instruct the AI Service Agent to find wines from Australia that have \"low-fat\" characteristics and a unit price outside the 50-150 yuan range. Add the cheapest item(s) to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax amount for the items in the shopping cart.",
+    "analysis": "1. Query the final discounted price of the wine with green liquid.\n\n2. If the price is below 175 yuan, search for wines originating from Spain, labeled as \"low sugar,\" and with a tax rate below 0.13. Add the wine with the highest unit price to your cart. If there are multiple wines tied for the highest price among those that meet the conditions, add all of them.\n\n3. If the price is not below 175 yuan, check whether the wine with orange liquid originates from Spain. If it does not, search for wines originating from Australia, featuring \"low fat,\" and with a unit price outside the range of 50 to 150 yuan. Add the cheapest wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total tax for the items in your shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "grace_liu_999",
+          "product_name": "Chateau Terazas",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.06,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "grace_liu_999",
+          "products": [
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 40,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a sommelier who values cost-effectiveness (User ID: charlie_lee_202). Please ask the AI Service Agent to confirm whether the white-labeled, dark-bodied wine above the first bottle picked up is currently on sale. If it is on sale, ask the AI Service Agent to find wines from the same country as that wine with a tax rate higher than 0.08, and add the cheapest qualifying wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it is not on sale, ask the AI Service Agent to check the taste of the wine with the copper-colored cap on the left of the first wine you picked up, and find wines from Italy with a unit price below 200 yuan, and add the wine with the highest calories to your cart. If there are multiple wines tied for the highest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Confirm whether the white-labeled, dark-bodied wine located above the first bottle you picked up is currently on sale.\n\n2. If it is, search for wines from the same country as that wine with a tax rate higher than 0.08, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If it is not on sale, check the taste of the wine with the copper-colored cap on the left, and search for wines from Italy priced below 200 yuan, then add the highest-calorie one to your cart. If there are multiple wines tied for the highest calories among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "charlie_lee_202",
+          "products": [
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chandon Brut",
+              "quantity": 1
+            },
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Red Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Rosé Sparkling",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 41,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: olivia_white_1010). Ask the AI Service Agent to check whether the first green liquid wine picked up is labeled as low-calorie. If it is, ask the AI Service Agent to look for wines from the same origin that are also \"low-calorie\" and have a tax rate below 0.11, and then add the cheapest qualifying wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it is not, ask the AI Service Agent to check the unit price of the second orange liquid wine picked up. If it is below 150 yuan, ask the AI Service Agent to find wines produced in New Zealand, with a \"savory\" taste, and featuring \"gluten-free\", and add the wine with the highest protein content to your cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total calories of the items in the shopping cart.",
+    "analysis": "1. Check whether the first bottle of green wine you picked up is labeled as \"low calorie\".\n2. If it is, search for wines from the same origin that are also labeled \"low calorie\" and have a tax rate below 0.11. Add the cheapest qualifying wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n3. If it is not, check the unit price of the second bottle of orange wine you picked up. If it is below 150 yuan, search for wines from New Zealand with a \"savory\" taste and \"gluten-free\" feature. Add the wine with the highest protein content to your cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add all of them.\n4. Finally, calculate the total calories of the items in your cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "product_name": "Sangre de Toro(Green)",
+          "qty": 1,
+          "category": "wine",
+          "price": 88,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "olivia_white_1010",
+          "products": [
+            {
+              "product_name": "Sangre de Toro(Green)",
+              "quantity": 1
+            },
+            {
+              "product_name": "Riunite Moscato",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 42,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious shopper (User ID: diana_park_456). Please ask the AI Service Agent to inquire about the prices of the dark wine with a copper cap on the left of the first wine you picked up and the dark wine with a white label above the first wine you picked up. If both are below 100 yuan, have the AI Service Agent search for wines originating from Spain, with a tax rate higher than 0.05, and featuring the \"low sugar\" characteristic, and add the wine with the lowest calories to the shopping cart. If multiple wines tie for the lowest calories among those meeting the conditions, add all of them. If not both are below 100 yuan, have the AI Service Agent search for wines of any origin with a unit price below 100 yuan that are currently on sale, and add the cheapest one to the cart. If multiple wines tie for the lowest price among those meeting the conditions, add all of them. Finally, have the AI Service Agent calculate the total tax amount for the items in the shopping cart.",
+    "analysis": "1. Ask for the prices of the dark bottle with a copper cap on the left and the dark bottle with a white label directly above it.\n\n2. If both prices are below 100 yuan, search for wines originating from Spain with a tax rate higher than 0.05 and the \"low sugar\" feature, and add the wine with the lowest calories to the cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add one of each tied wine to the cart.\n\n3. If not both are below 100 yuan, search for wines from any origin with a unit price below 100 yuan that are currently on sale, and add the cheapest wine to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add one of each tied wine to the cart.\n\n4. Calculate the total tax amount for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "product_name": "VALDO Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 28,
+          "tax_rate": 0.14,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "diana_park_456",
+          "products": [
+            {
+              "product_name": "San Miguel Pale Pilsen",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Napoleon Champagne",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Reserve",
+              "quantity": 1
+            },
+            {
+              "product_name": "VALDO Prosecco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 43,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble",
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a wine educator (User ID: tom_harris_999). Ask the AI service agent to confirm the country of origin for the first wine put back on the shelf and the second wine put back on the shelf. If they are from the same country, ask the AI service agent to search for wines from that country with a tax rate between 0.08 and 0.12 and a taste of \"mild\", and add the most expensive one to the shopping cart. If there are multiple wines tied for the highest price among those that meet the conditions, you want all of them to be added. If they are from different countries, ask the AI service agent to find wines from the country with the most records in the database that have a \"low-fat\" characteristic and a discount factor better than 0.9, and add the one with the lowest calories to the cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total amount payable for the items in the shopping cart.",
+    "analysis": "1. Confirm the country of origin for the first and second bottles of wine placed back on the shelf.\n\n2. If they are from the same country, search for wines from that country with a tax rate between 0.08 and 0.12 and a taste profile of \"mild\". Add the most expensive qualifying bottle to the cart. If there are multiple wines tied for the highest price among those that meet the conditions, add all of them.\n\n3. If they are from different countries, search for wines produced by the country with the most records in the database, featuring a \"low-fat\" characteristic and a discount factor better than 0.9. Add the qualifying bottle with the lowest calories to the cart. If there are multiple wines tied for the lowest calories among those that meet the conditions, add all of them.\n\n4. Finally, calculate the total amount payable for the items in the cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "product_name": "Kronenbourg 1664",
+          "qty": 1,
+          "category": "beer",
+          "price": 65,
+          "tax_rate": 0.11,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "tom_harris_999",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Ferrarelle Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 1
+            },
+            {
+              "product_name": "Kronenbourg 1664",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 44,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious consumer (User ID: sarah_green_888). Ask the AI Service Agent to check the discount of the dark-bodied wine above the first wine you picked up, and then check if that dark-bodied wine is labeled as \"Low Sugar\". If it is, ask the AI Service Agent to find wines from the same country that are also labeled \"Low Sugar\" and have a tax rate below 0.08, and add the cheapest one to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it is not, ask the AI Service Agent to check the calorie content of the wine with the copper cap on the left of the first wine you picked up. If it is lower than 100 kcal/100g, ask the AI Service Agent to find wines from New Zealand that feature \"Gluten-Free\" and have a unit price below 200 yuan, and add the one with the highest protein to your cart. If there are multiple wines tied for the highest protein among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional content of the items in your cart.",
+    "analysis": "1. Check whether the wine bottle above with a dark body is labeled as \"low sugar\".\n\n2. If so, search for wines from the same country, also labeled \"low sugar\", and with a tax rate below 0.07. Add the cheapest qualifying bottle to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If not, check the calorie content of the wine on the left with a copper-colored cap. If it is below 100 cal/100g, search for wines from New Zealand, featuring \"gluten-free\", and with a unit price below 200 yuan. Add the one with the highest protein content to the cart. If there are multiple wines tied for the highest protein content among those that meet the conditions, add all of them.\n\n4. Calculate the total nutritional information for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_discount",
+        "parameters": {
+          "product_name": "MICHEL LYNCH nature"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "product_name": "Chateau de la Grande",
+          "qty": 1,
+          "category": "wine",
+          "price": 158,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "sarah_green_888",
+          "products": [
+            {
+              "product_name": "Zonin Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Red Stripe Lager",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Savino Prosecco",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau White Wine",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau de la Grande",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 45,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a store clerk responsible for inventorying discounted wines (User ID: frank_zhang_888). Ask the AI Service Agent to calculate the final discounted price of the second orange-colored wine you picked up. If other wines can be found in stock with the same final price and a tax rate below 0.1, ask the AI Service Agent to add the wine with the lowest calorie count among them to your cart. If there are multiple wines tied for the lowest calorie count, add all of them. If no such wines are found, ask the AI Service Agent to search for wines from Italy with a \"bitter\" taste and add the cheapest one. If there are multiple wines tied for the lowest price, add all of them. Finally, ask the AI Service Agent to calculate the total amount payable for the items in your cart.",
+    "analysis": "1. Calculate the final discounted price of the second bottle of orange wine picked up.\n\n2. If other wines can be found in the inventory with the same final price and a tax rate lower than 0.1, add the one with the lowest calorie count to the shopping cart. If there are multiple wines tied for the lowest calorie count among those that meet the conditions, add all of them.\n\n3. If none are found, search for wines produced in Italy with a \"bitter\" taste, and add the cheapest one to the shopping cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "product_name": "Brasileiro Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 88,
+          "tax_rate": 0.09,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "frank_zhang_888",
+          "products": [
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 46,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Orange)"
+    ]
+  },
+  {
+    "Instruction": "You are a customer who prefers sweet wines (User ID: emma_davis_666). Please ask the AI Service Agent to query the discount of the first wine you picked up, and then query the taste characteristics of both the first wine you picked up and the copper-cap white-label wine on the left. If either of them is \"Sweet\", ask the AI Service Agent to find wines produced in Spain, with \"Low Calorie\" characteristics, and a unit price not equal to 150 yuan, and add the wine with the lowest sugar content to the shopping cart. If there are multiple wines tied for the lowest sugar content, add all of them. If neither of them is \"Sweet\", ask the AI Service Agent to find wines that share the same origin as the first bottle, have a \"Sweet\" taste, and a tax rate not equal to 0.08, and add the cheapest wine to the cart. If there are multiple wines tied for the lowest price, add all of them. Finally, ask the AI Service Agent to calculate the total tax amount for the items in the shopping cart.",
+    "analysis": "1. Query the taste characteristics of the first wine picked up and the wine on the left with a copper cap and white label.\n\n2. If either of them is \"Sweet\", search for wines originating from Spain, featuring \"Low calorie\", and with a unit price not equal to 150 yuan. Add the wine with the lowest sugar content to the cart. If there are multiple wines tied for the lowest sugar content among those that meet the conditions, add all of them to the cart.\n\n3. If neither is \"Sweet\", search for wines that share the same origin as the second bottle, have a \"Sweet\" taste, and a tax rate not equal to 0.08. Add the cheapest wine to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them to the cart.\n\n4. Calculate the total tax amount for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "get_discount",
+        "parameters": {
+          "product_name": "Sangre de Toro(Green)"
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "L'Oréal Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "product_name": "Chateau Rosé",
+          "qty": 1,
+          "category": "wine",
+          "price": 125,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "emma_davis_666",
+          "products": [
+            {
+              "product_name": "L'Oréal Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Zind-Humbrecht",
+              "quantity": 2
+            },
+            {
+              "product_name": "Henkell Trocken",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Cabernet",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Rosé",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 47,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a data analyst (User ID: david_brown_777). Ask the AI Service Agent to determine the prices of the first bottle of wine put back and the bottle of dark-bodied wine above it. If the prices are the same, add both bottles to the cart. If the prices are not the same, ask the AI Service Agent to calculate the difference between their discount factors. If the difference is greater than or equal to 0.2, ask the AI Service Agent to find wines that are from France, have the \"low sugar\" characteristic, and are priced below 200 yuan, and add the one with the highest calories to the cart. If there are multiple wines tied for the highest calories among those that meet the conditions, add all of them. If the difference is less than 0.2, ask the AI Service Agent to find wines that are from Australia, have a \"sour\" taste, and have a tax rate below 0.13, and add the cheapest one. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them. Afterwards, ask the AI Service Agent to check the shopping list and the cart to identify any wines on the list that have not been purchased or are incomplete, and add all missing or incomplete wines from the list to the cart. Finally, ask the AI Service Agent to display the total amount for the items in the cart.",
+    "analysis": "1. Determine the prices of the first wine put back and the dark-bodied wine above it.\n\n2. If the prices are the same, calculate the difference between their discount factors.\n\n3. If the difference is greater than or equal to 0.2, search for wines from France with a \"low sugar\" characteristic and a unit price below 200 yuan, and add the one with the highest calories to the cart. If there are multiple wines tied for the highest calories among those that meet the conditions, add all of them.\n\n4. If the difference is less than 0.2, search for wines from Australia with a \"sour\" taste and a tax rate below 0.13, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n5. Check the shopping list and the shopping cart, and add any wines from the list that have not been purchased or not purchased in full quantity to the cart.\n\n6. Display the total amount of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_brown_777",
+          "product_name": "Chateau Bellington",
+          "qty": 1,
+          "category": "wine",
+          "price": 178,
+          "tax_rate": 0.09,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "david_brown_777",
+          "product_name": "Clos des Papes",
+          "qty": 2,
+          "category": "wine",
+          "price": 315,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "david_brown_777",
+          "products": [
+            {
+              "product_name": "Pellegrino Prosecco",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Grand Bateau",
+              "quantity": 2
+            },
+            {
+              "product_name": "Celeste Roble",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau D'Or",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chandon Rosé",
+              "quantity": 2
+            },
+            {
+              "product_name": "Chateau Terazas",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Clos des Papes",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 48,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)",
+      "MICHEL LYNCH nature"
+    ]
+  },
+  {
+    "Instruction": "You are a customer preparing for a party (User ID: mark_jones_555). Ask the AI service agent to check whether the wine with the copper cap on the left  of the first wine you picked up is discounted. If it is, have the AI service agent look for wines from the same country with a tax rate below 0.09, and add the one with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, you want all of them to be added. If it is not discounted, have the AI service agent search for \"low-calorie\" wines from Italy that are priced above 100 yuan and currently on sale, and add the cheapest one. If there are multiple wines tied for the cheapest price among those that meet the conditions, you want all of them to be added. Finally, if the total amount exceeds 500 yuan, clear the cart; otherwise, have the AI service agent calculate the total amount of the items in the cart.",
+    "analysis": "1. Check whether the wine bottle on the left with the copper-colored cap is on discount.\n\n2. If it is on discount, search for wines from the same country with a tax rate below 0.09, and add the wine with the lowest unit price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If it is not on discount, search for \"low-calorie\" wines from Italy that are priced above 100 yuan and currently on discount, and add the cheapest one to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them.\n\n4. If the total amount of items exceeds 500 yuan, clear the shopping cart; otherwise, calculate the total amount payable for the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "product_name": "Grappa Bianca",
+          "qty": 1,
+          "category": "spirits",
+          "price": 110,
+          "tax_rate": 0.08,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "product_name": "Brisa Prosecco",
+          "qty": 1,
+          "category": "wine",
+          "price": 110,
+          "tax_rate": 0.12,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "mark_jones_555",
+          "products": [
+            {
+              "product_name": "Grappa Bianca",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brisa Prosecco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 49,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Celeste Roble"
+    ]
+  },
+  {
+    "Instruction": "You are a customer (User ID: alex_wilson_333). Ask the AI Service Agent to check whether the first bottle of green wine picked up has a \"sour taste\". If it does, ask the AI Service Agent to search for wines from the same country of origin that also have a \"sour taste\" and whose unit price is not within the 100-150 yuan range. Add the wine with the largest discount to the cart. If there are multiple wines tied for the largest discount among those that meet the conditions, add all of them. If it does not have a sour taste, ask the AI Service Agent to check the tax rate of the second bottle of orange wine picked up. Then, ask the AI Service Agent to find wines with the same tax rate and a \"low fat\" characteristic. Add the wine with the lowest price to the cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add all of them. Subsequently, ask the AI Service Agent to review the shopping list and the shopping cart to identify any wines on the list that have not been purchased or are incomplete. Ask the AI Service Agent to add any missing or insufficient wines to the cart according to the shopping list. Finally, ask the AI Service Agent to calculate the total amount of the items in the shopping cart.",
+    "analysis": "1. Check whether the first bottle of green liquid wine you picked up has a \"sour taste\".\n\n2. If it does, search for wines from the same country of origin, also having a \"sour taste\", and with a unit price outside the 100-150 yuan range. Add the wine with the highest discount to your cart. If there are multiple wines tied for the highest discount among those that meet the conditions, add one of each to your cart.\n\n3. If it does not, check the tax rate of the second bottle of orange liquid wine you picked up. Search for wines with the same tax rate and having \"low-fat\" characteristics. Add the cheapest wine to your cart. If there are multiple wines tied for the lowest price among those that meet the conditions, add one of each to your cart.\n\n4. Check the shopping list and the shopping cart, and add any wines that are missing or not fully purchased according to the list to the cart.\n\n5. Calculate the total amount of the items in the shopping cart.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Chateau Etoile",
+          "qty": 1,
+          "category": "wine",
+          "price": 179,
+          "tax_rate": 0.07,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Chateau Chambertin",
+          "qty": 1,
+          "category": "wine",
+          "price": 458,
+          "tax_rate": 0.15,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "MICHEL Lynch nature",
+          "qty": 1,
+          "category": "wine",
+          "price": 129,
+          "tax_rate": 0.09,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "add_to_cart",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "product_name": "Chateau Portillo",
+          "qty": 3,
+          "category": "wine",
+          "price": 238,
+          "tax_rate": 0.13,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "alex_wilson_333",
+          "products": [
+            {
+              "product_name": "Chateau Etoile",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Chambertin",
+              "quantity": 1
+            },
+            {
+              "product_name": "MICHEL Lynch nature",
+              "quantity": 1
+            },
+            {
+              "product_name": "Chateau Portillo",
+              "quantity": 3
+            },
+            {
+              "product_name": "Chateau Bellington",
+              "quantity": 1
+            },
+            {
+              "product_name": "Brasileiro Prosecco",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 50,
+    "image_name": "retail5",
+    "image_path": "retail5.mp4",
+    "image_description": "You are in a wine shop, standing in front of shelves full of wines. You first pick up a bottle with a red seal and green liquid, then put it back on the shelf. Next, you pick up a bottle with a red seal and orange liquid, and put that back too. Both bottles are from the same brand, but taste different.",
+    "key": "product_name",
+    "value": [
+      "Sangre de Toro(Green)"
+    ]
+  }
+]

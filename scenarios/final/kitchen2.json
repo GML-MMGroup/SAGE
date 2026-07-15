@@ -1,0 +1,2356 @@
+[
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 8, 2026. First, ask the AI Service Agent to determine what dish you are currently cooking based on the image of slicing fried pork cutlets into strips, and identify which ingredients belonging to the seasoning category were used in the two steps prior to the current step. Next, have the AI Service Agent judge whether the number of allergens contained in this dish is greater than zero. If so, ask the AI Service Agent to find the recipe(s) that use the greatest total weight of vegetables among all recipes that share at least one allergen with this dish, and add them to your menu. If multiple recipes tie for the greatest total weight, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe(s) with the lowest calorie content among all recipes that are completely free of allergens, and add them to your menu. If multiple recipes tie for the lowest calorie content, you want all of them to be added. Subsequently, ask the AI Service Agent to check all ingredients in the current menu that are stored in the refrigerated layer, and add the ingredient(s) with the lowest stock quantity to the shopping list according to the recipe requirements. If multiple ingredients tie for the lowest stock quantity, you want all of them to be added according to the recipe requirements. Finally, ask the AI Service Agent to calculate the total nutritional content of all ingredients in the current shopping list.",
+    "analysis": "1. Based on the video footage of cutting fried pork cutlet strips, identify the recipe currently being prepared.\n2. Identify the seasoning ingredients used in the two steps preceding the current step.\n3. If the dish contains allergens, search all recipes that share at least one allergen with this dish. Select the recipe with the highest total weight of vegetable ingredients and add it to the menu. If multiple recipes tie for the highest total weight among those that meet the conditions, add all of them to the menu.\n4. If the dish contains no allergens, search all recipes that are completely allergen-free. Select the recipe with the lowest calorie count and add it to the menu. If multiple recipes tie for the lowest calorie count among those that meet the conditions, add all of them to the menu.\n5. Check the ingredients in the refrigerated layer required by the current menu. For any ingredient with zero stock, add it to the shopping list in the quantity required by the recipe.\n6. Calculate the total protein and total fat content for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Cheese",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 0.3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "You are user cook_005, and today is May 7, 2026. Based on the scene of cutting fried pork chops, ask the AI Service Agent to identify which recipe is currently being prepared and indicate whether this dish contains fish allergens. Ask the AI Service Agent to determine: if this dish's nutritional profile includes \"high_protein\", then have the AI Service Agent find the dish with the fewest ingredient types from the pool of recipes that share at least one flavor profile with this dish, and add it to your menu. If there are multiple dishes tied for the fewest ingredient types, add all of them. Otherwise, have the AI Service Agent select the recipe that requires the highest number of ingredients from the storage cabinet from among all recipes with a \"mild\" flavor profile, and add it to your menu. If there are multiple recipes tied for the highest number of ingredients, add all of them. Subsequently, ask the AI Service Agent to check all ingredients stored on the home spice rack and add all non-expired seasonings to the shopping list (set the quantity to 100 grams for each). Finally, ask the AI Service Agent to calculate the nutritional profile for all recipes currently in your menu.",
+    "analysis": "1. Based on the scene of cutting fried pork chops, confirm the recipe currently being prepared.\n\n2. Determine whether this dish contains fish allergens.\n\n3. If the dish has the \"high_protein\" nutritional feature, identify the recipe(s) with the fewest ingredient types among all recipes that share at least one flavor profile with this dish, and add them to the menu. If multiple recipes tie for the fewest ingredient types, add all of them to the menu.\n\n4. If the dish does not have the \"high_protein\" nutritional feature, identify the recipe(s) that use the largest number of ingredients from the storage cabinet among all recipes with a \"mild\" flavor profile, and add them to the menu. If multiple recipes tie for the largest number, add all of them to the menu.\n\n5. Check all ingredients stored on the spice rack. For any expired seasonings, add 100 grams of each to the shopping list.\n\n6. Calculate the nutritional features of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_allergens",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "salt",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "black pepper",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Cinnamon",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Custom Seasoned Noodles"
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 13, 2026. Instruct the AI Service Agent to identify the name of the recipe based on the action of cutting fried pork cutlet in the scene, and recall all tools and ingredients used in the second-to-last step of that recipe. Then, have the AI Service Agent determine if the total weight of vegetable-type ingredients in this recipe is greater than 200 grams. If it is, have the AI Service Agent find the recipe with the highest calories among all recipes that share exactly the same allergens as this recipe, and add it to your menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the recipe with the lowest sodium content among all recipes whose nutritional characteristics include \"vegan\", and add it to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Additionally, have the AI Service Agent check all dishes in the current menu. If any ingredients used in them are stored in the refrigerated layer and are out of stock, have the AI Service Agent add them to the shopping list according to the quantity required by the recipe. Finally, have the AI Service Agent calculate the total sum of dietary fiber and protein for the items listed on the current shopping list.",
+    "analysis": "1. Identify the recipe name based on the scene of cutting fried pork cutlets.\n\n2. Identify all tools and ingredients used in the second-to-last step of this recipe.\n\n3. If the total weight of vegetable ingredients in this recipe exceeds 200 grams, search for all recipes that share exactly the same allergens as this dish. Among those, identify the recipe(s) with the highest calorie count and add them to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n\n4. If the total weight of vegetable ingredients in this recipe is 200 grams or less, search for all recipes with vegan nutritional characteristics. Among those, identify the recipe(s) with the lowest sodium content and add them to the menu. If there are multiple recipes tied for the lowest sodium among those that meet the conditions, add all of them to the menu.\n\n5. Check all recipes currently in the menu. For any ingredients required by these recipes that are stored in the refrigerated layer and are out of stock, add them to the shopping list in the quantities required by the recipes.\n\n6. Calculate the total dietary fiber and total protein for all items currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "salmon",
+          "quantity": "1.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "spinach",
+          "quantity": "0.6"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "celery",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "carrots",
+          "quantity": "0.4"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5.4
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 8
+            },
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 1.8
+            },
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 0.6
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 0.3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 12, 2026. Guide the AI Service Agent to analyze the visual information of the current fried pork strips to determine which dish's final step this represents, and have it identify the meat ingredient used in the largest quantity in that recipe. Next, have the AI Service Agent determine if the current household inventory of this meat ingredient is less than 500 grams. If so, have the AI Service Agent select the ingredient with the highest calcium content from all ingredients belonging to the same category in the database, and add it to your shopping list in a quantity of 1000 grams. If multiple ingredients tie for the highest calcium content, add 1000 grams of each tied item. Otherwise, have the AI Service Agent find the ingredient with the lowest calories among all ingredients stored in the freezer, and add it to the shopping list in a quantity of 500 grams. If multiple ingredients tie for the lowest calories, add 500 grams of each tied item. Then, have the AI Service Agent browse your existing menu and remove any recipes that use more than three types of seasonings. Finally, have the AI Service Agent calculate and tally the sugar and total calories for all ingredients in the current shopping list in detail.",
+    "analysis": "1. Based on the image of strip-cut fried pork chops, determine which recipe this represents as the final step.\n2. Identify the meat ingredient used in the largest quantity in that recipe.\n3. If the current inventory of that meat ingredient is less than 500g, find the ingredient with the highest calcium content within the same category and add 1000g of it to the shopping list. If there are multiple ingredients tied for the highest calcium content, you want all of them to be added with the specified quantity.\n4. If the current inventory of that meat ingredient is 500g or more, find the ingredient with the lowest calorie count among all frozen ingredients and add 500g of it to the shopping list. If there are multiple ingredients tied for the lowest calories, you want all of them to be added with the specified quantity.\n5. Check the current menu and remove any recipes that contain more than 3 types of seasonings.\n6. Calculate the total sugar and total calories for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Green Peas",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Mushroom & Thyme Roast Chicken"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. You ask the AI Service Agent to identify which dish in the recipe database corresponds to the visual scene of you slicing fried pork cutlets into strips. Then, ask the AI Service Agent to determine: if any of the ingredients used in this dish are stored on the countertop, the AI Service Agent should find the recipe(s) among all recipes containing dairy allergens that require the least total weight of ingredients from the egg, milk, or soy product categories, and add them to your menu. If there are multiple recipes tied for the least total weight, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe(s) with the highest dietary fiber content among all recipes that share at least one flavor profile with the current dish, and add them to the menu. If there are multiple recipes tied for the highest dietary fiber content, add all of them to your menu. Afterwards, ask the AI Service Agent to check the current shopping list. For any meat ingredients in the list that have not expired, the Agent should add an additional 100 grams of each to the shopping list based on the existing stock. Finally, ask the AI Service Agent to count the types of flavors involved in all recipes in your menu.",
+    "analysis": "1. Based on the scene of slicing fried pork cutlets into strips, identify the current recipe.\n2. Determine whether any ingredients used in this dish are currently stored on the countertop.\n3. If countertop ingredients are present, search through all recipes containing dairy allergens. Identify the recipe with the lowest total weight of egg, milk, or soy-based ingredients. If multiple recipes tie for the lowest weight, add all of them to the menu.\n4. If no countertop ingredients are present, search through all recipes that share at least one flavor profile with the current dish. Identify the recipe with the highest dietary fiber content. If multiple recipes tie for the highest content, add all of them to the menu.\n5. Check all ingredients involved in the current menu. For any ingredient expiring in less than 2 days, add 100 grams of that ingredient to the shopping list.\n6. Count the types of flavors involved in all recipes within the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Beef",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Tofu Soup",
+            "Mushroom & Thyme Roast Chicken"
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 11, 2026. You require the AI Service Agent to observe the current action of cutting fried pork chops, infer the corresponding recipe name, and extract the first step requirement of that recipe. Subsequently, have the AI Service Agent determine the taste of the recipe. If the taste is sour, have the AI Service Agent filter out the recipe with the highest sodium content from the set of all recipes that have exactly the same nutritional characteristics as this recipe, and add it to your menu. If there are multiple recipes tied for the highest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent pick out the recipe that uses the most types of staple/dried goods ingredients from all recipes with a sweet taste and add it to the menu. If there are multiple recipes tied for the most ingredient types among those that meet the conditions, you want all of them to be added. Next, have the AI Service Agent check the current shopping list and remove any expired fruit ingredients from the list. Finally, have the AI Service Agent summarize and calculate the distribution of nutritional characteristics for all recipes in the current menu.",
+    "analysis": "1. Identify the recipe name based on the action of cutting fried pork chops.\n2. Extract the first step instruction from this recipe.\n3. If the recipe's flavor is sour, find all recipes that share the exact same nutritional profile. Among these, identify the recipe with the highest sodium content and add it to the menu. If multiple recipes tie for the highest sodium content, add all of them to the menu.\n4. If the recipe's flavor is not sour, search through all sweet-flavored recipes. Identify the recipe with the greatest variety of staple or dry goods ingredients and add it to the menu. If multiple recipes tie for the most ingredient types, add all of them to the menu.\n5. Check the current shopping list and remove any expired fruit ingredients.\n6. Calculate the distribution of nutritional features for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Yogurt"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Strawberry"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake"
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_001, and today is May 9, 2026. First, ask the AI Service Agent to identify which dish from the database you are preparing based on the first-person view of cutting fried pork chops into strips. Next, have the AI Service Agent determine if this dish's nutritional features include high_sodium. If so, ask the AI Service Agent to find the recipe with the fewest types of seasonings among all recipes containing the allergen eggs, and add it to your menu. If there are multiple recipes tied for the fewest seasonings, add all of them. Otherwise, ask the AI Service Agent to find the recipe with the highest carbohydrates (sugars) among all recipes with a mild taste, and add it to the menu. If there are multiple recipes tied for the highest carbohydrates, add all of them. Subsequently, have the AI Service Agent check all meat ingredients in the home refrigerator compartment and add any expired ingredients to the shopping list, specifying a required quantity of 500g for each type. Finally, ask the AI Service Agent to generate a summary overview of the nutritional features involved in all recipes currently in the menu.",
+    "analysis": "1. Based on the first-person view of cutting fried pork cutlets into strips, identify the recipe currently being prepared.\n\n2. If the dish has the 'high_sodium' nutritional feature, search among all recipes containing 'eggs' as an allergen for the recipe(s) with the fewest types of seasonings, and add them to the menu. If multiple recipes tie for the fewest seasonings among those that meet the conditions, add all of them to the menu.\n\n3. If the dish does not have the 'high_sodium' nutritional feature, search among all recipes with a 'mild' flavor for the recipe(s) with the highest sugar content, and add them to the menu. If multiple recipes tie for the highest sugar content among those that meet the conditions, add all of them to the menu.\n\n4. Check all meat ingredients in the home refrigerator compartment. For any expired ingredients, add them to the shopping list at a quantity of 500 grams per type.\n\n5. Generate a summary overview of the nutritional features involved in all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Salmon",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Pork",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Chicken",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken"
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. You ask the AI Service Agent to identify which recipe is being prepared by recognizing the first-person view of the fried pork chop currently being cut, and have it query the total calorie count of this dish. Next, have the AI Service Agent determine: if the total calories of this recipe exceed 800 calories, then have the AI Service Agent find the ingredient with the highest dietary fiber content among all ingredients belonging to the staple/dry goods category, and add 200 grams of it to the shopping list. If there are multiple ingredients tied for the highest fiber content among those that meet the conditions, you want 200 grams of each of them to be added. Otherwise, have the AI Service Agent select the ingredient with the highest calcium content among all ingredients stored in the storage cabinet, and add 300 grams of it to the shopping list. If there are multiple ingredients tied for the highest calcium content among those that meet the conditions, you want 300 grams of each of them to be added. Afterwards, have the AI Service Agent check the recipes currently in your menu, and if any are found to contain the eggs allergen, have the AI Service Agent remove them from the menu. Finally, have the AI Service Agent calculate in detail the fat and sodium content of all ingredients included in the shopping list.",
+    "analysis": "1. Based on the first-person view footage of cutting fried pork chops, identify the recipe currently being prepared.\n2. Calculate the total weight of vegetable ingredients required for this dish.\n3. If the total calories for this recipe exceed 800 kcal, identify the ingredient with the highest dietary fiber content among all staple/dry goods ingredients, and add 200 grams to the shopping list. If multiple ingredients tie for the highest dietary fiber content, add 200 grams of each tied ingredient to the shopping list.\n4. If the total calories for this recipe do not exceed 800 kcal, identify the ingredient with the highest calcium content among all ingredients in the storage cabinet, and add 300 grams to the shopping list. If multiple ingredients tie for the highest calcium content, add 300 grams of each tied ingredient to the shopping list.\n5. Check the current menu and remove any recipes that contain eggs as an allergen.\n6. Calculate the total fat and total sodium content for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Chickpeas",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 12, 2026. You require the AI Service Agent to examine the progress screen of slicing fried pork cutlets into strips, infer the recipe, and identify the actions and ingredients involved in the third-to-last step of this recipe. Ask the AI Service Agent to determine if the ingredient list for this dish includes any ingredients belonging to the fruit category. If it does, ask the AI Service Agent to select the dish that requires the highest number of freezer ingredients from the recipe database where all flavors are exactly the same, and add it to the menu. If multiple dishes tie for the highest number of freezer ingredients, add all of them to the menu. Otherwise, ask the AI Service Agent to find the dish with the lowest calorie content among all recipes containing the gluten-free nutritional feature and add it to the menu list. If multiple dishes tie for the lowest calorie content, add all of them to the menu list. Subsequently, ask the AI Service Agent to review the existing shopping list and remove any ingredients from the list where the actual inventory at home exceeds 2000 grams. Finally, ask the AI Service Agent to perform a comprehensive statistical analysis of the nutritional feature labels for the current menu.",
+    "analysis": "1. Based on the visual scene of slicing fried pork cutlets into strips, identify the corresponding recipe.\n\n2. Identify the actions and ingredients involved in the third-to-last step of this recipe.\n\n3. If the ingredient list for this dish includes fruit ingredients, search among all recipes that exactly match the flavor profile of this dish. Find the recipe requiring the highest number of frozen compartment ingredients and add it to the menu. If multiple recipes tie for the highest number, add all of them to the menu.\n\n4. If the ingredient list for this dish does not include fruit ingredients, search among all recipes with the gluten_free nutritional feature. Find the recipe with the lowest calorie count and add it to the menu. If multiple recipes tie for the lowest calories, add all of them to the menu.\n\n5. Check the existing shopping list and remove any ingredients for which the actual home inventory exceeds 2000 grams.\n\n6. Summarize the nutritional feature tags of the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "get_current_shopping_list",
+        "parameters": {
+          "user_id": "cook_006"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Potato & Greens Salad",
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl"
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 11, 2026. You ask the AI service agent to identify the dish being prepared using the visual scene of you cutting pork chops, and to find the names of all ingredients used in this dish that belong to the seasoning category. Ask the AI service agent to determine if this dish has the nutritional feature \"high_fiber\". If it does, ask the AI service agent to select the recipe that uses the fewest types of ingredients from the pool of all recipes that share at least one allergen with this dish, and add it to your menu. If there are multiple recipes tied for the fewest ingredient types among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find a dish with the highest amount of protein from all recipes with a taste profile including \"rich\", and add it to the menu. If there are multiple dishes tied for the highest protein content among those that meet the conditions, you want all of them to be added. After completing this step, ask the AI service agent to check all ingredients involved in the current menu. If any of them are stored on the spice rack and are out of stock, ask the AI service agent to add them to the shopping list according to the recipe usage. Finally, ask the AI service agent to perform a taste profile statistical analysis on your menu.",
+    "analysis": "1. Identify the dish currently being prepared based on the footage of pork chops being cut.\n2. Identify all seasoning ingredients used in this dish.\n3. If the dish has the \"high_fiber\" nutritional feature, search for recipes that share at least one allergen with this dish. From these, select the recipe that uses the fewest types of ingredients and add it to the menu. If there are multiple recipes tied for the fewest ingredient types among those that meet the conditions, add all of them to the menu.\n4. If the dish does not have the \"high_fiber\" nutritional feature, search for recipes with a \"bitter\" flavor profile. From these, select the recipe with the highest protein content and add it to the menu. If there are multiple recipes tied for the highest protein content among those that meet the conditions, add all of them to the menu.\n5. Check all ingredients involved in the current menu. For any ingredients stored on the seasoning rack that are out of stock, add them to the shopping list in the quantities specified by the recipes.\n6. Calculate the flavor distribution for the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "dill",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Beef & Black Bean Stew"
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 6, 2026. You ask the AI Service Agent to analyze the step of cutting the fried pork chops in the kitchen, identify the recipe it belongs to, and have it list all the preparation steps for that recipe. Ask the AI Service Agent to determine if the first step of this dish requires ingredients on the countertop. If so, have the AI Service Agent select the ingredient with the highest protein content from all ingredients in the Egg/Dairy/Soy Products category and add it to the shopping list with a specification of 500 grams. If there are multiple ingredients tied for the highest protein content, add each of the tied items to the list at the specified weight. Otherwise, have the AI Service Agent find the ingredient with the lowest sodium content among all vegetable ingredients and add it to the shopping list with a specification of 800 grams. If there are multiple ingredients tied for the lowest sodium content, add each of the tied items to the list at the specified weight. Afterwards, have the AI Service Agent remove (delete) any recipes in the current menu that involve fish allergens. Finally, have the AI Service Agent calculate the total calories, calcium, and sugar content for all ingredients on the shopping list.",
+    "analysis": "1. Identify the corresponding recipe based on the image of the sliced fried pork chop.\n2. List all the preparation steps for this recipe.\n3. If the first step of this dish requires ingredients currently on the countertop, identify the ingredient with the highest protein content among all egg, dairy, or soy product ingredients, and add 500 grams of it to the shopping list. If multiple ingredients tie for the highest protein content, add 500 grams of each of those tied items.\n4. If the first step of this dish does not require ingredients currently on the countertop, identify the ingredient with the lowest sodium content among all vegetable ingredients, and add 800 grams of it to the shopping list. If multiple ingredients tie for the lowest sodium content, add 800 grams of each of those tied items.\n5. Remove all recipes from the current menu that contain fish allergens.\n6. Calculate the total calories, total calcium, and total sugar content for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Asparagus",
+          "quantity": "8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Lemon",
+          "quantity": "8"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 8
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 8
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 8, 2026. Ask the AI Service Agent to identify which dish in the database this is based on the footage of cutting pork chop strips. Then, ask the AI Service Agent to determine if the dish's allergens include gluten. If they do, ask the AI Service Agent to search among all recipes with the nutritional feature low_calories, retrieve the recipe that uses the most types of vegetables, and add it to the menu. If there are multiple recipes tied for using the most vegetable types, add all of them to the menu. Otherwise, ask the AI Service Agent to find the recipe with the lowest total fat content among all recipes with the flavor profile savory, and add it to the menu. If there are multiple recipes tied for the lowest fat content, add all of them to the menu. Afterwards, ask the AI Service Agent to check the inventory in the home freezer, add all non-expired ingredients to the shopping list, calculating each as 1kg. Finally, ask the AI Service Agent to calculate the total calories of all ingredients in the shopping list.",
+    "analysis": "1. Based on the footage of slicing pork cutlet strips, identify the corresponding recipe.\n\n2. If this dish contains the gluten allergen, search among all recipes with the 'low_calories' nutritional feature for the recipe(s) with the most vegetable varieties, and add them to the menu. If multiple recipes tie for the most vegetable varieties among those that meet the conditions, add all of them.\n\n3. If this dish does not contain the gluten allergen, search among all recipes with a 'savory' flavor profile for the recipe(s) with the lowest total fat content, and add them to the menu. If multiple recipes tie for the lowest fat content among those that meet the conditions, add all of them.\n\n4. Check the inventory in the home freezer compartment and add any expired ingredients to the shopping list, specifying 1 kilogram for each type.\n\n5. Calculate the total calories for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Turkey & Apple Soup"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Green Peas",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Beef",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Turkey",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "You are a user (User ID: cook_001), and today is May 11, 2026. Ask the AI Service Agent to identify which recipe corresponds to the visual scene of cutting pork chops in the kitchen. Then, ask the AI Service Agent to determine if the flavor of this dish includes \"salty\". If it does, ask the AI Service Agent to find the dish that uses the fewest types of seasonings from the set of all recipes with the nutritional feature \"high_protein\", and add it to your menu. If there are multiple dishes tied for the fewest types of seasonings among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to select the dish with the highest carbohydrate (sugar) content from all recipes containing the allergen \"dairy\", and add it to your menu. If there are multiple dishes tied for the highest carbohydrate content among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to check the fruits at home. If any are found to be expired, ask the AI Service Agent to add these fruits to the shopping list with a quantity of 1.2 kg. Finally, ask the AI Service Agent to calculate the total sodium content of all ingredients on the current shopping list.",
+    "analysis": "1. Based on the scene of pork chops being cut in the kitchen, identify the corresponding recipe.\n\n2. If the dish tastes salty, search through all recipes with high_protein nutritional characteristics. Find the recipe with the fewest types of seasonings and add it to the menu. If there are multiple recipes tied for the fewest seasoning types among those that meet the conditions, add all of them to the menu.\n\n3. If the dish does not taste salty, search through all recipes containing dairy as an allergen. Find the recipe with the highest sugar content and add it to the menu. If there are multiple recipes tied for the highest sugar content among those that meet the conditions, add all of them to the menu.\n\n4. Check the fruit at home and add 1.2 kg of any expired fruit to the shopping list.\n\n5. Calculate the total sodium content of all ingredients currently on the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Banana",
+          "quantity": "12"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Strawberry",
+          "quantity": "12"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 12
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 12
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_002, and today is May 7, 2026. First, have the AI Service Agent confirm the recipe currently being cooked by using the visual cues of the sliced fried pork cutlet. Ask the AI Service Agent to determine: if the taste of this dish includes \"sweet\", then have the AI Service Agent find the recipe with the highest calories among all recipes with the nutritional feature \"no_additives\" and add it to your menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the recipe with the least total meat weight among all recipes containing the allergen \"fish\" and add it to the menu. If there are multiple recipes tied for the least meat weight among those that meet the conditions, you want all of them to be added. Next, have the AI Service Agent check all seasoning ingredients at home; once any are found to have zero stock, have the AI Service Agent add them to the shopping list with a weight of 400g. Finally, have the AI Service Agent summarize the comprehensive nutritional feature tags for all recipes in the current menu.",
+    "analysis": "1. Based on the image of the sliced fried pork cutlet, identify the recipe currently being cooked.\n2. If the dish's taste includes \"sweet\", find the recipe with the highest calories among all recipes with the \"no_additives\" nutrition feature, and add it to the menu. If multiple recipes tie for the highest calories, add all of them to the menu.\n3. If the dish's taste does not include \"sweet\", find the recipe with the lowest total meat weight among all recipes containing \"fish\" as an allergen, and add it to the menu. If multiple recipes tie for the lowest meat weight, add all of them to the menu.\n4. Check all seasoning ingredients at home. For any ingredient with zero inventory, add 400 grams of it to the shopping list.\n5. Compile the comprehensive nutrition feature tags for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Thyme",
+          "quantity": "4"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Dill",
+          "quantity": "4"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup",
+            "Shrimp & Asparagus Stir-fry"
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 9, 2026. You require the AI Service Agent to examine the first-person view image of cutting fried pork chops and determine the specific name of the current recipe. Next, instruct the AI Service Agent to judge: if the total fat content of this dish is greater than 50g, have the AI Service Agent find the ingredient with the highest dietary fiber among all ingredients belonging to the egg/milk/bean product category and add it to the shopping list based on a requirement of 600g. If there are multiple ingredients tied for the highest dietary fiber among those that meet the conditions, you want all of them to be added with the specified quantity. Otherwise, have the AI Service Agent find the ingredient with the lowest protein among all ingredients belonging to the beverage category and add it to the shopping list based on a quantity of 800g. If there are multiple ingredients tied for the lowest protein among those that meet the conditions, you want all of them to be added with the specified quantity. Next, have the AI Service Agent remove all recipes from the current menu that contain a sweet flavor. Finally, have the AI Service Agent calculate and tally the total sugar and fat content currently in the shopping list.",
+    "analysis": "1. Based on the first-person perspective view of cutting the fried pork chop, identify the current recipe name.\n\n2. If the total fat content of this dish is greater than 50 grams, identify the ingredient with the highest dietary fiber among all egg, milk, or bean product ingredients, and add 600 grams of it to the shopping list. If there are multiple ingredients tied for the highest dietary fiber among those that meet the conditions, add 600 grams of each of them.\n\n3. If the total fat content of this dish is not greater than 50 grams, identify the ingredient with the lowest protein content among all beverage ingredients, and add 800 grams of it to the shopping list. If there are multiple ingredients tied for the lowest protein among those that meet the conditions, add 800 grams of each of them.\n\n4. Delete all recipes from the current menu that have a flavor containing \"bitter\".\n\n5. Calculate the total sugar and total fat content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Tofu",
+          "quantity": "6"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredients": [
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Quinoa",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Tofu",
+              "quantity": 6
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 10, 2026. You ask the AI Service Agent to identify the recipe you are currently making based on an image of sliced fried pork chops. Ask the AI Service Agent to determine: if the nutritional characteristics of this recipe include high_calcium, then ask the AI Service Agent to select the recipe with the fewest total cooking steps from all recipes that include spicy tastes and add it to the menu. If there are multiple recipes tied for the fewest steps, add all of them. Otherwise, ask the AI Service Agent to find the recipe with the lowest calories among recipes that contain eggs as an allergen and add it to your menu. If there are multiple recipes tied for the lowest calories, add all of them. Afterward, ask the AI Service Agent to count the staples/dry goods currently in your home, and add the variety with the least stock to the shopping list at 2.5kg each. If there are multiple varieties tied for the least stock, add 2.5kg of each. Finally, ask the AI Service Agent to calculate the distribution of taste types for each recipe in the current menu.",
+    "analysis": "1. Identify the current recipe based on the scene of slicing fried pork cutlets into strips.\n2. If this recipe has the high_calcium nutritional feature, find the recipe with the fewest total cooking steps among all recipes with a spicy flavor and add it to the menu. If multiple recipes tie for the fewest steps, add all of them to the menu.\n3. If this recipe does not have the high_calcium nutritional feature, find the recipe with the lowest calories among all recipes containing eggs as an allergen and add it to the menu. If multiple recipes tie for the lowest calories, add all of them to the menu.\n4. Check the existing stock of staple foods and dry goods ingredients at home. Add any varieties that are completely out of stock to the shopping list, with a quantity of 2.5 kg for each.\n5. Calculate the distribution of flavor types for the recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Chickpeas",
+          "quantity": "25"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Black Beans",
+          "quantity": "25"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 10, 2026. You ask the AI Service Agent to observe the action of cutting fried pork chops in the kitchen and infer the corresponding recipe name. Ask the AI Service Agent to determine: if the taste of this dish includes \"sour\", then ask the AI Service Agent to filter out the recipe with the lowest total calories among all recipes containing \"fish\" as an allergen and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to select the recipe with the largest total weight of vegetable categories among all recipes with the nutritional feature \"high_fiber\" and add it to the menu. If there are multiple recipes tied for the largest weight among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check all fruit-category ingredients used in the current menu. If any are found to be completely out of stock, ask the AI Service Agent to add them to the shopping list in quantities of 1kg. Finally, ask the AI Service Agent to calculate the total fat content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the recipe name based on the action of cutting fried pork chops in the kitchen.\n\n2. If the dish includes a \"sour\" taste, find the recipe(s) with the lowest total calories among all recipes containing the allergen \"fish\", and add them to the menu. If multiple recipes tie for the lowest calories, you want all of them to be added.\n\n3. If the dish does not include a \"sour\" taste, find the recipe(s) with the highest total weight of vegetable ingredients among all recipes with the \"high_fiber\" nutritional feature, and add them to the menu. If multiple recipes tie for the highest weight, you want all of them to be added.\n\n4. Check all fruit ingredients used in the current menu. For any ingredients that are out of stock, add 1 kg of each to the shopping list.\n\n5. Calculate the total fat content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Cherries",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cherries",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 11, 2026. Guide the AI Service Agent to analyze the visual information of the sliced fried pork strips to identify which dish is being prepared. Next, have the AI Service Agent determine whether the allergens for this dish include dairy. If they do, instruct the AI Service Agent to select the ingredient with the highest protein content from the ingredient inventory stored in the refrigerated layer and add it to your shopping list in a quantity of 800g. If multiple ingredients tie for the highest protein content, add 800g of each of them. Otherwise, have the AI Service Agent find the ingredient with the highest sodium content among all ingredients stored on the seasoning rack and add it to the shopping list in a quantity of 300g. If multiple ingredients tie for the highest sodium content, add 300g of each of them. Then, have the AI Service Agent browse your existing menu and remove all recipes that include a 'sweet' flavor. Finally, have the AI Service Agent calculate and sum the total calories for all ingredients in the current shopping list.",
+    "analysis": "1. Identify the corresponding recipe based on the image of fried pork cutlet strips.\n\n2. If this dish contains dairy allergens, identify the ingredient with the highest protein content among all ingredients stored in the refrigerated layer and add 800 grams to the shopping list. If multiple ingredients tie for the highest protein content, add 800 grams of each.\n\n3. If this dish does not contain dairy allergens, identify the ingredient with the highest sodium content among all ingredients stored on the seasoning shelf and add 300 grams to the shopping list. If multiple ingredients tie for the highest sodium content, add 300 grams of each.\n\n4. Remove all recipes from the current menu that have a spicy flavor.\n\n5. Calculate the total calories for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Salt",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Salt",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 12, 2026. You instruct the AI Service Agent to identify which recipe is currently being cooked based on the scene of cutting fried pork chops. Ask the AI Service Agent to determine: if the total calories of this recipe are below 600, then have the AI Service Agent find the recipe with the largest total weight of ingredients from the egg/dairy/soy product category among all recipes with a 'salty' flavor profile, and add it to your menu. If there are multiple recipes tied for the largest weight among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent select the recipe with the most preparation steps among all recipes with the 'gluten_free' nutritional feature and add it to the menu. If there are multiple recipes tied for the most steps among those that meet the conditions, you want all of them to be added. Subsequently, have the AI Service Agent check all ingredients stored in the pantry at home, and add all expired ones to the shopping list with a weight of 2Kg each. Finally, have the AI Service Agent summarize the flavor distribution of all recipes in the current menu.",
+    "analysis": "1. Based on the scene of cutting fried pork chops, confirm the recipe currently being prepared.\n2. If the total calories of this recipe are below 600, find the recipe(s) with the largest total weight of egg, dairy, or soy product ingredients among all recipes with a 'salty' flavor, and add them to the menu. If multiple recipes tie for the largest weight, add all of them.\n3. If the total calories of this recipe are 600 or above, find the recipe(s) with the most preparation steps among all recipes with the 'gluten_free' nutritional feature, and add them to the menu. If multiple recipes tie for the most steps, add all of them.\n4. Check all ingredients stored in the home storage cabinet, and add 2 kilograms of each expired ingredient to the shopping list.\n5. Calculate the flavor distribution of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Salmon & Quinoa Bowl"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "find_ingredients_by_location",
+        "parameters": {
+          "location": "pantry"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata",
+            "Salmon & Quinoa Bowl",
+            "Cod & Lemon Dill Bake"
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 13, 2026. You ask the AI Service Agent to determine the exact name of the recipe based on the action of cutting a fried pork cutlet with a knife in the scene. Then, ask the AI Service Agent to check whether the nutritional features of this dish include \"sugar_free\". If so, ask the AI Service Agent to find the recipe with the highest fat content among all recipes containing \"soy\" in their allergens and add it to your menu. If there are multiple recipes tied for the highest fat content, add all of them. Otherwise, ask the AI Service Agent to find the recipe with the least usage amount of staple/dried goods category ingredients among all recipes with \"umami\" flavor and add it to your menu. If there are multiple recipes tied for the least usage amount, add all of them. Additionally, ask the AI Service Agent to check all dishes in the current menu. If any beverage category ingredients used in them are out of stock, ask the AI Service Agent to add them to the shopping list with a specification of 1.5Kg. Finally, ask the AI Service Agent to calculate the total sum of dietary fiber for the items listed on the current shopping list.",
+    "analysis": "1. Based on the image of the cutlet fried pork chop, determine the exact name of the recipe.\n\n2. If this dish has the 'sugar_free' nutritional feature, find the recipe with the highest fat content among all recipes containing 'soy' as an allergen, and add it to the menu. If multiple recipes tie for the highest fat content, add all of them.\n\n3. If this dish does not have the 'sugar_free' nutritional feature, find the recipe with the lowest amount of staple/dry goods ingredients among all recipes with an 'umami' flavor profile, and add it to the menu. If multiple recipes tie for the lowest amount, add all of them.\n\n4. Check all recipes in the current menu. For any beverage-type ingredients required by these recipes that are out of stock, add 1.5 kg of each to the shopping list.\n\n5. Calculate the total dietary fiber for all items in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "get_current_menu",
+        "parameters": {
+          "user_id": "cook_009"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 6, 2026. You ask the AI Service Agent to observe the action of cutting a crispy pork cutlet and identify which dish this is from the recipe library. Ask the AI Service Agent to determine if the total weight of vegetables used in this dish is greater than 400g. If so, ask the AI Service Agent to select the ingredient with the highest calcium content among all ingredients currently placed on the counter, and add it to the shopping list in a quantity of 500g. If multiple ingredients tie for the highest calcium content, add each of them to the shopping list in a quantity of 500g. Otherwise, ask the AI Service Agent to select the ingredient with the lowest sugar content among all ingredients belonging to the fruit category, and add it to the shopping list in a portion of 2kg. If multiple ingredients tie for the lowest sugar content, add each of them to the shopping list in a portion of 2kg. Next, ask the AI Service Agent to review your current menu and delete all recipes that have the \"low_calories\" nutritional feature. Finally, ask the AI Service Agent to perform an ingredient analysis on the updated shopping list and calculate the total protein and sodium content.",
+    "analysis": "1. Identify the current recipe based on the image of slicing a crispy pork chop.\n\n2. If the total weight of vegetables used in this dish exceeds 400 grams, identify the ingredient with the highest calcium content among all ingredients currently placed on the counter, and add 500 grams of it to the shopping list. If multiple ingredients tie for the highest calcium content, add 500 grams of each tied item.\n\n3. If the total weight of vegetables used in this dish is not greater than 400 grams, identify the fruit ingredient with the lowest sugar content, and add 2 kilograms of it to the shopping list. If multiple fruit ingredients tie for the lowest sugar content, add 2 kilograms of each tied item.\n\n4. Remove all recipes with the 'low_protein' nutrient characteristic from the current menu.\n\n5. Calculate the total protein and total sodium content of all ingredients in the updated shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Strawberry",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 20
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. Ask the AI service agent to identify which recipe is being prepared by analyzing the first-person view of the fried pork cutlet currently being sliced. Next, have the AI service agent determine: if the recipe's flavor includes umami, instruct the AI service agent to find the recipe(s) with the minimum usage of staple foods/dry goods among all recipes featuring the nutritional characteristic high_fat, and add them to the menu. If multiple recipes tie for the minimum usage, add all of them. Otherwise, have the AI service agent select the recipe(s) with the highest fiber content among all recipes containing eggs as an allergen, and add them to the menu. If there is a tie for the highest fiber content, add all tied recipes. After that, ask the AI service agent to check which meat ingredients are currently out of stock at home, and add them to the shopping list with a quantity of 1.8Kg for each type. Finally, ask the AI service agent to provide a detailed summary of all nutritional feature tags covered in your menu.",
+    "analysis": "1. Based on the first-person view of cutting the fried pork cutlet, identify the recipe currently being prepared.\n\n2. If the recipe's flavor profile includes umami, search among all recipes with the high_fat nutritional feature for the one with the minimum usage of staple foods or dried goods, and add it to the menu. If there are multiple recipes tied for the minimum usage, add all of them.\n\n3. If the recipe's flavor profile does not include umami, search among all recipes containing eggs as an allergen for the one with the highest calcium content, and add it to the menu. If there are multiple recipes tied for the highest calcium content, add all of them.\n\n4. Check the meat ingredients currently out of stock at home, and add each of them to the shopping list with a quantity of 1.8 kg.\n\n5. Summarize the nutritional feature tags covered by all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Shrimp",
+          "quantity": "18"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Cod",
+          "quantity": "18"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Duck",
+          "quantity": "18"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl",
+            "Oat & Banana Pancakes"
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 10, 2026. You ask the AI Service Agent to examine the progress screen showing the fried pork cutlets being cut into strips and infer the recipe. Ask the AI Service Agent to determine whether the nutritional features of this dish include high_fiber. If so, ask the AI Service Agent to select the ingredient with the highest calorie count among all ingredients belonging to the vegetable category and add 700g of it to the shopping list. If there are multiple vegetables tied for the highest calorie count, add 700g of each of them. Otherwise, ask the AI Service Agent to find the ingredient with the lowest sugar content among all ingredients stored on the spice rack and add 250g of it to the shopping list. If there are multiple ingredients tied for the lowest sugar content, add 250g of each of them. Subsequently, ask the AI Service Agent to go through the existing menu and remove all recipes that include sour flavor. Finally, ask the AI Service Agent to perform a comprehensive dietary fiber statistics calculation for the current shopping list.",
+    "analysis": "1. Identify the current recipe based on the visual scene of slicing fried pork cutlets into strips.\n\n2. If this dish has the 'high_fiber' nutritional feature, find the vegetable ingredient with the highest calories among all vegetable ingredients and add 700 grams of it to the shopping list. If there are multiple vegetables tied for the highest calories among those that meet the conditions, you want 700 grams of each of them to be added.\n\n3. If this dish does not have the 'high_fiber' nutritional feature, find the ingredient with the lowest sugar content among all ingredients stored on the spice rack and add 250 grams of it to the shopping list. If there are multiple ingredients tied for the lowest sugar content among those that meet the conditions, you want 250 grams of each of them to be added.\n\n4. Remove all recipes from the current menu that have a flavor containing 'sour'.\n\n5. Calculate the total dietary fiber of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Salt",
+          "quantity": "2.5"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Salt",
+              "quantity": 2.5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 9, 2026. You ask the AI Service Agent to confirm the dish being prepared using the visual scene of you cutting pork chops. Ask the AI Service Agent to determine: if the dish contains soy allergens, have the AI Service Agent select the recipe with the fewest preparation steps from all recipes with a 'savory' flavor profile and add it to your menu. If there are multiple recipes tied for the fewest steps among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the recipe with the highest protein content from all recipes with the 'low_fat' nutritional feature and add it to the menu. If there are multiple recipes tied for the highest protein content among those that meet the conditions, you want all of them to be added. After completing this step, ask the AI Service Agent to check all drink-category ingredients at home. If any are expired, have the AI Service Agent add them to the shopping list in quantities of 1Kg each. Finally, ask the AI Service Agent to perform a statistical analysis of sodium and fat for all ingredients on the shopping list.",
+    "analysis": "1. Based on the visual feed of pork chops being cut, identify the dish currently being prepared.\n\n2. If the dish contains soy as an allergen, search through all recipes with a savory flavor. Identify the recipe with the fewest preparation steps and add it to the menu. If multiple recipes tie for the fewest steps, add all of them to the menu.\n\n3. If the dish does not contain soy as an allergen, search through all recipes with low_sodium nutritional features. Identify the recipe with the highest protein content and add it to the menu. If multiple recipes tie for the highest protein content, add all of them to the menu.\n\n4. Check all beverage ingredients at home. For any ingredients that have expired, add 1 kg of each to the shopping list.\n\n5. Calculate the total sodium and total fat for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Salmon & Quinoa Bowl"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Apple Juice",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 8
+            },
+            {
+              "ingredient_name": "Apple Juice",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 12, 2026. You ask the AI Service Agent to identify the dish currently being cooked based on the action of cutting golden fried pork chops in the scene. Ask the AI Service Agent to determine: if the total protein content of this dish is less than 100g, then ask the AI Service Agent to find the recipe with the highest calories among all recipes with a flavor containing \"sour\" and add it to your menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe that uses the largest total weight of vegetables among all recipes with nutritional characteristics containing \"low_fat\" and add it to your menu. If there are multiple recipes tied for the largest vegetable weight, you want all of them to be added. Additionally, ask the AI Service Agent to check all staple foods/dry goods ingredients at home, and ask the AI Service Agent to add the ingredient expiring soonest to the shopping list with a weight of 2Kg. If there are multiple ingredients tied for the soonest expiration, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sum of protein and calories for the items currently on the shopping list.",
+    "analysis": "1. Identify the recipe currently being cooked based on the image of the knife-cut golden fried pork chops.\n\n2. If the total calcium content of this dish is less than 100mg, find the recipe with the highest calories among all recipes with a flavor containing \"bitter\", and add it to the menu. If multiple recipes tie for the highest calories, add all of them.\n\n3. If the total calcium content of this dish is not less than 100mg, find the recipe with the largest total vegetable weight among all recipes with the \"no_additives\" nutritional feature, and add it to the menu. If multiple recipes tie for the largest weight, add all of them.\n\n4. Check all staple food and dry goods ingredients at home. For any ingredients that have expired, add 2 kilograms of each to the shopping list.\n\n5. Calculate the total protein and total calories for all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Duck & Cherry Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Instant Noodles",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredients": [
+            {
+              "ingredient_name": "Yogurt",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Oats",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Cinnamon",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Instant Noodles",
+              "quantity": 20
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your User ID is cook_005, and today is May 13, 2026. Instruct the AI Service Agent to identify the recipe currently being cooked based on the first-person view action of cutting fried pork cutlet into strips. Ask the AI Service Agent to determine if the total protein of this recipe is less than 30g. If it is, ask the AI Service Agent to filter all recipes with a sour flavor, select the dish with the largest total meat weight, and add it to your menu. If there are multiple dishes tied for the largest meat weight, add all of them to the menu. Otherwise, ask the AI Service Agent to find the recipe with the most cooking steps among all recipes with the vegan nutrition feature, and add it to the menu. If there are multiple recipes tied for the most cooking steps, add all of them to the menu. Next, ask the AI Service Agent to check all egg, dairy, and soy products at home. If any are found to be out of stock (quantity 0), add them to the shopping list with a usage amount of 800g each. Finally, ask the AI Service Agent to calculate and output all nutrition feature tags for the current menu.",
+    "analysis": "1. Based on the first-person view of the fried pork cutlet being cut into strips, identify the recipe currently being prepared.\n2. If the total protein content of this recipe is less than 30 grams, find the recipe with the highest total meat weight among all recipes with a \"sour\" flavor, and add it to the menu. If multiple recipes tie for the highest meat weight, add all of them to the menu.\n3. If the total protein content of this recipe is not less than 30 grams, find the recipe with the most cooking steps among all recipes with \"vegan\" nutritional characteristics, and add it to the menu. If multiple recipes tie for the most steps, add all of them to the menu.\n4. Check all egg, dairy, and soy product ingredients at home. Add any out-of-stock ingredients to the shopping list with a quantity of 800 grams each.\n5. Summarize all nutritional characteristic tags of the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Tofu",
+          "quantity": "8"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Tofu Soup"
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 12, 2026. You show the AI Service Agent the current operation of cutting fried pork chops and ask it to infer which recipe from the recipe database this corresponds to. Ask the AI Service Agent to determine whether the allergens for this dish include fish. If they do, ask the AI Service Agent to select the ingredient with the lowest fat content from all ingredients in the storage cabinets and add it to the shopping list in a quantity of 900g. If there are multiple ingredients tied for the lowest fat content, you want 900g of each of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest calorie content among all ingredients in the refrigerated layers and add it to the shopping list in a quantity of 400g. If there are multiple ingredients tied for the highest calorie content, you want 400g of each of them to be added. Immediately after, ask the AI Service Agent to check your current menu and remove any recipes that have the nutritional characteristic high_fiber (high dietary fiber) from the menu. Finally, ask the AI Service Agent to accurately calculate the total protein of all ingredients currently on the shopping list.",
+    "analysis": "1. Identify the corresponding recipe based on the current scene of cutting a fried pork cutlet.\n\n2. If the dish contains fish as an allergen, find the ingredient with the lowest fat content among all ingredients in the storage cabinet and add 900 grams of it to the shopping list. If multiple ingredients tie for the lowest fat content, add 900 grams of each of those tied ingredients.\n\n3. If the dish does not contain fish as an allergen, find the ingredient with the highest calorie content among all ingredients in the refrigerated section and add 400 grams of it to the shopping list. If multiple ingredients tie for the highest calorie content, add 400 grams of each of those tied ingredients.\n\n4. Delete all recipes with the \"low_fat\" nutritional feature from the current menu.\n\n5. Calculate the total protein content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Butter",
+          "quantity": "4"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 7, 2026. Instruct the AI Service Agent to identify the current recipe based on visual information of the fried pork cutlet being processed. Ask the AI Service Agent to determine if the dish's flavor includes \"mild\". If it does, ask the AI Service Agent to select the ingredient with the lowest calcium content from all meat ingredients and add 1.5kg of it to the shopping list. If there are multiple meat ingredients tied for the lowest calcium content, add 1.5kg of each of those tied ingredients to the shopping list. Otherwise, ask the AI Service Agent to find the ingredient with the highest dietary fiber from all staple/dry goods categories and add 2kg of it to the shopping list. If there are multiple ingredients tied for the highest dietary fiber, add 2kg of each of those tied ingredients to the shopping list. Subsequently, ask the AI Service Agent to check your current menu and remove all recipes that contain the nutritional characteristic \"low_carbs\". Finally, ask the AI Service Agent to calculate the total sugar content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the current recipe based on the scene showing the preparation of fried pork chops.\n\n2. If the dish's flavor includes \"mild\", find the meat ingredient(s) with the lowest calcium content among all meat ingredients. Add 1.5 kg of each qualifying ingredient to the shopping list. If multiple ingredients tie for the lowest calcium content, add 1.5 kg of each of those tied items.\n\n3. If the dish's flavor does not include \"mild\", find the staple or dry goods ingredient(s) with the highest dietary fiber content among all such ingredients. Add 2 kg of each qualifying ingredient to the shopping list. If multiple ingredients tie for the highest dietary fiber content, add 2 kg of each of those tied items.\n\n4. Remove all recipes from the current menu that have the \"high_sodium\" nutritional characteristic.\n\n5. Calculate the total sugar content for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Chickpeas",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Mushroom & Thyme Roast Chicken"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 20
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 6, 2026. You ask the AI Service Agent to observe the scene of pork chops being cut into strips and identify the corresponding recipe. Ask the AI Service Agent to determine whether the nutritional features of this dish include low_sugar. If they do, ask the AI Service Agent to find the recipe with the highest total fat content among all recipes with a umami flavor and add it to the menu. If there are multiple recipes tied for the highest fat content, add all of them to the menu. Otherwise, ask the AI Service Agent to find the recipe that uses the fewest types of vegetables among all recipes containing soy allergens and add it to the menu. If there are multiple recipes tied for the fewest vegetable types, add all of them to the menu. Then, ask the AI Service Agent to check all ingredients placed on the counter and add all expired ingredients to the shopping list, each with a weight of 300g. Finally, ask the AI Service Agent to calculate the total calories of all ingredients in the shopping list.",
+    "analysis": "Results:\n1. Based on the scene of cutting pork chops into strips, identify the corresponding recipe.\n\n2. If this dish has the low_sugar nutritional feature, find the recipe with the highest total fat content among all recipes with an umami flavor, and add it to the menu. If there are multiple recipes tied for the highest fat content, add all of them to the menu.\n\n3. If this dish does not have the low_sugar nutritional feature, find the recipe with the fewest types of vegetables among all recipes containing soy as an allergen, and add it to the menu. If there are multiple recipes tied for the fewest vegetable types, add all of them to the menu.\n\n4. Check all ingredients placed on the counter, and add any expired ingredients to the shopping list with a quantity of 300 grams each.\n\n5. Calculate the total calories for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Banana",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 8, 2026. You ask the AI Service Agent to analyze the image of you cutting a fried pork cutlet in the kitchen to identify the recipe. Instruct the AI Service Agent to determine whether the total sugar content of this dish exceeds 20g. If it does, ask the AI Service Agent to select the recipe with the lowest total calories from all recipes whose flavor includes \"sweet\" and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added to your menu. Otherwise, ask the AI Service Agent to find the recipe that uses the largest weight of meat category from all recipes whose nutritional features include \"gluten_free\" and add it to the menu. If there are multiple recipes tied for the largest meat weight among those that meet the conditions, you want all of them to be added to your menu. Afterwards, ask the AI Service Agent to identify any ingredients that are completely out of stock in the home freezer and add them to the shopping list with a weight of 1kg each. Finally, ask the AI Service Agent to summarize the flavor types of all recipes currently on the menu.",
+    "analysis": "1. Identify the corresponding recipe based on the image of the sliced fried pork chop.\n\n2. If the total sugar content of this dish is greater than 20 grams, find the recipe with the lowest total calories among all recipes with a flavor profile containing \"sweet\", and add it to the menu. If multiple recipes tie for the lowest calorie count among those that meet the conditions, add all of them.\n\n3. If the total sugar content of this dish is not greater than 20 grams, find the recipe with the highest total weight of fruit ingredients among all recipes with the \"gluten_free\" nutritional feature, and add it to the menu. If multiple recipes tie for the highest weight among those that meet the conditions, add all of them.\n\n4. Check the ingredients in the home freezer. For any ingredients that are out of stock, add 1 kilogram of each to the shopping list.\n\n5. Summarize the flavor types of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "find_ingredients_by_location",
+        "parameters": {
+          "location": "freezer"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Green Pepper Chicken",
+            "Roasted Tomato Salmon"
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 10, 2026. First, ask the AI Service Agent to confirm the recipe being cooked based on the visual cues of the currently sliced fried pork cutlet, and determine whether this dish contains the gluten allergen. Ask the AI Service Agent to judge: if the total calories of this dish are below 400, then ask the AI Service Agent to find other recipes that share at least one nutritional feature with it and use the least amount of seasoning by weight, and add them to your menu. If there are multiple recipes tied for the least seasoning weight among those that meet the conditions, add all of them. Otherwise, ask the AI Service Agent to find the dish with the lowest carbohydrate (sugar) content among recipes containing the eggs allergen, and add it to the menu. If there are multiple dishes tied for the lowest carbohydrate content among those that meet the conditions, add all of them. Next, ask the AI Service Agent to check all meat ingredients required for the current menu. Once any expired ingredients are found, ask the AI Service Agent to add them to the shopping list according to the original recipe requirements. Finally, ask the AI Service Agent to summarize the comprehensive flavor profile types of all recipes in the current menu.",
+    "analysis": "1. Based on the image of the sliced fried pork cutlet, identify the recipe currently being prepared.\n2. Determine whether this dish contains gluten allergens.\n3. If the total calories of this dish are below 400, find all other recipes that share at least one nutrient feature with this dish. Among them, select the recipe with the lowest total weight of seasonings and add it to the menu. If there are multiple recipes tied for the lowest weight among those that meet the conditions, add all of them.\n4. If the total calories of this dish are 400 or above, find all recipes that contain eggs allergens. Among them, select the recipe with the lowest sugar content and add it to the menu. If there are multiple recipes tied for the lowest sugar content among those that meet the conditions, add all of them.\n5. Check all meat ingredients required for the current menu. Add any expired ingredients to the shopping list in the quantities required by the original recipes.\n6. Summarize the overall flavor profiles of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_allergens",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "pork",
+          "quantity": "1.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "salmon",
+          "quantity": "1.8"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl"
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 9, 2026. Ask the AI Service Agent to observe the action of cutting pork chops in the kitchen, identify which dish is currently being prepared, and find the ingredient with the highest fat content in that recipe. Ask the AI Service Agent to determine if that ingredient is stored in the freezer. If it is, ask the AI Service Agent to select the ingredient with the highest protein content among all ingredients belonging to the same meat category and add it to the shopping list with a quantity of 800 grams. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, add 800 grams of each of those tied items to the shopping list. Otherwise, ask the AI Service Agent to select the ingredient with the longest shelf life (furthest from expiration date) among all ingredients stored in the cabinet and add it to the shopping list with a quantity of 300 grams. If there are multiple ingredients tied for the longest shelf life among those that meet the conditions, add 300 grams of each of those tied items to the shopping list. Next, ask the AI Service Agent to review your current menu and delete all recipes with a spicy flavor. Finally, ask the AI Service Agent to perform a nutrient analysis on the updated shopping list and calculate the total calcium and fat.",
+    "analysis": "1. Based on the action of cutting pork chops, identify the recipe currently being prepared.\n2. Identify the ingredient with the highest fat content in that recipe.\n3. If that ingredient is stored in the freezer, find the meat ingredient with the highest protein content among all meat ingredients and add 800g of it to the shopping list. If multiple meat ingredients tie for the highest protein content, add 800g of each tied ingredient to the list.\n4. If that ingredient is not stored in the freezer, find the ingredient with the longest shelf life among all storage cabinet ingredients and add 300g of it to the shopping list. If multiple cabinet ingredients tie for the longest shelf life, add 300g of each tied ingredient to the list.\n5. Check the current menu and remove all recipes with a spicy flavor.\n6. Calculate the total calcium and total fat for all ingredients in the updated shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Balsamic Vinegar",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "get_current_menu",
+        "parameters": {
+          "user_id": "cook_010"
+        }
+      },
+      {
+        "tool_name": "get_recipe_taste",
+        "parameters": {
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "get_recipe_taste",
+        "parameters": {
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_008, and today is May 11, 2026. You ask the AI Service Agent to examine the first-person view of cutting the fried pork chop, determine the current recipe name, and identify the seasoning ingredient used in the smallest amount in this dish. Next, have the AI Service Agent check if the current stock of this seasoning ingredient is zero. If it is zero, have the AI Service Agent find the ingredient with the lowest fat content among all ingredients belonging to the egg/dairy/soy product category, and add it to the shopping list with a requirement of 500 grams. If there are multiple ingredients tied for the lowest fat content among those that meet the conditions, you want 500 grams of each of them to be added. Otherwise, have the AI Service Agent find the ingredient with the highest sugar content among all ingredients stored in the same location as that seasoning, and add it to the shopping list with a requirement of 200 grams. If there are multiple ingredients tied for the highest sugar content among those that meet the conditions, you want 200 grams of each of them to be added. Next, have the AI Service Agent remove all recipes from the current menu that require ingredients from the storage cabinet. Finally, have the AI Service Agent calculate and summarize the overall nutritional content (sugar, protein, fat) of the current shopping list.",
+    "analysis": "Results:\n1. Based on the first-person view of cutting the fried pork cutlet, identify the name of the current recipe.\n\n2. Identify the vegetable ingredient used in the smallest quantity in this dish.\n\n3. If the current stock of that vegetable is 0, identify the ingredient with the lowest fat content among all egg, dairy, or soy product ingredients and add 500 grams to the shopping list. If multiple ingredients tie for the lowest fat content, add 500 grams of each tied ingredient.\n\n4. If the current stock of that vegetable is not 0, identify the ingredient with the highest sugar content among all ingredients stored in the same location as that vegetable and add 200 grams to the shopping list. If multiple ingredients tie for the highest sugar content, add 200 grams of each tied ingredient.\n\n5. Remove all recipes from the current menu that require ingredients from the storage cabinet.\n\n6. Calculate the total sugar, total protein, and total fat for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Turkey & Apple Soup"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 6, 2026. You ask the AI Service Agent to identify which dish in the database this is based on the action of cutting pork chop strips. Then, have it find the ingredients used in the step immediately preceding the current step and add all of them to the shopping list in the quantities required by the recipe. Subsequently, ask the AI Service Agent to determine if the dish's flavor includes umami. If it does, have the AI Service Agent search among all recipes with no_additives to find the recipe with the lowest total ingredient weight and add it to the menu. If there are multiple recipes tied for the lowest total weight, add all of them. Otherwise, have the AI Service Agent find the recipe with the highest protein content among all recipes that have exactly the same flavor profile as this recipe and add it to the menu. If there are multiple recipes tied for the highest protein content, add all of them. Afterwards, have the AI Service Agent check the home inventory and add all ingredients in the fruit category that have zero stock to the shopping list, 200 grams of each. Finally, have the AI Service Agent calculate the total calories and sodium content for all ingredients in the shopping list.",
+    "analysis": "1. Identify the current recipe based on the action of cutting pork chop strips.\n\n2. Identify the ingredients used in the previous step and add them to the shopping list according to the quantities required by the recipe.\n\n3. If the dish flavor includes umami, find the recipe with the lowest total ingredient weight among all recipes labeled 'no_additives' and add it to the menu. If multiple recipes tie for the lowest weight, add all of them to the menu.\n\n4. If the dish flavor does not include umami, find the recipe with the highest protein content among all recipes that exactly match the dish's flavor and add it to the menu. If multiple recipes tie for the highest protein content, add all of them to the menu.\n\n5. Check the fruit ingredients at home. For any fruit ingredients with zero stock, add 200 grams of each to the shopping list.\n\n6. Calculate the total calories and total sodium content for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "pork",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "chicken",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "peanut oil",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Cherries",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "pork",
+              "quantity": 1.5
+            },
+            {
+              "ingredient_name": "chicken",
+              "quantity": 1.5
+            },
+            {
+              "ingredient_name": "peanut oil",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Cherries",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 12, 2026. Ask the AI Service Agent to identify the recipe you are currently making based on the image of slicing fried pork chops into strips, and also require it to check whether the nutritional characteristics of this dish include \"low_fat\". Instruct the AI Service Agent to determine: if this recipe has the \"low_sodium\" label, then have the AI Service Agent select the recipe with the fewest total cooking steps from all recipes that have exactly the same allergens as this recipe and add it to the menu. If there are multiple recipes tied for the fewest steps, add all of them. Otherwise, have the AI Service Agent look for the recipe with the highest calories among recipes containing fish allergens and add it to your menu. If there are multiple recipes tied for the highest calories, add all of them. After completion, have the AI Service Agent count all staples/dry goods mentioned in your current menu, and add those that are not expired and have an inventory less than 10 to the shopping list, specifying 500 grams for each item. Finally, have the AI Service Agent summarize the flavor profiles of each recipe in the current menu.",
+    "analysis": "1. Identify the current recipe based on the visual scene of cutting fried pork cutlets into strips.\n\n2. Determine whether the nutritional profile of this dish includes \"low_fat\".\n\n3. If the recipe has a \"low_sodium\" label, find all recipes that match its allergens exactly. Among these, identify the recipe(s) with the minimum number of cooking steps. If there are multiple recipes tied for the fewest steps, include all of them. Add the selected recipe(s) to the menu.\n\n4. If the recipe does not have a \"low_sodium\" label, find all recipes that contain the \"fish\" allergen. Among these, identify the recipe(s) with the highest calorie count. If there are multiple recipes tied for the highest calories, include all of them. Add the selected recipe(s) to the menu.\n\n5. Check the staple foods and dry goods ingredients involved in the current menu. For any ingredients that are expired, add 500 grams of each to the shopping list.\n\n6. Summarize the flavor profiles of each recipe in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Salmon & Quinoa Bowl"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Black Beans",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Duck & Cherry Salad",
+            "Beef & Black Bean Stew",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 13, 2026. You ask the AI Service Agent to identify which recipe the visual scene of cutting pork chops in the kitchen belongs to, and have it analyze how many of the ingredients for this dish come from the refrigerated layer. Then, have the AI Service Agent determine: if this dish contains more than two types of seasonings, have the AI Service Agent find the dish with the highest dietary fiber content among all recipes that share at least one common nutritional feature and add it to your menu. If there are multiple dishes tied for the highest dietary fiber content among the qualifying recipes, add all of them to your menu. Otherwise, have the AI Service Agent pick the dish with the richest variety of vegetables among all recipes with a salty flavor and add it to the menu. If there are multiple dishes tied for the richest vegetable variety among the qualifying recipes, add all of them to the menu. Afterwards, have the AI Service Agent check the fruits at home; if any are found to have only 1 day left before expiration, have the AI Service Agent add these fruits to the shopping list in quantities double the current inventory. Finally, have the AI Service Agent count the nutritional feature tags covered by all recipes in the current menu.",
+    "analysis": "Results:\n1. Identify the corresponding recipe based on the footage of pork chops being cut.\n2. Count the number of distinct ingredient types for this dish that originate from the refrigerated section.\n3. If the dish uses more than 2 types of seasonings, find the recipe with the highest dietary fiber content among all recipes that share at least one nutritional feature with this dish, and add it to the menu. If multiple recipes tie for the highest fiber content, add all of them.\n4. If the dish uses no more than 2 types of seasonings, find the recipe with the greatest variety of vegetables among all recipes with a salty flavor, and add it to the menu. If multiple recipes tie for the most vegetable varieties, add all of them.\n5. Check the fruits at home. For any fruit expiring in exactly 1 day, add twice the current inventory quantity to the shopping list.\n6. Compile statistics on the nutritional feature tags covered by all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Apple"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Banana"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Strawberry"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Cherries"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Roasted Chickpeas & Vegetables"
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 7, 2026. You ask the AI Service Agent to observe the scene of pork chops being cut into strips, identify the corresponding recipe, and find the ingredient with the highest calories in that recipe. Ask the AI Service Agent to determine if this highest-calorie ingredient belongs to the staple/dry goods category. If it does, ask the AI Service Agent to find the ingredient with the largest existing stock among all ingredients stored in the freezer layer, and add it to the shopping list in a quantity of 100 grams. If there are multiple ingredients tied for the largest stock among those that meet the conditions, you want 100 grams of each of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the shortest shelf life among all ingredients in the beverage category, and add it to the shopping list in a quantity of 300 grams. If there are multiple ingredients tied for the shortest shelf life among those that meet the conditions, you want 300 grams of each of them to be added. Then, ask the AI Service Agent to clean your menu by removing all recipes whose nutritional characteristics include high fat (high_fat). Finally, ask the AI Service Agent to calculate the total amount of protein and dietary fiber for all ingredients in the shopping list.",
+    "analysis": "1. Identify the corresponding recipe based on the footage of slicing pork chops into strips.\n2. Identify the ingredient with the highest calorie content in that recipe.\n3. If that ingredient belongs to the staple foods or dry goods category, find the ingredient with the largest current stock among all frozen ingredients and add 100 grams of it to the shopping list. If multiple ingredients tie for the largest stock, add 100 grams of each of them.\n4. If that ingredient does not belong to the staple foods or dry goods category, find the ingredient with the shortest shelf life among all beverage ingredients and add 300 grams of it to the shopping list. If multiple ingredients tie for the shortest shelf life, add 300 grams of each of them.\n5. Remove all recipes from the current menu that have the \"high_fat\" nutritional characteristic.\n6. Calculate the total protein and total dietary fiber for all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Apple Juice",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "get_recipe_nutritional_characteristics",
+        "parameters": {
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "get_recipe_nutritional_characteristics",
+        "parameters": {
+          "recipe_name": "Mushroom & Thyme Roast Chicken"
+        }
+      },
+      {
+        "tool_name": "get_recipe_nutritional_characteristics",
+        "parameters": {
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Apple Juice",
+              "quantity": 3
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 8, 2026. Show the AI Service Agent the current action of cutting fried pork chops, and ask it to infer which recipe from the recipe database this is, and to extract all egg, dairy, and soy product ingredients required for this recipe. Ask the AI Service Agent to determine if this dish contains soy allergens. If it does, ask the AI Service Agent to select the recipe that uses the largest number of ingredients on the countertop among those with the high_calcium nutritional feature, and add it to the menu list. If there are multiple recipes tied for using the most ingredients, add all of them. Otherwise, ask the AI Service Agent to find the recipe with the lowest calories among all vegan recipes and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them. Next, ask the AI Service Agent to check the current shopping list and remove any ingredients from the list that have the same name as items currently in the home freezer with a stock quantity greater than 1000 grams. Finally, ask the AI Service Agent to accurately calculate the total sodium content and calories of all ingredients on the current shopping list.",
+    "analysis": "1. Identify the current recipe based on the action of cutting fried pork chops.\n\n2. Extract all ingredients required for this recipe that belong to the egg, dairy, or soy product categories.\n\n3. If the dish contains soy allergens, identify the recipe(s) that use the highest number of countertop ingredients among all recipes with high calcium nutrition features, and add them to the menu. If there are multiple recipes tied for the highest number of ingredients, add all of them.\n\n4. If the dish does not contain soy allergens, identify the recipe(s) with the lowest calorie count among all vegan recipes, and add them to the menu. If there are multiple recipes tied for the lowest calories, add all of them.\n\n5. Check the current shopping list and remove any items for which the household freezer inventory of the same ingredient exceeds 1000 grams.\n\n6. Calculate the total sodium content and total calories for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Beef"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 10, 2026. You instruct the AI Service Agent to identify the current recipe based on visual information of the fried pork cutlets being prepared, and ask it to determine whether the flavor profile of this dish includes \"savory\". Ask the AI Service Agent to determine: if this dish contains dairy allergens, have it select the recipe with the lowest total calories from all recipes with exactly the same flavor profile and add it to your menu. If multiple recipes tie for the lowest calorie count, add all of them. Otherwise, have the AI Service Agent find the recipe using the greatest total weight of fruits among all recipes containing the \"low_sugar\" tag and add it to the menu. If multiple recipes tie for the greatest weight, add all of them. Subsequently, ask the AI Service Agent to check all vegetables currently in the refrigerator at home. If any are expired, have the AI Service Agent add the names of the expired vegetables to the shopping list with a purchase quantity of 1 kg each. Finally, ask the AI Service Agent to summarize all nutritional characteristics involved in your current menu.",
+    "analysis": "1. Identify the current recipe based on the visual scene of preparing fried pork cutlets.\n2. Determine whether the flavor profile of this dish includes \"savory\".\n3. If this dish contains dairy allergens, search among all recipes that match its flavor profile exactly. Identify the recipe(s) with the lowest total calories. If multiple recipes tie for the lowest calorie count, include all of them. Add the selected recipe(s) to the menu.\n4. If this dish does not contain dairy allergens, search among all recipes tagged with \"low_sugar\". Identify the recipe(s) with the highest total weight of fruit ingredients. If multiple recipes tie for the maximum weight, include all of them. Add the selected recipe(s) to the menu.\n5. Check all vegetables in the refrigerator. For any vegetables that have expired, add 1 kg of each type to the shopping list.\n6. Calculate statistics for all nutritional features present in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Broccoli",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Garlic Chives",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Spinach",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Celery",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Asparagus",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 9, 2026. Ask the AI Service Agent to identify the recipe being cooked by recognizing the action of slicing fried pork cutlets from the first-person perspective, and have it calculate the total weight of all meat ingredients in that recipe. Instruct the AI Service Agent that if the total meat weight in this recipe exceeds 300 grams, it should filter through all recipes that share at least one allergen with this dish, select the recipe with the lowest sugar content, and add it to your menu. If there are multiple recipes tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the recipe requiring the greatest variety of ingredients among all recipes tagged as low_carbs, and add it to the menu. If there are multiple recipes tied for the most ingredient types among those that meet the conditions, you want all of them to be added. The next step is to have the AI Service Agent check the ingredients of all dishes currently in the menu. If any seasonings are found to be out of stock (quantity is 0), have the AI Service Agent add them to the shopping list according to the required amount. Finally, have the AI Service Agent summarize and output all flavor attributes of the current menu.",
+    "analysis": "1. Based on the first-person view showing fried pork cutlets being sliced into strips, identify the recipe currently being prepared.\n2. Calculate the total weight of all meat ingredients in that recipe.\n3. If the total weight of meat ingredients in this recipe exceeds 300 grams, search among all recipes that share at least one allergen with this dish. Identify the recipe with the lowest sugar content and add it to the menu. If there are multiple recipes tied for the lowest sugar content, add all of them to the menu.\n4. If the total weight of meat ingredients in this recipe does not exceed 300 grams, search among all recipes tagged as \"sugar_free\". Identify the recipe requiring the most ingredient types and add it to the menu. If there are multiple recipes tied for the most ingredient types, add all of them to the menu.\n5. Check the ingredients required for all recipes currently in the menu, and add any out-of-stock seasonings to the shopping list in the required quantities.\n6. Summarize all flavor attributes of the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Mushroom & Thyme Roast Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Dill",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Thyme",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Mushroom & Thyme Roast Chicken"
+          ]
+        }
+      }
+    ],
+    "task_id": 40,
+    "image_name": "kitchen2",
+    "image_path": "deep_fried.mp4",
+    "image_description": "You are cooking in the kitchen. You are currently at a step in one of the dishes: cutting the already fried pork chop into strips.",
+    "key": "recipe_name",
+    "value": [
+      "Deep-fried Meat Platter"
+    ]
+  }
+]

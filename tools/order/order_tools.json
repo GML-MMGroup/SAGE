@@ -1,0 +1,1150 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "add_dish_to_catalog",
+      "description": "Add or update a dish in the restaurant's catalog. Each dish must have a unique name, category, price, discount factor, nutritional tags, taste profile, allergens, and nutrition facts.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string",
+            "description": "Unique dish name (primary key)."
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Annie's top dishes",
+              "Antipasti & Snacks",
+              "Appetizers",
+              "Cheese & Olives",
+              "Cold Cuts",
+              "Desserts",
+              "Handmade Bread",
+              "Italian Pasta",
+              "Main Courses",
+              "Pasta",
+              "Pizza",
+              "Salads",
+              "Sandwiches & Panini",
+              "Seafood",
+              "Selected Steaks",
+              "Sides",
+              "Soups"
+            ]
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Shelf price including tax."
+          },
+          "tax_rate": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Tax rate (e.g., 0.08 for 8%)."
+          },
+          "discount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.0,
+            "description": "Discount factor: final amount = price * discount."
+          },
+          "nutritional_characteristics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "high_antioxidants",
+                "high_calcium",
+                "high_calories",
+                "high_carbs",
+                "high_fat",
+                "high_fiber",
+                "high_healthy_fats",
+                "high_iron",
+                "high_monounsaturated_fat",
+                "high_omega3",
+                "high_protein",
+                "high_sodium",
+                "high_sugar",
+                "high_vitaminA",
+                "low_calories",
+                "low_fat",
+                "low_protein",
+                "low_sodium",
+                "low_sugar",
+                "no_additives",
+                "sugar_free",
+                "gluten_free",
+                "vegan"
+              ]
+            },
+            "description": "Nutritional/health tags."
+          },
+          "taste": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "bitter",
+                "buttery",
+                "creamy",
+                "earthy",
+                "fresh",
+                "fruity",
+                "garlicky",
+                "herby",
+                "mild",
+                "nutty",
+                "pungent",
+                "rich",
+                "salty",
+                "savory",
+                "smoky",
+                "sour",
+                "spicy",
+                "sweet",
+                "tart",
+                "umami"
+              ]
+            },
+            "description": "Taste profiles."
+          },
+          "allergens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nutrition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "PER_100G",
+                  "PER_SERVING",
+                  "PER_125G",
+                  "PER_235G",
+                  "PER_250G",
+                  "PER_BOX",
+                  "PER_PIECE"
+                ]
+              },
+              "serving_size_g": {
+                "type": "number"
+              },
+              "calories_kcal": {
+                "type": "number"
+              },
+              "protein_g": {
+                "type": "number"
+              },
+              "fat_g": {
+                "type": "number"
+              },
+              "carbs_g": {
+                "type": "number"
+              },
+              "sugar_g": {
+                "type": "number"
+              },
+              "sodium_mg": {
+                "type": "number"
+              },
+              "fiber_g": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "basis"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name",
+          "category",
+          "price",
+          "tax_rate",
+          "discount",
+          "nutritional_characteristics",
+          "taste",
+          "allergens",
+          "nutrition"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "remove_dish_from_catalog",
+      "description": "Remove a dish from the catalog by its exact name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "update_dish_price",
+      "description": "Update the price of an existing dish in the catalog.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          },
+          "new_price": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name",
+          "new_price"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "update_dish_discount",
+      "description": "Update the discount factor for an existing dish.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          },
+          "new_discount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name",
+          "new_discount"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_dish_nutrition",
+      "description": "Retrieve detailed numeric nutrition facts for a specific dish by name. These numeric nutrition facts do not indicate nutritional characteristic tags, e.g., high_protein, low_fat, high_sugar, or low_sugar.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_tax_rate",
+      "description": "Retrieve tax rate for a specific dish by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_dish_allergens",
+      "description": "Retrieve allergen information for a specific individual dish by dish name. Do not pass a set meal name to this tool. If an order item is a set meal, first call get_set_meal_details to retrieve its included dishes, then call get_dish_allergens for those included individual dish names.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_dish_taste_profile",
+      "description": "Retrieve the taste profile (e.g., sweet, spicy) for a specific dish by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_dish_price",
+      "description": "Get only the current shelf price (including tax) for a specific dish by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_dish_discount",
+      "description": "Get only the current discount factor for a specific dish by name. Discount factor is a price multiplier: lower factor means a larger discount; when asked for the highest/largest/biggest discount rate, choose the minimum discount factor.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_dishes_by_category",
+      "description": "List dishes by category. For pasta/noodles, use 'Italian Pasta' for Annie and 'Pasta' for Mediterranean.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Annie's top dishes",
+              "Antipasti & Snacks",
+              "Appetizers",
+              "Cheese & Olives",
+              "Cold Cuts",
+              "Desserts",
+              "Handmade Bread",
+              "Italian Pasta",
+              "Main Courses",
+              "Pasta",
+              "Pizza",
+              "Salads",
+              "Sandwiches & Panini",
+              "Seafood",
+              "Selected Steaks",
+              "Sides",
+              "Soups"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "category"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_dishes_by_nutritional_tag",
+      "description": "Find dish names with the specified nutritional tag. Returned names are dishes, not categories.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "tag": {
+            "type": "string",
+            "enum": [
+              "high_antioxidants",
+              "high_calcium",
+              "high_calories",
+              "high_carbs",
+              "high_fat",
+              "high_fiber",
+              "high_healthy_fats",
+              "high_iron",
+              "high_monounsaturated_fat",
+              "high_omega3",
+              "high_protein",
+              "high_sodium",
+              "high_sugar",
+              "high_vitaminA",
+              "low_calories",
+              "low_fat",
+              "low_protein",
+              "low_sodium",
+              "low_sugar",
+              "no_additives",
+              "sugar_free",
+              "gluten_free",
+              "vegan"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "tag"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_dishes_by_taste",
+      "description": "Find all dishes that match a specific taste profile (e.g., 'spicy', 'sweet').",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "taste": {
+            "type": "string",
+            "enum": [
+              "bitter",
+              "buttery",
+              "creamy",
+              "earthy",
+              "fresh",
+              "fruity",
+              "garlicky",
+              "herby",
+              "mild",
+              "nutty",
+              "pungent",
+              "rich",
+              "salty",
+              "savory",
+              "smoky",
+              "sour",
+              "spicy",
+              "sweet",
+              "tart",
+              "umami"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "taste"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_dishes_by_allergen",
+      "description": "Find dish names whose allergen list contains the specified allergen. This tool is only for candidate discovery/filtering. Do not use it to add/remove items, compute totals, or infer price, discount, nutrition, taste, tax, or order state. Use specific get/compute/order tools for those facts and actions.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "allergen": {
+            "type": "string",
+            "enum": [
+              "dairy",
+              "eggs",
+              "fish",
+              "gluten",
+              "nuts",
+              "seafood"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "allergen"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "add_dish_to_order",
+      "description": "Add one or more servings of a dish to a user's current order. Order is keyed by user_id and restaurant.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "dish_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id",
+          "dish_name",
+          "quantity"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "remove_dish_from_order",
+      "description": "Remove a specified quantity of a dish from a user's current order. If the user asks to remove an item/dish from the order without specifying a quantity, use the dish's current order quantity so the whole order item is removed; use a smaller or specific quantity only when explicitly requested.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "dish_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id",
+          "dish_name",
+          "quantity"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "clear_user_order",
+      "description": "Clear all items from a user's current order for a specific restaurant.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_user_order_summary",
+      "description": "Retrieve all items in a user's current order for a specific restaurant, including individual dishes and set meals. Each returned item includes item_type ('dish' or 'set_meal'); for total nutrition, payment, or tax calculations, pass set meal names directly to the compute tool without expanding them; if item_type is 'set_meal' and the task asks about allergens, tags, included dishes, or component-level nutrition, call get_set_meal_details before deciding. item_type is informational only; do not pass item_type into compute, add, or remove tool parameters. For compute_total_* tools, pass only dish_name and quantity for each order item.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id"
+        ]
+      }
+    }
+  },
+  {
+    "tool_name": "compute_total_payment",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "restaurant_name": {
+          "type": "string",
+          "description": "Name of the restaurant."
+        },
+        "user_id": {
+          "type": "string",
+          "description": "The unique identifier of the user"
+        },
+        "dishes": {
+          "type": "array",
+          "description": "List of dishes to calculate total payment for",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quantity": {
+                "type": "integer",
+                "description": "Quantity of the dish to purchase"
+              },
+              "dish_name": {
+                "type": "string",
+                "description": "Name of the dish or set meal. If the current order item is a set meal, pass the set meal name as one item; do not expand it into included dishes unless the user explicitly asks to calculate set meal components separately."
+              }
+            },
+            "required": [
+              "dish_name",
+              "quantity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "restaurant_name",
+        "user_id",
+        "dishes"
+      ]
+    },
+    "description": "Compute total payable amount for the specified dishes: sum(tax-inclusive price * discount * qty). The returned total_payment is already tax-inclusive; do not add compute_total_tax to total_payment. compute_total_tax only reports the tax portion included inside total_payment. If a set meal has no set_meal_price, it is priced from its included dishes. The dishes list may contain both individual dish names and set meal names. If the final order contains a set meal, pass the set meal name as one item and do not expand it into included dishes."
+  },
+  {
+    "tool_name": "compute_total_tax",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "restaurant_name": {
+          "type": "string",
+          "description": "Name of the restaurant."
+        },
+        "user_id": {
+          "type": "string",
+          "description": "The unique identifier of the user"
+        },
+        "dishes": {
+          "type": "array",
+          "description": "List of dishes to calculate total tax for",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quantity": {
+                "type": "integer",
+                "description": "Quantity of the dish to purchase"
+              },
+              "dish_name": {
+                "type": "string",
+                "description": "Name of the dish or set meal. If the current order item is a set meal, pass the set meal name as one item; do not expand it into included dishes unless the user explicitly asks to calculate set meal components separately."
+              }
+            },
+            "required": [
+              "dish_name",
+              "quantity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "restaurant_name",
+        "user_id",
+        "dishes"
+      ]
+    },
+    "description": "Compute total tax amount for the specified dishes. Since price is tax-inclusive, tax per item = (price * tax_rate / (1 + tax_rate)) * discount * qty. The dishes list may contain both individual dish names and set meal names. If the final order contains a set meal, pass the set meal name as one item and do not expand it into included dishes."
+  },
+  {
+    "tool_name": "compute_total_nutrition",
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "restaurant_name": {
+          "type": "string",
+          "description": "Name of the restaurant."
+        },
+        "user_id": {
+          "type": "string",
+          "description": "The unique identifier of the user"
+        },
+        "dishes": {
+          "type": "array",
+          "description": "List of dishes to calculate total nutrition values for",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quantity": {
+                "type": "integer",
+                "description": "Quantity of the dish to purchase"
+              },
+              "dish_name": {
+                "type": "string",
+                "description": "Name of the dish or set meal. If the current order item is a set meal, pass the set meal name as one item; do not expand it into included dishes unless the user explicitly asks to calculate set meal components separately."
+              }
+            },
+            "required": [
+              "dish_name",
+              "quantity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "restaurant_name",
+        "user_id",
+        "dishes"
+      ]
+    },
+    "description": "Compute total nutrition values for the specified dishes. The dishes list may contain both individual dish names and set meal names. If the final order contains a set meal, pass the set meal name as one item and do not expand it into included dishes."
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "list_all_discounted_dishes",
+      "description": "Return a list of all dish names that currently have a discount factor less than 1.0 for a specific restaurant.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          }
+        },
+        "required": [
+          "restaurant_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "filter_dishes_by_price_range",
+      "description": "Find all dishes with a price within a specified inclusive range for a specific restaurant.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "min_price": {
+            "type": "number",
+            "minimum": 0
+          },
+          "max_price": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "min_price",
+          "max_price"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "create_set_meal",
+      "description": "Create a new set meal by combining existing dishes. The set meal will have a fixed name, a composite price, and a discount factor.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "set_meal_name": {
+            "type": "string"
+          },
+          "included_dishes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dish_name": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              },
+              "required": [
+                "dish_name",
+                "quantity"
+              ]
+            }
+          },
+          "set_meal_price": {
+            "type": "number",
+            "minimum": 0
+          },
+          "set_meal_discount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "set_meal_name",
+          "included_dishes",
+          "set_meal_price",
+          "set_meal_discount"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "get_set_meal_details",
+      "description": "Retrieve the composition, price, and discount of a set meal by its name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "set_meal_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "set_meal_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "add_set_meal_to_order",
+      "description": "Add a pre-defined set meal to a user's order. The set meal is treated as a single item with its own price and discount.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "set_meal_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id",
+          "set_meal_name",
+          "quantity"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "find_set_meals_containing_dish",
+      "description": "Find all set meals that include a specific dish by name.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "dish_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "dish_name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "tool_name": "remove_set_meal_from_order",
+      "description": "Remove a specified quantity of a pre-defined set meal from a user's order. The set meal is treated as a single item with its own price and discount. If the user asks to remove a set meal/item from the order without specifying a quantity, use the set meal's current order quantity so the whole order item is removed; use a smaller or specific quantity only when explicitly requested.",
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "restaurant_name": {
+            "type": "string",
+            "description": "Name of the restaurant. Use the canonical database restaurant name from enum; remove color/layout descriptors from user wording.",
+            "enum": [
+              "Annie Italian Restaurant",
+              "Mediterranean Greek Restaurant"
+            ]
+          },
+          "user_id": {
+            "type": "string"
+          },
+          "set_meal_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "restaurant_name",
+          "user_id",
+          "set_meal_name",
+          "quantity"
+        ]
+      }
+    }
+  }
+]

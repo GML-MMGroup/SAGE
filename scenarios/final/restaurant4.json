@@ -1,0 +1,2192 @@
+[
+  {
+    "Instruction": "You are a food blogger (User ID: customer_010). There are three dishes in front of you. Regarding the Raw Salmon dish, ask the AI Service Agent to check whether it is included in the Steak Lovers Set. If this dish is included in the set, ask the AI Service Agent to look for an item in the \"Selected Steaks\" category that is [High Protein] and has the [Highest Price], and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to look for an item in the category containing Panini that is [Mild] and has the [Lowest Sodium], and add it to the order. If there are multiple items tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total grams of carbohydrates for all dishes in the order.",
+    "analysis": "1. Check if raw salmon is included in the Steak Lovers Set.\n\n2. If raw salmon is included in the set, select the high-protein item with the highest price from the \"Selected Steaks\" category and add it to the order. If multiple items tie for the highest price, add one of each of those tied items.\n\n3. If raw salmon is not included in the set, select the herbal-flavored item with the lowest sodium content from the category containing Panini and add it to the order. If multiple items tie for the lowest sodium content, add one of each of those tied items.\n\n4. Calculate the total grams of carbohydrates for all items in the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_010",
+          "dish_name": "Piadina",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 88,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_010",
+          "dishes": [
+            {
+              "dish_name": "Black truffle",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & cream",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Sesame & nuts",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Piadina",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "set_meal_name",
+    "value": [
+      "Steak Lovers Set"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_009). There are three dishes in front of you. Regarding the Raw Salmon dish, ask the AI Service Agent to check its sodium content. Ask the AI Service Agent to determine: if the sodium content of this dish is higher than 800mg, then ask the AI Service Agent to filter within the \"Salad\" category for dishes that are [Dairy-Free] and have the [Lowest Price], replace the current dish with them, and add them to the order. If there are multiple dishes tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to search within the category containing Melon and Ham dishes, find items that are [High Carb] and have the [Lowest Calorie], and add them to the order. If there are multiple dishes tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total payable amount for the current order after discounts.",
+    "analysis": "1. Check the sodium content of the raw salmon.\n\n2. If the sodium content of the raw salmon is higher than 800mg, select the dairy-free item(s) with the lowest price in the \"Salad\" category, replace the current item, and add them to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the sodium content of the raw salmon is not higher than 800mg, select the high-carb item(s) with the lowest calorie count from the category containing dishes with melon and ham, and add them to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the current order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_009",
+          "dish_name": "Lasagne",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 49,
+          "tax_rate": 0.06,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_009",
+          "dishes": [
+            {
+              "dish_name": "Lasagne",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Salmone affumicato",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a fitness coach (User ID: customer_007). There are three dishes in front of you. Regarding the raw salmon dish, ask the AI service agent to retrieve its nutrition information. Ask the AI service agent to determine: if the fat content of this dish exceeds 10 grams, then ask the AI service agent to find a [High Protein] and [Lowest Price] dish in the \"Cold Cuts\" category and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find a [Low Fat] and [Biggest Discount] dish in the \"Appetizers & Snacks\" category and add it to the order. If there are multiple items tied for the biggest discount among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI service agent to determine: if the total calories in the current order exceed 800 kcal, then remove the highest calorie non-set meal item from the order. Finally, ask the AI service agent to calculate the total tax for the current order.",
+    "analysis": "1. Retrieve the nutritional information for the raw salmon.\n\n2. If the fat content of the raw salmon exceeds 10 grams, select the item(s) with high protein and the lowest price from the \"Cold Cuts\" category and add them to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the fat content of the raw salmon does not exceed 10 grams, select the item(s) with low fat and the highest discount from the \"Appetizers & Snacks\" category and add them to the order. If there are multiple items tied for the highest discount among those that meet the conditions, add all of them.\n\n4. Determine whether the total calories in the current order exceed 800 kcal; if so, remove the dish with the highest calories from the order.\n\n5. Calculate the total tax for the current order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Cooked ham",
+          "quantity": 1,
+          "category": "Cold Cuts",
+          "price": 28,
+          "tax_rate": 0.14,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Culatello",
+          "quantity": 1,
+          "category": "Cold Cuts",
+          "price": 28,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Turkey breast ham",
+          "quantity": 1,
+          "category": "Cold Cuts",
+          "price": 28,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_dish_from_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Homemade pappardelle with bolognese sauce",
+          "quantity": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_007",
+          "dishes": [
+            {
+              "dish_name": "Piadina",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cooked ham",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Culatello",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Turkey breast ham",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a parent (User ID: customer_003). There are three dishes in front of you. Regarding the raw salmon dish, ask the AI Service Agent to check if it contains gluten. If this dish contains gluten, ask the AI Service Agent to find an item in the \"Salad\" category that is high in calcium and has the lowest price, and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the Sandwiches category that is low in fat and has the lowest sugar content, and add it to the order. If there are multiple items tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount payable for your order after discount.",
+    "analysis": "1. Check whether the raw salmon contains gluten.\n\n2. If the raw salmon contains gluten, select the high-calcium item with the lowest price in the \"Salad\" category and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the raw salmon does not contain gluten, select the low-fat item with the lowest sugar content in the \"Dessert\" category and add it to the order. If there are multiple items tied for the lowest sugar content among those that meet the conditions, add all of them.\n\n4. Calculate the total amount payable for the order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Cooked ham baguette",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 38,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cooked ham baguette",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_002). There are three dishes in front of you. Focus on the Panini dish. You need to ask the AI service agent to check its protein content. Ask the AI service agent to determine: if the protein content is less than 25 grams, ask the AI service agent to find an item in the \"Handmade Bread\" category that is [Nut-free] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find an item in the \"Appetizers and Snacks\" category that is [High Fiber] and has the [Lowest Sodium Content], and add it to the order. If there are multiple items tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Next, ask the AI service agent to determine: if the total tax on the order is greater than 15 yuan, then remove the lowest-priced non-set meal item from the order. Finally, ask the AI service agent to calculate the total calories of your order.",
+    "analysis": "1. Check the protein content of the Panini.\n\n2. If the Panini's protein content is less than 25 grams, select the nut-free item with the highest protein content from the \"Artisan Bread\" category and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, add all of them to the order.\n\n3. If the Panini's protein content is not less than 25 grams, select the high-fiber item with the lowest sodium content from the \"Appetizers & Snacks\" category and add it to the order. If there are multiple items tied for the lowest sodium content among those that meet the conditions, add all of them to the order.\n\n4. Determine whether the total tax on the order is greater than 15 yuan; if it is greater than 15 yuan, remove the cheapest dish from the order.\n\n5. Calculate the total calories of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "ustomer_002",
+          "dish_name": "Sweet potato fries",
+          "quantity": 1,
+          "category": "Antipasti & Snacks",
+          "price": 28,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "remove_dish_from_order",
+        "parameters": {
+          "user_id": "customer_002",
+          "dish_name": "Focaccia",
+          "quantity": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_002",
+          "dishes": [
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled chicken salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Sweet potato fries",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a frugal diner (User ID: customer_008). There are three dishes in front of you. Regarding the raw salmon dish, ask the AI Service Agent to query its price. Instruct the AI Service Agent to judge: if the unit price of this dish exceeds 50 yuan, ask the AI Service Agent to find items in the \"Sandwich\" category that are [Low Fat] and have the [Highest Protein], and add them to the order. If there are multiple items tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find items in the \"Cold Cut\" category that are [High Sodium] (high_sodium) and have the [Lowest Price], and add them to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total dietary fiber content of the current order.",
+    "analysis": "1. Check the price of raw salmon.\n\n2. If the unit price of raw salmon exceeds 50 yuan, select low-fat items with the highest protein content from the \"Sandwich\" category and add the item with the highest protein content to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, add all of them to the order.\n\n3. If the unit price of raw salmon is 50 yuan or less, select high-calcium items with the lowest price from the \"Cold Cut\" category and add the item with the lowest price to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them to the order.\n\n4. Calculate the total dietary fiber content of the current order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_008",
+          "dish_name": "Culatello",
+          "quantity": 1,
+          "category": "Cold Cuts",
+          "price": 28,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_008",
+          "dishes": [
+            {
+              "dish_name": "Beef filet",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Buratta salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Walnut bread",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Culatello",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a picky customer (User ID: customer_006). There are three dishes in front of you. Regarding the raw salmon dish, ask the AI Service Agent to check its allergen information. Ask the AI Service Agent to determine: if this dish contains dairy, then ask the AI Service Agent to find a dish in the same category as Panini that is [salty/umami flavored] and has the [lowest calories], and add it to the order. If there are multiple dishes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find a dish in \"Annie Signature Dishes\" that is [gluten-free] and has the [highest price], and add it to the order. If there are multiple dishes tied for the highest price among those that meet the conditions, you want all of them to be added. Afterwards, ask the AI Service Agent to determine if the total cost of non-set items in the order exceeds 300 yuan. If so, remove the most expensive non-set item from the order. Finally, ask the AI Service Agent to calculate the total tax for your order.",
+    "analysis": "1. Check the allergen information for the raw salmon.\n\n2. If the raw salmon contains dairy, select the item with a savory flavor and the lowest calorie count from the same category as the Panini, and add it to the order. If there are multiple items tied for the lowest calorie count, add one of each tied item.\n\n3. If the raw salmon does not contain dairy, select the gluten-free item with the highest price from \"Annie's Signature Dishes\" and add it to the order. If there are multiple items tied for the highest price, add one of each tied item.\n\n4. Determine whether the total order cost exceeds 300 yuan. If it does, remove the most expensive dish from the order.\n\n5. Calculate the total tax for the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_006",
+          "dish_name": "Grilled salmon",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 128,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_006",
+          "dishes": [
+            {
+              "dish_name": "Tuna panini",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a food critic (User ID: customer_001). There are three dishes in front of you. Regarding the dish containing melon and ham, ask the AI Service Agent to obtain its full flavor profile. Instruct the AI Service Agent to judge: if the flavor profile of this dish contains smoky notes, ask the AI Service Agent to find an item in the \"Pizza\" category that is [low-calorie] and has the [highest price], and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the \"Pasta\" category that is [fresh taste] and has the [lowest calorie] count, and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total protein content of the order.",
+    "analysis": "1. Retrieve the complete flavor profile of the dish containing melon and ham.\n\n2. If the flavor profile includes a smoky note, select the low-calorie pizza with the highest price from the \"Pizza\" category and add it to the order. If multiple items tie for the highest price among the qualifying low-calorie options, add all of them.\n\n3. If the flavor profile does not include a smoky note, select the mild-tasting pasta with the lowest calories from the \"Pasta\" category and add it to the order. If multiple items tie for the lowest calories among the qualifying mild-tasting options, add all of them.\n\n4. Calculate the total protein content of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_001",
+          "dish_name": "Salmon & asparagus",
+          "quantity": 1,
+          "category": "Italian Pasta",
+          "price": 79,
+          "tax_rate": 0.14,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_001",
+          "dishes": [
+            {
+              "dish_name": "Margherita",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Rigatoni all'arrabbiata",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tiramisu'",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a vegetarian customer (User ID: customer_005). There are three dishes in front of you. Focus on the dish containing melon and ham. Ask the AI Service Agent to check whether it contains meat allergens. If this dish contains meat allergens, ask the AI Service Agent to look for an item in the \"Salad\" category that is [Refreshing Flavor] and has the [Lowest Calorie], and add it to your order. If there are multiple items tied for the lowest calorie among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to look for an item in the \"Appetizers & Snacks\" category that is [High Protein] and has the [Highest Discount], and add it to your order. If there are multiple items tied for the highest discount among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sodium content of your order.",
+    "analysis": "Results:\n1. Check whether the dish containing melon and ham contains meat allergens.\n\n2. If the dish contains meat allergens, select the item with a fresh flavor and the lowest calories from the \"Salad\" category and add it to the order. If multiple items tie for the lowest calories among those that meet the conditions, add all of them.\n\n3. If the dish does not contain meat allergens, select the vegan item with the highest discount from the \"Appetizers & Snacks\" category and add it to the order. If multiple items tie for the highest discount among those that meet the conditions, add all of them.\n\n4. Calculate the total sodium content of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_005",
+          "dish_name": "Cold cuts & cheese plate",
+          "quantity": 1,
+          "category": "Antipasti & Snacks",
+          "price": 118,
+          "tax_rate": 0.07,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_005",
+          "dishes": [
+            {
+              "dish_name": "Cold cuts & cheese plate",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's pizza",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cheesecake",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious fitness enthusiast (User ID: customer_003). There are three dishes in front of you. Regarding the Panini, ask the AI service agent to query its carbohydrate content. Ask the AI service agent to determine: if the carbohydrate content is higher than 50 grams, ask the AI service agent to find an item in the \"Cold Cuts\" category that is [High Protein] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find an item in the \"Cheese & Olives\" category that is [Low Calorie] and has the [Lowest Fat Content], and add it to the order. If there are multiple items tied for the lowest fat content among those that meet the conditions, you want all of them to be added. Next, ask the AI service agent to determine: if the total protein intake of the current order is below 30 grams, then additionally add one portion of the lowest priced salad. If there are multiple salads tied for the lowest price, you want all of them to be added. Finally, ask the AI service agent to calculate the total amount of the entire order.",
+    "analysis": "Results:\n1. Check the carbohydrate content of the Panini.\n\n2. If the carbohydrate content of the Panini is higher than 50 grams, select a high-protein item with the lowest price from the \"Cold Cuts\" category and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the carbohydrate content of the Panini is not higher than 50 grams, select a low-sodium item with the lowest fat content from the \"Cheese & Olives\" category and add it to the order. If there are multiple items tied for the lowest fat content among those that meet the conditions, add all of them.\n\n4. Determine whether the total protein intake is lower than 30 grams; if it is lower than 30 grams, additionally add the cheapest salad to the order. If there are multiple salads tied for the lowest price, add all of them.\n\n5. Calculate the total amount of the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Green olives",
+          "quantity": 1,
+          "category": "Cheese & Olives",
+          "price": 25,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Green olives",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a data-driven budgeter (User ID: customer_001). There are three dishes in front of you. For the Smoked Salmon dish, ask the AI Service Agent to check its discount factor. Ask the AI Service Agent to determine: if the discount factor for this dish is lower than 0.9, then ask the AI Service Agent to search the \"Dessert\" section for an item that is [Low Sugar] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to search the \"Pasta\" category for an item that is [High Fat] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to determine: if the total original price of non-set meal items in the current order exceeds 150 yuan, then remove the non-set meal item with the smallest discount magnitude. Finally, ask the AI Service Agent to calculate the total amount payable after discounts.",
+    "analysis": "1. Check the discount factor for raw salmon.\n\n2. If the discount for raw salmon is less than 0.9, select a low-sugar item with the lowest price from the \"Dessert\" section and add it to the order. If multiple items tie for the lowest price, add all of them.\n\n3. If the discount for raw salmon is not less than 0.9, select a high-fat item with the highest protein content from the \"Pasta\" category and add it to the order. If multiple items tie for the highest protein content, add all of them.\n\n4. Determine if the total original price of the current order exceeds 150 yuan; if it does, remove the dish with the least discount.\n\n5. Calculate the total amount payable after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_001",
+          "dish_name": "Orecchiette with Italian sausage, burrata cheese",
+          "quantity": 1,
+          "category": "Italian Pasta",
+          "price": 68,
+          "tax_rate": 0.15,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "remove_dish_from_order",
+        "parameters": {
+          "user_id": "customer_001",
+          "dish_name": "Margherita",
+          "quantity": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_001",
+          "dishes": [
+            {
+              "dish_name": "Orecchiette with Italian sausage, burrata cheese",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Rigatoni all'arrabbiata",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tiramisu'",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a customer with a gluten allergy (User ID: customer_009). There are three dishes in front of you. Focus on the dish containing melon and ham. You need to ask the AI Service Agent to verify whether it contains gluten. If the dish contains gluten, ask the AI Service Agent to search within the same category as Panini for items that are [high protein] and have the [lowest price], and add the qualifying item(s) to your order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to search within the \"Annie Signature Dishes\" category for items that are [smoked] and have the [highest calorie] count, and add the qualifying item(s) to your order. If there are multiple items tied for the highest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax and fees for your order.",
+    "analysis": "1. Check whether the dish containing melon and ham contains gluten.\n\n2. If the dish contains gluten, select the item with high protein and the lowest price from the same category as Panini and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the dish does not contain gluten, select the item with a buttery aroma and the highest calorie count from the \"Annie Signature Dishes\" category and add it to the order. If there are multiple items tied for the highest calorie count among those that meet the conditions, add all of them.\n\n4. Calculate the total tax for the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_009",
+          "dish_name": "Grilled salmon",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 128,
+          "tax_rate": 0.07,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_009",
+          "dishes": [
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Lasagne",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmone affumicato",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a careful parent (User ID: customer_006). There are three dishes in front of you. Regarding the Panini, ask the AI Service Agent to check its sugar content. Ask the AI Service Agent to judge: if the sugar content exceeds 5 grams, ask the AI Service Agent to find an item in the category containing Melon and Ham that is [High Iron] and has the [Lowest Calories], and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, add all of them. Otherwise, ask the AI Service Agent to find an item in the \"Salad\" category that is [Smoked Flavor] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein among those that meet the conditions, add all of them. Finally, ask the AI Service Agent to calculate the total fat content of your order.",
+    "analysis": "1. Check the sugar content of the Panini.\n\n2. If the Panini's sugar content exceeds 5 grams, locate the category containing Melon and Ham dishes. Select the item(s) from this category that have high iron content and the lowest calories. If multiple items tie for the lowest calories, add all of them to the order.\n\n3. If the Panini's sugar content does not exceed 5 grams, select the item(s) from the \"Salad\" category that are herbal flavored and have the highest protein content. If multiple items tie for the highest protein, add all of them to the order.\n\n4. Calculate the total fat content of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_006",
+          "dish_name": "Grilled chicken salad",
+          "quantity": 1,
+          "category": "Salads",
+          "price": 58,
+          "tax_rate": 0.1,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_006",
+          "dishes": [
+            {
+              "dish_name": "Grilled chicken salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna panini",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious tourist (User ID: customer_004). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI Service Agent to query its unit price. Ask the AI Service Agent to determine: if the price of this dish is below 45 yuan, then ask the AI Service Agent to find an item in the \"Handmade Bread\" category that is [Low Fat] and has the [Lowest Calories] and add it to the order. If multiple items tie for the lowest calories, add all of them. Otherwise, ask the AI Service Agent to find an item in the category containing the Melon and Ham dish that is [High Calcium] and has the [Lowest Price] and add it to the order. If multiple items tie for the lowest price, add all of them. Finally, ask the AI Service Agent to calculate the total tax amount for your order.",
+    "analysis": "1. Check the unit price of raw salmon.\n\n2. If the price of raw salmon is below 45 yuan, select the low-sugar item with the lowest calories from the \"Handmade Bread\" category and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, add all of them.\n\n3. If the price of raw salmon is not less than 45 yuan, select the high-calcium item with the lowest price from the category containing Melon and Ham dishes and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n4. Calculate the total tax for the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_004",
+          "dish_name": "Ciabatta",
+          "quantity": 1,
+          "category": "Handmade Bread",
+          "price": 15,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "ustomer_004",
+          "dishes": [
+            {
+              "dish_name": "Mixed cold cuts plank",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold cuts & cheese plate",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Comte",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Ciabatta",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_009). There are three dishes in front of you. Regarding the smoked salmon dish, ask the AI Service Agent to calculate its sodium content. Ask the AI Service Agent to determine: if the sodium content exceeds 800mg, then ask the AI Service Agent to find a [high-fiber] and [lowest sodium] item in the category containing melon and ham dishes to replace the current dish and add it to the order. If there are multiple items tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item with a [rich] flavor, the [highest discount], and the lowest price in the \"Annie Signature Dishes\" category and add it to the order. If there are multiple items tied for the highest discount or lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total taxes and fees of the modified order.",
+    "analysis": "1. Calculate the sodium content of the raw salmon.\n\n2. If the sodium content exceeds 800 mg, select the high-fiber item with the lowest sodium content from the category containing melon and ham dishes to replace the current dish and add it to the order. If multiple items tie for the lowest sodium content, add all of them to the order.\n\n3. If the sodium content does not exceed 800 mg, select the savory item with the largest discount from the \"Annie Signature Dishes\" category and add it to the order. If multiple items tie for the largest discount, add all of them to the order.\n\n4. Calculate the total taxes and fees for the modified order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_009",
+          "dish_name": "Mushroom soup",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 29,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_009",
+          "dishes": [
+            {
+              "dish_name": "Mushroom soup",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Lasagne",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmone affumicato",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a professional chef (User ID: customer_002). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI Service Agent to retrieve its flavor profile. Ask the AI Service Agent to determine if the dish contains a smoked flavor. If it does, ask the AI Service Agent to find an item in the Panini category that is [Low Fat] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the \"Cold Cut\" category that is [High Sodium] and has the [Highest Fat Content], and add it to the order. If there are multiple items tied for the highest fat content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total payable amount for your order after discounts.",
+    "analysis": "1. Retrieve the flavor profile of the raw salmon.\n\n2. If the dish features a salty-umami flavor, select the low-fat item with the highest protein content from the Panini category and add it to the order. If multiple items tie for the highest protein content among those that meet the conditions, add all of them to the order.\n\n3. If the dish does not feature a salty-umami flavor, select the high-sodium item with the highest fat content from the \"Cold Cut\" category and add it to the order. If multiple items tie for the highest fat content among those that meet the conditions, add all of them to the order.\n\n4. Calculate the total amount payable for the order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_002",
+          "dish_name": "Cooked ham baguette",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 38,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_002",
+          "dishes": [
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled chicken salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Focaccia",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cooked ham baguette",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a knowledgeable sommelier (User ID: customer_008). There are three dishes in front of you. For the dish containing melon and ham, ask the AI Service Agent to retrieve its flavor profile. Ask the AI Service Agent to determine: if the flavor is smoky, then have the AI Service Agent search within the \"Seafood Delight Set\" for items that are low-fat and have the lowest calories, and add the qualifying item to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent search within the Panini category for an item that is mild, has the highest price, and offers the highest discount, and add the qualifying item to the order. If there are multiple items tied for the highest price and highest discount among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to determine: if the total cost of non-set meal items in the order exceeds 200 yuan, then remove the most expensive non-set meal item from the order. Finally, ask the AI Service Agent to calculate the total protein content of the current order.",
+    "analysis": "1. Retrieve the flavor profile of the dish containing melon and ham.\n\n2. If the flavor is smoky, select the low-fat item with the lowest calories from the \"Seafood Delight Set\" and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, add all of them.\n\n3. If the flavor is not smoky, select the slightly salty item with the highest price from the Panini category and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, add all of them.\n\n4. Determine if the total order cost exceeds 200 yuan; if it does, remove the most expensive item from the order.\n\n5. Calculate the total protein content of the current order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_008",
+          "dish_name": "Piadina",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 88,
+          "tax_rate": 0.13,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "remove_dish_from_order",
+        "parameters": {
+          "user_id": "customer_008",
+          "dish_name": "Piadina",
+          "quantity": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_008",
+          "dishes": [
+            {
+              "dish_name": "Beef filet",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Buratta salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Walnut bread",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a cost-conscious diner (User ID: customer_007). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI Service Agent to query its unit price. Ask the AI Service Agent to determine: if the unit price is below 40 yuan, ask the AI Service Agent to find an item in the \"Cheese & Olives\" category that is [Low Calorie] and has the [Biggest Discount], and add it to the order. If there are multiple items tied for the biggest discount among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the \"Pizza\" category that is [Rich Flavor] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total tax for the current order.",
+    "analysis": "1. Query the unit price of raw salmon.\n2. If the unit price of raw salmon is less than 40 yuan, select the low-sodium item with the highest discount in the \"Cheese & Olives\" category and add it to the order. If multiple items tie for the highest discount, add all of them.\n3. If the unit price of raw salmon is 40 yuan or more, select the rich-flavored item with the lowest price in the \"Pizza\" category and add it to the order. If multiple items tie for the lowest price, add all of them.\n4. Calculate the total tax for the current order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Green olives",
+          "quantity": 1,
+          "category": "Cheese & Olives",
+          "price": 25,
+          "tax_rate": 0.12,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_007",
+          "dishes": [
+            {
+              "dish_name": "Homemade pappardelle with bolognese sauce",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Piadina",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Green olives",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a chef (User ID: customer_002). There are three dishes in front of you. Focus on the Panini dish; ask the AI Service Agent to understand its flavor characteristics. Have the AI Service Agent determine: if the dish has salty and umami flavors, ask the AI Service Agent to search in the \"Annie Signature Dishes\" category for an item with [Spicy Flavor] and the [Highest Price] and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to search in the category containing dishes with melon and ham for an item with [Rich Flavor] and the [Highest Fat Content] and add it to the order. If there are multiple items tied for the highest fat content among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total protein content of all dishes in your order.",
+    "analysis": "1. Identify the flavor profile of the Panini.\n\n2. If the Panini features salty and umami flavors, select the spicy item with the highest price from the \"Annie Signature Dishes\" category and add it to the order. If multiple items tie for the highest price, add all of them.\n\n3. If the Panini does not feature salty and umami flavors, select the rich-flavored item with the highest fat content from the category containing Melon and Ham dishes and add it to the order. If multiple items tie for the highest fat content, add all of them.\n\n4. Calculate the total protein content of all dishes in the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_002",
+          "dish_name": "Lasagne",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 49,
+          "tax_rate": 0.06,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_002",
+          "dishes": [
+            {
+              "dish_name": "Lasagne",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled chicken salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Focaccia",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_010). There are three dishes in front of you. For the dish containing melon and ham, instruct the AI Service Agent to check its nutritional features. Have the AI Service Agent determine: if it has a high-protein label, then search for an item in the \"Pasta\" category that is [High Fiber] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them to the order. Otherwise, search for an item in the category to which Smoked Salmon belongs that is [High Fat] and has the [Highest Calorie], and add it to the order. If there are multiple items tied for the highest calorie among those that meet the conditions, add all of them to the order. Subsequently, have the AI Service Agent determine: if the total cost of items not part of a set meal in the order exceeds 200 yuan, remove the most expensive non-set meal item from the order. Finally, have the AI Service Agent calculate the total taxes and fees for your order.",
+    "analysis": "1. Check the nutritional attributes of the dish containing melon and ham.\n\n2. If the dish has a \"high protein\" label, select a high-fiber item with the lowest price from the \"Pasta\" category and add it to the order. If multiple items tie for the lowest price, add all of them.\n\n3. If the dish does not have a \"high protein\" label, select a high-fat item with the highest calorie count from the category containing raw salmon and add it to the order. If multiple items tie for the highest calorie count, add all of them.\n\n4. Determine if the total cost exceeds 200 yuan; if it does, remove the most expensive dish from the order.\n\n5. Calculate the total tax for the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_010",
+          "dish_name": "Pesto",
+          "quantity": 1,
+          "category": "Italian Pasta",
+          "price": 38,
+          "tax_rate": 0.12,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "remove_dish_from_order",
+        "parameters": {
+          "user_id": "customer_010",
+          "dish_name": "Black truffle",
+          "quantity": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_010",
+          "dishes": [
+            {
+              "dish_name": "Pesto",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & cream",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Sesame & nuts",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious diner (User ID: customer_008). There are three dishes in front of you. Regarding the Panini, ask the AI Service Agent to confirm its price. Instruct the AI Service Agent to determine: if the price of this dish is below 50 yuan, ask the AI Service Agent to find an item in the \"Appetizers & Snacks\" category that is [High Protein] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add one of each of those tied items. Otherwise, ask the AI Service Agent to find an item in the \"Sandwiches\" category that is [Low Fat] and has the [Biggest Discount], and add it to the order. If there are multiple items tied for the biggest discount among those that meet the conditions, add one of each of those tied items. Finally, ask the AI Service Agent to calculate the total price of your order.",
+    "analysis": "1. Confirm the price of the Panini.\n\n2. If the Panini costs less than 50 yuan, select the high-protein item with the lowest price in the \"Appetizers & Snacks\" category and add it to the order. If there are multiple items tied for the lowest price, add all of them.\n\n3. If the Panini costs 50 yuan or more, select the low-fat item with the highest discount in the \"Sandwiches & Panini\" category and add it to the order. If there are multiple items tied for the highest discount, add all of them.\n\n4. Calculate the total price of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_008",
+          "dish_name": "Chicken wings",
+          "quantity": 1,
+          "category": "Antipasti & Snacks",
+          "price": 48,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_008",
+          "dishes": [
+            {
+              "dish_name": "Chicken wings",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Beef filet",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Buratta salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Walnut bread",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_003). There are three dishes in front of you. Regarding the smoked salmon dish, ask the AI service agent to retrieve the protein content of this dish. Ask the AI service agent to determine: if its protein content is less than 15 grams, then ask the AI service agent to find items in the \"Cold Cuts\" category that are [High Calcium] and have the [Highest Protein] and add them to the order. If there are multiple items tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find items in the Panini category that are [High Sodium] and have the [Lowest Calories] and add them to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total payable amount for the order after discounts.",
+    "analysis": "1. Retrieve the protein content of the raw salmon.\n\n2. If the protein content of the raw salmon is less than 15 grams, select items from the \"Cold Cut\" category that are high in calcium and have the highest protein content, and add them to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, add all of them.\n\n3. If the protein content of the raw salmon is 15 grams or more, select items from the Panini category that are low in sodium and have the lowest calorie content, and add them to the order. If there are multiple items tied for the lowest calorie content among those that meet the conditions, add all of them.\n\n4. Finally, calculate the total amount payable for the order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Salame ciabatta",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 48,
+          "tax_rate": 0.15,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Salame ciabatta",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a vegan critic (User ID: customer_006). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI Service Agent to query its allergen information. Instruct the AI Service Agent to determine whether this dish contains any animal-derived ingredients. If it does, ask the AI Service Agent to search within the \"Salad\" category for an item that is [Vegan] and has the [lowest calories], and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, add all of them to the order. Otherwise, ask the AI Service Agent to search within the category containing the Melon and Ham dish for an item that is [Dairy-free] and has the [highest price], and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, add all of them to the order. Finally, ask the AI Service Agent to calculate the total tax for your current order.",
+    "analysis": "1. Query the allergen information for raw salmon.\n\n2. If raw salmon contains any animal-derived ingredients, select a vegan item with the lowest calories in the \"Salad\" category and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, add all of them to the order.\n\n3. If raw salmon does not contain any animal-derived ingredients, select a dairy-free item with the highest price in the category containing melon and ham dishes and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, add all of them to the order.\n\n4. Calculate the total tax for the current order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_006",
+          "dish_name": "Veggie salad",
+          "quantity": 1,
+          "category": "Salads",
+          "price": 38,
+          "tax_rate": 0.13,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_006",
+          "dishes": [
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna panini",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "Results:\nYou are a customer allergic to fish (User ID: customer_010). There are three dishes in front of you. For the raw salmon dish, ask the AI service agent to verify its allergen information. Ask the AI service agent to determine if fish is listed. If fish is listed, ask the AI service agent to find an item in the same category as the dish containing melon and ham that is [Seafood-Free] and has the [Lowest Calorie], and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find an item in the \"Pasta\" category that is [Herbal Flavor] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total sodium content of your order.",
+    "analysis": "1. Verify the allergen information for the raw salmon.\n\n2. If fish is listed among the allergens, select the seafood-free item with the lowest calorie count from the same category as the melon and ham dishes, and add it to the order. If multiple items tie for the lowest calorie count, add all of them to the order.\n\n3. If fish is not listed among the allergens, select the herbal-flavored item with the highest protein content from the \"Pasta\" category, and add it to the order. If multiple items tie for the highest protein content, add all of them to the order.\n\n4. Calculate the total sodium content of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_010",
+          "dish_name": "Annie's salad",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 39,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_010",
+          "dishes": [
+            {
+              "dish_name": "Black truffle",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & cream",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Sesame & nuts",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's salad",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a food blogger (User ID: customer_006). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI Service Agent to check its sugar content. If the sugar content is less than 5 grams, ask the AI Service Agent to find an item in the \"Salad\" category that is [Low Calorie] and has the [Highest Protein], and add it to your order. If there are multiple items tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the same category as Panini that is [Slightly Sour Flavor] and has the [Lowest Sugar], and add it to your order. If there are multiple items tied for the lowest sugar among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total calories of the entire order.",
+    "analysis": "1. Check the sugar content of the raw salmon.\n\n2. If the sugar content of the raw salmon is less than 5 grams, select the low-calorie item(s) with the highest protein from the \"Salad\" category and add them to the order. If there are multiple items tied for the highest protein, add all of them.\n\n3. If the sugar content of the raw salmon is 5 grams or more, select the item(s) with a slightly sour taste and the lowest sugar content from the category that Panini belongs to and add them to the order. If there are multiple items tied for the lowest sugar content, add all of them.\n\n4. Calculate the total calories for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_006",
+          "dish_name": "Veggie salad",
+          "quantity": 1,
+          "category": "Salads",
+          "price": 38,
+          "tax_rate": 0.13,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_006",
+          "dishes": [
+            {
+              "dish_name": "Tuna panini",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious diner (User ID: customer_007). There are three dishes in front of you. Focus on the raw salmon dish. You need to ask the AI Service Agent to check its price. Ask the AI Service Agent to determine: if the price exceeds 40 yuan, find an item in the \"Sandwich\" category that is [Savory] and has the [Highest Protein], and add it to the order. If there are multiple items tied for the highest protein, add all of them. Otherwise, ask the AI Service Agent to find an item in the \"Appetizers & Snacks\" category that is [High Carb] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price, add all of them. Next, ask the AI Service Agent to determine: if the total amount of non-set items in the order is less than 100 yuan, then add the item(s) with the lowest price from the \"Handmade Bread\" category. If there are multiple items tied for the lowest price, add all of them. Finally, ask the AI Service Agent to calculate the total tax for your current entire order.",
+    "analysis": "1. Check the price of the raw salmon.\n\n2. If the price of the raw salmon exceeds 40 yuan, select the item with a savory flavor and the highest protein content from the \"Sandwich\" category and add it to the order. If there are multiple items tied for the highest protein content, add all of them.\n\n3. If the price of the raw salmon does not exceed 40 yuan, select the item with high carbohydrates and the lowest price from the \"Appetizers & Snacks\" category and add it to the order. If there are multiple items tied for the lowest price, add all of them.\n\n4. Check if the total order amount is less than 100 yuan. If it is less than 100 yuan, add the item with the lowest price from the \"Handmade Bread\" category. If there are multiple items tied for the lowest price, add all of them.\n\n5. Calculate the total tax for the current entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "French fries",
+          "quantity": 1,
+          "category": "Antipasti & Snacks",
+          "price": 28,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_007",
+          "dishes": [
+            {
+              "dish_name": "Homemade pappardelle with bolognese sauce",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Piadina",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            },
+            {
+              "dish_name": "French fries",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a diabetic patient (User ID: customer_001). There are three dishes in front of you. Focus on the Raw Salmon dish. Ask the AI Service Agent to query its carbohydrate content. Ask the AI Service Agent to determine: if the carbohydrate content of this dish exceeds 5 grams, then ask the AI Service Agent to find an item in the \"Salad\" category that is [Low Sugar] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the category containing the dish with Melon and Ham that is [High Fiber] and has the [Lowest Calorie], and add it to the order. If there are multiple items tied for the lowest calorie among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total carbohydrate and total sugar content of your entire order.",
+    "analysis": "1. Check the carbohydrate content of raw salmon.\n\n2. If the carbohydrate content of raw salmon exceeds 5 grams, select the low-sugar item with the lowest price from the \"Salad\" category and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n\n3. If the carbohydrate content of raw salmon does not exceed 5 grams, select the high-fiber item with the lowest calorie count from the category containing melon and ham dishes and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, add all of them.\n\n4. Finally, calculate the total carbohydrate and total sugar content for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_001",
+          "dish_name": "Annie's salad",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 39,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_001",
+          "dishes": [
+            {
+              "dish_name": "Margherita",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Rigatoni all'arrabbiata",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tiramisu'",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's salad",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness enthusiast (User ID: customer_003). There are three dishes in front of you. Regarding the raw salmon dish, ask the AI Service Agent to query its protein content. Ask the AI Service Agent to determine: if the protein content of this dish exceeds 20 grams, then ask the AI Service Agent to find an item in the \"Selected Steaks\" category that is [High Protein] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them. Otherwise, ask the AI Service Agent to find an item in the Panini category that is [High Protein] and has the [Lowest Carbs], and add it to the order. If there are multiple items tied for the lowest carbs among those that meet the conditions, add all of them. Finally, ask the AI Service Agent to calculate the total calories for your entire order.",
+    "analysis": "1. Query the protein content of raw salmon.\n\n2. If the protein content of raw salmon exceeds 20 grams, select a low-fat item with the lowest price from the \"Selected Steaks\" category and add it to the order. If multiple items tie for the lowest price, add one of each tied item to the order.\n\n3. If the protein content of raw salmon does not exceed 20 grams, select a high-protein item with the lowest carbohydrate content from the category to which Panini belongs and add it to the order. If multiple items tie for the lowest carbohydrate content, add one of each tied item to the order.\n\n4. Calculate the total calories for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Australian selected Ribeye",
+          "quantity": 1,
+          "category": "Selected Steaks",
+          "price": 208,
+          "tax_rate": 0.06,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a health-conscious diner (User ID: customer_003). There are three dishes in front of you. Focus on the dish containing melon and ham. Ask the AI service agent to query its sodium content. Ask the AI service agent to determine: if the sodium content of this dish is below 500mg, then ask the AI service agent to look for an item in the \"Salad\" category that is [Low Fat] and has the [Highest Dietary Fiber], and add it to your order. If there are multiple items tied for the highest dietary fiber among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to look for an item in the same category as Smoked Salmon that is [High Calcium] and has the [Lowest Price], and add it to your order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total sodium content of your entire order.",
+    "analysis": "1. Query the sodium content of the dish containing melon and ham.\n2. If the sodium content of that dish is below 500 mg, select the low-fat item with the highest dietary fiber from the \"Salad\" category and add it to the order. If there are multiple items tied for the highest dietary fiber among those that meet the conditions, add all of them.\n3. If the sodium content of that dish is 500 mg or higher, select the high-calcium item with the lowest price from the same category as raw salmon and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them.\n4. Calculate the total sodium content of the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Buffalo mozzarella margherita pizza",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 59,
+          "tax_rate": 0.08,
+          "discount": 1
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Buffalo mozzarella margherita pizza",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a food safety inspector (User ID: customer_003). There are three dishes in front of you. For the dish containing melon and ham, ask the AI service agent to check its nutrition label. Ask the AI service agent to determine: if the dish is labeled low-fat, ask the AI service agent to find an item in the \"Sandwich\" category that is [High Sodium] and has the [Highest Protein], and add it to your order. If there are multiple items tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find an item in the category containing Raw Salmon that is [Dairy-free] and has the [Lowest Calorie], and add it to your order. If there are multiple items tied for the lowest calorie among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total sodium content of all items in your order.",
+    "analysis": "1. Check the nutrition label for the dish containing melon and ham.\n2. If the dish is labeled as low-fat, select the item with high sodium and the highest protein content in the \"Sandwich\" category and add it to the order. If there are multiple items tied for the highest protein content among those that meet the conditions, add all of them.\n3. If the dish is not labeled as low-fat, select the item that is dairy-free and has the lowest calorie count in the category containing raw salmon and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, add all of them.\n4. Calculate the total sodium content of all items in the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_003",
+          "dish_name": "Salame ciabatta",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 48,
+          "tax_rate": 0.15,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_003",
+          "dishes": [
+            {
+              "dish_name": "Salmon & asparagus",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled salmon",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tuna salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salame ciabatta",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a food photographer (User ID: customer_002). There are three dishes in front of you. For the Smoked Salmon dish, ask the AI Service Agent to query its allergens. Ask the AI Service Agent to determine if this dish contains nut allergens. If it does, ask the AI Service Agent to search in the category containing the Melon and Ham dish for a [Vegan] item with the [Highest Protein] and add it to the order. If multiple items tie for the highest protein among those meeting the conditions, add all of them. Otherwise, ask the AI Service Agent to search in the \"Dessert\" category for a [Gluten-Free] item with the [Largest Discount] and add it to the order. If multiple items tie for the largest discount among those meeting the conditions, add all of them. However, if there are no gluten-free desserts, ask the AI Service Agent to search in the \"Handmade Bread\" category for an item with a \"Sweet\" flavor and the [Lowest Price] and add it to the order. If multiple items tie for the lowest price among those meeting the conditions, add all of them. Finally, ask the AI Service Agent to calculate the total amount payable for your order after discounts.",
+    "analysis": "1. Check the allergens for the raw salmon.\n\n2. If the raw salmon contains nut allergens, select the vegan item with the highest protein content from the category containing melon and ham dishes and add it to the order. If multiple items tie for the highest protein content, add all of them.\n\n3. If the raw salmon does not contain nut allergens, select the gluten-free item with the biggest discount from the \"Dessert\" category and add it to the order. If multiple items tie for the biggest discount, add all of them.\n\n4. Calculate the total amount payable for the order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_002",
+          "dish_name": "Cranberry",
+          "quantity": 1,
+          "category": "Handmade Bread",
+          "price": 15,
+          "tax_rate": 0.14,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_002",
+          "dishes": [
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Grilled chicken salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Focaccia",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cranberry",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a customer allergic to fish (User ID: customer_005). There are three dishes in front of you. Regarding the Smoked Salmon dish, ask the AI service agent to check if this dish contains fish allergens. Ask the AI service agent to determine: if it contains fish ingredients, ask the AI service agent to find an item in the \"Salad\" category that is [Gluten-Free] and has the [lowest calories], and add it to the order. If there are multiple salads tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find an item in the category associated with Panini that is [Cream Flavor] and has the [lowest price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI service agent to calculate the total cost of your order.",
+    "analysis": "1. Check if the raw salmon contains fish allergens.\n\n2. If the raw salmon contains fish ingredients, select the gluten-free item with the lowest calories from the \"Salad\" category and add it to the order. If there are multiple items tied for the lowest calories, add all of them.\n\n3. If the raw salmon does not contain fish ingredients, select the creamy-flavored item with the lowest price from the category to which Paninis belong and add it to the order. If there are multiple items tied for the lowest price, add all of them.\n\n4. Calculate the total cost of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_005",
+          "dish_name": "Veggie salad",
+          "quantity": 1,
+          "category": "Salads",
+          "price": 38,
+          "tax_rate": 0.13,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_005",
+          "dishes": [
+            {
+              "dish_name": "Annie's pizza",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cheesecake",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a nutritionist (User ID: customer_001). There are three dishes in front of you. Focus on the Smoked Salmon dish. Ask the AI Service Agent to retrieve its nutrition information. Ask the AI Service Agent to determine if the dish is labeled with high Omega-3. If it is, ask the AI Service Agent to find an item in the \"Selected Steaks\" category that is [Low Sodium] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, add all of them. However, if no Low Sodium items exist, ask the AI Service Agent to add the item with the [Lowest Price] in the \"Selected Steaks\" category to the order. If there are multiple items tied for the lowest price, add all of them. Otherwise, ask the AI Service Agent to find an item in the same category as Panini that is [High Fiber] and has the [Highest Calorie], and add it to the order. If there are multiple items tied for the highest calorie, add all of them. Finally, ask the AI Service Agent to calculate the total protein content of your entire order.",
+    "analysis": "1. Retrieve the nutritional information for the raw salmon.\n2. If the raw salmon is labeled with high Omega-3, select the low-sodium item with the lowest price from the \"Featured Steaks\" category and add it to the order. If multiple items tie for the lowest price, add all of them.\n3. If the raw salmon is not labeled with high Omega-3, select the high-fiber item with the highest calories from the same category as the Panini and add it to the order. If multiple items tie for the highest calories, add all of them.\n4. Calculate the total protein content for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_001",
+          "dish_name": "Australian selected Ribeye",
+          "quantity": 1,
+          "category": "Selected Steaks",
+          "price": 208,
+          "tax_rate": 0.06,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_001",
+          "dishes": [
+            {
+              "dish_name": "Margherita",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Rigatoni all'arrabbiata",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Tiramisu'",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a budget-conscious student (User ID: customer_004). There are three dishes in front of you. Regarding the Panini dish, ask the AI Service Agent to check its price. Ask the AI Service Agent to determine: if the price of this dish is below 40 yuan, then ask the AI Service Agent to find an item in the \"Appetizers & Snacks\" category that is [High Carb] and has the [Lowest Calorie] and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the category containing the Melon and Ham dish that is [High Protein] and has the [Biggest Discount] and add it to the order. If there are multiple items tied for the biggest discount among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total price of your order.",
+    "analysis": "1. Check the price of the Panini.\n\n2. If the price of the Panini is less than 40 yuan, select the item from the \"Appetizers & Snacks\" category that is high in carbohydrates and has the lowest calorie count, and add it to the order. If multiple items tie for the lowest calorie count among those that meet the conditions, add all of them.\n\n3. If the price of the Panini is 40 yuan or more, select the item from the category containing the Ham and Melon dish that is high in protein and has the largest discount, and add it to the order. If multiple items tie for the largest discount among those that meet the conditions, add all of them.\n\n4. Calculate the total price of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_004",
+          "dish_name": "French fries",
+          "quantity": 1,
+          "category": "Antipasti & Snacks",
+          "price": 28,
+          "tax_rate": 0.08,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_004",
+          "dishes": [
+            {
+              "dish_name": "Mixed cold cuts plank",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold cuts & cheese plate",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Comte",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "French fries",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a foodie (User ID: customer_007). There are three dishes in front of you. Regarding the Raw Salmon dish, ask the AI Service Agent to check its price. Ask the AI Service Agent to determine: if the price of this dish is higher than 50 yuan, then ask the AI Service Agent to find an item in the \"Cheese and Olives\" category that is [High Fat] and has the [Highest Calorie] count, and add it to the order. If there are multiple items tied for the highest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the \"Pizza\" category that is [Rich Flavor] and has the [Highest Price], and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to determine: if the total amount of non-set meal items in the order exceeds 500 yuan, then remove the non-set meal item with the lowest price. If there are multiple items tied for the lowest price, you want all of them to be removed. Finally, ask the AI Service Agent to calculate the total tax for your order.",
+    "analysis": "1. Query the price of the raw salmon.\n\n2. If the price of the raw salmon is higher than 50 yuan, select an item from the \"Cheese and Olives\" category that is high in fat and has the highest calories, and add it to the order. If there are multiple items tied for the highest calories among those that meet the conditions, you want all of them to be added.\n\n3. If the price of the raw salmon is 50 yuan or less, select an item from the \"Pizza\" category that has a rich flavor and the highest price, and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added.\n\n4. Determine whether the total order amount exceeds 500 yuan; if it does, remove the dish with the lowest price.\n\n5. Calculate the total tax and fees for the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_007",
+          "dish_name": "Beef filet",
+          "quantity": 1,
+          "category": "Pizza",
+          "price": 78,
+          "tax_rate": 0.13,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_tax",
+        "parameters": {
+          "user_id": "customer_007",
+          "dishes": [
+            {
+              "dish_name": "Homemade pappardelle with bolognese sauce",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Piadina",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Beef filet",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a fitness enthusiast (User ID: customer_006). There are three dishes in front of you. Regarding the Panini, ask the AI Service Agent to query its protein content. Instruct the AI Service Agent to determine: if the protein content of this dish exceeds 20 grams, ask the AI Service Agent to find an item in the \"Selected Steaks\" category that is [High Iron] and has the [Lowest Calorie] content, and add it to the order. If there are multiple items tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the category containing dishes with Melon and Ham that is [High Iron] and has the [Lowest Price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total protein content of your entire order.",
+    "analysis": "Results:\n1. Check the protein content of the Panini.\n\n2. If the Panini's protein content exceeds 20 grams, select the low-fat item with the lowest calorie count from the \"Selected Steaks\" category and add it to the order. If multiple items tie for the lowest calorie count, add all of them.\n\n3. If the Panini's protein content does not exceed 20 grams, select the high-iron item with the lowest price from the category containing melon and ham dishes and add it to the order. If multiple items tie for the lowest price, add all of them.\n\n4. Calculate the total protein content for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_006",
+          "dish_name": "Australian selected Ribeye",
+          "quantity": 1,
+          "category": "Selected Steaks",
+          "price": 208,
+          "tax_rate": 0.06,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_006",
+          "dishes": [
+            {
+              "dish_name": "Tuna panini",
+              "quantity": 2
+            },
+            {
+              "dish_name": "Veggie salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's Special Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Australian selected Ribeye",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a food lover (User ID: customer_005). There are three dishes in front of you. For the raw salmon dish, ask the AI Service Agent to retrieve its flavor profile. Ask the AI Service Agent to determine: if this dish contains a savory flavor, then ask the AI Service Agent to find an item in the \"Annie's Signature Dishes\" category that has [earthy aroma] and [savory flavor] and add it to the order; otherwise, ask the AI Service Agent to find an item in the category Panini belongs to that has [herbal flavor] and [the highest price] and add it to the order. If there are multiple items tied for the highest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total amount of your order.",
+    "analysis": "1. Retrieve the flavor profile of the raw salmon.\n\n2. If the dish contains a savory aroma, select the item with an earthy aroma and the strongest umami flavor from the \"Annie Signature Dishes\" category and add it to the order. If there are multiple items tied for the strongest umami flavor, add all of them to the order.\n\n3. If the dish does not contain a savory aroma, select the item with an herbal flavor and the highest price from the category to which Panini belongs and add it to the order. If there are multiple items tied for the highest price, add all of them to the order.\n\n4. Calculate the total amount of the order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_005",
+          "dish_name": "Mushroom soup",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 29,
+          "tax_rate": 0.11,
+          "discount": 0.8
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_005",
+          "dishes": [
+            {
+              "dish_name": "Annie's pizza",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Annie's salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cheesecake",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Seafood Delight Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Mushroom soup",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Salmone affumicato"
+    ]
+  },
+  {
+    "Instruction": "You are a vegan (User ID: customer_008). There are three dishes in front of you. Regarding the dish containing melon and ham, ask the AI Service Agent to query its allergen information. Ask the AI Service Agent to determine if this dish contains dairy. If it contains dairy, ask the AI Service Agent to search the \"Salad\" category for items that are [Vegan] and have the [Highest Dietary Fiber], and add them to the order. If there are multiple items tied for the highest dietary fiber among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to search the Panini category for items that are [Low Fat] and have the [Lowest Price], and add them to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total dietary fiber content of your entire order.",
+    "analysis": "1. Query the allergen information for dishes containing melon and ham.\n\n2. If the dish contains dairy, select the vegan item with the highest dietary fiber in the \"Salad\" category and add it to your order. If multiple items tie for the highest dietary fiber, add one of each of those tied items.\n\n3. If the dish does not contain dairy, select the gluten-free item with the lowest price in the category that Panini belongs to and add it to your order. If multiple items tie for the lowest price, add one of each of those tied items.\n\n4. Calculate the total dietary fiber content for the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_008",
+          "dish_name": "Cooked ham baguette",
+          "quantity": 1,
+          "category": "Sandwiches & Panini",
+          "price": 38,
+          "tax_rate": 0.06,
+          "discount": 0.7
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_008",
+          "dishes": [
+            {
+              "dish_name": "Beef filet",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Buratta salad",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Walnut bread",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Steak Lovers Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cooked ham baguette",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Ham & melon"
+    ]
+  },
+  {
+    "Instruction": "You are a sandwich lover (User ID: customer_010). There are three dishes in front of you. Regarding the Panini, ask the AI Service Agent to retrieve its nutritional information. Ask the AI Service Agent to determine if this dish is labeled as low-fat. If it is, ask the AI Service Agent to find an item in the \"Sandwich\" category that is [nut-free] and has the [highest protein], and add it to the order. If there are multiple items tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the category containing the Melon and Ham dish that is [sweet], discounted, and has the [lowest price], and add it to the order. If there are multiple items tied for the lowest price among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total payable amount for your order after discounts.",
+    "analysis": "Results:\n1. Retrieve the nutritional information for the Panini.\n\n2. If the Panini is labeled as low-fat, select the nut-free item with the highest protein in the \"Sandwich\" category and add it to the order. If there are multiple items tied for the highest protein, add all of them.\n\n3. If the Panini is not labeled as low-fat, select the herbal-flavored item with the lowest price in the category containing the Melon and Ham dish and add it to the order. If there are multiple items tied for the lowest price, add all of them.\n\n4. Calculate the total amount payable for the order after discounts.",
+    "ground_truth": [
+      {
+        "tool_name": "get_dish_nutrition",
+        "parameters": {
+          "dish_name": "Tuna panini"
+        }
+      },
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_010",
+          "dish_name": "Cheesecake",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 28,
+          "tax_rate": 0.11,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_payment",
+        "parameters": {
+          "user_id": "customer_010",
+          "dishes": [
+            {
+              "dish_name": "Black truffle",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmon & cream",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Sesame & nuts",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cheesecake",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  },
+  {
+    "Instruction": "You are a sweet tooth (User ID: customer_009). There are three dishes in front of you. Focus on the Panini. Ask the AI Service Agent to retrieve the taste characteristics of this dish. Have the AI Service Agent determine if the dish contains sweetness. If it does, ask the AI Service Agent to find an item in the \"Dessert\" category that is [High Fat] and has the [Highest Sugar Content], and add it to the order. If there are multiple items tied for the highest sugar content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find an item in the same category as Smoked Salmon that is [Sweet], has the [Lowest Calorie] count, and is discounted, and add it to the order. If there are multiple items tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sugar content of your entire order.",
+    "analysis": "1. Retrieve the flavor profile of the Panini.\n\n2. If the Panini has a sweet flavor, select a high-fat item with the highest sugar content from the \"Dessert\" category and add it to the order. If multiple items tie for the highest sugar content, add one of each tied item to the order.\n\n3. If the Panini does not have a sweet flavor, select a fruity item with the lowest calorie count from the same category as Raw Salmon and add it to the order. If multiple items tie for the lowest calorie count, add one of each tied item to the order.\n\n4. Calculate the total sugar content of the entire order.",
+    "ground_truth": [
+      {
+        "tool_name": "add_dish_to_order",
+        "parameters": {
+          "user_id": "customer_009",
+          "dish_name": "Ham & melon",
+          "quantity": 1,
+          "category": "Annie's top dishes",
+          "price": 39,
+          "tax_rate": 0.07,
+          "discount": 0.9
+        }
+      },
+      {
+        "tool_name": "compute_total_nutrition",
+        "parameters": {
+          "user_id": "customer_009",
+          "dishes": [
+            {
+              "dish_name": "Lasagne",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Salmone affumicato",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Italian Classic Set",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Cold Cuts & Cheese Platter",
+              "quantity": 1
+            },
+            {
+              "dish_name": "Ham & melon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 40,
+    "image_name": "restaurant4",
+    "image_path": "restaurant4.mp4",
+    "image_description": "You and your friend are in a restaurant. You can see that the waiter has served you three dishes on the tablel.",
+    "key": "dish_name",
+    "value": [
+      "Tuna panini"
+    ]
+  }
+]

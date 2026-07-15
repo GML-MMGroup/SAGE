@@ -1,0 +1,2489 @@
+[
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 6, 2026. First, ask the AI Service Agent to identify what ingredient the staple powder you are sprinkling on the right side of the baking tray belongs to. Then, ask the AI Service Agent to determine if this ingredient has zero sugar content. If it does, ask the AI Service Agent to find the staple or dry goods ingredient with the lowest calories among all ingredients stored in the storage cabinet and add it to the shopping list. If there are multiple items tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest sodium content among all ingredients belonging to the seasoning category, and add 500g of it to the shopping list. If there are multiple items tied for the highest sodium content, you want 500g of each of them to be added. Next, ask the AI Service Agent to identify all ingredients stored in the refrigerated layer required by all recipes in the current menu, and add all these ingredients to the shopping list according to the recipe requirements. Finally, ask the AI Service Agent to calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the staple ingredient powder the user is sprinkling on the right side of the baking tray.\n\n2. If the sugar content of this ingredient is zero, find the staple or dry goods ingredient with the lowest calorie count among all ingredients stored in the storage cabinet and add it to the shopping list. If multiple items tie for the lowest calorie count, add all of them.\n\n3. If the sugar content of this ingredient is not zero, find the seasoning ingredient with the highest sodium content among all seasoning ingredients and remove it from the shopping list. If multiple items tie for the highest sodium content, remove all of them.\n\n4. Identify all ingredients required by the recipes in the current menu that are stored in the refrigerated section, and add them to the shopping list according to the required quantities.\n\n5. Calculate the total dietary fiber content for all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "salt",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Carrots",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Celery",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Yogurt",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Strawberry",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Chicken",
+          "quantity": "2.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Butter",
+          "quantity": "0.1"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4.3
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "salt",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 0.5
+            },
+            {
+              "ingredient_name": "Yogurt",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 2.5
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 0.1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 7, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the two ingredients placed on the baking tray. Then, ask the AI Service Agent to check if this recipe's allergens include gluten. If it does, ask the AI Service Agent to find the recipe with the highest fat content among all recipes with a savory flavor and add it to your menu. If there are multiple recipes tied for the highest fat content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest calories among all other recipes that share at least one nutritional feature with this recipe and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to check if the green ingredient on the right side of the blue cutting board is still in stock. If not, ask the AI Service Agent to add it to the shopping list with a quantity of 300 grams. Finally, ask the AI Service Agent to list the flavors involved in all recipes currently in the menu.",
+    "analysis": "1. Determine which recipe corresponds to the two ingredients on the baking tray.\n2. If the recipe contains gluten allergens, find the recipe with the highest fat content among all recipes with a savory flavor and add it to the menu. If there are multiple recipes tied for the highest fat content, add all of them.\n3. If the recipe does not contain gluten allergens, find the recipe with the lowest calorie count among all other recipes that share at least one nutrient feature with this recipe and add it to the menu. If there are multiple recipes tied for the lowest calorie count, add all of them.\n4. Check whether the green ingredient to the right of the blue cutting board is in stock; if it is not, add 300 grams of it to the shopping list.\n5. Compile a list of all flavor profiles involved in the recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_quantity",
+        "parameters": {
+          "ingredient_name": "Broccoli"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Tofu Soup"
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. First, ask the AI Service Agent to identify what kind of ingredient the green ingredient at the top left of the blue cutting board is. Then, ask the AI Service Agent to determine: if this ingredient belongs to the vegetable category, ask the AI Service Agent to look for recipes that require this ingredient and contain a sour taste, and then add the recipe with the lowest sodium content to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them to your menu. Otherwise, ask the AI Service Agent to look for recipes that do not require this ingredient and are vegan, and then add the recipe with the lowest calorie count to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, add all of them to your menu. Subsequently, ask the AI Service Agent to iterate through all the ingredients in the recipe composed of the two ingredients on the baking tray, and add any ingredients whose expiration date is before today to the shopping list with a quantity of 500 grams for each. Finally, ask the AI Service Agent to calculate the total fat content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the green ingredient located at the top-left of the blue cutting board.\n\n2. If this ingredient belongs to the vegetable category, find all recipes that use this ingredient. Select the recipe(s) with a spicy flavor and the lowest sodium content to add to the menu. If multiple recipes tie for the lowest sodium content, add all of them.\n\n3. If this ingredient does not belong to the vegetable category, find all recipes that do not use this ingredient. Select the recipe(s) with vegan nutritional characteristics and the lowest calorie count to add to the menu. If multiple recipes tie for the lowest calorie count, add all of them.\n\n4. Identify the recipe composed of the two ingredients on the baking tray, and add any of those ingredients that expire before today to the shopping list.\n\n5. Calculate the total fat content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Tomatoes",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Salmon",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Asparagus"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. First, ask the AI Service Agent to identify the cooked ingredient placed on the left side of the baking tray. Then, ask the AI Service Agent to determine if this ingredient's sodium content is higher than 50mg. If it is, ask the AI Service Agent to find the ingredient with the highest calcium content among all fruit-category ingredients and add it to the shopping list. If there are multiple ingredients tied for the highest calcium content, add each of them to the list. Otherwise, ask the AI Service Agent to find the ingredient with the lowest stock quantity among all ingredients stored on the countertop and add 200g of it to the shopping list. If there are multiple ingredients tied for the lowest stock quantity, add 200g of each of them to the list. Next, ask the AI Service Agent to check whether the green ingredient on the top left of the blue cutting board has expired. If it has not expired, add it as an extra side dish to the first recipe on the menu. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients currently in the shopping list.",
+    "analysis": "1. Identify the baked ingredient located to the left of the baking tray.\n\n2. If the sodium content of that ingredient is higher than 50mg, identify the ingredient(s) with the highest calcium content among all fruit ingredients and add them to the shopping list. If multiple ingredients tie for the highest calcium content, add all of them.\n\n3. If the sodium content of that ingredient is 50mg or less, identify the ingredient(s) with the lowest inventory count among all ingredients stored on the countertop and add them to the shopping list. If multiple ingredients tie for the lowest inventory count, add all of them.\n\n4. Check whether the green ingredient to the top-left of the blue cutting board is expired. If it is not expired, add it as an extra side dish to the first recipe on the menu.\n\n5. Calculate the total protein content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Banana",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Asparagus"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredients": [
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Quinoa",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 12, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the dish composed of the chunky ingredients boiling in the pot and the three vegetables on the blue cutting board. Subsequently, ask the AI Service Agent to judge whether the taste of this dish is sour. If it is sour, ask the AI Service Agent to find the recipe with the highest calories among all recipes containing high dietary fiber nutrition features and add it to your menu. If there are multiple recipes tied for the highest calories, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe that uses the most types of seasonings among all recipes containing the eggs allergen and add it to your menu. If there are multiple recipes tied for the most seasoning types, add all of them to your menu. Then, ask the AI Service Agent to extract the cooking steps for all recipes in the current menu, check all egg, milk, and soy products used in these steps, and add any that are out of stock to the shopping list. Finally, ask the AI Service Agent to summarize the taste tags for all recipes in the current menu.",
+    "analysis": "1. Determine which recipe corresponds to the chunky ingredients in the boiling water in the pot and the three vegetables on the blue cutting board.\n\n2. If the recipe's taste is sour, find the recipe with the highest calorie count among all recipes containing the \"high dietary fiber\" nutritional feature and add it to the menu. If there are multiple recipes tied for the highest calorie count, add all of them.\n\n3. If the recipe's taste is not sour, find the recipe that uses the most types of seasonings among all recipes containing the \"eggs\" allergen and add it to the menu. If there are multiple recipes tied for the most types of seasonings, add all of them.\n\n4. Extract the cooking steps for all recipes in the current menu, check all egg, dairy, and soy products used in the steps, and add those that are out of stock to the shopping list.\n\n5. Summarize the taste tags of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Beef & Black Bean Stew"
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 9, 2026. First, ask the AI Service Agent to identify which recipe consists of the two ingredients on the baking tray, namely roasted tomatoes and yellow powder. Subsequently, ask the AI Service Agent to determine whether the total number of cooking steps for this recipe exceeds 5. If it does, ask the AI Service Agent to find the recipe with the largest total weight of vegetable categories among all recipes with a salty flavor and add it to your menu. If there are multiple recipes tied for the largest total weight among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe requiring the fewest types of ingredients among all recipes containing the dairy allergen and add it to your menu. If there are multiple recipes tied for the fewest ingredient types among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check all ingredients currently included in your menu, and ask the AI Service Agent to add ingredients with zero stock inventory to the shopping list according to their recipe required quantities (in units of 100 grams). Finally, ask the AI Service Agent to summarize all flavors covered by all recipes currently in the menu.",
+    "analysis": "1. Determine which recipe is composed of the two ingredients on the baking tray, including roasted tomatoes and yellow powder.\n\n2. If the cooking steps for this recipe exceed 5, find the recipe with the largest total weight of vegetable ingredients among all recipes with a salty flavor and add it to the menu. If there are multiple recipes tied for the largest total weight, add all of them.\n\n3. If the cooking steps for this recipe do not exceed 5, find the recipe requiring the fewest types of ingredients among all recipes containing dairy allergens and add it to the menu. If there are multiple recipes tied for the fewest ingredient types, add all of them.\n\n4. Check all ingredients included in the current user menu, and add any ingredients stored in the refrigerated layer that have zero stock to the shopping list.\n\n5. Summarize all flavors covered by all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Shrimp",
+          "quantity": "2.0"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 6, 2026. First, ask the AI Service Agent to identify the common recipe for the potatoes in the pot and the three vegetables on the blue cutting board. Then, ask the AI Service Agent to check if this recipe contains the 'fish' allergen. If it does, ask the AI Service Agent to find the recipe with the most types of fruits among all recipes with a 'mild' flavor and add it to your menu. If there are multiple recipes tied for having the most fruit types among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest total sugar content among all recipes with absolutely no allergens and add it to your menu. If there are multiple recipes tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to go through all recipes in the current menu, identify ingredients that belong to the staple food/dry goods category, and add the expired portions to the shopping list according to the original usage amount. Finally, ask the AI Service Agent to tally the flavor tags of all recipes in the current menu.",
+    "analysis": "1. Identify the recipe that includes both the potatoes in the pot and the three vegetables on the blue cutting board.\n\n2. If this recipe contains the 'fish' allergen, search through all recipes with a 'mild' flavor profile. Find the recipe with the most fruit varieties and add it to the menu. If multiple recipes tie for the most fruit varieties, add all of them.\n\n3. If this recipe does not contain the 'fish' allergen, search through all recipes that are completely allergen-free. Find the recipe with the lowest total sugar content and add it to the menu. If multiple recipes tie for the lowest sugar content, add all of them.\n\n4. Iterate through all recipes currently in the menu. Identify ingredients that are categorized as 'staples/dry goods' and are expired. Add these ingredients to the shopping list using their original required amounts.\n\n5. Compile statistics on the flavor tags for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Potato & Greens Salad"
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 8, 2026. First, ask the AI Service Agent to determine which recipe the dish composed of all three ingredients placed on the blue cutting board and the chunky ingredients simmering in the pot belongs to. Subsequently, ask the AI Service Agent to determine the nutritional characteristics of this dish. If the nutritional characteristic is \"no_additives\", then ask the AI Service Agent to find the recipe(s) that use the fewest seasonings among all recipes sharing at least one allergen with it, and add them to your menu. If there are multiple recipes tied for the fewest seasonings among those that meet the conditions, add all of them. Otherwise, ask the AI Service Agent to find the recipe(s) with the lowest sodium content among all recipes with high calcium nutritional features, and add them to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them. Next, ask the AI Service Agent to check the baked ingredient on the left side of the baking tray. If its shelf life is less than one day, ask the AI Service Agent to add it to the shopping list in a quantity of 200 grams. Finally, ask the AI Service Agent to compile the collection of nutritional features for all recipes currently in the menu.",
+    "analysis": "1. Identify which recipe is composed of the three ingredients on the blue cutting board and the chunky ingredients simmering in the pot.\n\n2. If this dish has the 'no_additives' nutritional feature, find the recipe that uses the fewest seasonings among all recipes that share at least one allergen with it, and add it to the menu. If there are multiple recipes tied for the fewest seasonings among those that meet the conditions, add all of them to the menu.\n\n3. If this dish does not have the 'no_additives' nutritional feature, find the recipe with the lowest sodium content among all recipes that have the 'high calcium' nutritional feature, and add it to the menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them to the menu.\n\n4. Check the ingredients already roasted on the left side of the baking tray; if their shelf life is less than one day, add 200 grams of them to the shopping list.\n\n5. Compile the set of nutritional features for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Tomatoes"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipes": [
+            "Beef & Black Bean Stew",
+            "Mushroom & Thyme Roast Chicken",
+            "Yogurt & Berry Parfait",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "You are user cook_006, and today's date is May 13, 2026. First, ask the AI service agent to identify the green ingredient located in the top-left corner of the blue cutting board. Subsequently, ask the AI service agent to determine whether this ingredient is stored on the spice rack. If it is, ask the AI service agent to find the ingredient(s) with the lowest sugar content among all condiments and add them to the shopping list. If there are multiple condiments tied for the lowest sugar content, you want all of them to be added. Otherwise, ask the AI service agent to find the meat ingredient(s) with the expiration date closest to today among all meat ingredients and add them to the shopping list with a quantity equal to their current stock quantity (in units of 100 grams). If there are multiple meat items tied for the closest expiration date, you want all of them to be added. Then, ask the AI service agent to identify the recipe that consists of all the ingredients currently on the baking tray. Ask the AI service agent to add all ingredients from this recipe that require refrigeration to the shopping list, according to the required quantities. Finally, ask the AI service agent to calculate the total protein content of all ingredients in the shopping list.",
+    "analysis": "1. Identify the green ingredient located at the top-left corner of the blue cutting board.\n\n2. If this ingredient is stored on the spice rack, identify the seasoning ingredient(s) with the lowest sugar content among all seasoning ingredients and add them to the shopping list. If multiple ingredients tie for the lowest sugar content, add all of them.\n\n3. If this ingredient is not stored on the spice rack, identify the meat ingredient(s) with the expiration date closest to today among all meat ingredients and add them to the shopping list. If multiple ingredients tie for the closest expiration date, add all of them.\n\n4. Identify the recipe that consists of all the ingredients on the baking tray, and add all ingredients in this recipe that require refrigeration to the shopping list according to the specified quantities.\n\n5. Calculate the total protein content of all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Lamb",
+          "quantity": "14"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Salmon",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredients": [
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Quinoa",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 14
+            },
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Asparagus"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 7, 2026. First, have the AI Service Agent identify which staple or dry goods ingredient the powder is that you are pouring onto the right side of the baking tray. Subsequently, have the AI Service Agent determine if this ingredient's dietary fiber content is greater than 10 grams. If it is, have the AI Service Agent find the recipe with the lowest calories among all recipes containing the same high dietary fiber nutritional characteristic, and add all ingredients from that recipe to the shopping list according to the required amount. If there are multiple recipes tied for the lowest calories among those that meet the conditions, have the AI Service Agent add the ingredients from all of them. Otherwise, have the AI Service Agent find the recipe with the highest total fat among all recipes that do not contain this ingredient and contain the 'eggs' allergen, and add the meat ingredients from that recipe to the shopping list according to the required amount. If there are multiple recipes tied for the highest total fat among those that meet the conditions, have the AI Service Agent add the meat ingredients from all of them. Subsequently, have the AI Service Agent check if the yellow ingredient at the bottom-left corner of the blue cutting board is in stock. If it is in stock, add 100g of it to the shopping list. Finally, have the AI Service Agent calculate the total calcium content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the ingredient (staple food/dry powder) that the user is pouring onto the right side of the baking tray.\n\n2. If the dietary fiber content of this ingredient is greater than 10 grams, find the recipe with the lowest calories among all recipes that share the same high dietary fiber nutritional characteristic, and add all its ingredients to the shopping list according to the required amount. If there are multiple recipes tied for the lowest calories, you want all of them to be selected and their ingredients added.\n\n3. If the dietary fiber content of this ingredient is not greater than 10 grams, find the recipe with the highest total fat among all recipes that do not contain this ingredient and contain the 'eggs' allergen, and add the meat ingredients from it to the shopping list according to the required amount. If there are multiple recipes tied for the highest total fat, you want all of them to be selected and their meat ingredients added.\n\n4. Check if there is stock of the yellow ingredient at the bottom-left corner of the blue cutting board in the refrigerated layer. If not, mark this ingredient in the existing recipes of the user's current menu.\n\n5. Calculate the total calcium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Pork",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Chicken",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Lemon",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Pork",
+              "quantity": 1.5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 1.5
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 7, 2026. First, ask the AI service agent to identify the specific ingredient that has been roasted and placed on the left half of the baking tray. Then, ask the AI service agent to determine whether this ingredient is stored on the countertop. If it is, ask the AI service agent to find the ingredient with the lowest fat content value among all meat ingredients and add 100 grams of it to the shopping list. If there are multiple ingredients tied for the lowest fat content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find the ingredient with the highest total calorie value among all egg, milk, or soy product ingredients and add it to the shopping list. If there are multiple ingredients tied for the highest calorie content among those that meet the conditions, you want all of them to be added. Next, ask the AI service agent to check if any ingredients in the current shopping list are expiring within no more than two days. If there are any, ask the AI service agent to double the quantity of these soon-to-expire ingredients. Finally, ask the AI service agent to calculate the total sugar content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the ingredient cooked on the left half of the grill pan.\n\n2. If the ingredient is stored on the countertop, find the meat ingredient with the lowest fat content among all meat ingredients and add it to the shopping list. If multiple meat ingredients tie for the lowest fat content, add all of them.\n\n3. If the ingredient is not stored on the countertop, find the egg, dairy, or bean product ingredient with the highest total calories among all such ingredients and add it to the shopping list. If multiple items tie for the highest total calories, add all of them.\n\n4. Check all ingredients in the current shopping list to see if any are expiring in less than two days. If so, double the quantity of those ingredients.\n\n5. Calculate the total sugar content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Shrimp",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Lamb",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Shrimp",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the two ingredients on the baking tray and determine which step of this recipe has not yet been completed. Then, ask the AI Service Agent to check whether the unfinished step involves ingredients from the seasoning category. If it does, ask the AI Service Agent to find the recipe with the lowest total calorie count among all recipes with an umami flavor profile and add it to your menu. If there are multiple recipes tied for the lowest calorie count, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe containing the highest total number of vegetable types among all recipes with a sour flavor profile and add it to your menu. If there are multiple recipes tied for the highest number of vegetable types, add all of them to your menu. Subsequently, ask the AI Service Agent to check all recipes in the current menu and add any ingredients stored in the fridge with inventory less than 10 to the shopping list according to their original usage amount. Finally, ask the AI Service Agent to compile all flavor tags involved in all recipes in the current menu.",
+    "analysis": "1. Identify which recipe is formed by the two ingredients on the baking tray.\n2. Determine which step in this recipe remains incomplete.\n3. If the incomplete step involves ingredients from the seasoning category, find the recipe with the lowest total calorie count among all recipes with an umami flavor and add it to the menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, add all of them.\n4. If the incomplete step does not involve ingredients from the seasoning category, find the recipe containing the highest total number of vegetable types among all recipes with a sour flavor and add it to the menu. If there are multiple recipes tied for the highest count among those that meet the conditions, add all of them.\n5. Check all recipes in the current menu. Add any ingredients that are stored in the freezer and are out of stock to the shopping list, maintaining their original required quantities.\n6. Summarize all flavor tags associated with all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Spinach",
+          "quantity": "1.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Soy Sauce",
+          "quantity": "0.1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Celery",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Carrots",
+          "quantity": "0.4"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Eggs",
+          "quantity": "0.2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Cheese",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 6, 2026. First, ask the AI Service Agent to identify the specific ingredient of the yellow vegetable placed in the bottom-left corner of the blue cutting board. Next, ask the AI Service Agent to check if the calorie count of this ingredient is below 50 kcal. If it is, ask the AI Service Agent to select the recipe with the highest total protein score from all recipes containing the 'dairy' allergen and add it to your menu. If there are multiple recipes tied for the highest protein score, add all of them to your menu. Otherwise, ask the AI Service Agent to select the recipe with the lowest total calcium content from all recipes that share at least one nutritional feature with the recipe mentioned above, and add it to your menu. If there are multiple recipes tied for the lowest calcium content, add all of them to your menu. Next, ask the AI Service Agent to add the ingredients currently simmering in the pot to the shopping list, based on the required quantities specified in the first recipe in your current menu. If the first recipe in your current menu does not require the ingredients currently simmering in the pot, add 200g of beef to the shopping list instead. Finally, ask the AI Service Agent to summarize all nutritional features covered in the current menu.",
+    "analysis": "1. Identify the yellow vegetable located at the bottom left corner of the blue cutting board.\n\n2. If the calorie content of this ingredient is below 50 kcal, find the recipe with the highest total protein among all recipes containing the dairy allergen and add it to the menu. If there are multiple recipes tied for the highest protein content among those that meet the conditions, you want all of them to be added.\n\n3. If the calorie content of this ingredient is 50 kcal or more, find the recipe with the lowest total calcium content among all recipes that share at least one nutritional feature with that recipe and add it to the menu. If there are multiple recipes tied for the lowest calcium content among those that meet the conditions, you want all of them to be added.\n\n4. Add the ingredients currently simmering in the pot to the shopping list according to the quantities required by the first recipe in the current menu.\n\n5. Summarize all nutritional features covered in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Mushroom & Thyme Roast Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Beef",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipes": [
+            "Beef & Black Bean Stew",
+            "Mushroom & Thyme Roast Chicken",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Lemon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 8, 2026. First, ask the AI Service Agent to determine which specific category the potato being boiled in the pot belongs to. Next, ask the AI Service Agent to check whether the current household inventory of this ingredient is less than the amount required by the recipe. If it is less, ask the AI Service Agent to find the ingredient with the highest protein content among all ingredients in the same category and add it to the shopping list. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the shortest shelf life among all ingredients stored on the spice rack and add it to the shopping list. If there are multiple ingredients tied for the shortest shelf life among those that meet the conditions, you want all of them to be added. Immediately afterwards, ask the AI Service Agent to check whether the current shopping list includes the yellow ingredient placed on the bottom left of the blue cutting board. If it does, ask the AI Service Agent to double its purchase quantity. Finally, ask the AI Service Agent to calculate the total sugar content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the specific category of the potatoes currently boiling in the pot.\n\n2. If the current home inventory of this ingredient is less than the amount required by the recipe, find the ingredient(s) with the highest protein content among all ingredients of the same category and add them to the shopping list. If multiple ingredients tie for the highest protein content, add all of them.\n\n3. If the current home inventory of this ingredient is not less than the amount required by the recipe, find the ingredient(s) with the shortest shelf life among all ingredients stored on the spice rack and add them to the shopping list. If multiple ingredients tie for the shortest shelf life, add all of them.\n\n4. Check whether the current shopping list includes the yellow ingredient located at the bottom-left of the blue cutting board. If it does, double the purchase quantity for that item.\n\n5. Calculate the total sugar content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "get_current_shopping_list",
+        "parameters": {
+          "user_id": "cook_001"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Potato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. First, ask the AI Service Agent to identify the recipe that corresponds to both the chunky ingredients currently cooking in the pot and the three vegetables on the blue cutting board, and determine which step of this recipe remains unfinished. Subsequently, ask the AI Service Agent to determine whether the total calories of all ingredients involved in the unfinished steps exceed 200 kcal. If they do, ask the AI Service Agent to find the recipe using the greatest weight of egg/milk/soy products among all recipes featuring high calcium nutritional characteristics and add it to your menu. If there are multiple recipes tied for the greatest weight, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe with the lowest total sodium content among all recipes featuring vegan nutritional characteristics and add it to your menu. If there are multiple recipes tied for the lowest sodium content, add all of them to your menu. Next, ask the AI Service Agent to check all meat ingredients used in all recipes currently in the menu. If the household inventory is insufficient, ask the AI Service Agent to add the shortage quantity to the shopping list. If the household inventory is sufficient, ask the AI Service Agent to add 200g of the first ingredient from the first recipe in the current menu to the shopping list. Finally, ask the AI Service Agent to summarize the nutritional characteristics covered by all recipes in the current menu.",
+    "analysis": "1. Identify the recipe that includes both the chunky ingredients currently cooking in the pot and the three vegetables on the blue cutting board.\n2. Determine which step in this recipe has not yet been completed.\n3. If the total calories of all ingredients involved in the unfinished step exceed 200 kcal, search through all recipes with high calcium nutritional characteristics. Identify the recipe with the largest quantity of egg, milk, or soy products and add it to the menu. If there are multiple recipes tied for the largest quantity, add all of them to the menu.\n4. If the total calories of all ingredients involved in the unfinished step do not exceed 200 kcal, search through all recipes with vegan nutritional characteristics. Identify the recipe with the lowest total sodium content and add it to the menu. If there are multiple recipes tied for the lowest content, add all of them to the menu.\n5. Check the meat ingredients used in all recipes currently in the menu. For any ingredient where the stock is insufficient, add the shortage quantity to the shopping list.\n6. Summarize the nutritional characteristics covered by all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "pork",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Egg & Spinach Frittata",
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl"
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 9, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the dish represented by all three ingredients on the blue cutting board and the ingredients in the pot. Next, have the AI Service Agent determine whether the nutrition features of this dish include low sodium. If they do, ask the AI Service Agent to find the recipe with the highest total protein content among all recipes containing the soy allergen and add it to your menu. If there are multiple recipes tied for the highest protein content, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the fewest preparation steps among all recipes that share at least two nutrition features with this recipe and add it to your menu. If there are multiple recipes tied for the fewest steps, you want all of them to be added. After that, have the AI Service Agent identify all ingredients belonging to the fruit category required by the last recipe in the current menu, and add any that are already expired to the shopping list. Finally, ask the AI Service Agent to summarize the nutrition features of all recipes in the current menu.",
+    "analysis": "1. Identify which recipe matches the combination of the three ingredients on the blue cutting board and the ingredients in the pot.\n\n2. If this recipe includes the low-sodium nutritional feature, find the recipe with the highest total protein among all recipes containing the soy allergen and add it to the menu. If there are multiple recipes tied for the highest total protein among those that meet the conditions, add all of them.\n\n3. If this recipe does not include the low-sodium nutritional feature, find the recipe with the fewest preparation steps among all recipes that share at least two nutritional features with this recipe and add it to the menu. If there are multiple recipes tied for the fewest preparation steps among those that meet the conditions, add all of them.\n\n4. Identify all fruit ingredients required for the last recipe in the current menu, and add any expired ones to the shopping list.\n\n5. Summarize the nutritional features of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup",
+            "Yogurt & Berry Parfait",
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Tofu Soup"
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your User ID is cook_005, and today is May 12, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the two ingredients currently on the baking tray. Next, have the AI Service Agent determine if this recipe has a sweet taste profile. If it does, ask the AI Service Agent to search among all recipes with vegan nutritional features for the recipe containing the most vegetable varieties and add it to your menu. If there are multiple recipes tied for the most vegetable varieties, add all of them. Otherwise, ask the AI Service Agent to search among all recipes with a salty taste profile for the recipe with the highest total calories and add it to your menu. If there are multiple recipes tied for the highest total calories, add all of them. Then, have the AI Service Agent check the chunk ingredient in the boiling water in the pot. If there is no stock of this ingredient at home, ask the AI Service Agent to add 1 kg of it to the shopping list. Finally, ask the AI Service Agent to calculate all nutritional features contained in the current menu.",
+    "analysis": "1. Identify which recipe is composed of the two ingredients on the baking tray.\n\n2. If the recipe includes a sweet flavor, find the recipe with the most vegetable types among all recipes with vegan nutrition features and add it to the menu. If there are multiple recipes tied for the most vegetable types among those that meet the conditions, add all of them to the menu.\n\n3. If the recipe does not include a sweet flavor, find the recipe with the highest total calories among all recipes with a bitter flavor and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n\n4. Check the chunky ingredients in the boiling water in the pot. If there is no stock of them at home, add 1 kilogram to the shopping list.\n\n5. Summarize all nutrition features included in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_quantity",
+        "parameters": {
+          "ingredient_name": "Potatoes"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 10, 2026. First, have the AI Service Agent identify the ingredient that has already been baked and is placed on the left half of the baking tray. Then, have the AI Service Agent determine whether the expiration date of this ingredient is after today. If it is, have the AI Service Agent find the ingredient with the highest calcium content among all ingredients belonging to eggs, dairy, or soy products and add it to your shopping list. If there are multiple ingredients tied for the highest calcium content among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the ingredient with the largest stock quantity among all ingredients stored in the freezer and add 100 grams of it to the shopping list. If there are multiple ingredients tied for the largest stock quantity among those that meet the conditions, you want all of them to be added. Next, have the AI Service Agent identify the yellow powder you are sprinkling on the right side of the baking tray. If its stock quantity is less than 50 grams, have the AI Service Agent add it to the shopping list with a quantity of 500 grams. Finally, have the AI Service Agent calculate the total calories of all ingredients in the current shopping list.",
+    "analysis": "Results:\n1. Identify the ingredient that has been baked on the left half of the baking tray.\n\n2. If the expiration date of that ingredient is after today, find the ingredient with the highest calcium content among all egg, milk, or soy product ingredients and add it to the shopping list. If multiple items tie for the highest calcium content, add all of them.\n\n3. If that ingredient is expired or its expiration date is not after today, find the ingredient with the largest stock quantity among all ingredients stored in the freezer and add it to the shopping list. If multiple items tie for the largest stock quantity, add all of them.\n\n4. Identify the yellow powder the user is sprinkling on the right side of the baking tray. If its stock quantity is less than 50 grams, add 500 grams of it to the shopping list.\n\n5. Calculate the total calories of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Beef",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_quantity",
+        "parameters": {
+          "ingredient_name": "Cornmeal"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the dish composed of the ingredients currently cooking in the pot and the three ingredients on the blue cutting board, and to identify which step of this recipe has not yet been completed. Then, ask the AI Service Agent to check whether the ingredients required for this unfinished step include meat. If they do, ask the AI Service Agent to find the ingredient(s) with the lowest sodium content among all ingredients in the seasoning category and add 200 grams of each to the shopping list. If there are multiple ingredients tied for the lowest sodium content among those that meet the conditions, you want 200 grams of each of them to be added. Otherwise, ask the AI Service Agent to find the ingredient(s) with the highest protein content among all ingredients in the staple/dry goods category and add 500 grams of each to the shopping list. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, you want 500 grams of each of them to be added. Next, ask the AI Service Agent to check whether the green vegetable in the top-left corner of the blue cutting board has expired. If it has expired and is on the shopping list, remove it. Finally, ask the AI Service Agent to calculate the total calorie sum of all ingredients currently on the shopping list.",
+    "analysis": "1. Identify which recipe corresponds to the ingredients currently cooking in the pot combined with the three ingredients on the blue cutting board.\n\n2. Determine which step in this recipe has not yet been completed.\n\n3. If the ingredients required for the unfinished step include meat, find the seasoning ingredient with the lowest sodium content among all seasoning ingredients, and add 200 grams of it to the shopping list. If multiple seasonings tie for the lowest sodium content, add 200 grams of each of them.\n\n4. If the ingredients required for the unfinished step do not include meat, find the staple/dry goods ingredient with the highest protein content among all staple/dry goods ingredients, and add 500 grams of it to the shopping list. If multiple items tie for the highest protein content, add 500 grams of each of them.\n\n5. Check if the green vegetable located at the top-left corner of the blue cutting board, which is included in the current shopping list, is expired. If it is expired, remove it from the shopping list.\n\n6. Calculate the total calorie count of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Black Beans",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Asparagus"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Black Beans",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 11, 2026. First, ask the AI Service Agent to identify what ingredient the green vegetable on the right side of the blue cutting board is. Then, have the AI Service Agent determine: if this ingredient's calories are below 20, ask the AI Service Agent to find the recipes with an umami flavor that require the highest weight of meat among all recipes requiring this ingredient, and add them to your menu. If there are multiple recipes tied for the highest meat weight among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipes containing dairy allergens with the lowest fat content among all recipes not requiring this ingredient, and add them to your menu. If there are multiple recipes tied for the lowest fat content among those that meet the conditions, you want all of them to be added. Next, have the AI Service Agent extract all (prepared) beverage category ingredients from all recipes in the current menu, and add those that are out of stock at home to the shopping list according to the quantities specified in the recipes. Finally, ask the AI Service Agent to summarize the flavor information of all recipes in the current menu.",
+    "analysis": "1. Identify the ingredient type of the green vegetable located to the right of the blue cutting board.\n\n2. If the calorie count of this ingredient is below 20, search through all recipes that require this ingredient. Find the recipe with an umami flavor and the highest meat usage, and add it to the menu. If there are multiple recipes tied for the highest meat usage among those that meet the conditions, you want all of them to be added.\n\n3. If the calorie count of this ingredient is 20 or higher, search through all recipes that do not require this ingredient. Find the recipe that contains dairy allergens and has the lowest fat content, and add it to the menu. If there are multiple recipes tied for the lowest fat content among those that meet the conditions, you want all of them to be added.\n\n4. Extract all beverage-category ingredients from the recipes currently in the menu. For any items that are out of stock, add them to the shopping list in the quantities specified by the recipes.\n\n5. Summarize the flavor profile information for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Broccoli"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 7, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the dish composed of the two ingredients on the baking tray, and identify which step of the recipe corresponds to your action of sprinkling powder on the right half of the baking tray. Subsequently, ask the AI Service Agent to determine whether the next step requires ingredients stored in the refrigerated layer. If so, ask the AI Service Agent to find the recipe with the lowest total calorie count among all recipes containing low-fat nutritional characteristics and add it to your menu. If multiple recipes tie for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the highest total fat content among all recipes containing the soy allergen and add it to your menu. If multiple recipes tie for the highest fat content among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to add any ingredients from the newly added recipe(s) in the menu to the shopping list if they are not already present. Finally, ask the AI Service Agent to compile the collection of flavors for all recipes currently in the menu.",
+    "analysis": "1. Determine which recipe corresponds to the two ingredients on the baking tray.\n2. Identify which step of this recipe it is when the user is sprinkling powder on the right half of the baking tray.\n3. If the next step requires ingredients stored in the refrigerated layer, find the recipe with the lowest total calories among all recipes featuring low-fat nutrition, and add it to the menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, add all of them.\n4. If the next step does not require ingredients stored in the refrigerated layer, find the recipe with the highest total fat content among all recipes containing soy allergens, and add it to the menu. If there are multiple recipes tied for the highest fat content among those that meet the conditions, add all of them.\n5. Add ingredients from all recipes in the current menu that have a shelf life of less than one day to the shopping list according to the required quantity.\n6. Compile the set of flavors from all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Tofu",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Spinach",
+          "quantity": "0.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Yellow Onions",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Soy Sauce",
+          "quantity": "0.1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Salt",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Black Pepper",
+          "quantity": "0.01"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "0.01"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup",
+            "Tofu Soup"
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato",
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 9, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the roasted ingredient placed on the left side of the baking tray, and which step of that recipe is currently being executed. Subsequently, ask the AI Service Agent to check whether the next step of the current step requires ingredients from the spice rack. If it does, ask the AI Service Agent to search among all recipes with a sweet flavor for the dish with the lowest total sugar score and add it to your menu. If there are multiple recipes tied for the lowest sugar score, you want all of them to be added. Otherwise, ask the AI Service Agent to search among all recipes containing gluten allergens for the dish with the highest total calorie value and add it to your menu. If there are multiple recipes tied for the highest calorie value, you want all of them to be added. Then, ask the AI Service Agent to add the ingredients boiling in the pot to the shopping list according to the usage amount specified in their respective recipe. Finally, ask the AI Service Agent to calculate the total sodium content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify which recipe corresponds to the ingredients being baked on the left side of the baking tray.\n2. Determine the current step of this recipe.\n3. If the next step requires ingredients from the spice rack, identify the recipe with the lowest total sugar content among all sweet-flavored recipes and add it to the menu. If there are multiple recipes tied for the lowest sugar content among those that meet the conditions, add all of them to the menu.\n4. If the next step does not require ingredients from the spice rack, identify the recipe with the highest total calories among all recipes containing gluten allergens and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n5. Add the ingredients boiling in the pot to the shopping list according to the quantities specified in their respective recipes.\n6. Calculate the total sodium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Potatoes",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 10, 2026. First, ask the AI Service Agent to identify the specific type of the yellow ingredient located at the bottom-left corner of the blue cutting board. Then, ask the AI Service Agent to determine whether this ingredient's sodium content is greater than 20 mg. If it is, ask the AI Service Agent to find the ingredients with the lowest fat content among all ingredients stored in the same location as this ingredient, and replace the original yellow ingredient in the shopping list with them. If there are multiple ingredients tied for the lowest fat content among those that meet the conditions, you want all of them to be included. Otherwise, ask the AI Service Agent to find the ingredients with the highest calorie content among all ingredients belonging to the fruit category and add 100 grams of each to the shopping list. If there are multiple ingredients tied for the highest calorie content, you want all of them to be added. After that, ask the AI Service Agent to select the first recipe in your current menu and add all ingredients within it that are vegetables and need to be stored in the storage cabinet to the shopping list. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the yellow ingredient located at the bottom-left corner of the blue cutting board.\n\n2. If the calcium content of this ingredient is greater than 20mg, find the ingredient with the lowest fat content among all ingredients stored in the same location, and replace the original yellow ingredient in the shopping list with it. If there are multiple ingredients tied for the lowest fat content among those that meet the conditions, you want all of them to be used for the replacement.\n\n3. If the calcium content of this ingredient is not greater than 20mg, find the ingredient with the highest calories among all fruit category ingredients and add it to the shopping list. If there are multiple items tied for the highest calorie count among those that meet the conditions, you want all of them to be added.\n\n4. Iterate through the current user's menu and add all ingredients that require storage in the cabinet and have expired to the shopping list.\n\n5. Calculate the total protein content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Banana",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Yellow Onions",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5.5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Lemon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 10, 2026. First, ask the AI Service Agent to identify the specific green ingredient located at the top-left of the blue cutting board. Then, ask the AI Service Agent to determine if the dietary fiber content of this ingredient is less than 2 grams. If it is, ask the AI Service Agent to find the ingredient with the highest calcium content among all ingredients stored in the refrigerated layer and add it to your shopping list. If there are multiple ingredients tied for the highest calcium content among those that meet the conditions, add all of them to the list. Otherwise, ask the AI Service Agent to find the ingredient with the lowest calorie value among all ingredients belonging to the staple/dry goods category and add 100g of it to the shopping list. If there are multiple ingredients tied for the lowest calorie value among those that meet the conditions, add 100g of each of them to the list. Next, ask the AI Service Agent to identify the recipe composed of the two ingredients on the baking tray, and ask the AI Service Agent to add all ingredients in this recipe that are out of stock to the shopping list. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the green ingredient located at the top-left of the blue cutting board.\n\n2. If the dietary fiber content of this ingredient is less than 2 grams, find the ingredient with the highest calcium content among all ingredients stored in the refrigerated layer and add it to the shopping list. If multiple ingredients tie for the highest calcium content, add all of them.\n\n3. If the dietary fiber content of this ingredient is not less than 2 grams, find the ingredient with the lowest calorie content among all ingredients in the staple food/dry goods category and add it to the shopping list. If multiple ingredients tie for the lowest calorie content, add all of them.\n\n4. Identify the recipe formed by the two ingredients on the baking tray, and add all ingredients required for that recipe that are currently out of stock to the shopping list.\n\n5. Calculate the total protein content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Black Beans",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "get_recipe_ingredients",
+        "parameters": {
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Black Beans",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Asparagus"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 8, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the dish composed of the chunked ingredients currently in boiling water in the pot and the three vegetables on the blue cutting board, and to determine which steps of this recipe have not yet been completed. Subsequently, ask the AI Service Agent to determine whether the total protein content of the ingredients involved in the completed steps of this dish exceeds 10 grams. If it does, ask the AI Service Agent to find the recipe with the lowest total calorie count among all recipes characterized as high-protein and add it to your menu. If there are multiple recipes tied for the lowest calorie count, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe with the highest total sodium content among all recipes characterized as low-sugar and add it to your menu. If there are multiple recipes tied for the highest sodium content, add all of them to your menu. Then, ask the AI Service Agent to add all condiments required by the recipes currently in your menu that are stored in the refrigerated layer to the shopping list, according to the amounts specified in the recipes. Finally, ask the AI Service Agent to summarize the flavor tags of all recipes currently in your menu.",
+    "analysis": "1. Identify the recipe that includes both the chunky ingredients boiling in the pot and the three vegetables on the blue cutting board.\n2. Determine which step of this recipe has not yet been completed.\n3. Calculate the total protein content of the ingredients involved in the completed steps of this dish.\n4. If the total protein content of the ingredients in the completed steps is greater than 10 grams, find the recipe with the lowest total calories among all recipes characterized as high-protein, and add it to the menu. If there are multiple recipes tied for the lowest calorie count, add all of them to the menu.\n5. If the total protein content is 10 grams or less, find the recipe with the highest total sodium content among all recipes characterized as sugar-free, and add it to the menu. If there are multiple recipes tied for the highest sodium content, add all of them to the menu.\n6. Add all seasonings required by the recipes in the current menu that are stored in the refrigerated layer to the shopping list, according to the amounts specified in the recipes.\n7. Compile the flavor tags for all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Soy Sauce",
+          "quantity": "0.4"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken",
+            "Green Pepper Chicken"
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 9, 2026. First, ask the AI Service Agent to identify the ingredient corresponding to the yellow staple powder you are sprinkling onto the right side of the baking tray. Then, have the AI Service Agent determine whether the sodium content of this ingredient exceeds 100 mg. If it does, ask the AI Service Agent to find all recipes that require this ingredient and have a spicy flavor, select the one with the lowest total calories, and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find all recipes that do not require this ingredient and contain fish allergens, select the one with the highest total fat content, and add it to your menu. If there are multiple recipes tied for the highest fat content among those that meet the conditions, you want all of them to be added. Afterwards, have the AI Service Agent identify all vegetables involved in the current menu, remove any vegetables with expiration dates before today, and re-add them to the shopping list in their original quantities. Finally, ask the AI Service Agent to compile the collection of nutritional features for all recipes in the current menu.",
+    "analysis": "1. Identify the ingredient corresponding to the yellow staple food powder the user is sprinkling onto the right side of the baking tray.\n\n2. If the sodium content of this ingredient exceeds 100 mg, search among all recipes that require this ingredient for those with a spicy flavor and the lowest total calories, and add them to the menu. If multiple recipes tie for the lowest calories, add all of them.\n\n3. If the sodium content of this ingredient does not exceed 100 mg, search among all recipes that do not require this ingredient for those containing fish allergens and having the highest total fat, and add them to the menu. If multiple recipes tie for the highest fat, add all of them.\n\n4. Identify all vegetables involved in the current menu. Remove any vegetables with an expiration date earlier than today from the menu, and add them back to the shopping list in their original quantities.\n\n5. Calculate the aggregate nutritional features of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Salmon & Quinoa Bowl"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Spinach",
+          "quantity": "8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Celery",
+          "quantity": "7"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup"
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 12, 2026. First, ask the AI Service Agent to identify the specific ingredient currently being boiled in the pot. Then, ask the AI Service Agent to determine whether the calorie content per unit of this ingredient is greater than 100 kcal. If it is, ask the AI Service Agent to find the vegetable ingredient with the highest calcium content and add it to the shopping list. If multiple vegetables tie for the highest calcium content, add all of them. Otherwise, ask the AI Service Agent to find the fruit ingredient with the lowest sugar content and add 100g of it to the shopping list. If multiple fruits tie for the lowest sugar content, add 100g of each. Next, ask the AI Service Agent to check the green vegetables placed on the right side of the blue cutting board. If there is currently no stock of them at home, ask the AI Service Agent to add 500g of them to the shopping list. Finally, ask the AI Service Agent to calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the specific ingredients currently simmering in the pot.\n\n2. If the calorie content per unit of that ingredient is greater than 100 kcal, identify the vegetable ingredient(s) with the highest calcium content and add them to the shopping list. If multiple vegetables tie for the highest calcium content, add all of them to the shopping list.\n\n3. If the calorie content per unit of that ingredient is 100 kcal or less, identify the fruit ingredient(s) with the lowest sugar content and add them to the shopping list. If multiple fruits tie for the lowest sugar content, add all of them to the shopping list.\n\n4. Check whether there is any stock remaining of the green vegetables to the right of the blue cutting board. If they are out of stock, add 500 grams to the shopping list.\n\n5. Calculate the total dietary fiber content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Strawberry",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_quantity",
+        "parameters": {
+          "ingredient_name": "Broccoli"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Potato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 11, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the two ingredients on the baking tray, and which step of this recipe involves sprinkling yellow powder. Then, ask the AI Service Agent to determine whether the total sugar content of the ingredients used in the next step of this recipe exceeds 15 grams. If it does, ask the AI Service Agent to find the recipe with the highest total protein value among all recipes with a savory flavor and add it to your menu. If there are multiple recipes tied for the highest protein value among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest total dietary fiber value among all recipes containing the eggs allergen and add it to your menu. If there are multiple recipes tied for the lowest dietary fiber value among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to extract the last step of all recipes in the current menu, and add all the seasonings used in this last step to the shopping list according to the amounts specified in the recipes. Finally, ask the AI Service Agent to summarize the flavor information of all recipes in the current menu.",
+    "analysis": "1. Determine which recipe corresponds to the two ingredients on the baking tray.\n\n2. Identify which step of this recipe involves sprinkling yellow powder.\n\n3. If the total sugar content of the ingredients used in the next step of this recipe exceeds 15 grams, find the recipe with the highest total protein among all recipes with a savory flavor and add it to the menu. If there are multiple recipes tied for the highest protein content, add all of them to the menu.\n\n4. If the total sugar content of the ingredients used in the next step of this recipe does not exceed 15 grams, find the recipe with the lowest total dietary fiber among all recipes containing the eggs allergen and add it to the menu. If there are multiple recipes tied for the lowest dietary fiber, add all of them to the menu.\n\n5. Extract the final step operation of all recipes in the current menu, and add all seasonings used in these final steps to the shopping list according to the recipe amounts.\n\n6. Summarize the flavor information of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "balsamic vinegar",
+          "quantity": "0.1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "olive oil",
+          "quantity": "0.05"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 7, 2026. First, ask the AI Service Agent to identify which recipe the potatoes in the pot and the three vegetables on the blue cutting board jointly belong to, and determine which step of this recipe has not yet been completed. Next, ask the AI Service Agent to determine if this undone step involves ingredients containing soy allergens. If it does, ask the AI Service Agent to find the recipe with the lowest total sodium content among all recipes with vegan nutritional characteristics and add it to your menu. If there are multiple recipes tied for the lowest sodium content, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the highest total fat content among all recipes with a sweet flavor profile and add it to your menu. If there are multiple recipes tied for the highest fat content, you want all of them to be added. Subsequently, ask the AI Service Agent to check whether the staple powder you are pouring onto the right side of the baking tray is in stock in the storage cabinet. If it is out of stock, ask the AI Service Agent to add 50 grams of it to the shopping list; if it is in stock, ask the AI Service Agent to add 100 grams of it to the shopping list. Finally, ask the AI Service Agent to tally the flavor tags of all recipes currently in your menu.",
+    "analysis": "1. Determine which recipe contains both the potatoes in the pot and the three vegetables on the blue cutting board.\n\n2. Identify which step in that recipe has not been completed yet.\n\n3. If the unfinished step involves ingredients containing soy allergens, find the recipe with the lowest total sodium content among all recipes with vegan nutritional characteristics and add it to the menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them to the menu.\n\n4. If the unfinished step does not involve ingredients containing soy allergens, find the recipe with the highest total fat content among all recipes with a bitter taste and add it to the menu. If there are multiple recipes tied for the highest fat content among those that meet the conditions, add all of them to the menu.\n\n5. Check if the staple food powder the user is pouring onto the right side of the baking tray is in stock in the storage cabinet. If it is not in stock, add 50 grams of it to the shopping list.\n\n6. Compile statistics on the taste tags of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Cornmeal",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata",
+            "Pork & Red Bell Pepper Skillet"
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. First, have the AI Service Agent identify specifically what ingredient the green vegetable located on the right side of the blue cutting board is. Then, have the AI Service Agent determine whether this ingredient's protein content is higher than 3 grams. If it is, have the AI Service Agent find the recipe with the lowest total calorie value among all recipes containing this ingredient and add it to your menu. If there are multiple recipes tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, have the AI Service Agent find the dish with the highest total fat value among all recipes not containing this ingredient that also contain the soy allergen, and add it to your menu. If there are multiple dishes tied for the highest fat content among those that meet the conditions, you want all of them to be added. Next, have the AI Service Agent add the red ingredient with grill marks on the surface located on the left side of the baking tray to the shopping list with a quantity of 500 grams. Finally, have the AI Service Agent summarize the collection of nutritional characteristics for all recipes currently in the menu.",
+    "analysis": "1. Identify what ingredient the green vegetable on the right side of the blue cutting board is.\n\n2. If the protein content of this ingredient is higher than 3 grams, find the recipe with the lowest total calories among all recipes containing this ingredient and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them to the menu.\n\n3. If the protein content of this ingredient is not higher than 3 grams, find the recipe containing the soy allergen with the highest total fat among all recipes not containing this ingredient and add it to the menu. If there are multiple recipes tied for the highest fat, add all of them to the menu.\n\n4. Add 500 grams of the red ingredient with grill marks on its surface located on the left side of the baking tray to the shopping list.\n\n5. Summarize the collection of nutritional features of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Tomatoes",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken",
+            "Pork & Red Bell Pepper Skillet"
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Broccoli"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 8, 2026. First, ask the AI Service Agent to identify the specific type of the green ingredient located at the top left of the blue cutting board. Then, ask the AI Service Agent to determine whether the fat content of this ingredient is higher than 1 gram. If it is, ask the AI Service Agent to find the dish with the lowest total calories among all recipes containing low-sugar nutritional features and add it to your menu. If there are multiple dishes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the dish with the highest total protein value among all recipes containing the fish allergen and add it to your menu. If there are multiple dishes tied for the highest protein among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check the chunky ingredient currently boiling in the pot. If its expiration date has passed, ask the AI Service Agent to add it to the shopping list according to the original recipe usage amount. If it has not expired, add 500 grams of it to the shopping list. Finally, ask the AI Service Agent to summarize the collection of nutritional features of all recipes in the current menu.",
+    "analysis": "1. Identify the green ingredient located to the upper left of the blue cutting board.\n\n2. If the fat content of this ingredient is higher than 1 gram, find the recipe with the lowest total calories among all recipes with low-sugar nutritional features and add it to the menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, add all of them to the menu.\n\n3. If the fat content of this ingredient is 1 gram or less, find the recipe with the highest total protein among all recipes containing the fish allergen and add it to the menu. If there are multiple recipes tied for the highest protein among those that meet the conditions, add all of them to the menu.\n\n4. Check the chunky ingredient currently boiling in the pot; if it is expired, add it to the shopping list using the quantity specified in the original recipe.\n\n5. Summarize the collection of nutritional features for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Salmon & Quinoa Bowl"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Potatoes",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipes": [
+            "Beef & Black Bean Stew",
+            "Mushroom & Thyme Roast Chicken",
+            "Yogurt & Berry Parfait",
+            "Salmon & Quinoa Bowl"
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Asparagus"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 9, 2026. First, ask the AI Service Agent to identify which recipe consists of the two ingredients on the baking tray, including roasted tomatoes and yellow powder, and indicate which step the current powder sprinkling is at. Subsequently, ask the AI Service Agent to determine whether the next step of this recipe requires an ingredient with high sodium nutritional characteristics. If it does, ask the AI Service Agent to find the recipe with the lowest total calorie count among all recipes with a salty flavor and add it to your menu. If there are multiple recipes tied for the lowest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the highest total fat value among all recipes containing gluten allergens and add it to your menu. If there are multiple recipes tied for the highest fat value among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check the green vegetable on the right side of the blue cutting board included in the current shopping list, and remove it from the current shopping list. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine which recipe consists of the two ingredients on the baking tray, specifically roasted tomatoes and yellow powder.\n2. Identify which step of this recipe corresponds to the current action of sprinkling powder.\n3. If the next step requires an ingredient with high sodium content, identify the recipe with the lowest total calories among all salty recipes and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them to the menu.\n4. If the next step does not require an ingredient with high sodium content, identify the recipe with the highest total fat among all recipes containing gluten allergens and add it to the menu. If there are multiple recipes tied for the highest fat, add all of them to the menu.\n5. Check if the current shopping list includes the green vegetable to the right of the blue cutting board, and remove it.\n6. Calculate the total protein content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 10, 2026. First, ask the AI service agent to identify the specific yellow ingredient placed in the bottom-left corner of the blue cutting board. Then, ask the AI service agent to determine whether this ingredient is stored in the refrigerated layer. If it is, ask the AI service agent to find all recipes containing this ingredient, select the recipe with the largest usage amount in the Staple/Dry Goods category, and add it to your menu. If there are multiple recipes tied for the largest usage amount, you want all of them to be added to your menu. Otherwise, ask the AI service agent to find all recipes that do not contain this ingredient at all, select the recipe that contains dairy allergens and has the lightest total weight, and add it to your menu. If there are multiple recipes tied for the lightest weight, you want all of them to be added to your menu. Afterwards, ask the AI service agent to identify all seasonings used in the current menu. If the home stock is sufficient, add any seasonings not currently available at home to the shopping list in quantities of 100 grams. Finally, ask the AI service agent to summarize all nutritional features covered by the current menu.",
+    "analysis": "1. Identify the yellow ingredient located at the bottom-left corner of the blue cutting board.\n\n2. If this ingredient is stored in the refrigerated layer, search through all recipes containing this ingredient. Find the recipe with the largest usage amount in the \"Staple Food/Dry Goods\" category and add it to the menu. If multiple recipes tie for the largest usage amount, add all of them to the menu.\n\n3. If this ingredient is not stored in the refrigerated layer, search through all recipes that do not contain this ingredient at all. Find the recipe that contains the \"dairy\" allergen and has the lightest total weight, and add it to the menu. If multiple recipes tie for the lightest weight, add all of them to the menu.\n\n4. Check all seasonings used in the current menu. If any are out of stock at home, add 100 grams of each to the shopping list.\n\n5. Summarize all nutritional features covered by the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Lemon"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_004, and today is May 9, 2026. First, ask the AI service agent to identify specifically what ingredient the green vegetable placed on the right side of the blue cutting board is. Subsequently, ask the AI service agent to determine if this ingredient is less than three days away from expiration. If it is, ask the AI service agent to find the ingredient with the highest dietary fiber content among all ingredients in the vegetable category, and replace the original ingredient in your menu with it. If there are multiple ingredients tied for the highest dietary fiber content among those that meet the conditions, you want all of them to be used for the replacement. Otherwise, ask the AI service agent to find the ingredient with the lowest sugar content among all ingredients that are in the same category as this ingredient and have fewer than 30 calories, and add one portion to your shopping list. If there are multiple ingredients tied for the lowest sugar content among those that meet the conditions, you want one portion of each of them to be added. Then, ask the AI service agent to search the storage cabinet for non-expired ingredients under the category corresponding to the ingredients currently cooking in the pot, and add them to the shopping list in the same quantity. Finally, ask the AI service agent to calculate the total calories of all ingredients in the current shopping list.",
+    "analysis": "1. Identify what ingredient the green vegetable located to the right of the blue cutting board is.\n\n2. If this ingredient expires in less than three days, find the vegetable ingredient with the highest dietary fiber content among all vegetables and use it to replace the original ingredient in the menu. If there are multiple vegetables tied for the highest dietary fiber content, include all of them in the replacement.\n\n3. If this ingredient expires in three days or more, find the ingredient with the lowest sugar content among all ingredients that have the same calorie value as this ingredient, and add it to the shopping list. If there are multiple ingredients tied for the lowest sugar content, add all of them to the shopping list.\n\n4. Remove all expired ingredients from the storage cabinet that belong to the same category as the ingredient currently cooking in the pot, and record them on the shopping list.\n\n5. Calculate the total calories of all ingredients currently on the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Spinach",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Potatoes",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Yellow Onions",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 20
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Broccoli"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 8, 2026. First, ask the AI service agent to determine which recipe corresponds to the dish composed of the two ingredients on the baking tray. Subsequently, ask the AI service agent to determine whether this recipe's nutritional features include high protein. If so, ask the AI service agent to find the recipe(s) requiring the fewest types of ingredients among all recipes that share at least one flavor profile with this recipe, and add them to your menu. If there are multiple recipes tied for the fewest ingredient types among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find the recipe(s) with the lowest total fat content among all recipes containing the fish allergen, and add them to your menu. If there are multiple recipes tied for the lowest fat content among those that meet the conditions, you want all of them to be added. Next, ask the AI service agent to check the meat ingredients required by all recipes in the current menu, and add meat ingredients with insufficient home inventory to the shopping list based on the shortage quantity. Finally, ask the AI service agent to summarize the collection of nutritional features of all recipes in the current menu.",
+    "analysis": "1. Identify which recipe corresponds to the two ingredients on the baking tray.\n\n2. If that recipe contains the high-protein nutrition feature, then among all recipes that share at least one same flavor, find the recipe requiring the fewest types of ingredients and add it to the menu. If there are multiple recipes tied for the fewest ingredient types among those that meet the conditions, add all of them to the menu.\n\n3. If that recipe does not contain the high-protein nutrition feature, then among all recipes containing the fish allergen, find the recipe with the lowest total fat content and add it to the menu. If there are multiple recipes tied for the lowest fat content among those that meet the conditions, add all of them to the menu.\n\n4. Check the meat ingredients required by all recipes in the current menu, and add the insufficient quantities to the shopping list based on the shortage amount.\n\n5. Summarize the collection of nutrition features of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Tofu Soup"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Pork & Chive Dumplings"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Duck",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Duck & Cherry Salad",
+            "Beef & Black Bean Stew",
+            "Egg & Spinach Frittata",
+            "Tofu Soup",
+            "Potato & Greens Salad",
+            "Roasted Tomato Salmon",
+            "Pork & Chive Dumplings",
+            "Custom Seasoned Noodles",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 7, 2026. First, ask the AI Service Agent to identify which ingredient the yellow powder is that you are sprinkling on the right half of the baking tray. Next, ask the AI Service Agent to determine whether the current home inventory of this ingredient is zero. If it is zero, ask the AI Service Agent to find the ingredient with the highest protein content among all ingredients belonging to the staple food/dry goods category, and add it to the shopping list in a quantity of 500 grams. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, add 500 grams of each of them. Otherwise, ask the AI Service Agent to find the ingredient with the longest shelf life among all ingredients stored in the same location as this ingredient, and add it to the shopping list in a quantity of 200 grams. If there are multiple ingredients tied for the longest shelf life among those that meet the conditions, add 200 grams of each of them. Then, ask the AI Service Agent to check whether the ingredient placed on the left side of the baking tray has expired. If it has expired, remove it from the shopping list. If it has not expired, check if the shopping list already contains this ingredient; if it does not, add 200g of it to the list. Finally, ask the AI Service Agent to calculate the total sodium content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the ingredient corresponding to the yellow powder the user is sprinkling on the right half of the baking tray.\n\n2. If the current home stock of this ingredient is zero, find the ingredient with the highest protein content among all staple food or dry goods categories, and add 500 grams of it to the shopping list. If multiple items tie for the highest protein content, add 500 grams of each of those tied items.\n\n3. If there is current home stock of this ingredient, find the ingredient with the longest shelf life among all ingredients stored in the same location, and add 200 grams of it to the shopping list. If multiple items tie for the longest shelf life, add 200 grams of each of those tied items.\n\n4. Determine whether the ingredient placed on the left side of the baking tray is expired; if it is expired, remove it from the shopping list.\n\n5. Calculate the total sodium content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Balsamic Vinegar",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Tomatoes",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 8
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. First, ask the AI Service Agent to determine which recipe corresponds to the dish composed of the ingredients currently cooking in the pot and the three ingredients on the blue cutting board. Subsequently, ask the AI Service Agent to check if this dish contains the soy allergen. If it does, ask the AI Service Agent to find the recipe with the lowest calories among all recipes that contain at least two identical allergens and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe that requires the largest total weight of vegetable category ingredients among all recipes characterized as gluten-free and add it to your menu. If there are multiple recipes tied for the largest total weight among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to add the ingredients stored in the freezer layer used by all recipes in the current menu to the shopping list according to the recipe requirements. If there are no such ingredients, add 200g of beef to the shopping list. Finally, ask the AI Service Agent to compile the flavor tags of all recipes in the current menu.",
+    "analysis": "1. Determine which recipe corresponds to the ingredients currently cooking in the pot combined with the three ingredients on the blue cutting board.\n\n2. If this recipe contains the soy allergen, find the recipe with the lowest calories among all recipes that contain at least two of the same allergens, and add it to the menu. If multiple recipes tie for the lowest calories, add all of them.\n\n3. If this recipe does not contain the soy allergen, find the recipe with the highest total weight of vegetables among all recipes with gluten-free nutritional features, and add it to the menu. If multiple recipes tie for the highest total vegetable weight, add all of them.\n\n4. Add all ingredients used by the recipes in the current menu that are stored in the freezer to the shopping list according to the required quantities.\n\n5. Compile statistics on the flavor tags of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Beef",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken",
+            "Roasted Chickpeas & Vegetables"
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the dish prepared with the green vegetables located on the right side of the blue cutting board. Next, have the AI Service Agent determine whether this recipe contains the 'eggs' allergen. If it does, instruct the AI Service Agent to find the recipe with the lowest total sodium content among all recipes with a 'spicy' flavor and add it to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, instruct the AI Service Agent to find the recipe with the highest total calorie count among all recipes with a 'vegan' nutritional feature and add it to your menu. If there are multiple recipes tied for the highest calorie count among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to check the powdered ingredient on the right side of the baking tray. If there is no stock at home, have the AI Service Agent add 50 grams of it to the shopping list. Finally, ask the AI Service Agent to summarize all nutritional features covered by all recipes currently in your menu.",
+    "analysis": "1. Identify which recipe uses the green vegetables located to the right of the blue cutting board.\n\n2. If that recipe contains the eggs allergen, find the recipe with the lowest total sodium content among all recipes with a spicy flavor and add it to the menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them to the menu.\n\n3. If that recipe does not contain the eggs allergen, find the recipe with the highest total calories among all recipes with vegan nutritional features and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n\n4. Check the powdered ingredient to the right of the baking tray; if there is no stock at home, add 50 grams of it to the shopping list.\n\n5. Summarize all nutritional features covered by all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl",
+            "Roasted Chickpeas & Vegetables"
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Broccoli"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 8, 2026. First, ask the AI Service Agent to identify the specific type of the yellow ingredient located at the bottom left corner of the blue cutting board. Next, have the AI Service Agent check if the current household inventory of this ingredient is less than 50 grams. If it is, ask the AI Service Agent to find the recipe with the highest total dietary fiber value among all recipes with a \"sweet\" flavor profile and add it to your menu. If there are multiple recipes tied for the highest dietary fiber value among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest total protein value among all recipes containing \"dairy\" allergens and add it to your menu. If there are multiple recipes tied for the lowest protein value among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to extract all ingredients required by the recipes in the current menu that belong to the egg, dairy, or soy product categories, and add them to the shopping list according to the required quantities specified in the recipes. Finally, ask the AI Service Agent to summarize all flavor tags covered in the current menu.",
+    "analysis": "1. Identify the yellow ingredient located at the bottom left corner of the blue cutting board.\n\n2. If the current stock of this ingredient at home is less than 50 grams, search through all recipes with a \"sweet\" flavor, identify the recipe with the highest total dietary fiber value, and add it to the menu. If multiple recipes tie for the highest value, add all of them.\n\n3. If the current stock of this ingredient at home is 50 grams or more, search through all recipes containing \"dairy\" allergens, identify the recipe with the lowest total protein value, and add it to the menu. If multiple recipes tie for the lowest value, add all of them.\n\n4. Extract all ingredients categorized as eggs, dairy, or soy products required by the recipes currently in the menu, and add them to the shopping list according to the required quantities.\n\n5. Summarize all flavor tags covered by the recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Egg & Spinach Frittata"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Eggs",
+          "quantity": "0.2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Milk",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Cheese",
+          "quantity": "0.3"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Duck & Cherry Salad",
+            "Beef & Black Bean Stew",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Lemon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 10, 2026. First, ask the AI Service Agent to identify which recipe corresponds to the dish composed of the chunky ingredients boiling in the pot and the three vegetables on the blue cutting board. Then, ask the AI Service Agent to determine whether the total calorie count of all ingredients required for this recipe exceeds 500 kcal. If it does, ask the AI Service Agent to find the ingredient with the highest protein value among all meat ingredients and add it to the shopping list. If there are multiple ingredients tied for the highest protein value, add all of them. Otherwise, ask the AI Service Agent to find the ingredient with the highest dietary fiber value among all staple food or dry goods ingredients and add 100 grams of it to the shopping list. If there are multiple ingredients tied for the highest dietary fiber value, add all of them. Next, ask the AI Service Agent to remove all expired vegetables from the current shopping list. Finally, ask the AI Service Agent to calculate the total sodium content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine which recipe is formed by the chunky ingredients boiling in the pot and the three vegetables on the blue cutting board.\n\n2. If the total calories of all ingredients required for this recipe exceed 500 kcal, find the meat ingredient with the highest protein content and add it to the shopping list. If multiple meat ingredients tie for the highest protein content, add all of them.\n\n3. If the total calories of all ingredients required for this recipe do not exceed 500 kcal, find the staple/dry goods ingredient with the highest dietary fiber content and add it to the shopping list. If multiple staple/dry goods ingredients tie for the highest dietary fiber content, add all of them.\n\n4. Remove all expired vegetables from the current shopping list.\n\n5. Calculate the total sodium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Chickpeas",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 40,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 7, 2026. First, ask the AI Service Agent to identify the specific type of red ingredient with grill marks on the left surface of the grill pan. Next, have the AI Service Agent determine if this ingredient is currently stored in the refrigerated layer. If it is, ask the AI Service Agent to find the ingredient with the lowest total sugar score among all ingredients in the fruit category and add 200 grams of it to the shopping list. If there are multiple ingredients tied for the lowest sugar score among those that meet the conditions, you want 200 grams of each of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest sodium content among all ingredients in the condiment category and add 100 grams of it to the shopping list. If there are multiple ingredients tied for the highest sodium content among those that meet the conditions, you want 100 grams of each of them to be added. Then, have the AI Service Agent check the chunk-shaped ingredient in the boiling water inside the pot. If it is expired, ask the AI Service Agent to remove it from the home storage records and add the original quantity to the shopping list. If it is not expired, ask the AI Service Agent to add 500 grams of it to the shopping list. Finally, ask the AI Service Agent to calculate the total calorie count of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the red ingredient on the left side of the baking tray that has grilling marks on its surface.\n\n2. If this ingredient is currently stored in the refrigerated layer, find the ingredient with the lowest total sugar content among all fruit category ingredients and add 200 grams to the shopping list. If multiple ingredients tie for the lowest sugar content, add 200 grams of each tied ingredient.\n\n3. If this ingredient is not stored in the refrigerated layer, find the ingredient with the highest sodium content among all seasoning ingredients and add 100 grams to the shopping list. If multiple ingredients tie for the highest sodium content, add 100 grams of each tied ingredient.\n\n4. Check the chunky ingredient in the boiling water inside the pot; if it is expired, remove it from the home storage location records and add the original amount to the shopping list.\n\n5. Calculate the total calorie count for all ingredients currently on the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Salt",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Potatoes",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 15
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 8
+            },
+            {
+              "ingredient_name": "Salt",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 41,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Tomato"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 9, 2026. First, ask the AI service agent to identify which recipe is composed of the yellow powdery staple food you are pouring onto the right half of the baking tray and the other ingredient on the tray. Then, ask the AI service agent to determine if this recipe contains the high-calcium nutrition feature. If it does, ask the AI service agent to find the recipe with the lowest total calories among all recipes containing the fish allergen and add it to your menu. If there are multiple recipes tied for the lowest total calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find the recipe with the highest total fat among all recipes with a savory taste and add it to your menu. If there are multiple recipes tied for the highest total fat among those that meet the conditions, you want all of them to be added. After that, ask the AI service agent to add the green vegetables on the top left of the blue cutting board to the shopping list with a quantity of 300 grams. Finally, ask the AI service agent to summarize all nutrition features used in all recipes currently in your menu.",
+    "analysis": "1. Determine which recipe is composed of the yellow powdery staple food the user is sprinkling on the right half of the baking tray and another ingredient on the baking tray.\n\n2. If this recipe contains the high calcium nutritional feature, find the recipe with the lowest total calories among all recipes containing the fish allergen and add it to the menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, add all of them to the menu.\n\n3. If this recipe does not contain the high calcium nutritional feature, find the recipe with the highest total fat among all recipes with a savory flavor and add it to the menu. If there are multiple recipes tied for the highest fat among those that meet the conditions, add all of them to the menu.\n\n4. Add 300 grams of the green vegetables located at the top left of the blue cutting board to the shopping list.\n\n5. Summarize all nutritional features used by all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Asparagus",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 42,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your User ID is cook_007, and today is May 12, 2026. First, ask the AI Service Agent to identify which recipe on the baking tray consists of roasted red ingredients on the left and yellow powder on the right. Subsequently, ask the AI Service Agent to determine whether the total fat content of this recipe is less than 15 grams. If it is less than 15 grams, ask the AI Service Agent to select the recipe with the highest total protein value from all recipes containing the gluten allergen and add it to your menu. If there are multiple recipes tied for the highest protein value among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to select the recipe with the lowest total sugar value from all recipes that share at least one flavor with this recipe and add it to your menu. If there are multiple recipes tied for the lowest sugar value among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to inspect the green vegetable at the top-left of the blue cutting board. If it is expired, ask the AI Service Agent to add it to the shopping list again according to the original recipe usage amount. Finally, ask the AI Service Agent to compile the set of flavors for all recipes currently in your menu.",
+    "analysis": "1. Identify which recipe consists of the red ingredient baked on the left side of the baking tray and the yellow powder on the right side.\n\n2. If the total fat of this recipe is less than 15 grams, find the recipe with the highest total protein among all recipes containing the gluten allergen and add it to the menu. If there are multiple recipes tied for the highest protein among those that meet the conditions, add all of them to the menu.\n\n3. If the total fat of this recipe is not less than 15 grams, find the recipe with the lowest total sugar among all recipes that share at least one flavor with this recipe and add it to the menu. If there are multiple recipes tied for the lowest sugar among those that meet the conditions, add all of them to the menu.\n\n4. Check the green vegetables on the top-left of the blue cutting board; if they are expired, add them to the shopping list again according to the amount specified in the original recipe.\n\n5. Calculate the set of flavors for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake"
+          ]
+        }
+      }
+    ],
+    "task_id": 43,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Roasted Tomato Salmon"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. First, ask the AI Service Agent to identify the specific type of green leafy ingredient located at the top-left corner of the blue cutting board. Next, have the AI Service Agent determine the following: if the total calorie count of this ingredient is less than 20 kcal, instruct the AI Service Agent to find the ingredient with the lowest fat content among all ingredients stored on the countertop and add it to the shopping list; otherwise, instruct the AI Service Agent to find the ingredient with the lowest sodium content among all ingredients categorized as vegetables with a quantity no greater than 10 and add it to the shopping list. If multiple items tie for the lowest value according to the specified criterion, add each of those tied items to the list. Then, have the AI Service Agent add the chunk-shaped ingredient currently boiling in the pot to the shopping list based on a weight of 1 kilogram. Finally, ask the AI Service Agent to calculate the total dietary fiber content of all ingredients currently in the shopping list.",
+    "analysis": "1. Identify what ingredient the green leafy vegetable in the top-left corner of the blue cutting board is.\n\n2. If the total calories of this ingredient are less than 20 kcal, find the ingredient with the lowest fat content among all ingredients stored on the countertop and add it to the shopping list. If there are multiple ingredients tied for the lowest fat content among those that meet the conditions, you want all of them to be added.\n\n3. If the total calories of this ingredient are 20 kcal or higher, find the ingredient with the highest calcium content among all ingredients in the vegetable category and add it to the shopping list. If there are multiple ingredients tied for the highest calcium content among those that meet the conditions, you want all of them to be added.\n\n4. Add 1 kg of the chunk-shaped ingredient currently boiling in the pot directly to the shopping list.\n\n5. Calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Asparagus",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Lemon",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Potatoes",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredients": [
+            {
+              "ingredient_name": "Chickpeas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 44,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Asparagus"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 6, 2026. First, ask the AI service agent to identify what ingredient the yellow staple powder you are sprinkling on the right side of the baking tray belongs to. Then, ask the AI service agent to determine whether the sugar content of this ingredient is zero. If it is zero, ask the AI service agent to find the recipe with the lowest total calories among all recipes containing low-fat nutritional features and add it to your menu. If there are multiple recipes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find the recipe with the highest total sodium content among all recipes containing soy allergens and add it to your menu. If there are multiple recipes tied for the highest sodium content among those that meet the conditions, you want all of them to be added. Then, ask the AI service agent to iterate through all ingredients required by all recipes in the current menu, and add all ingredients designated to be stored in the freezer to the shopping list in their original quantities. Finally, ask the AI service agent to summarize all flavor tags covered by all recipes in the current menu.",
+    "analysis": "1. Identify the ingredient corresponding to the yellow staple powder the user is sprinkling on the right side of the baking pan.\n\n2. If the ingredient has zero sugar content, search through all recipes featuring the low-fat nutritional attribute. Find the recipe with the lowest total calories and add it to the menu. If there are multiple recipes tied for the lowest calorie count, add all of them.\n\n3. If the ingredient has non-zero sugar content, search through all recipes containing the soy allergen. Find the recipe with the highest total sodium content and add it to the menu. If there are multiple recipes tied for the highest sodium content, add all of them.\n\n4. Iterate through all ingredients required by the recipes currently in the menu. For any ingredients specified to be stored in the freezer compartment, add them all to the shopping list in their original quantities.\n\n5. Compile a summary of all flavor tags covered by all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Beef",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipes": [
+            "Beef & Black Bean Stew",
+            "Mushroom & Thyme Roast Chicken",
+            "Yogurt & Berry Parfait",
+            "Custom Seasoned Noodles"
+          ]
+        }
+      }
+    ],
+    "task_id": 45,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "ingredient_name",
+    "value": [
+      "Cornmeal"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 7, 2026. First, ask the AI Service Agent to identify the recipe that includes both the yellow vegetable located at the bottom left of the blue cutting board and the chunky ingredients cooking in the pot. Next, ask the AI Service Agent to determine if the flavor profile of this recipe is umami. If it is, ask the AI Service Agent to find the ingredient with the highest calorie count among all ingredients in the fruit category and add it to the shopping list. If there are multiple ingredients tied for the highest calorie count among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest protein content among all ingredients in the egg/dairy/soy product category and add 100 grams of it to the shopping list. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to manually reset the home inventory of the roasted red ingredient on the left side of the baking tray to zero, and add 500 grams of this ingredient to the shopping list. Finally, ask the AI Service Agent to calculate the total sugar content of all ingredients currently in the shopping list.",
+    "analysis": "1. Determine which recipe the yellow vegetable at the bottom left of the blue cutting board and the chunky ingredients boiling in the pot both belong to.\n\n2. If the recipe's flavor is umami, identify the fruit-category ingredient(s) with the highest calorie count and add them to the shopping list. If there are multiple ingredients tied for the highest calorie count among those that meet the conditions, add all of them.\n\n3. If the recipe's flavor is not umami, identify the ingredient(s) with the highest protein content among all egg, dairy, or soy product ingredients and add them to the shopping list. If there are multiple ingredients tied for the highest protein content among those that meet the conditions, add all of them.\n\n4. Manually reset the home inventory quantity of the red ingredient that has already been roasted on the left side of the baking tray to zero, and add 500 grams of it to the shopping list.\n\n5. Calculate the total sugar content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Cheese",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Tomatoes",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredients": [
+            {
+              "ingredient_name": "Lamb",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Red Bell Pepper",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Coffee",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 46,
+    "image_name": "kitchen1",
+    "image_path": "kitchen1.mp4",
+    "image_description": "You are cooking. In the pot in front of you, potatoes are boiling. On the cutting board to your right, there are three chopped ingredients. Their positions are: the upper left of the cutting board (a green ingredient), the lower left (a yellow ingredient), and the right side (a green ingredient). The first two steps have already been completed for the current recipe. On the baking tray, there are roasted tomatoes on the left side, and the user is sprinkling yellow powder onto the right half of the tray. The two ingredients on the tray are for another recipe, which is currently at step 2.",
+    "key": "recipe_name",
+    "value": [
+      "Potato & Greens Salad"
+    ]
+  }
+]

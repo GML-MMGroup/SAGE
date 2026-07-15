@@ -1,0 +1,17 @@
+openai
+requests
+pandas
+numpy
+matplotlib
+Pillow
+adjustText
+openpyxl
+zai-sdk
+opencv-python-headless
+torch
+torchvision
+transformers
+accelerate
+sentencepiece
+timm
+peft

@@ -1,0 +1,2426 @@
+[
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. There are stir-fried green peppers and chicken in the wok, and you are picking one of the ingredients onto a plate. First, ask the AI Service Agent to determine which step of which recipe you are cooking based on the contents of the wok, and identify what the green ingredient being picked out is. Then, ask the AI Service Agent to judge: if this picked-out ingredient belongs to the vegetable category, ask the AI Service Agent to find the recipe with the highest dietary fiber among all recipes that require this ingredient and add it to your menu. If there are multiple recipes tied for the highest dietary fiber among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the lowest stock quantity among all ingredients in the cupboard and add it to your shopping list with a quantity of 500 grams. If there are multiple ingredients tied for the lowest stock quantity among those that meet the conditions, you want 500 grams of each of them to be added. Next, ask the AI Service Agent to check the ingredients involved in the first recipe in your current menu, and add ingredients that are stored in the refrigerated layer and are meat to the shopping list according to the required quantity of the corresponding recipe. Finally, ask the AI Service Agent to calculate the total sodium content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine which recipe and step is currently being executed, and identify the green ingredient being picked up.\n\n2. If the picked ingredient belongs to the vegetable category, find the recipe with the highest dietary fiber among all recipes that require this ingredient and add it to the menu. If multiple recipes tie for the highest dietary fiber, add all of them to the menu.\n\n3. If the picked ingredient does not belong to the vegetable category, find the ingredient with the lowest inventory in the storage cabinet and add 500 grams of it to the shopping list. If multiple ingredients tie for the lowest inventory, add 500 grams of each of them to the shopping list.\n\n4. Check the ingredients involved in the first recipe in the current menu. For any ingredients stored in the freezer that are out of stock, add them to the shopping list according to the required amount specified in the recipe.\n\n5. Calculate the total sodium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Chicken",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 1,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 10, 2026. Green peppers and chicken are being stir-fried in the wok, and you are picking one ingredient out onto the plate beside you. Ask the AI Service Agent to identify what ingredient is being picked out and what ingredients remain in the wok. Next, ask the AI Service Agent to determine: if the calorie count of the ingredient being picked out is lower than 100 kcal, then ask the AI Service Agent to find the recipe with the lowest total fat content among all recipes that fully match this green pepper stir-fried chicken dish and add it to the menu. If there are multiple recipes tied for the lowest fat content, add all of them to the menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest protein content among all ingredients belonging to the egg, dairy, or soy product category and add it to the shopping list with a quantity of 1 kilogram. If there are multiple ingredients tied for the highest protein content, add 1 kilogram of each to the shopping list. Next, ask the AI Service Agent to add all fruit ingredients required by the recipes currently in your menu that are not currently in stock at home to the shopping list, according to the quantities specified in the recipes. Finally, ask the AI Service Agent to calculate the estimated total calories of all ingredients currently in the shopping list.",
+    "analysis": "1. Identify the ingredient currently being selected and the ingredients remaining in the pot that have not yet been selected.\n\n2. If the calorie count of the ingredient currently being selected is below 100 kcal, find the dish with the lowest total fat content among all recipes that fully match this Green Pepper Stir-fried Chicken flavor profile and add it to the menu. If multiple dishes tie for the lowest fat content, add all of them to the menu.\n\n3. If the calorie count of the ingredient currently being selected is not less than 100 kcal, find the ingredient with the highest protein content among all ingredients in the Egg, Dairy, or Soy Product categories and add 1 kg of it to the shopping list. If multiple ingredients tie for the highest protein content, add 1 kg of each of them.\n\n4. Add all fruit ingredients required by the recipes in the current menu that are not currently in stock at home to the shopping list, according to the amounts specified in the recipes.\n\n5. Calculate the estimated total calories for all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 2,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_004, and today is May 9, 2026. You are cooking. The wok contains completed stir-fried chicken with green peppers, and you are picking out ingredients from it. First, ask the AI Service Agent to identify which recipe this dish belongs to and which step of the recipe you are currently at. Then, ask the AI Service Agent to determine if the nutritional profile of this recipe includes \"high_protein\". If it does, ask the AI Service Agent to filter through all recipes containing the \"soy\" allergen and add the recipe with the highest sodium content to the menu. If there are multiple recipes tied for the highest sodium content, add all of them to the menu. Otherwise, ask the AI Service Agent to select the recipe that uses the most types of staple food/dry goods ingredients from all recipes that do not contain any allergens, and add it to the menu. If there are multiple recipes tied for the most types, add all of them to the menu. Subsequently, ask the AI Service Agent to check if any ingredients on the current home spice rack are expired. If none are expired, add the seasoning ingredient with the highest fat content to the shopping list in a quantity of 100g. If there are multiple ingredients tied for the highest fat content, add 100g of each to the shopping list. Finally, ask the AI Service Agent to summarize the nutritional profile tags of all recipes currently in the menu.",
+    "analysis": "1. Identify the current recipe being prepared and the current step within that recipe.\n\n2. If the nutritional profile of this recipe includes \"high_protein\", filter all recipes containing the \"soy\" allergen and select the recipe with the highest calcium content to add to the menu. If multiple recipes tie for the highest calcium content, add all of them to the menu.\n\n3. If the nutritional profile of this recipe does not include \"high_protein\", filter all recipes containing no allergens and select the recipe that uses the greatest variety of staple/dry goods ingredients to add to the menu. If multiple recipes tie for the greatest variety, add all of them to the menu.\n\n4. Check all ingredients on the current home spice rack for expiration. If any are expired, add one bottle of each expired seasoning ingredient to the shopping list.\n\n5. Summarize the nutritional profile tags of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Black Pepper",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Custom Seasoned Noodles"
+          ]
+        }
+      }
+    ],
+    "task_id": 3,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. In the camera view, there is a wok of stir-fried green pepper chicken, and someone is picking out an ingredient from it onto a plate. Ask the AI Service Agent to first identify which ingredients were used in the previous step of the current operation. Then, ask the AI Service Agent to determine: if the picked-out ingredient defaults to the vegetable category in the database, ask the AI Service Agent to select the dish that uses the fewest types of ingredients from the recipe library with the nutritional feature \"low_fat\" and add it to your menu. If there are multiple dishes tied for the fewest ingredient types among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest sugar content among recipes containing at least one allergen same as this dish, and add it to the menu. If there are multiple recipes tied for the lowest sugar content among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to scan all ingredient inventories at home, and add the dried goods/staple food ingredients with the longest shelf life from today to the shopping list, with a weight of 250 grams each. If there are multiple ingredients tied for the longest shelf life among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to count all the flavor types included in the current menu.",
+    "analysis": "1. Identify the ingredients used in the previous step of the current operation.\n\n2. If the selected ingredients are classified as vegetables in the database, find recipes with the nutritional feature \"low_fat\" and add the recipe with the fewest ingredient types to the menu. If multiple recipes tie for the fewest ingredient types, add all of them to the menu.\n\n3. If the selected ingredients are not classified as vegetables, find recipes that share at least one allergen with this dish, and add the recipe with the lowest sugar content to the menu. If multiple recipes tie for the lowest sugar content, add all of them to the menu.\n\n4. Scan all ingredient inventories at home. Add all dry goods or staple food ingredients that expire within less than two days from today to the shopping list, with a quantity of 250 grams each.\n\n5. Summarize all allergen types included in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Spaghetti",
+          "quantity": "2.5"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Potato & Greens Salad",
+            "Salmon & Quinoa Bowl",
+            "Pork & Red Bell Pepper Skillet"
+          ]
+        }
+      }
+    ],
+    "task_id": 4,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 7, 2026. You see stir-fried green pepper with chicken in the pot, and you are picking out an ingredient with chopsticks. First, ask the AI service agent to identify what meat ingredient remains in the pot without being picked out. Subsequently, ask the AI service agent to check whether the current household inventory of this remaining meat ingredient is zero. If it is zero, ask the AI service agent to find the recipe with the lowest calorie content among all recipes that share at least one allergen with this current recipe, and add it to the menu. If there are multiple recipes tied for the lowest calories, you want all of them to be added. Otherwise, ask the AI service agent to find the recipe that uses the greatest weight of meat ingredients among all recipes with a taste profile containing \"sweet\", and add it to the menu. If there are multiple recipes tied for the greatest weight, you want all of them to be added. After that, ask the AI service agent to add all ingredients currently stored in the refrigerator layer that have expired as of today to the shopping list, with a quantity of 100 grams for each type. Finally, ask the AI service agent to calculate the nutritional characteristics of all recipes in the menu.",
+    "analysis": "1. Identify the meat ingredient that has not been picked out and is still in the pot.\n\n2. If the current home inventory of this meat ingredient is 0, find the recipe with the lowest calorie count among all recipes that share at least one allergen with this recipe, and add it to the menu. If multiple recipes tie for the lowest calories, add all of them to the menu.\n\n3. If the current home inventory of this meat ingredient is not 0, find the recipe that uses the greatest weight of meat ingredients among all recipes with a \"spicy\" flavor, and add it to the menu. If multiple recipes tie for the greatest meat weight, add all of them to the menu.\n\n4. Add all ingredients currently stored in the refrigerator compartment at home that have expired to the shopping list, at 100 grams per type.\n\n5. Calculate the total protein content of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Spinach",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Celery",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Chicken",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Salmon",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Milk",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Yogurt",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Apple Juice",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Turkey & Apple Soup",
+            "Salmon & Quinoa Bowl",
+            "Pork & Red Bell Pepper Skillet"
+          ]
+        }
+      }
+    ],
+    "task_id": 5,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_003, and today is May 8, 2026. In the scene, the pot contains stir-fried green peppers and chicken, and you are moving an ingredient from the pot to a plate. First, ask the AI Service Agent to determine the category of the ingredient being picked out based on this visual information. Next, ask the AI Service Agent to judge: if this picked ingredient belongs to the seasoning category, ask the AI Service Agent to find the recipe with the fewest cooking steps among all recipes with vegan nutritional characteristics and add it to your menu. If there are multiple recipes tied for the fewest steps, you want all of them to be added to your menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest current protein content among all ingredients stored in the same location as the picked ingredient, and add it to the shopping list with a requirement of 200 grams. If multiple ingredients tie for the highest protein content, you want 200 grams of each of them to be added to the shopping list. Immediately after, ask the AI Service Agent to check all ingredients in the current shopping list; if any belong to the fruit category, double their required quantity. Finally, ask the AI Service Agent to count and output the different flavor types contained in all recipes in your current menu.",
+    "analysis": "1. Determine the category of the picked ingredient based on visual information.\n\n2. If the picked ingredient belongs to the seasoning category, find the recipe with the fewest cooking steps among all recipes with vegan nutritional characteristics and add it to the menu. If there are multiple recipes tied for the fewest steps, add all of them to the menu.\n\n3. If the picked ingredient does not belong to the seasoning category, find the ingredient with the highest protein content among all ingredients stored in the same location, and add 200g of it to the shopping list. If there are multiple ingredients tied for the highest protein content, add 200g of each of them to the shopping list.\n\n4. Check all ingredients in the current shopping list and double the required quantity for those belonging to the fruit category.\n\n5. Count and output the different flavor types included in all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Chicken",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Banana",
+          "quantity": "12"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Egg & Spinach Frittata",
+            "Beef & Black Bean Stew",
+            "Duck & Cherry Salad"
+          ]
+        }
+      }
+    ],
+    "task_id": 6,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. Visible in the pot are already stir-fried green peppers and chicken, and you are using a tool to pick out one ingredient from it onto a plate. First, ask the AI Service Agent to determine which recipe the dish you are cooking corresponds to and to identify the ingredient being picked out. Next, ask the AI Service Agent to judge whether this recipe contains at least two different categories of ingredients. If it does, ask the AI Service Agent to find the recipe with the lowest sodium content among all recipes containing dairy allergens and add it to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest sugar content among all fruit ingredients at home, and add it to your shopping list with a quantity of 3 items. If there are multiple ingredients tied for the highest sugar content among those that meet the conditions, you want 3 of each of them to be added. Next, ask the AI Service Agent to check the current shopping list and delete all ingredient entries that are stored in the freezer and are already expired. Finally, ask the AI Service Agent to compile the collection of flavor characteristics for all dishes in the current menu.",
+    "analysis": "1. Determine which recipe is currently being prepared and identify the ingredients that are picked out.\n\n2. If this recipe contains at least two different categories of ingredients, find the recipe with the lowest sodium content among all recipes containing the dairy allergen and add it to the menu. If there are multiple recipes tied for the lowest sodium content, add all of them to the menu.\n\n3. If this recipe does not contain at least two different categories of ingredients, find the ingredient with the highest sugar content among all fruit ingredients at home, and add 3 units of it to the shopping list. If there are multiple ingredients tied for the highest sugar content, add 3 units of each of them to the shopping list.\n\n4. Check the current shopping list and remove all ingredient entries that are stored in the freezer and are already expired.\n\n5. Calculate and output the total sum of nutritional components for all recipes combined in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "get_current_shopping_list",
+        "parameters": {
+          "user_id": "cook_008"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 7,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_001, and today is May 8, 2026. You have stir-fried green peppers and chicken in your pot, and you are picking out an ingredient onto a plate. Ask the AI Service Agent to first determine the expiration date of the ingredient being picked out. Next, ask the AI Service Agent to judge: if the default storage location of this ingredient in the database is the refrigerated layer, then ask the AI Service Agent to find the recipe with the highest sodium content among all recipes that share at least one nutritional characteristic with this dish, and add it to your menu. If there are multiple recipes tied for the highest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest calcium content per 100 grams among all staple food/dry goods category ingredients at home, and add it to the shopping list in a quantity of 500 grams. If there are multiple ingredients tied for the highest calcium content among those that meet the conditions, you want 500 grams of each of them to be added. Then, ask the AI Service Agent to add all seasonings used in recipes currently in your menu that contain the 'eggs' allergen to the shopping list, according to the recipe quantities. Finally, ask the AI Service Agent to calculate the total fat content of all items in the current shopping list.",
+    "analysis": "1. Determine the expiration date of the currently selected ingredient.  \n2. If the ingredient's default storage location in the database is the refrigerated layer, then among all recipes that include at least one ingredient with nutritional characteristics matching those of this dish, identify the recipe with the highest sodium content and add it to the menu. If multiple recipes tie for the highest sodium content, add all tied recipes to the menu.  \n3. If the ingredient's default storage location in the database is not the refrigerated layer, then among all staple food and dry goods category ingredients available at home, identify the ingredient with the highest calcium content per 100 grams and add 500 grams of it to the shopping list. If multiple ingredients tie for the highest calcium content per 100 grams, add 500 grams of each tied ingredient to the shopping list.  \n4. Add all seasonings used in the recipes currently in the menu that list eggs as an allergen to the shopping list, according to the quantities specified in their respective recipes.  \n5. Calculate the total fat content of all items in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_ingredient_shelf_life",
+        "parameters": {
+          "ingredient_name": "Green Bell Pepper"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Cinnamon",
+          "quantity": "0.01"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredients": [
+            {
+              "ingredient_name": "Broccoli",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Beef",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Rice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Soy Sauce",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Cinnamon",
+              "quantity": 0.01
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 8,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_009, and today is May 6, 2026. There is a pot in front of you containing stir-fried green peppers and chicken, and you are transferring an ingredient from the pot to a plate. Ask the AI Service Agent to first identify which recipe in the database corresponds to this based on the green peppers and chicken in the pot. Then, ask the AI Service Agent to determine if the taste profile of this recipe includes \"umami\". If it does, ask the AI Service Agent to find the item with the lowest calories among ingredients belonging to the (prepared) beverage category and add 2 bottles of it to the shopping list. If there are multiple items tied for the lowest calories among those that meet the conditions, you want 2 bottles of each of them to be added. Otherwise, ask the AI Service Agent to select the recipe that uses the largest weight of seasonings among recipes containing the \"high_fiber\" nutritional feature and add it to your menu. If there are multiple recipes tied for the largest seasoning weight, you want all of them to be added. Afterwards, ask the AI Service Agent to review all recipes currently in your menu. For any ingredients belonging to the meat category used in these recipes that have zero stock at home, add them to the shopping list according to the required amounts specified in the recipes. Finally, ask the AI Service Agent to calculate the total sugar content of all ingredients listed in the current shopping list.",
+    "analysis": "1. Identify which recipe in the database corresponds to the green peppers and chicken in the pot.\n\n2. If this recipe's flavor includes \"umami\", find the item with the lowest calories in the (prepared) beverage category ingredients, and add 2 bottles to the shopping list. If multiple items tie for the lowest calorie count, add 2 bottles of each tied item.\n\n3. If this recipe's flavor does not include \"umami\", then among recipes with the \"high_fiber\" nutritional feature, select the dish that uses the highest weight of seasonings and add it to the menu. If multiple dishes tie for the highest seasoning weight, add each of them to the menu.\n\n4. Review all recipes in the current menu. For any meat ingredients used that have zero stock at home, add them to the shopping list in the quantities required by the recipes.\n\n5. Calculate the total sugar content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "get_current_menu",
+        "parameters": {
+          "user_id": "cook_009"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 9,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 12, 2026. There is a pot of prepared Green Pepper Stir-fried Chicken on the stove, and you are picking out one of the ingredients. Ask the AI service agent to first determine where this picked ingredient is normally stored in the home. Then, ask the AI service agent to determine: if this Green Pepper Stir-fried Chicken recipe requires ingredients stored in the refrigerated layer, ask the AI service agent to find the recipe with the highest calories among all recipes with a \"sour\" flavor and add it to your menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to find the recipe with the largest total weight of vegetable categories among all recipes without gluten allergens and add it to the menu. If there are multiple recipes tied for the largest total weight among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI service agent to add all ingredients stored on the countertop from all recipes involved in the current menu to the shopping list, regardless of stock availability, uniformly at 50 grams each. Finally, ask the AI service agent to calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine the default storage location in the home for the selected ingredients.\n2. If this Green Pepper Stir-fried Chicken recipe requires ingredients stored in the refrigerated layer, find the recipe with the highest calories among all recipes with a \"sour\" taste and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n3. If this Green Pepper Stir-fried Chicken recipe does not require ingredients stored in the refrigerated layer, find the recipe with the largest total weight of vegetable categories among all recipes without gluten allergens and add it to the menu. If there are multiple recipes tied for the largest weight among those that meet the conditions, add all of them to the menu.\n4. Add all ingredients stored on the countertop from all recipes in the current menu to the shopping list at 50 grams each, regardless of stock status.\n5. Calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_ingredient_location",
+        "parameters": {
+          "ingredient_name": "Green Bell Pepper"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Duck & Cherry Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "banana",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "flour",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "lemon",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredients": [
+            {
+              "ingredient_name": "Yogurt",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Oats",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Cinnamon",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "banana",
+              "quantity": 0.5
+            },
+            {
+              "ingredient_name": "flour",
+              "quantity": 0.5
+            },
+            {
+              "ingredient_name": "lemon",
+              "quantity": 0.5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 10,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 7, 2026. The screen shows a finished dish of stir-fried green pepper with chicken in the pot, and you are picking one of the ingredients onto the side plate. Ask the AI Service Agent to first identify the name of this recipe and what the green ingredient currently left in the pot (not picked out) is. Then, ask the AI Service Agent to determine if the current stock at home for all ingredients used in this recipe is greater than zero. If so, ask the AI Service Agent to select the recipe with the highest total protein content among recipes with a \"sweet\" flavor and add it to your menu. If there are multiple recipes tied for the highest protein content, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe with the fewest steps among all recipes that require ingredients from the cupboard and add it to your menu. If there are multiple recipes tied for the fewest steps, add all of them to your menu. Subsequently, ask the AI Service Agent to add all expired vegetable ingredients in the refrigerator compartment to the shopping list at twice the current stock quantity for repurchase. Finally, ask the AI Service Agent to calculate the combined set of flavor characteristics for all recipes currently in your menu.",
+    "analysis": "Results:\n1. Identify the name of this recipe and the green ingredients currently remaining in the pot that have not been removed.\n2. If the inventory of all ingredients used in the current recipe is greater than 0 at home, select the recipe with the highest total protein content from those with a \"sweet\" flavor and add it to the menu. If there are multiple recipes tied for the highest protein content among those that meet the conditions, add all of them.\n3. If any ingredient for the current recipe has an inventory less than or equal to 0, identify the recipe with the fewest steps among all recipes requiring ingredients from the storage cabinet and add it to the menu. If there are multiple recipes tied for the fewest steps among those that meet the conditions, add all of them.\n4. Add all expired vegetable ingredients in the refrigerator to the shopping list, with the quantity set to twice the current inventory level.\n5. Calculate the set of flavor characteristics resulting from combining all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Pork & Red Bell Pepper Skillet"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Spinach",
+          "quantity": "16"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Celery",
+          "quantity": "14"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Pork & Red Bell Pepper Skillet"
+          ]
+        }
+      }
+    ],
+    "task_id": 11,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 9, 2026. You are cooking; the pot contains finished stir-fried chicken with green peppers, and you are picking out one ingredient. First, ask the AI Service Agent to determine the full name of this recipe and confirm the calorie count per 100 grams of the ingredient being picked out. Then, ask the AI Service Agent to evaluate: if the calories of this picked-out ingredient are lower than 50 kcal, ask the AI Service Agent to find the recipe with the highest total protein among all recipes that contain absolutely no allergens and add it to your menu. If there are multiple recipes tied for the highest protein among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest total carbohydrates (sugar) among all recipes that require ingredients from the freezer compartment and add it to the menu. If there are multiple recipes tied for the lowest carbohydrates among those that meet the conditions, you want all of them to be added. Then, ask the AI Service Agent to add all ingredients on the home spice rack that are expiring in less than 3 days from today to the shopping list, 1 portion each. Next, ask the AI Service Agent to find the recipe with the shortest cooking steps among all recipes in the current menu and add the ingredients involved in its last step to the shopping list at 50 grams each. If there are multiple recipes tied for the shortest steps among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients in the current shopping list.",
+    "analysis": "1. Identify the full name of this recipe and confirm the calorie count per 100 grams for the selected ingredient.\n2. If the calorie count of the selected ingredient is below 50 kcal, find the recipe with the highest total protein among all recipes that are completely free of any allergens and add it to the menu. If multiple recipes tie for the highest protein content, add all of them to the menu.\n3. If the calorie count of the selected ingredient is 50 kcal or higher, find the recipe with the lowest total carbohydrates (sugar) among all recipes that require ingredients from the freezer section and add it to the menu. If multiple recipes tie for the lowest carbohydrate content, add all of them to the menu.\n4. Add one portion of each ingredient on the home spice rack that expires in less than 3 days from today to the shopping list.\n5. From the current menu, identify the recipe with the longest cooking procedure and add the ingredients involved in its final step to the shopping list, quantified at 50 grams. If multiple recipes tie for the longest procedure, include the ingredients from the final step of each tied recipe, quantified at 50 grams.\n6. Calculate the total protein content of all ingredients currently in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Beef & Black Bean Stew"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "balsamic vinegar",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "olive oil",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5.5
+            },
+            {
+              "ingredient_name": "balsamic vinegar",
+              "quantity": 0.5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 12,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 11, 2026. In the camera view, there is a wok of stir-fried green pepper chicken, and someone is picking an ingredient from it onto a plate. Ask the AI Service Agent to identify which recipe this belongs to and what nutritional feature tags it possesses. Next, ask the AI Service Agent to determine: if this dish contains the \"high_fiber\" feature, then ask the AI Service Agent to select the recipe with the highest total calories among all recipes with a \"sweet\" flavor and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find a recipe that requires the same cooking steps among recipes that share the same allergen \"soy\" as the current recipe, and add it to the menu. After that, ask the AI Service Agent to inventory all egg, dairy, and soy products at home, remove all that have expired, and re-add them to the shopping list in their original quantities. Then, ask the AI Service Agent to extract the first step from all recipes in the current menu, identify all vegetable ingredients used in these first steps, and add them to the shopping list at a quantity of 200 grams each. Finally, ask the AI Service Agent to carefully calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine the current recipe and identify its nutritional feature tags.\n\n2. If this dish contains the \"high_fiber\" feature, select the recipe with the highest total calories from all recipes with a \"sweet\" taste and add it to the menu. If multiple recipes tie for the highest calories, add all of them.\n\n3. If this dish does not contain the \"high_fiber\" feature, find the recipe requiring the most cooking steps among those that share at least one allergen with the current recipe and add it to the menu. If multiple recipes tie for the most steps, add all of them.\n\n4. Inventory all egg, milk, and soy products at home, and add all expired items to the shopping list in their original quantities.\n\n5. Extract the first step from all recipes in the current menu, identify all vegetable ingredients used in these first steps, and add each of them to the shopping list at 200 grams.\n\n6. Calculate the total dietary fiber content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Milk",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Yogurt",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "red bell pepper",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Yellow Onions",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredients": [
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Quinoa",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 20
+            },
+            {
+              "ingredient_name": "Yogurt",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "red bell pepper",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 13,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 8, 2026. In the scene, the pot contains stir-fried green peppers and chicken, and you are moving one ingredient from the pot to a plate. First, ask the AI Service Agent to identify what this picked-out ingredient is and determine where it is normally stored by default in the home. Then, ask the AI Service Agent to determine: if this ingredient is normally stored in the refrigerated layer, ask the AI Service Agent to select the recipe with the highest total calories among those recipes that share the low-sugar nutritional characteristics of this dish and add it to the menu. If multiple recipes tie for the highest calories, add all of them. Otherwise, ask the AI Service Agent to find the ingredient with the highest calcium content among all ingredients belonging to eggs, milk, or soy products, and add it to the shopping list in a quantity of 300 grams. If multiple ingredients tie for the highest calcium content, add 300 grams of each. After that, ask the AI Service Agent to scan the storage cabinet and add any fruit ingredients that have no stock inside to the shopping list, at 1 kilogram per type. Next, ask the AI Service Agent to determine which recipe in the current menu has the lowest total sugar and remove that recipe. If multiple recipes tie for the lowest sugar, remove all of them. Finally, ask the AI Service Agent to calculate the set of different flavor profiles contained in all the recipes currently in the menu.",
+    "analysis": "1. Identify the ingredient that has been picked up and determine its default storage location in the home.\n\n2. If the ingredient is normally stored in the refrigerated layer, select the recipe with the highest total calories from among those that share at least one nutritional characteristic with this dish, and add it to the menu. If multiple recipes tie for the highest calorie count, add all of them to the menu.\n\n3. If the ingredient is not normally stored in the refrigerated layer, find the ingredient with the highest calcium content among all egg, dairy, or bean product ingredients, and add 300 grams of it to the shopping list. If multiple ingredients tie for the highest calcium content, add 300 grams of each of them to the shopping list.\n\n4. Scan the storage cabinet and add 1 kilogram of each type of fruit ingredient that is completely out of stock to the shopping list.\n\n5. Determine which dish in the current menu has the lowest total sugar, and record the number of vegetable types required for that dish. If multiple dishes tie for the lowest sugar content, record the vegetable count for each of them.\n\n6. Calculate the set of distinct flavor characteristics contained across all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Pork & Chive Dumplings"
+        }
+      },
+      {
+        "tool_name": "find_ingredients_by_location",
+        "parameters": {
+          "location": "pantry"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Pork & Chive Dumplings"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Duck & Cherry Salad",
+            "Beef & Black Bean Stew",
+            "Egg & Spinach Frittata"
+          ]
+        }
+      }
+    ],
+    "task_id": 14,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_002, and today is May 7, 2026. In the pot is prepared green pepper stir-fried chicken, and you are picking out one of the ingredients with chopsticks. First, ask the AI Service Agent to identify which recipe this is and determine at which step the picked-out ingredient is added to the pot according to the recipe. Next, have the AI Service Agent determine: if the picked-out ingredient is used in the first step of the recipe, then have the AI Service Agent find the recipe with the lowest total fat content among all recipes with a \"salty\" flavor and add it to the menu. If there are multiple recipes tied for the lowest fat content, add all of them to the menu. Otherwise, have the AI Service Agent find the recipe requiring the fewest total steps among all vegan recipes and add it to the menu. If there are multiple recipes tied for the fewest steps, add all of them to the menu. Subsequently, have the AI Service Agent double the required quantity of any meat ingredients already existing in the current shopping list. After that, have the AI Service Agent add the staple or dry ingredient with the highest protein content currently stored on the home countertop to the shopping list, with a quantity of 200 grams. If there are multiple ingredients tied for the highest protein content, add 200 grams of each of them to the shopping list. Finally, have the AI Service Agent calculate and output the estimated total calories for all ingredients in the current shopping list.",
+    "analysis": "1. Determine the current recipe and identify at which cooking step the selected ingredient is added in the recipe.\n2. If the selected ingredient is used in the first step of this recipe, find the recipe with the lowest total fat content among all recipes with a \"spicy\" flavor and add it to the menu. If there are multiple recipes tied for the lowest fat content, add all of them to the menu.\n3. If the selected ingredient is not used in the first step of this recipe, find the recipe with the fewest total steps among all vegan recipes and add it to the menu. If there are multiple recipes tied for the fewest steps, add all of them to the menu.\n4. Double the required quantity of all meat ingredients currently existing in the shopping list.\n5. Add the staple or dry ingredient currently stored on the home counter with the highest protein content to the shopping list at 200 grams. If there are multiple items tied for the highest protein content, add 200 grams of each of them.\n6. Calculate and output the estimated total calories of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Chicken",
+          "quantity": "16"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Flour",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 16
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 2
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 15,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 10, 2026. Green peppers and chicken are being stir-fried in the wok, and you are transferring an ingredient to the plate beside you. Ask the AI Service Agent to first determine which step of the recipe your current action corresponds to and the total number of steps in the recipe. Next, ask the AI Service Agent to judge: if the current step is the second-to-last step of the entire recipe, then ask the AI Service Agent to find the recipe with the lowest total sodium content among all recipes containing the \"dairy\" allergen and add it to the menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the lowest calories among all ingredients in the prepared beverage category and add it to the shopping list in a quantity of 200 grams. If there are multiple ingredients tied for the lowest calories among those that meet the conditions, you want all of them to be added. Subsequently, ask the AI Service Agent to check the ingredients currently included in your menu; if there is any expired meat, add it to the shopping list in twice the quantity required by the recipe. Next, ask the AI Service Agent to find the recipe that uses the largest weight of staple foods/dry goods among all recipes containing the \"high_fiber\" tag, and use it to replace the recipe with the highest total calories in the current menu. If there are multiple recipes tied for the largest weight or highest calories, you want all tied items to be handled accordingly. Finally, ask the AI Service Agent to count the types of nutritional feature tags present in all recipes currently in the menu.",
+    "analysis": "1. Determine which step of the current recipe the current action corresponds to, and identify the total number of steps in the recipe.\n\n2. If the current step is the second-to-last step of the entire recipe, find the dish with the lowest total sodium content among all recipes containing dairy allergens and add it to the menu. If multiple dishes tie for the lowest sodium content, add all of them to the menu.\n\n3. If the current step is not the second-to-last step of the entire recipe, find the ingredient with the lowest calories among all (instant) beverage category ingredients, and add 2 bottles of it to the shopping list. If multiple ingredients tie for the lowest calories, add 2 bottles of each of them to the shopping list.\n\n4. Check the ingredients included in the current menu. If there is any expired meat, add twice the amount required by the recipe to the shopping list.\n\n5. Among all recipes with the \"high_fiber\" tag, find the dish that uses the largest weight of staples/dried goods, and use it to replace the dish with the highest total calories in the current menu.\n\n6. Count the types of nutritional feature tags for all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Tea",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Lamb",
+          "quantity": "4"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Lamb & Potato Stew"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Yogurt & Berry Parfait",
+            "Chicken & Broccoli Stir-fry"
+          ]
+        }
+      }
+    ],
+    "task_id": 16,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 9, 2026. In the pot in front of you, there are stir-fried green peppers and chicken, and you are currently picking one of the ingredients out and placing it onto a plate. Ask the AI Service Agent to first determine which step in the recipe your current operation corresponds to, and identify which storage location the picked-out ingredient belongs to. Afterwards, ask the AI Service Agent to judge: if this picked-out ingredient is normally stored on the spice rack by default, then ask the AI Service Agent to find the dish with the lowest calories among all recipes containing a \"salty\" flavor and add it to your menu. If there are multiple dishes tied for the lowest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe that uses the most types of vegetables among recipes containing at least one nutritional characteristic same as stir-fried green pepper and chicken, and add it to your menu. If there are multiple recipes tied for the most vegetable types among those that meet the conditions, you want all of them to be added. Next, ask the AI Service Agent to check the current shopping list, and for all meat ingredients therein that require a purchase quantity exceeding 500 grams, reduce their purchase quantity by half uniformly. Finally, ask the AI Service Agent to calculate the total number of nutritional characteristic tag types included in all recipes currently in your menu.",
+    "analysis": "1. Determine which step in the recipe the current operation corresponds to, and identify the storage location of the selected ingredient.\n\n2. If the selected ingredient is normally stored on the spice rack, find the recipe with the lowest calories among all recipes containing the \"salty\" flavor and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them.\n\n3. If the selected ingredient is not normally stored on the spice rack, find the recipe that uses the most types of vegetables among those containing at least one nutritional feature identical to \"Stir-fried Chicken with Green Peppers\", and add it to the menu. If there are multiple recipes tied for the most vegetable types, add all of them.\n\n4. Check the current shopping list and halve the purchase quantity for all meat ingredients that require more than 500 grams.\n\n5. Calculate the total count of nutritional feature label types for all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Lamb & Potato Stew"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Lamb & Potato Stew"
+          ]
+        }
+      }
+    ],
+    "task_id": 17,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 6, 2026. Looking at the stir-fried chicken with green peppers in the pot, you are using a spoon or chopsticks to move one ingredient onto a plate. Ask the AI Service Agent to first identify the meat ingredient remaining in the pot (that has not been picked out) and check its current inventory status. Next, ask the AI Service Agent to determine if the expiration date of this remaining meat ingredient is more than 5 days from today. If so, ask the AI Service Agent to find the recipe with the lowest calories among all recipes that do not contain fish allergens and add it to your menu. If there are multiple recipes tied for the lowest calories, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe with the highest dietary fiber among all recipes with a \"salty\" taste and add it to your menu. If there are multiple recipes tied for the highest dietary fiber, add all of them to your menu. Subsequently, ask the AI Service Agent to add all fruit ingredients with zero current inventory in the freezer to the shopping list, 500g of each; otherwise, ask the AI Service Agent to add all fruit ingredients with zero current inventory to the shopping list, 500g of each. Finally, ask the AI Service Agent to calculate the total calcium content of all listed ingredients in the current shopping list in detail.",
+    "analysis": "1. Identify the meat ingredient in the pot that has not been picked out, and check its current inventory status.\n\n2. If the shelf life of this meat ingredient is more than 5 days from today, find the recipe with the lowest calories among all recipes that do not contain the 'fish' allergen, and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them.\n\n3. If the shelf life of this meat ingredient is 5 days or less from today, find the recipe with the highest dietary fiber among all recipes with a 'bitter' flavor, and add it to the menu. If there are multiple recipes tied for the highest dietary fiber, add all of them.\n\n4. Add all fruit ingredients in the freezer compartment that currently have an inventory of 0 to the shopping list, at 500 grams of each.\n\n5. Calculate the total calcium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Green Peas",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredients": [
+            {
+              "quantity": 5,
+              "ingredient_name": "Yogurt"
+            },
+            {
+              "quantity": 3,
+              "ingredient_name": "Strawberry"
+            },
+            {
+              "quantity": 5,
+              "ingredient_name": "Oats"
+            },
+            {
+              "quantity": 1,
+              "ingredient_name": "Cinnamon"
+            },
+            {
+              "quantity": 5,
+              "ingredient_name": "Green Peas"
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 18,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 6, 2026. There are stir-fried green peppers and chicken in the pot, and you are picking one of the ingredients into a plate. First, ask the AI Service Agent to determine which step of the recipe the current operation is at based on visual information. Then, ask the AI Service Agent to judge: if the current operation is the last step of this recipe, ask the AI Service Agent to find the dish with the highest total protein content among all recipes containing the soy allergen and add it to your menu. If there are multiple dishes tied for the highest protein content, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest dietary fiber among all vegetable category ingredients and add 500 grams of it to the shopping list. If there are multiple ingredients tied for the highest dietary fiber, you want 500 grams of each of them to be added. After that, ask the AI Service Agent to check all ingredients in the refrigerator compartment at home, and add all expired ones to the shopping list at twice the original inventory amount. Next, find the recipe with the most steps in the current menu, and add all seasonings used in its first step to the shopping list in quantities of 100g. If there are multiple recipes tied for the most steps, you want the seasonings from the first step of each of them to be added. Finally, ask the AI Service Agent to calculate the total nutritional characteristics of all recipes in the current menu.",
+    "analysis": "1. Determine which step of the current recipe is being performed based on visual information.\n2. If the current operation is the last step of this recipe, find the recipe with the highest total protein content among all recipes containing the soy allergen and add it to the menu. If multiple recipes tie for the highest protein content, add all of them to the menu.\n3. If the current operation is not the last step of this recipe, find the ingredient with the highest dietary fiber among all vegetable ingredients and add 500g of it to the shopping list. If multiple ingredients tie for the highest dietary fiber, add 500g of each of them to the shopping list.\n4. Check all ingredients in the home refrigerator compartment. For any expired ingredients, add twice the original inventory amount to the shopping list.\n5. Identify the recipe with the most steps in the current menu. Add all condiments used in its first step to the shopping list, 1 bottle each. If multiple recipes tie for the most steps, perform this action for all of them.\n6. Calculate the total sodium content of all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Spinach",
+          "quantity": "16"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Celery",
+          "quantity": "14"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Chicken",
+          "quantity": "50"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Salmon",
+          "quantity": "30"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Milk",
+          "quantity": "40"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Yogurt",
+          "quantity": "20"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Apple Juice",
+          "quantity": "24"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Thyme",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken"
+          ]
+        }
+      }
+    ],
+    "task_id": 19,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 8, 2026. There is a stir-fried dish of green peppers and chicken in the pot, and you are picking out a specific ingredient from it to plate. Ask the AI Service Agent to first identify what the picked-out ingredient is, and whether the ingredient remaining in the pot belongs to the vegetable category.\n\nSubsequently, ask the AI Service Agent to determine: if this recipe contains at least three different seasonings, the AI Service Agent should find the recipe(s) with the highest weight of egg/dairy/soy products among all recipes tagged \"gluten_free\" and add it/them to your menu. If there are multiple recipes tied for the highest weight, add all of them. However, if the recipe does not contain at least three seasonings, ask the AI Service Agent to find the recipe(s) with the lowest calories among all recipes tagged \"gluten_free\" and add it/them to your menu. If there are multiple recipes tied for the lowest calories, add all of them. Otherwise, ask the AI Service Agent to find the ingredient(s) with the lowest sugar content among all home (prepared) beverage category ingredients and add it/them to your shopping list with a quantity of 1000 grams each. If there are multiple ingredients tied for the lowest sugar content, add all of them.\n\nThen, ask the AI Service Agent to add all ingredients on the home countertop that are expired as of today, regardless of category, to the shopping list, each with a weight of 150 grams. If there are no expired ingredients on the countertop, ask the AI Service Agent to add all expired fruits in the home inventory to the shopping list, each with a weight of 150 grams. Finally, ask the AI Service Agent to tally all ingredients currently on the shopping list and calculate their total dietary fiber content.",
+    "analysis": "1. Identify the selected ingredient and determine whether the ingredient remaining in the pot belongs to the vegetable category.\n\n2. If this recipe contains at least three different seasonings, search among all recipes labeled \"gluten_free\" for the one using the highest weight of egg, dairy, or soy products, and add it to the menu. If multiple recipes tie for the highest weight, add all of them to the menu.\n\n3. If this recipe does not contain at least three different seasonings, find the ingredient with the lowest sugar content among all home instant drink category ingredients, and add 1000g of it to the shopping list. If multiple items tie for the lowest sugar content, add 1000g of each of those tied items.\n\n4. Add all ingredients on the home counter that have expired as of today, regardless of category, to the shopping list, specifying 100g for each. (Wait, input says 150g. Correction: 150g). -> specifying 150g for each.\n\n5. Calculate the total dietary fiber content of all ingredients currently on the shopping list.\n\n*Self-Correction on Step 4:* Input says \"150 克\". My draft above momentarily thought 100g. Correcting to 150g.\n*Self-Correction on Step 3:* \"家里所有（冲调）饮料类别食材\". \"All home (instant) drink category ingredients\". I will use \"home instant drink ingredients\" for brevity and naturalness.\n\nFinal Polish:\n1. Identify the picked-out ingredient and determine whether the ingredient remaining in the pot belongs to the vegetable category.\n2. If this recipe contains at least three different seasonings, search among all recipes labeled \"gluten_free\" for the one using the highest weight of egg, dairy, or soy products, and add it to the menu. If multiple recipes tie for the highest weight, add all of them to the menu.\n3. If this recipe does not contain at least three different seasonings, find the ingredient with the lowest sugar content among all home instant drink category ingredients, and add 1000g of it to the shopping list. If multiple items tie for the lowest sugar content, add 1000g of each of those tied items.\n4. Add all ingredients on the home counter that have expired as of today, regardless of category, to the shopping list, specifying 150g for each.\n5. Calculate the total dietary fiber content of all ingredients currently on the shopping list.\n\nLooks consistent with the rules. I will present this as the result.\nWait, I should check if I need to merge into a paragraph like the example. The example input was a paragraph, so the output was a paragraph. This input is a numbered list. It is safer to keep the numbered list structure for robot instructions to ensure step-by-step execution clarity. I will output as a numbered list.\n\nOne last check on the tie-breaking rule phrasing. The prompt says: \"incorporate the following rule into the interpretation of the sentence: if multiple items tie... then add one or the specified number of each of those tied items\".\nMy translation: \"If multiple recipes tie for the highest weight, add all of them to the menu.\" (Matches \"add one... of each\" -> since it's recipes, adding all of them is correct).\nMy translation: \"If multiple items tie for the lowest sugar content, add 1000g of each of those tied items.\" (Matches \"specified number of each\").\n\nOkay, good to go.\n\nOne detail: \"距离今天已经过期\". \"Expired as of today\" or \"expired by today\". \"Expired as of today\" is fine.\n\"被挑出来的食材\". \"The selected ingredient\" or \"the picked-out ingredient\". \"Selected\" sounds more formal for robot instruction.\n\"还在锅里的那个食材\". \"The ingredient remaining in the pot\".\n\nLet's finalize.\n\n1. Identify the selected ingredient and determine whether the ingredient remaining in the pot belongs to the vegetable category.\n2. If this recipe contains at least three different seasonings, search among all recipes labeled \"gluten_free\" for the one using the highest weight of egg, dairy, or soy products, and add it to the menu. If multiple recipes tie for the highest weight, add all of them to the menu.\n3. If this recipe does not contain at least three different seasonings, find the ingredient with the lowest sugar content among all home instant drink category ingredients, and add 1000g of it to the shopping list. If multiple items tie for the lowest sugar content, add 1000g of each of those tied items.\n4. Add all ingredients on the home counter that have expired as of today, regardless of category, to the shopping list, specifying 150g for each.\n5. Calculate the total dietary fiber content of all ingredients currently on the shopping list.\n\nI will remove the \"1.\", \"2.\" markup if the system expects plain text, but usually, preserving list structure is better. I'll keep the numbers.\nActually, looking at the example result, it's a block of text. But the input there was a block of text. Here the input is clearly steps. I will provide the steps.\n\nWait, I need to check the \"Results:\" label in the prompt. It is already there. I just need to provide the text following it.\nI will ensure the tie-breaking rule is clearly stated as per instructions.\n\nOne final check on Step 4: \"不论类别\" -> \"regardless of category\". \"都按 150 克加入\" -> \"add... 150g each\". This is not a superlative tie-breaker situation (it's \"all items\"), so the specific tie-breaking rule regarding \"cheapest/lowest-calorie\" doesn't strictly apply, but the logic \"add 150g for each\" covers the quantity specification correctly.\n\nOkay, generating output.\n\nOne last check on the restaurant rule. \"If a restaurant is mentioned in the text...\". I am confident there are no restaurants. \"Italian\" or \"Greek\" do not appear. \"Annie\" or \"Mediterranean\" do not appear. So no changes needed there.\n\nFinal check on Step 3: \"家里所有（冲调）饮料类别食材\". \"All home (instant) drink category ingredients\". I'll translate as \"all home instant drink ingredients\".\n\nOkay, ready.\n\nOne small nuance: \"add one or the specified number of each\".\nStep 2: \"add... to menu\". Implies 1 unit (the recipe itself). So \"add all of them\" is correct.\nStep 3: \"add... 1000g\". Specified number/weight. So \"add 1000g of each\" is correct.\n\nI will formulate the response now.\n\nWait, I should check if \"menu\" needs translation or capitalization. Input says \"menu\". I will keep \"menu\" lowercase or capitalize based on context. \"add it to the menu\" is fine.\n\nOkay, proceeding.\n</think>\n\n1. Identify the selected ingredient and determine whether the ingredient remaining in the pot belongs to the vegetable category.\n\n2. If this recipe contains at least three different seasonings, search among all recipes labeled \"gluten_free\" for the one using the highest weight of egg, dairy, or soy products, and add it to the menu. If multiple recipes tie for the highest weight, add all of them to the menu.\n\n3. If this recipe does not contain at least three different seasonings, find the ingredient with the lowest sugar content among all home instant drink category ingredients, and add 1000g of it to the shopping list. If multiple items tie for the lowest sugar content, add 1000g of each of those tied items.\n\n4. Add all ingredients on the home counter that have expired as of today, regardless of category, to the shopping list, specifying 150g for each.\n\n5. Calculate the total dietary fiber content of all ingredients currently on the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "find_ingredient_category",
+        "parameters": {
+          "ingredient_name": "Chicken"
+        }
+      },
+      {
+        "tool_name": "find_ingredient_category",
+        "parameters": {
+          "ingredient_name": "Green Bell Pepper"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Banana",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "quantity": 5,
+              "ingredient_name": "Turkey"
+            },
+            {
+              "quantity": 4,
+              "ingredient_name": "Celery"
+            },
+            {
+              "quantity": 4,
+              "ingredient_name": "Green Peas"
+            },
+            {
+              "quantity": 5,
+              "ingredient_name": "Apple"
+            },
+            {
+              "quantity": 10,
+              "ingredient_name": "Orange Juice"
+            },
+            {
+              "quantity": 1.5,
+              "ingredient_name": "Banana"
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 20,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_006, and today is May 13, 2026. The wok contains stir-fried green peppers and chicken, and you are picking out an ingredient onto a plate. Ask the AI Service Agent to first identify the picked ingredient based on visual features and determine its sugar content. Then, ask the AI Service Agent to check if the current recipe contains the allergen soy. If it does, ask the AI Service Agent to select the ingredient with the highest protein content from the database of all staple foods/dry goods and add it to your shopping list in a quantity of 500 grams. If multiple ingredients tie for the highest protein content, add each of them to your shopping list in a quantity of 500 grams. Otherwise, ask the AI Service Agent to select the recipe that uses the greatest variety of vegetables from all recipes using pantry ingredients and add it to your menu. If multiple recipes tie for the most vegetable varieties, add each of them to your menu. Next, ask the AI Service Agent to iterate through your current menu. If any dish contains the nutritional feature \"low_fat\", identify the vegetable used in the largest quantity in that dish and add it to the shopping list in twice the amount specified in the recipe. If multiple vegetables tie for the largest quantity, add each of them to the shopping list in twice the amount specified in the recipe. Finally, ask the AI Service Agent to compile and output a list of flavor tags for all recipes in the current menu.",
+    "analysis": "1. Identify the selected ingredient based on visual features and determine its sugar content.\n\n2. If the selected ingredient contains the soy allergen, choose the ingredient with the highest protein content from all staple/dry goods ingredients, and add 500 grams of it to the shopping list. If multiple ingredients tie for the highest protein content, add 500 grams of each of those tied items.\n\n3. If the selected ingredient does not contain the soy allergen, choose the recipe that uses the most types of vegetables from all recipes using storage cabinet ingredients, and add it to the menu. If multiple recipes tie for the most vegetable types, add all of them to the menu.\n\n4. Iterate through the current menu. If any dish has a nutritional feature containing \"high_sodium\", add all vegetables used in that dish to the shopping list at half the current recipe amount.\n\n5. Compile and output the list of flavor tags for all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_ingredient_nutrition",
+        "parameters": {
+          "ingredient_name": "green bell pepper"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Black Beans",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "spinach",
+          "quantity": "1.2"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipes": [
+            "Pork & Red Bell Pepper Skillet",
+            "Salmon & Quinoa Bowl"
+          ]
+        }
+      }
+    ],
+    "task_id": 21,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_003, and today is May 10, 2026. The dish being cooked in the pot is green pepper stir-fried chicken, and you have picked a certain ingredient from the pot onto a plate. Ask the AI Service Agent to first identify the picked-out ingredient and which ingredient category it belongs to. Then, ask the AI Service Agent to determine: if the protein content of the picked-out ingredient is greater than its fat content, ask the AI Service Agent to find the recipe that uses the highest number of ingredients from the egg/dairy/bean product category among all recipes with the \"gluten_free\" label, and add that dish to the menu. If there are multiple recipes tied for the highest number of such ingredients, add all of them to the menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest dietary fiber content among all vegetable ingredients, and add it to the shopping list with a quantity of 300 grams. If there are multiple vegetables tied for the highest dietary fiber content, add 300 grams of each to the shopping list. Subsequently, ask the AI Service Agent to check all recipes in the current menu that use meat, and add the meat ingredients from these recipes that currently have zero stock at home to the shopping list according to the recipe requirements. Finally, ask the AI Service Agent to calculate the total protein content of all ingredients currently on the shopping list.",
+    "analysis": "Results:\n1. Identify the ingredient that has been picked up and its ingredient category.\n\n2. If the protein content of this ingredient is greater than its fat content, search among all recipes tagged with \"no_additives\" for the recipe that uses the highest number of ingredients from the Egg/Dairy/Bean Products category, and add it to the menu. If there are multiple recipes tied for the highest number among those that meet the conditions, you want all of them to be added.\n\n3. If the protein content of this ingredient is not greater than its fat content, find the vegetable ingredient with the highest dietary fiber content among all vegetable ingredients, and add 300 grams of it to the shopping list. If there are multiple vegetables tied for the highest dietary fiber content among those that meet the conditions, you want 300 grams of each of them to be added.\n\n4. Check all recipes in the current menu that use meat. For any meat ingredients in these recipes that currently have zero stock at home, add them to the shopping list according to the quantity required by the recipe.\n\n5. Calculate the total protein content summed up from all ingredients on the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "find_ingredient_category",
+        "parameters": {
+          "ingredient_name": "green bell pepper"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Cod & Lemon Dill Bake"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Duck",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Cod",
+          "quantity": "2.0"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredients": [
+            {
+              "ingredient_name": "Eggs",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Milk",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Flour",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Butter",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cod",
+              "quantity": 1.8
+            },
+            {
+              "ingredient_name": "Duck",
+              "quantity": 1.5
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 22,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "You are user cook_004, and today is May 11, 2026. There is a pot of stir-fried green peppers and chicken in your view, and you are picking out one ingredient from it to serve. Ask the AI Service Agent to first determine the recipe name of this dish and identify what meat ingredient remains in the pot. Next, ask the AI Service Agent to check if the current stock of the meat ingredient remaining in the pot is greater than zero. If so, ask the AI Service Agent to find the recipe with the lowest fat content among all recipes that share at least one flavor profile with the current recipe and add it to your menu. If there are multiple recipes tied for the lowest fat content among those that meet the conditions, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe with the highest calorie count among all recipes with the 'sugar_free' nutritional feature and add it to your menu. If there are multiple recipes tied for the highest calorie count among those that meet the conditions, add all of them to your menu. Afterwards, ask the AI Service Agent to check the home spice rack and add all seasoning ingredients that expire by the end of next year to the shopping list, based on a default weight of 200 grams per bottle. Finally, ask the AI Service Agent to summarize the nutrition labels for the dishes in your menu.",
+    "analysis": "Results:\n1. Identify the name of the recipe for this dish and determine what meat ingredient remains in the pot.\n\n2. If the current inventory of the meat ingredient remaining in the pot is greater than 0, find the dish with the lowest fat content among all recipes that share at least one flavor profile with the current recipe, and add it to the menu. If there are multiple dishes tied for the lowest fat content among those that meet the conditions, add all of them to the menu.\n\n3. If the current inventory of the meat ingredient remaining in the pot is not greater than 0, find the dish with the highest calorie content among all recipes that have the \"sugar_free\" nutritional feature, and add it to the menu. If there are multiple dishes tied for the highest calorie content among those that meet the conditions, add all of them to the menu.\n\n4. Check the spice rack at home and add all seasoning ingredients that expired before today to the shopping list, assuming a default quantity of 200 grams per bottle.\n\n5. Calculate the total calcium content provided by all dishes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipes": [
+            "Roasted Chickpeas & Vegetables",
+            "Cod & Lemon Dill Bake",
+            "Shrimp & Asparagus Stir-fry"
+          ]
+        }
+      }
+    ],
+    "task_id": 23,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_002, and today is May 9, 2026. There is prepared green pepper stir-fried chicken in the pot, and you are picking one item out of it. Ask the AI Service Agent to first determine where most of the ingredients used in this dish are stored in the home. Then, ask the AI Service Agent to determine: if the total calories of this recipe exceed 500 kcal, ask the AI Service Agent to find the recipe among all recipes containing a \"mild\" flavor that uses the greatest total weight of fruit-category ingredients, and add it to your menu. If there are multiple recipes tied for the greatest total weight of fruit ingredients, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the lowest carbohydrate (sugar) content among recipes containing at least one fish allergen, and add it to your menu. If there are multiple recipes tied for the lowest carbohydrate content, you want all of them to be added. Immediately after, ask the AI Service Agent to add all ingredients stored on the home countertop that expire in less than 3 days from today to the shopping list, each with a weight of 150 grams. Finally, ask the AI Service Agent to comprehensively calculate the summary of nutrition labels for all recipes currently included in your menu.",
+    "analysis": "1. Determine the storage location within the home for the majority of ingredients used in this dish.\n\n2. If the total calories of this recipe exceed 500 kcal, find the recipe among all recipes with a \"mild\" flavor that uses the largest total weight of fruit ingredients and add it to the menu. If multiple recipes tie for the largest weight among those that meet the conditions, add all of them to the menu.\n\n3. If the total calories of this recipe do not exceed 500 kcal, find the recipe with the lowest carbohydrate (sugar) content among recipes containing at least one fish allergen and add it to the menu. If multiple recipes tie for the lowest content among those that meet the conditions, add all of them to the menu.\n\n4. Add all ingredients stored on the countertop at home that expire within 3 days from today to the shopping list, with each ingredient listed as 150 grams.\n\n5. Calculate the aggregated nutrition label summary for all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "get_ingredient_location",
+        "parameters": {
+          "ingredient_name": "chicken"
+        }
+      },
+      {
+        "tool_name": "get_ingredient_location",
+        "parameters": {
+          "ingredient_name": "green bell pepper"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Yogurt & Berry Parfait"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredient_name": "Tomatoes",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipes": [
+            "Salmon & Quinoa Bowl",
+            "Turkey & Apple Soup",
+            "Yogurt & Berry Parfait"
+          ]
+        }
+      }
+    ],
+    "task_id": 24,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 12, 2026. There is cooked green pepper stir-fried chicken in the pot on the stove, and you are picking out one of the ingredients. You need to ask the AI Service Agent to first determine how many steps are required to complete this recipe. Then, ask the AI Service Agent to judge: if the total number of steps for this recipe is greater than 5, ask the AI Service Agent to find the dish with the highest total calcium content among all recipes with a \"sour\" flavor and add it to the menu. If there are multiple dishes tied for the highest calcium content, you want all of them to be added to the menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest protein among all ingredients stored in the refrigerated layer and add 1 kg of it to the shopping list. If there are multiple ingredients tied for the highest protein, you want 1 kg of each of them to be added to the shopping list. Next, ask the AI Service Agent to adjust the weight of all egg/dairy/soy product category ingredients in the current shopping list that exceed 400 grams down to 300 grams uniformly. Subsequently, ask the AI Service Agent to locate the recipe with the lowest total sodium content in the current menu, and add all the seasonings used in it to the shopping list according to the recipe requirements. If there are multiple recipes tied for the lowest sodium content, you want the seasonings from all of them to be added. Finally, ask the AI Service Agent to calculate the total protein content provided by all recipes in the current menu combined.",
+    "analysis": "1. Determine the total number of steps required to complete this recipe.\n\n2. If the total number of steps for this recipe is greater than 5, find the recipe with the highest total calcium content among all recipes with a \"sour\" flavor and add it to the menu. If there are multiple recipes tied for the highest calcium content, add all of them to the menu.\n\n3. If the total number of steps for this recipe is not greater than 5, find the ingredient with the highest protein content among all ingredients stored in the refrigerated layer and add 1 kilogram of it to the shopping list. If there are multiple ingredients tied for the highest protein, add 1 kilogram of each tied item.\n\n4. Adjust the weight of all vegetable ingredients in the current shopping list that exceed 500 grams down to 300 grams.\n\n5. Identify the recipe with the lowest total sodium content in the current menu, and add all the seasonings required by it to the shopping list according to the recipe specifications. If there are multiple recipes tied for the lowest sodium content, include the seasonings for all tied recipes.\n\n6. Calculate the total protein content provided by all recipes in the current menu combined.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Chicken",
+          "quantity": "10"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Yogurt"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Yogurt",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Cinnamon",
+          "quantity": "0.01"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Oat & Banana Pancakes",
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake"
+          ]
+        }
+      }
+    ],
+    "task_id": 25,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 12, 2026. In the pot is the completed Green Pepper Stir-fried Chicken, and you have picked out one of the ingredients and set it aside. Ask the AI Service Agent to first determine which specific step in the recipe you are currently performing. Then, ask the AI Service Agent to determine: if this Green Pepper Stir-fried Chicken recipe does not use any ingredients from the egg/milk/soy product categories at all, then ask the AI Service Agent to find the recipe with the fewest number of ingredients among all recipes containing a \"savory (rich/salty aroma)\" flavor and add it to your menu. If there are multiple recipes tied for the fewest ingredients, add all of them to your menu. Otherwise, ask the AI Service Agent to find the ingredient with the lowest calories among all ingredients stored in the freezer layer, and add it to the shopping list with a specification of 400 grams. If there are multiple ingredients tied for the lowest calories, add each of them to the shopping list with a specification of 400 grams. Subsequently, ask the AI Service Agent to increase the required amount of all ingredients belonging to the staple food/dry goods category in the current shopping list by 100 grams uniformly. Finally, ask the AI Service Agent to carefully calculate the total calorie value of all items in the current shopping list.",
+    "analysis": "1. Identify the specific step in the recipe currently being executed.\n\n2. If this Green Pepper Stir-fried Chicken recipe contains no ingredients from the Egg/Dairy/Soy Products category, find the recipe with the fewest number of ingredients among all recipes featuring a \"savory\" flavor and add it to the menu. If multiple recipes tie for the fewest ingredients, add all of them.\n\n3. If this Green Pepper Stir-fried Chicken recipe uses ingredients from the Egg/Dairy/Soy Products category, find the ingredient with the lowest calories among all ingredients stored in the freezer and add 400 grams of it to the shopping list. If multiple ingredients tie for the lowest calories, add 400 grams of each tied ingredient.\n\n4. Increase the required quantity of all ingredients belonging to the Staple Food/Dry Goods category in the current shopping list by 100 grams each.\n\n5. Calculate the total calorie count of all items in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Custom Seasoned Noodles"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Spaghetti"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Spaghetti",
+          "quantity": "6"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredients": [
+            {
+              "ingredient_name": "Pork",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Yellow Onions",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Spaghetti",
+              "quantity": 6
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 26,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 6, 2026. There is a pot in front of you containing stir-fried green peppers and chicken, and you are transferring a specific ingredient onto a plate. Ask the AI Service Agent to first determine whether the selected ingredient is the one with the highest total usage amount in this recipe, and confirm the name of this recipe. Then, ask the AI Service Agent to judge: if the selected ingredient is the one with the highest total usage amount in this recipe, ask the AI Service Agent to select the recipe with the lowest total calories among all recipes containing fish allergens and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them to the menu. Otherwise, ask the AI Service Agent to find the ingredient with the lowest total sugar content among the fruit ingredients available at home, and add 3 units of it to the shopping list. If multiple ingredients tie for the lowest sugar content, add 3 units of each of those tied items. Subsequently, ask the AI Service Agent to add all the seasonings required by the first recipe in your current menu that are in stock at home to the shopping list according to the recipe requirements. Then, ask the AI Service Agent to compare all recipes in the current menu, find the recipe with the fewest cooking steps, and double the amount of meat ingredients required for it in the shopping list (ignore if no meat is involved). If multiple recipes tie for the fewest steps, apply this doubling to the meat ingredients for all of them. Finally, ask the AI Service Agent to calculate the total calcium content of all ingredients in the current shopping list.",
+    "analysis": "1. Determine whether the selected ingredient is the one with the highest total usage amount in this recipe, and confirm the name of this recipe.\n\n2. If the selected ingredient is the one with the highest total usage amount in this recipe, select the recipe with the lowest total calories from all recipes containing the 'fish' allergen and add it to the menu. If there are multiple recipes tied for the lowest calories, add all of them to the menu.\n\n3. If the selected ingredient is not the one with the highest total usage amount in this recipe, among all fruit ingredients at home, find the one with the lowest total sugar content and add 3 units of it to the shopping list. If there are multiple ingredients tied for the lowest sugar content, add 3 units of each of them.\n\n4. Add the seasonings required by the first recipe in the current menu that are not currently in stock at home to the shopping list according to the recipe specifications.\n\n5. Compare all recipes in the current menu to find the recipe with the fewest cooking steps, and double the amount of its required meat ingredients in the shopping list. If there are multiple recipes tied for the fewest steps, apply this doubling to all of them.\n\n6. Calculate the total calcium content of all ingredients in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Strawberry",
+          "quantity": "3"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "",
+          "ingredient_name": "Salt",
+          "quantity": "0.03"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Black Pepper",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Olive Oil",
+          "quantity": "0.15"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Garlic Powder",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Strawberry",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Salt",
+              "quantity": 0.03
+            },
+            {
+              "ingredient_name": "Black Pepper",
+              "quantity": 0.02
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 0.15
+            },
+            {
+              "ingredient_name": "Garlic Powder",
+              "quantity": 0.02
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 27,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 13, 2026. Green peppers and chicken that have already been stir-fried are visible in the wok, and you are using a tool to pick out one type of ingredient from them into a plate. First, ask the AI Service Agent to identify what this picked-out ingredient is and determine how many days are left until it expires. Then, ask the AI Service Agent to determine: if the picked-out ingredient is already expired as of today, ask the AI Service Agent to find the recipe with the highest total dietary fiber among all recipes tagged with \"low_fat\" and add it to your menu. If there are multiple recipes tied for the highest total dietary fiber, add all of them to your menu. Otherwise, ask the AI Service Agent to find the recipe that uses the highest total weight of meat ingredients among all recipes containing gluten allergens and add it to the menu. If there are multiple recipes tied for the highest total meat weight, add all of them to the menu. After that, ask the AI Service Agent to check all ingredients on the counter and add each type of staple food/dry goods that is in stock to the shopping list at 500 grams per type. Immediately after, ask the AI Service Agent to search the current shopping list and remove the entry that belongs to the condiments category and has the highest sugar content. If multiple items tie for the highest sugar content, remove all of them. Finally, ask the AI Service Agent to calculate and output the nutritional characteristics provided by all recipes in the current menu.",
+    "analysis": "1. Identify the ingredient that has been picked up and determine how many days remain until it expires.\n\n2. If the picked ingredient is expired, find the recipe with the highest total dietary fiber among all recipes tagged with \"low_fat\" and add it to the menu. If multiple recipes tie for the highest fiber, add all of them.\n\n3. If the picked ingredient is not expired, find the recipe that uses the largest total weight of meat ingredients among all recipes containing gluten allergens and add it to the menu. If multiple recipes tie for the largest meat weight, add all of them.\n\n4. Check all ingredients on the counter. Add 500 grams of each staple food or dry good that has zero inventory to the shopping list.\n\n5. Remove all entries from the current shopping list that belong to the fruit category and have the highest sugar content. If multiple fruit items tie for the highest sugar content, remove all of them.\n\n6. Calculate and output all allergen types contributed by all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Flour",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Garlic Powder"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 28,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 7, 2026. The screen shows a finished dish of green pepper stir-fried chicken in a pot, and you are picking one of the ingredients into a side plate. Ask the AI Service Agent to first identify what this recipe is and calculate its carbohydrate (sugar) content value. Next, ask the AI Service Agent to determine: if this recipe's carbohydrate (sugar) content is less than 10 grams, then ask the AI Service Agent to find the recipe with the highest total protein among recipes that share at least one flavor profile with the current recipe, and add it to the menu. If there are multiple recipes tied for the highest protein, add all of them. Otherwise, ask the AI Service Agent to find the recipe with the fewest cooking steps among all recipes containing the 'eggs' allergen, and add it to your menu. If there are multiple recipes tied for the fewest steps, add all of them. After that, ask the AI Service Agent to check the home freezer and add all ingredients that expire more than a week from today to the shopping list, at 200 grams each. Next, ask the AI Service Agent to find the recipe with the lowest total calories among all vegan recipes, and add all ingredients involved in all its cooking steps to the shopping list as needed. If there are multiple recipes tied for the lowest calories, include the ingredients for all of them. Finally, ask the AI Service Agent to comprehensively evaluate and output the total nutritional calories of all recipes in the current menu.",
+    "analysis": "1. Identify the current recipe and calculate its carbohydrate (sugar) content.\n\n2. If the carbohydrate (sugar) content of this recipe is less than 10 grams, find the recipe with the highest total protein among those that share at least one flavor profile with the current recipe, and add it to the menu. If there are multiple recipes tied for the highest total protein among those that meet the conditions, add all of them to the menu.\n\n3. If the carbohydrate (sugar) content of this recipe is not less than 10 grams, find the recipe with the fewest cooking steps among all recipes containing the 'eggs' allergen, and add it to the menu. If there are multiple recipes tied for the fewest cooking steps among those that meet the conditions, add all of them to the menu.\n\n4. Check the home freezer and add 200 grams of each ingredient that expires more than one week from today to the shopping list.\n\n5. Find the recipe with the lowest total calories among all vegan recipes, and add all ingredients involved in all its cooking steps to the shopping list as needed. If there are multiple recipes tied for the lowest total calories among those that meet the conditions, include all of them and add their ingredients to the shopping list.\n\n6. Output the total nutritional calories of all recipes currently in the menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Green Peas",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Beef",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Turkey",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "potatoes",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "broccoli",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "asparagus",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "lemon",
+          "quantity": "0.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "olive oil",
+          "quantity": "0.15"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "salt",
+          "quantity": "0.03"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "black pepper",
+          "quantity": "0.02"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 29,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_001, and today is May 8, 2026. You have stir-fried green peppers and chicken in your pot, and you are picking out an ingredient to place on a plate. Ask the AI Service Agent to first determine whether the step preceding the current step of this dish used seasoning. Next, ask the AI Service Agent to judge: if the previous step of this recipe did indeed use seasoning, then ask the AI Service Agent to find the recipe with the lowest total sodium content among all recipes with the \"high_protein\" feature and add it to your menu. If there are multiple recipes tied for the lowest sodium content among those that meet the conditions, add all of them to your menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest dietary fiber content among all ingredients classified as staples/dry goods, and add them to the shopping list with a quantity of 800 grams. If there are multiple ingredients tied for the highest dietary fiber content, add 800 grams of each of them. Then, ask the AI Service Agent to delete entries in the current shopping list that belong to meat and have at least 4 months remaining before expiration. Next, ask the AI Service Agent to retrieve the recipe with the most cooking steps among all recipes, and add the fruit-category ingredients required by this recipe to the shopping list according to the recipe quantity. If there are multiple recipes tied for the most cooking steps, include the fruit ingredients from all of them according to the recipe quantity. Finally, ask the AI Service Agent to count all distinct flavor types present in your current menu.",
+    "analysis": "1. Determine whether the step immediately preceding the current step in this recipe used seasonings.\n2. If the previous step used seasonings, find the recipe with the lowest total sodium content among all recipes featuring \"high_protein\" and add it to the menu. If there are multiple recipes tied for the lowest sodium content, add all of them to the menu.\n3. If the previous step did not use seasonings, find the ingredient with the highest dietary fiber content among all staple foods and dry goods, and add 800 grams of it to the shopping list. If there are multiple ingredients tied for the highest dietary fiber content, add 800 grams of each tied ingredient.\n4. Remove any entries from the current shopping list that are classified as meat and have expired.\n5. Identify the dish with the most cooking steps in the current menu, and add the fruit ingredients required by this dish to the shopping list according to the recipe quantities. If there are multiple dishes tied for the most cooking steps, add the fruit ingredients for all of them according to their respective recipe quantities.\n6. Count all the distinct flavor types present in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "Beef"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "cherries",
+          "quantity": "0.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_001",
+          "ingredient_name": "apple",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "tally_total_tastes",
+        "parameters": {
+          "user_id": "cook_001",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Tofu Soup",
+            "Oat & Banana Pancakes",
+            "Mushroom & Thyme Roast Chicken",
+            "Roasted Tomato Salmon"
+          ]
+        }
+      }
+    ],
+    "task_id": 30,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_004, and today is May 11, 2026. There is a wok of stir-fried green peppers and chicken within view, and you are picking out one ingredient from it to serve on a plate. Ask the AI Service Agent to first identify the ingredient being picked out and determine whether, in the corresponding recipe, this ingredient is processed or added to the pot in the first step. Next, ask the AI Service Agent to proceed as follows: if the picked ingredient is used in the first step, ask the AI Service Agent to find the recipe with the lowest total carbohydrates (sugar) among all recipes with a \"savory\" flavor and add it to the menu. If multiple recipes tie for the lowest carbohydrate content, add all of them to the menu. Otherwise, ask the AI Service Agent to find the ingredient with the highest calcium content among all ingredients in the vegetable category and add it to the shopping list with a quantity of 2. If multiple ingredients tie for the highest calcium content, add 2 of each of those tied items to the shopping list. Next, ask the AI Service Agent to check the inventory on the home spice rack and add any spices that are completely out of stock to the shopping list, 100g each. Afterwards, ask the AI Service Agent to find the dish with the highest total calories among all recipes currently in the menu, and then extract all the cooking steps for it. If multiple dishes tie for the highest calorie content, extract the cooking steps for all of them. Finally, ask the AI Service Agent to carefully calculate the total sodium content value for all ingredients currently on the shopping list.",
+    "analysis": "1. Identify the selected ingredient and determine whether it is processed or added to the pot in the first step of the corresponding recipe.\n\n2. If the selected ingredient is used in the first step, find the dish with the lowest total carbohydrates (sugar) among all recipes with a \"savory\" flavor and add it to the menu. If multiple dishes tie for the lowest carbohydrate content, add all of them to the menu.\n\n3. If the selected ingredient is not used in the first step, find the ingredient with the highest calcium content among all ingredients in the vegetable category and add 2 pieces of it to the shopping list. If multiple ingredients tie for the highest calcium content, add 2 pieces of each to the shopping list.\n\n4. Check the inventory on the home spice rack and add 1 bottle of each seasoning that is completely out of stock to the shopping list.\n\n5. Find the dish with the highest total calories in the current menu, extract all its cooking steps, arrange them in reverse order, and record them in the shopping list notes. If multiple dishes tie for the highest calorie content, perform this operation for each of them.\n\n6. Calculate the total sodium content of all ingredients on the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_004",
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Thyme",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredient_name": "Dill",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "get_cooking_steps",
+        "parameters": {
+          "recipe_name": "Roasted Chickpeas & Vegetables"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_004",
+          "ingredients": [
+            {
+              "ingredient_name": "Salmon",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Asparagus",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Lemon",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Olive Oil",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Thyme",
+              "quantity": 1
+            },
+            {
+              "ingredient_name": "Dill",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 31,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_003, and today is May 10, 2026. The dish currently cooking in the pot is stir-fried chicken with green peppers, and you have transferred some ingredient from the pot to a plate. Ask the AI Service Agent to first determine how many different seasonings are used in this recipe. Afterwards, ask the AI Service Agent to evaluate: if this recipe uses more than three types of seasonings, ask the AI Service Agent to find the recipe with the highest total calories among all recipes with the \"low_sugar\" nutritional feature and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe that uses the greatest weight of egg/milk/soy products among all recipes requiring countertop ingredients and add it to your menu. If there are multiple recipes tied for the greatest weight among those that meet the conditions, you want all of them to be added. Immediately afterwards, ask the AI Service Agent to select all recipes from the current menu that require ingredients from the refrigerated layer, and add these ingredients to the shopping list according to the required amount if they are not in stock. Subsequently, ask the AI Service Agent to find the recipe with the fewest cooking steps among all recipes containing the gluten allergen, and add all staple food ingredients involved in it to the list at 500 grams. If there are multiple recipes tied for the fewest steps among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to summarize in detail the total nutritional features possessed by the combination of all dishes in the current menu.",
+    "analysis": "1. Determine the total number of different seasonings used in this recipe.\n\n2. If this recipe uses more than three types of seasonings, find the recipe with the highest total calories among all recipes with the \"low_sodium\" nutritional feature and add it to the menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, add all of them to the menu.\n\n3. If this recipe uses no more than three types of seasonings, find the recipe with the largest weight of egg/milk/soy products among all recipes requiring countertop ingredients and add it to the menu. If there are multiple recipes tied for the largest weight among those that meet the conditions, add all of them to the menu.\n\n4. Select all recipes from the current menu that require ingredients from the refrigerated layer. Add any out-of-stock ingredients from these recipes to the shopping list according to the required quantity.\n\n5. Find the recipe with the fewest cooking steps among all recipes that do not contain gluten allergens. If there are multiple recipes tied for the fewest steps among those that meet the conditions, select all of them. Add all staple food ingredients involved to the shopping list at 500 grams each.\n\n6. Calculate the total carbohydrate (sugar) content of all dishes combined in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Duck",
+          "quantity": "1.5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Cherries",
+          "quantity": "0.8"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Oats",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Flour",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_003",
+          "ingredient_name": "Instant Noodles",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_003",
+          "recipes": [
+            "Duck & Cherry Salad",
+            "Beef & Black Bean Stew",
+            "Egg & Spinach Frittata",
+            "Oat & Banana Pancakes"
+          ]
+        }
+      }
+    ],
+    "task_id": 32,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_005, and today is May 12, 2026. In the pot is the completed stir-fried chicken with green peppers, and you have picked out one of the ingredients and set it aside. You need to ask the AI Service Agent to first identify the picked-out ingredient and determine the specific quantity in grams required for this ingredient in the recipe being prepared. Then, ask the AI Service Agent to judge: if the required amount of the picked-out ingredient in this recipe exceeds 100 grams, ask the AI Service Agent to find the recipe with the highest total protein among recipes that are completely free of dairy allergens and add it to your menu. If there are multiple recipes tied for the highest protein, you want all of them to be added. Otherwise, ask the AI Service Agent to find the recipe with the highest number of steps among all recipes with the \"sugar_free\" feature and add it to the menu. If there are multiple recipes tied for the most steps, you want all of them to be added. Then, ask the AI Service Agent to clean the shopping list by thoroughly removing all expired meat items from it. Immediately after, ask the AI Service Agent to remove the recipe with the highest total sodium content from the current menu, and replace it with a recipe that has the lowest total sodium content among all recipes containing fish allergens. If there are multiple recipes tied for the lowest sodium among those containing fish allergens, you want all of them to be added. Finally, ask the AI Service Agent to comprehensively calculate the overall nutritional characteristics of all recipes combined in the current menu.",
+    "analysis": "1. Identify the ingredient that has been picked out and determine its specific usage amount in grams within the current recipe.\n\n2. If the required amount of the picked ingredient in this recipe exceeds 100 grams, search through recipes that are completely free of dairy allergens, find the dish with the highest total protein, and add it to the menu. If multiple dishes tie for the highest protein content, add all of them.\n\n3. If the required amount of the picked ingredient in this recipe does not exceed 100 grams, search through all recipes marked as \"sugar_free\", find the dish with the highest number of steps, and add it to the menu. If multiple dishes tie for the most steps, add all of them.\n\n4. Clean up the shopping list by removing all fruit entries that have already expired.\n\n5. Remove the dish with the highest total sodium content from the current menu. If multiple dishes tie for the highest sodium content, remove all of them. Then, replace them with the dish from recipes containing fish allergens that has the lowest total sodium content. If multiple dishes tie for the lowest sodium content, add all of them.\n\n6. Calculate the total nutritional calories for all recipes combined in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_005",
+          "ingredient_name": "Pork"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipe_name": "Roasted Tomato Salmon"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_005",
+          "recipes": [
+            "Deep-fried Meat Platter",
+            "Yogurt & Berry Parfait",
+            "Lamb & Potato Stew",
+            "Roasted Tomato Salmon"
+          ]
+        }
+      }
+    ],
+    "task_id": 33,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_006, and today is May 13, 2026. There are stir-fried green peppers and chicken in the pot, and you are picking out one ingredient to place on a plate. Ask the AI Service Agent to first determine which step of the recipe your current action corresponds to. Subsequently, ask the AI Service Agent to judge: if your current action is indeed the final step of this recipe, then ask the AI Service Agent to find the recipe with the fewest cooking steps among all recipes with a \"mild\" flavor and add it to your menu. If there are multiple recipes tied for the fewest steps among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the highest total protein content among the ingredients in your home inventory that belong to the Egg/Dairy/Bean Products category, and add 800g of it to the shopping list. If there are multiple ingredients tied for the highest protein content, you want 800g of each of them to be added. Next, ask the AI Service Agent to check all recipes in the current menu, identify ingredients that are vegetables, and add 100g of the one with the highest inventory stock to the shopping list. If there are multiple vegetables tied for the highest stock, you want 100g of each of them to be added. Then, ask the AI Service Agent to iterate through your current shopping list and multiply the quantity of all ingredients belonging to the Staple/Dried Goods category by 1.5. Finally, ask the AI Service Agent to calculate the total sugar content of all items in the current shopping list.",
+    "analysis": "1. Determine the step number of the current action within the recipe.\n\n2. If the current action is the final step of this recipe, find the recipe(s) with the fewest cooking steps among all recipes with a \"mild\" flavor and add them to the menu. If there are multiple recipes tied for the fewest steps, add all of them to the menu.\n\n3. If the current action is not the final step of this recipe, find the ingredient(s) with the highest total protein content among the home inventory ingredients belonging to the egg, milk, or soy products category, and add 800 grams of each to the shopping list. If there are multiple ingredients tied for the highest protein content, add 800 grams of each to the shopping list.\n\n4. Check all recipes in the current menu. For ingredients that need to be stored in the freezer but are insufficient in home inventory, add the shortfall amount to the shopping list.\n\n5. Iterate through the current shopping list and multiply the quantity of all ingredients belonging to the staple food or dry goods category by 1.5.\n\n6. Calculate the total accumulated sugar content of all items in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Oat & Banana Pancakes"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_006",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Potatoes",
+          "quantity": "1"
+        }
+      },
+      {
+        "tool_name": "remove_from_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Quinoa"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredient_name": "Quinoa",
+          "quantity": "6"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_006",
+          "ingredients": [
+            {
+              "ingredient_name": "Spinach",
+              "quantity": 3
+            },
+            {
+              "ingredient_name": "Tomatoes",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Cheese",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Balsamic Vinegar",
+              "quantity": 2
+            },
+            {
+              "ingredient_name": "Quinoa",
+              "quantity": 6
+            },
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 34,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_009, and today is May 8, 2026. There is a stir-fried dish of green peppers and chicken in the pot, and you are picking out a specific ingredient from it to plate. You need to ask the AI Service Agent to first identify what the picked-out ingredient is and determine whether seasoning was used in the previous step of this recipe. Then, instruct the AI Service Agent that if the previous step of this recipe did indeed use seasoning, it should find the recipe with the highest total calories among all recipes containing the soy allergen and add it to your menu. If there are multiple recipes tied for the highest calories among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI Service Agent to select the recipe with the largest number of cooking steps among all recipes requiring ingredients from the storage cabinet and add it to your menu. If there are multiple recipes tied for the most steps among those that meet the conditions, you want all of them to be added. After that, ask the AI Service Agent to check all fruit ingredients currently at home, and for any that are expired, add them to the shopping list at 3 times the original inventory amount. Next, ask the AI Service Agent to compare all recipes in the current menu, remove the one with the highest total carbs (sugar), and replace it with the recipe with the lowest total carbs among all recipes containing no allergens. If there are multiple recipes tied for the lowest carbs among those that meet the conditions, you want all of them to be added. Finally, ask the AI Service Agent to calculate the total sum of protein provided by all ingredients listed in the shopping list.",
+    "analysis": "1. Identify the selected ingredient and determine whether the previous step of this recipe used any seasoning.\n\n2. If the previous step of this recipe used seasoning, find the recipe with the highest total calories among all recipes containing the soy allergen and add it to the menu. If multiple recipes tie for the highest calories, add all of them.\n\n3. If the previous step of this recipe did not use seasoning, select the recipe with the greatest number of cooking steps among all recipes requiring pantry ingredients and add it to the menu. If multiple recipes tie for the most steps, add all of them.\n\n4. Check all fruit ingredients currently at home. Add any expired ingredients to the shopping list in quantities equal to three times their original stock amount.\n\n5. Compare all recipes currently in the menu. Remove the recipe with the highest total carbohydrates. If multiple recipes tie for the highest, remove all of them. Then, replace them with the recipe containing the lowest total carbohydrates among all recipes that do not contain any allergens. If multiple recipes tie for the lowest, add all of them.\n\n6. Calculate the total protein sum of all ingredients in the shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Pork & Chive Dumplings"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredient_name": "Banana",
+          "quantity": "27"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Pork & Chive Dumplings"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_009",
+          "recipe_name": "Duck & Cherry Salad"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_009",
+          "ingredients": [
+            {
+              "ingredient_name": "Turkey",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Celery",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Green Peas",
+              "quantity": 4
+            },
+            {
+              "ingredient_name": "Apple",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Orange Juice",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Banana",
+              "quantity": 27
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 35,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  },
+  {
+    "Instruction": "\nYour user ID is cook_002, and today is May 9, 2026. There is cooked green pepper stir-fried chicken in the pot, and you are picking out one of the ingredients. Ask the AI Service Agent to first query the nutritional characteristics of the recipe currently being cooked in the pot, and identify the current inventory quantity of the ingredient being picked out. Subsequently, ask the AI Service Agent to determine: if the current inventory quantity of the picked-out ingredient is zero, then ask the AI Service Agent to find the recipe requiring the most steps among those with an \"umami\" flavor profile and add it to the menu. If there are multiple recipes tied for the most steps, add all of them to the menu. Otherwise, ask the AI Service Agent to select the dish with the lowest total fat content among all recipes containing no allergens and add it to the menu. If there are multiple dishes tied for the lowest total fat content, add all of them to the menu. After that, ask the AI Service Agent to go through all the pantry ingredients at home, and add those with expiration dates prior to today to the shopping list at 250 grams each. Then, ask the AI Service Agent to check the current menu, find the recipe with the lowest total protein, and replace it with the one having the highest total protein among all recipes containing the \"soy\" allergen. If there are multiple recipes tied for the lowest total protein, all of them should be replaced. If there are multiple recipes tied for the highest total protein among the soy-containing options, all of them should be added. Finally, ask the AI Service Agent to precisely calculate the total fat content of all items in the current shopping list.",
+    "analysis": "1. Determine the total calories of the recipe currently being cooked in the pot, and identify the current inventory quantity of the selected ingredient.\n\n2. If the current inventory of the selected ingredient is 0, find the recipe with the most required steps among those with an \"umami\" flavor and add it to the menu. If multiple recipes tie for the most steps, add all of them to the menu.\n\n3. If the current inventory of the selected ingredient is not 0, select the recipe with the lowest total fat content from all recipes that contain no allergens and add it to the menu. If multiple recipes tie for the lowest fat content, add all of them to the menu.\n\n4. Check all ingredients in the home storage cabinets. For any ingredients that expired before today, add 250 grams of each to the shopping list.\n\n5. Check the current menu and identify the recipe with the lowest total protein. Replace it with the recipe containing the \"soy\" allergen that has the highest total protein. If multiple recipes tie for the lowest protein, replace all of them. If multiple recipes tie for the highest protein among soy-containing recipes, add all of them to the menu.\n\n6. Calculate the total fat content of all items in the current shopping list.",
+    "ground_truth": [
+      {
+        "tool_name": "get_recipe_nutritional_characteristics",
+        "parameters": {
+          "recipe_name": "Green Pepper Chicken"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "find_ingredients_by_location",
+        "parameters": {
+          "location": "pantry"
+        }
+      },
+      {
+        "tool_name": "remove_recipe_from_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Potato & Greens Salad"
+        }
+      },
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_002",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "compute_total_nutritions",
+        "parameters": {
+          "user_id": "cook_002",
+          "ingredients": [
+            {
+              "ingredient_name": "Potatoes",
+              "quantity": 10
+            },
+            {
+              "ingredient_name": "Carrots",
+              "quantity": 5
+            },
+            {
+              "ingredient_name": "Chicken",
+              "quantity": 8
+            }
+          ]
+        }
+      }
+    ],
+    "task_id": 36,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_010, and today is May 9, 2026. There is already stir-fried green pepper and chicken in the pot in front of you, and you are picking out one of the ingredients to put onto a plate. Ask the AI Service Agent to first determine how many different types of vegetable ingredients are used in this recipe. Afterwards, ask the AI Service Agent to judge: if this recipe uses exactly two different types of vegetable ingredients, then ask the AI Service Agent to find the dish with the lowest total fat among all recipes containing the \"high_calcium\" feature and add it to your menu. If there are multiple dishes tied for the lowest total fat, add all of them to your menu. Otherwise, ask the AI Service Agent to find the dish that uses the highest total weight of meat among all recipes with a \"salty\" flavor and add it to the menu. If there are multiple dishes tied for the highest total weight of meat, add all of them to your menu. Then, ask the AI Service Agent to check the stock of all egg, dairy, or soy products required for the dish \"Green Pepper Chicken\" currently being cooked. If the household stock is zero, add them to the shopping list with a specification of 1 kilogram. Immediately afterwards, ask the AI Service Agent to find the dish with the lowest total calories among all recipes in the current menu, and add 500g of the meat ingredients used in it to the shopping list. If there are multiple dishes tied for the lowest total calories, add 500g of the meat ingredients from each of those tied dishes to the shopping list. Finally, ask the AI Service Agent to accurately calculate the nutritional characteristics when all recipes in the current menu are combined.",
+    "analysis": "1. Determine the total number of different vegetable ingredients used in this recipe.\n\n2. If this recipe uses exactly two different vegetable ingredients, find the recipe with the lowest total fat among all recipes featuring \"high_calcium\" and add it to the menu. If there are multiple recipes tied for the lowest total fat among those that meet the conditions, add all of them to the menu.\n\n3. If the number of vegetable ingredients used in this recipe is not equal to two, find the recipe with the highest total meat weight among all recipes with a \"salty\" taste and add it to the menu. If there are multiple recipes tied for the highest total meat weight among those that meet the conditions, add all of them to the menu.\n\n4. Count all egg, milk, or soy product ingredients required for the first recipe. If the household stock for an item is 0, add 1 kg of it to the shopping list.\n\n5. Find the dish with the lowest total calories in the current menu, and double the quantity of all its ingredients stored in the freezer layer in the shopping list. If there are multiple dishes tied for the lowest total calories, apply this action to all of them.\n\n6. Calculate the total calcium content when all recipes in the current menu are combined.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipe_name": "Deep-fried Meat Platter"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_010",
+          "ingredient_name": "Shrimp",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_010",
+          "recipes": [
+            "Shrimp & Asparagus Stir-fry",
+            "Roasted Chickpeas & Vegetables",
+            "Deep-fried Meat Platter"
+          ]
+        }
+      }
+    ],
+    "task_id": 37,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_008, and today is May 7, 2026. The screen shows finished stir-fried chicken with green peppers in a pot, and you are picking one of the ingredients into a plate. Ask the AI Service Agent to first determine the total number of steps in this recipe. Next, ask the AI Service Agent to judge: if the total number of steps in the current recipe is less than or equal to 3, then ask the AI Service Agent to find the recipe with the lowest total fat among all recipes with a \"savory\" flavor and add it to the menu. If there are multiple recipes tied for the lowest total fat, you want all of them to be added. Otherwise, ask the AI Service Agent to find the ingredient with the lowest sugar content among all ingredients belonging to the (prepared) beverage category with non-zero inventory, and add 1 can of it to the shopping list. If there are multiple ingredients tied for the lowest sugar content, you want 1 can of each to be added. Next, ask the AI Service Agent to check existing ingredients; if there are any ingredients that are stored on the countertop and are expired, add an amount equal to the expired quantity to the shopping list. Subsequently, ask the AI Service Agent to find the dish with the highest total protein among all recipes in the current menu, extract the meat ingredient required for the first step of this dish, and add an additional 500 grams of it to the shopping list. If there are multiple dishes tied for the highest total protein, you want the meat ingredient from each of them to be extracted and 500 grams of each to be added. Finally, ask the AI Service Agent to evaluate all recipes in the current menu and output the shared nutritional characteristic combination tags.",
+    "analysis": "1. Determine the total number of steps in this recipe.\n\n2. If the total number of steps in this recipe is less than or equal to 3, find the recipe with the lowest total fat among all recipes with a \"bitter\" taste and add it to the menu. If there are multiple recipes tied for the lowest fat content, add all of them to the menu.\n\n3. If the total number of steps in this recipe is greater than 3, find the ingredient with the lowest sugar content among all ingredients belonging to the (prepared) beverage category with non-zero stock, and add 1 can of it to the shopping list. If there are multiple ingredients tied for the lowest sugar content, add 1 can of each of them to the shopping list.\n\n4. Check the shopping list and set the required quantity to zero for any ingredients that are stored on the countertop and have expired.\n\n5. Find the dish with the highest total protein in the current menu. Extract the meat ingredient required for its first step and additionally add 500 grams of it to the shopping list. If there are multiple dishes tied for the highest protein content, perform this action for each of them.\n\n6. Output the nutritional feature combination tags common to all recipes in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipe_name": "Shrimp & Asparagus Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "Banana",
+          "quantity": "9"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_008",
+          "ingredient_name": "shrimp",
+          "quantity": "5"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_008",
+          "recipes": [
+            "Tofu Soup",
+            "Turkey & Apple Soup",
+            "Egg & Spinach Frittata",
+            "Shrimp & Asparagus Stir-fry"
+          ]
+        }
+      }
+    ],
+    "task_id": 38,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "recipe_name",
+    "value": [
+      "Green Pepper Chicken"
+    ]
+  },
+  {
+    "Instruction": "Your user ID is cook_007, and today is May 6, 2026. Looking at the green pepper stir-fried chicken in the wok, you are using a spoon or chopsticks to move one ingredient onto the plate. Ask the AI service agent to first identify the nutritional content of the ingredient being picked out. Next, ask the AI service agent to determine: if the calorie content of the picked-out ingredient is lower than 50kcal, ask the AI service agent to find the dish with the highest total protein content among all other recipes that share at least one allergen with it, and add it to the menu. If there are multiple dishes tied for the highest protein content among those that meet the conditions, you want all of them to be added. Otherwise, ask the AI service agent to select the dish that uses the largest total weight of vegetables from all recipes in the \"low_sugar\" recipe library and add it to your menu. If there are multiple dishes tied for the largest vegetable weight among those that meet the conditions, you want all of them to be added. After that, ask the AI service agent to scan the refrigerated layer and add all vegetable ingredients that expire within less than 2 days from today to the shopping list, at 200 grams each. Then, ask the AI service agent to find all recipes in the current menu with a total step count exceeding 4, and add all condiments used in the last step of these recipes to the shopping list, with a quantity of 2 bottles each. Finally, ask the AI service agent to calculate the combined estimated total dietary fiber content of all dishes in the current menu.",
+    "analysis": "1. Identify the nutritional content of the selected ingredient.\n\n2. If the selected ingredient contains fewer than 50 kcal, search for other recipes that share at least one allergen with it. Find the recipe with the highest total calcium content among them and add it to the menu. If there are multiple recipes tied for the highest calcium content, add all of them to the menu.\n\n3. If the selected ingredient contains 50 kcal or more, select the recipe with the largest total weight of vegetables from all \"low_sugar\" recipes and add it to the menu. If there are multiple recipes tied for the largest vegetable weight, add all of them to the menu.\n\n4. Scan the refrigerated layer and add 200 grams of each staple food ingredient that expires in less than 2 days from today to the shopping list.\n\n5. Identify all recipes in the current menu that have more than 4 steps. For the last step of each of these recipes, add 2 bottles of every condiment used to the shopping list.\n\n6. Calculate the estimated total dietary fiber content for all dishes combined in the current menu.",
+    "ground_truth": [
+      {
+        "tool_name": "add_recipe_to_menu",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipe_name": "Chicken & Broccoli Stir-fry"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Spinach",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "add_to_shopping_list",
+        "parameters": {
+          "user_id": "cook_007",
+          "ingredient_name": "Soy Sauce",
+          "quantity": "2"
+        }
+      },
+      {
+        "tool_name": "tally_total_nutritional_characteristics",
+        "parameters": {
+          "user_id": "cook_007",
+          "recipes": [
+            "Chicken & Broccoli Stir-fry",
+            "Cod & Lemon Dill Bake",
+            "Oat & Banana Pancakes"
+          ]
+        }
+      }
+    ],
+    "task_id": 39,
+    "image_name": "kitchen3",
+    "image_path": "Green Pepper Chicken.mp4",
+    "image_description": "You are cooking a dish. The food in the pot is already cooked. You are picking one of the ingredients out of the pot and placing it onto a plate.",
+    "key": "ingredient_name",
+    "value": [
+      "green bell pepper"
+    ]
+  }
+]
