@@ -24,7 +24,10 @@ from openai import OpenAI
 # You can change this to any model you prefer
 
 # USER_MODEL_NAME = os.environ.get("USER_MODEL_NAME", "Qwen/Qwen3.5-122B-A10B")
-USER_MODEL_NAME ="Qwen/Qwen3.5-397B-A17B"
+USER_MODEL_NAME = os.environ.get(
+    "USER_MODEL_NAME",
+    "Qwen/Qwen3.5-397B-A17B",
+)
 # USER_MODEL_NAME = "deepseek-v4-flash"
 
 # API Key for user simulation model
