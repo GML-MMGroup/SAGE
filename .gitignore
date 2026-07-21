@@ -1,5 +1,4 @@
 .env
-env_vars.sh
 __pycache__/
 *.py[cod]
 *.tmp
