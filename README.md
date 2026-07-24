@@ -6,7 +6,13 @@ SAGE (**S**tatus-**A**ware **G**rounded **E**xecution) is designed for egocentri
 
 This repository provides the current reproduction and extended implementation for EgoBench Track 2, including multi-agent interaction, temporal frame selection, generic target localization, independent bounding-box review, visual recognition constrained by a candidate catalog, Planner–Executor–Reporter tool execution, and per-stage latency and token statistics.
 
-## Overview
+## 📢 News
+
+[2026.07.23] 🏆🏆🏆 We achieved joint first place in the review and verification stage and secured a Challenge Paper slot at ACM Multimedia 2026 through the EgoLink Grand Challenge!
+
+[2026.06.24] 🔥🔥🔥 We ranked first in the challenge evaluation stage, were invited to submit a technical report, and open-sourced our repository!
+
+## 📝 Overview
 
 Egocentric interaction involves visual reference resolution, latent attributes, conditional branches, and state updates. Common paradigms exhibit different shortcomings in this setting: ReAct may commit to a branch prematurely based on the latest local observation, while the fixed natural-language plan used by Plan-and-Solve may execute mutually exclusive branches sequentially. SAGE instead uses explicit step states and execution evidence to decide whether to continue, repair, or terminate.
 
@@ -20,7 +26,7 @@ SAGE's core design includes:
 - **Visual–tool decoupling**: The visual branch produces normalized Visual Facts. If the tool branch discovers a missing visual entity, it can issue a type-constrained visual request and then resume from the same state.
 - **Conservative visual fallback**: When localization is uncertain, a bounding box is invalid, or the Reviewer rejects a candidate, the entire batch of localization results is discarded and the system falls back to the original evidence.
 
-## System Architecture
+## 🏗️ System Architecture
 
 ![Overall SAGE architecture](https://huggingface.co/datasets/thomasrios/TYPERA/resolve/main/SAGE/SAGE_001.png)
 
@@ -81,7 +87,7 @@ Supervisor ──────► ask_user
 
 The main Planning Round contains only the Planner and Executor. When the Planner sets `requires_next_planning_round` to `true`, the Executor completes the current round, after which the system appends the accumulated Tool Results and descriptions of the tools used to the next Planner input. This loop runs for at most 5 rounds. The Reporter is called only after the Planner sets the field to `false` or the round limit is reached. If the Reporter still returns `unresolved`, the system enters a separate repair-planning process and performs at most 2 additional rounds of Planner–Executor–Reporter repair.
 
-## Temporal Visual Grounding and Paired Evidence
+## 🎯 Temporal Visual Grounding and Paired Evidence
 
 ![SPG paired visual evidence](https://huggingface.co/datasets/thomasrios/TYPERA/resolve/main/SAGE/SAGE_002.png)
 
@@ -98,7 +104,7 @@ The visual branch uses a `select → ground → review → render → recognize 
 
 The green boxes are high-confidence candidate evidence that has passed localization and review, not irrefutable ground truth. The Recognition VLM must still validate them against the original task, full frames, and auxiliary evidence. Auxiliary frames also cannot replace the object identified by the anchor with a clearer but unrelated neighboring target.
 
-## Experimental Results
+## 📊 Experimental Results
 
 ### Evaluation Protocol
 
@@ -199,7 +205,7 @@ The following table is based on the 13 scenarios in the current implementation t
 
 Together, the Executor and Planner account for 53.23% of total agent response time and are the main sources of latency in the current implementation. The Box Locator and Reviewer together account for 17.40%.
 
-## Failure Cases
+## ⚠️ Failure Cases
 
 ![Analysis of SAGE failure cases](https://huggingface.co/datasets/thomasrios/TYPERA/resolve/main/SAGE/SAGE_003.png)
 
@@ -212,7 +218,7 @@ The figure supplements the paper with four failure categories that were not elab
 
 These cases show that end-to-end failures should not all be attributed to the service agent: visual anchoring, user simulation, annotation consistency, and repair semantics can all affect Joint Success.
 
-## Reproducing the Experiments
+## 🔬 Reproducing the Experiments
 
 The following instructions assume the current `egolink_track2_GML-MM-Group` working directory and primarily correspond to `run/multi_agent.py`, `config/*_config.py`, `run_all_scenarios.sh`, and `analysis_scripts/run_eval.sh`.
 
@@ -245,7 +251,7 @@ The current project uses `image_base64` visual input exclusively: it first sampl
 
 The runtime-generated `results/`, `processed/`, and `eval_result/` directories are excluded by `.gitignore`.
 
-## Quick Start
+## 🚀 Quick Start
 
 All commands are assumed to be run from the repository root.
 
@@ -264,7 +270,7 @@ ffmpeg -version
 
 `environment.yml` uses Python 3.10 and installs FFmpeg, OpenCV, the OpenAI SDK, PyTorch, Transformers, Pillow, and the evaluation and plotting dependencies. If FFmpeg is unavailable, the code attempts to use OpenCV to obtain video durations and sample frames. For consistent results, however, using FFmpeg from the Conda environment is still recommended.
 
-## API Configuration
+## 🔑 API Configuration
 
 The project's LLM and VLM calls use OpenAI-compatible endpoints. The current full pipeline primarily requires three configuration groups:
 
@@ -328,7 +334,7 @@ export VISUAL_BOXED_MODEL_NAMES="<PRIMARY_BOX_MODEL>,<FALLBACK_BOX_MODEL>"
 
 Optional reasoning parameters include `FRAME_SELECTER_REASONING_EFFORT`, `VISUAL_AGENT_REASONING_EFFORT`, `VISUAL_BOXED_REASONING_EFFORT`, and `TOOL_PLANNER_REASONING_EFFORT`. The configuration is read when the Python process starts, so restart the Python process after modifying `.env`.
 
-## Video Configuration
+## 🎥 Video Configuration
 
 ### Local Video Mode
 
@@ -356,7 +362,7 @@ export VIDEO_URL_MAPPING='{
 
 Mapping keys must exactly match the video filenames in the scenario JSON, including spaces and letter case. When running scenarios with multiple videos, the mapping must cover every filename they use. URL mode changes only the video source: the program still downloads or reads video frames and follows the `image_base64` pipeline rather than sending the full video directly to the vision model.
 
-## Running a Single Scenario
+## ▶️ Running a Single Scenario
 
 The following example runs tasks 1 through 5 from `retail6`:
 
@@ -407,7 +413,7 @@ python run/multi_agent.py \
   --box false
 ```
 
-## Visual Module Smoke Test
+## 🧪 Visual Module Smoke Test
 
 Use `--test_visual` to check the frame sampling, frame selection, target localization, review, and visual recognition pipeline before running the full experiment:
 
@@ -432,7 +438,7 @@ processed/visual_test/
             └── {YYYYMMDD_HHMMSS}_{scenario}_easy.json
 ```
 
-## Reproducing the Final Five Scenarios
+## 🔁 Reproducing the Final Five Scenarios
 
 | Type       | Scenarios             |
 | ---------- | --------------------- |
@@ -463,7 +469,7 @@ bash run_all_scenarios.sh
 
 The batch script automatically loads `.env`, always uses the current `image_base64` entry point, and enables `--multi_agent_user`, per-stage latency statistics, and target localization by default.
 
-## Output Files
+## 📁 Output Files
 
 ### Complete Interaction Results
 
@@ -513,7 +519,7 @@ processed/profiling/
 
 The profiling leaf directory has the same name as the corresponding result JSON file without the `.json` extension. Statistics cover eight formal stages: Frame Selector, Box Locator, Frames Reviewer, Visual Agent, Supervisor, Tool Planner, Tool Executor, and Tool Reporter. The User Agent and User Corrector are recorded only in the raw events and are excluded from the formal stage summaries. Complete interactions use the `{service_model_name}` directory, while `--test_visual` uses the `{visual_model}` directory.
 
-## Evaluation
+## 📏 Evaluation
 
 The evaluation script recursively reads result files under `results/` that follow the timestamp naming format and evaluates tool calls and final database states against the `ground_truth` fields of the corresponding scenarios under `scenarios/final/`.
 
@@ -557,7 +563,7 @@ eval_result/
 | `micro_tool_stats.micro_accuracy`                 | Micro recall across all ground-truth tool calls.             |
 | `filtered_user_issue.filtered_joint_success_rate` | Joint success rate after excluding samples identified as simulated-user anomalies. |
 
-## Regression Tests
+## ✅ Regression Tests
 
 Run the following command from the repository root:
 
@@ -572,7 +578,7 @@ The current 23 tests cover:
 - Model request parameters for the Visual Agent and Box Locator.
 - Per-stage latency, nested-call latency, and token statistics.
 
-## Pre-Reproduction Checklist
+## 📋 Pre-Reproduction Checklist
 
 1. Create and activate the Python 3.10 environment using `environment.yml`.
 2. Confirm that FFmpeg is available and the dependencies in `requirements.txt` are installed.
@@ -582,4 +588,3 @@ The current 23 tests cover:
 6. Complete a smoke test with `--num_tasks 1` or `--test_visual` first.
 7. Run the final five scenarios with `bash run_all_scenarios.sh --final_eval`.
 8. Generate evaluation results with `bash analysis_scripts/run_eval.sh --model_name <service_model_name>`.
-
