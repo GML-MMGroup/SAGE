@@ -588,3 +588,7 @@ The current 23 tests cover:
 6. Complete a smoke test with `--num_tasks 1` or `--test_visual` first.
 7. Run the final five scenarios with `bash run_all_scenarios.sh --final_eval`.
 8. Generate evaluation results with `bash analysis_scripts/run_eval.sh --model_name <service_model_name>`.
+
+## 🙏 Acknowledgements
+
+We gratefully acknowledge all GML-MMGroup members who participated in the competition. We also extend our sincere thanks to Haoran Jiang, Sirui Chen, Xiaodong Lin, Deqiang Yin, and Jiechao Cai for their valuable contributions to and continuous improvements of the system throughout the competition.
