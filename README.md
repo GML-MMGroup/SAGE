@@ -10,7 +10,7 @@ This repository provides the current reproduction and extended implementation fo
 
 [2026.07.23] 🏆🏆🏆 We achieved joint first place in the review and verification stage and secured a Challenge Paper slot at ACM Multimedia 2026 through the EgoLink Grand Challenge!
 
-[2026.06.24] 🔥🔥🔥 We ranked first in the challenge evaluation stage, were invited to submit a technical report, and open-sourced our repository!
+[2026.06.24] 🔥🔥🔥 We achieved [outstanding results](https://ego-link.github.io/challenge2026/#leaderboard) during the challenge evaluation stage, were invited to submit a technical report, and open-sourced our repository!
 
 ## 📝 Overview
 
