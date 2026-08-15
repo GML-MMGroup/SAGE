@@ -8,8 +8,7 @@ This repository provides the current reproduction and extended implementation fo
 
 ## 👥 Authors
 
-* Zebang Cheng<sup>1,2,*</sup>, Zhiwen Wang<sup>1,2,*</sup>, Defang Chen<sup>1,2,*</sup>, **Siyuan Mao<sup>3</sup> (Project Lead)**, Peiyu Qu<sup>4</sup>, Honghang Chen<sup>5</sup>, Laizhong Cui<sup>1,†</sup>, Fei Ma<sup>2,†</sup>, and Qi Tian<sup>2,6</sup>
-* <sup>1</sup>Shenzhen University, <sup>2</sup>Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ), <sup>3</sup>Beijing Normal University, <sup>4</sup>University of British Columbia, <sup>5</sup>ShanghaiTech University, and <sup>6</sup>Huawei Technologies Ltd.
+* Zebang Cheng<sup>*</sup>, Zhiwen Wang<sup>*</sup>, Defang Chen<sup>*</sup>, **Siyuan Mao (Project Lead)**, Peiyu Qu, Honghang Chen, Laizhong Cui<sup>†</sup>, Fei Ma<sup>†</sup>, and Qi Tian
 
 ## 📢 News
 
@@ -567,21 +566,6 @@ eval_result/
 | `joint_success.success_rate`                      | Whether both tool-based and result-based evaluation succeed. |
 | `micro_tool_stats.micro_accuracy`                 | Micro recall across all ground-truth tool calls.             |
 | `filtered_user_issue.filtered_joint_success_rate` | Joint success rate after excluding samples identified as simulated-user anomalies. |
-
-## ✅ Regression Tests
-
-Run the following command from the repository root:
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-The current 23 tests cover:
-
-- Frame Selector output parsing, prompts, and request parameters.
-- Generic target localization, Reviewer acceptance/correction/rejection, and fallback to the original image.
-- Model request parameters for the Visual Agent and Box Locator.
-- Per-stage latency, nested-call latency, and token statistics.
 
 ## 📋 Pre-Reproduction Checklist
 
