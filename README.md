@@ -6,6 +6,11 @@ SAGE (**S**tatus-**A**ware **G**rounded **E**xecution) is designed for egocentri
 
 This repository provides the current reproduction and extended implementation for EgoBench Track 2, including multi-agent interaction, temporal frame selection, generic target localization, independent bounding-box review, visual recognition constrained by a candidate catalog, Planner–Executor–Reporter tool execution, and per-stage latency and token statistics.
 
+## 👥 Authors
+
+* Zebang Cheng<sup>1,2,*</sup>, Zhiwen Wang<sup>1,2,*</sup>, Defang Chen<sup>1,2,*</sup>, **Siyuan Mao<sup>3</sup> (Project Lead)**, Peiyu Qu<sup>4</sup>, Honghang Chen<sup>5</sup>, Laizhong Cui<sup>1,†</sup>, Fei Ma<sup>2,†</sup>, and Qi Tian<sup>2,6</sup>
+* <sup>1</sup>Shenzhen University, <sup>2</sup>Guangdong Laboratory of Artificial Intelligence and Digital Economy (SZ), <sup>3</sup>Beijing Normal University, <sup>4</sup>University of British Columbia, <sup>5</sup>ShanghaiTech University, and <sup>6</sup>Huawei Technologies Ltd.
+
 ## 📢 News
 
 [2026.07.23] 🏆🏆🏆 We achieved joint first place in the review and verification stage and secured a Challenge Paper slot at ACM Multimedia 2026 through the EgoLink Grand Challenge!
