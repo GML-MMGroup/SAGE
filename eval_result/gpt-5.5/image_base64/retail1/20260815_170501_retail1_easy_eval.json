@@ -1,0 +1,826 @@
+{
+  "total_scenarios": 32,
+  "valid_scenarios": 32,
+  "invalid_scenarios": [],
+  "tool_based": {
+    "success_count": 24,
+    "partial_matches": [
+      {
+        "task_id": 20,
+        "matches": 1,
+        "total": 3
+      },
+      {
+        "task_id": 21,
+        "matches": 1,
+        "total": 3
+      }
+    ],
+    "success_rate": 0.75
+  },
+  "result_based": {
+    "success_count": 24,
+    "success_rate": 0.75
+  },
+  "joint_success": {
+    "success_count": 24,
+    "success_rate": 0.75
+  },
+  "detailed_results": [
+    {
+      "task_id": 1,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 13
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "9d359c66877c6a9e39cdb1814a43def651990027181f7b9015cba171d43bb32b",
+        "interaction_hash": "9d359c66877c6a9e39cdb1814a43def651990027181f7b9015cba171d43bb32b"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 2,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 29
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "7f171cd569f230a8df1d97323b86f20d058e4b8999648dd4254b7877b287c0b8",
+        "interaction_hash": "7f171cd569f230a8df1d97323b86f20d058e4b8999648dd4254b7877b287c0b8"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 3,
+      "tool_based": {
+        "success": true,
+        "matches": 3,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 9
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "6034373cecb450fee1dd620b1b51b3feaf76c98ea8ffca5d2482ddd45684108b",
+        "interaction_hash": "6034373cecb450fee1dd620b1b51b3feaf76c98ea8ffca5d2482ddd45684108b"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 4,
+      "tool_based": {
+        "success": true,
+        "matches": 3,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 14
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "659ae630ddd226071d13cd0578ddeac705628aef02a4c73c480f2a26bf77207b",
+        "interaction_hash": "659ae630ddd226071d13cd0578ddeac705628aef02a4c73c480f2a26bf77207b"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 5,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 17
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "69d978ecd9def90b746ea0ba614885fe42ae369f8fb64ccd278e758630281949",
+        "interaction_hash": "69d978ecd9def90b746ea0ba614885fe42ae369f8fb64ccd278e758630281949"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 6,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 24
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "33bd055e1a87859555ba0f611f9ac946b2c0c0d1966ffdc3e7ce65346575ba87",
+        "interaction_hash": "33bd055e1a87859555ba0f611f9ac946b2c0c0d1966ffdc3e7ce65346575ba87"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 7,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 15
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "56cac493996bd0db45878d1488cbf990b213dffcb64ba95447107fe08ed655eb",
+        "interaction_hash": "56cac493996bd0db45878d1488cbf990b213dffcb64ba95447107fe08ed655eb"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 8,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 6
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "3059f5a581e6dc523526d63a1851afdb0615622a5dd17302a2c2bbc6dbb2db86",
+        "interaction_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 9,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 18
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "74ec399666f03188c5f64462abe50c174f49d0c15a0c91a9dde26ad05bf90f8d",
+        "interaction_hash": "74ec399666f03188c5f64462abe50c174f49d0c15a0c91a9dde26ad05bf90f8d"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 10,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 8
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "b4c0e5985f90082834ba860c9c07c1452917442dfaf3963d9231271009100ef3",
+        "interaction_hash": "137aa36bf216a8f6803d5493228903ac1b5d78c8889c9396837afd609990c7bd"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 11,
+      "tool_based": {
+        "success": true,
+        "matches": 4,
+        "total_gt_calls": 4,
+        "total_interaction_calls": 15
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "c762e14a90f7ef072759a7c6eb428c8d4082032419547490049cf1bf9920cf0f",
+        "interaction_hash": "c762e14a90f7ef072759a7c6eb428c8d4082032419547490049cf1bf9920cf0f"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 12,
+      "tool_based": {
+        "success": true,
+        "matches": 5,
+        "total_gt_calls": 5,
+        "total_interaction_calls": 27
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "c8584b0d1987ae9ceb1f7a27ce135f020d87a33b98db9030ac8292d8faf86696",
+        "interaction_hash": "c8584b0d1987ae9ceb1f7a27ce135f020d87a33b98db9030ac8292d8faf86696"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 13,
+      "tool_based": {
+        "success": true,
+        "matches": 4,
+        "total_gt_calls": 4,
+        "total_interaction_calls": 8
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "3e0b29cc746d789e9df3a411e768e060c319ad9028ac13558a3c7bef5cdf60c4",
+        "interaction_hash": "3e0b29cc746d789e9df3a411e768e060c319ad9028ac13558a3c7bef5cdf60c4"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 14,
+      "tool_based": {
+        "success": true,
+        "matches": 3,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 23
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "0d62d0f1a3f4a3c5d5455e0b476d57e477cf45efcb240b42a9f60b3eaa33c6b5",
+        "interaction_hash": "0d62d0f1a3f4a3c5d5455e0b476d57e477cf45efcb240b42a9f60b3eaa33c6b5"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 15,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 3
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5",
+        "interaction_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 16,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 4
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "6dca5fc96b65fbba382da90d6fdbf658bd7738812bf7daf95a22832959cc6e09",
+        "interaction_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 17,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 26
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "c9e9420523e37652ca7a30bf6ff08fcb6f843d03195c1dd94eb88df5db168bd5",
+        "interaction_hash": "c9e9420523e37652ca7a30bf6ff08fcb6f843d03195c1dd94eb88df5db168bd5"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 18,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 9
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "1e65a4b1e93b821dcce4a342ae648588269217a6f97609d18f246dc93658201a",
+        "interaction_hash": "fa33b8a8375c6971fb7fb1daf741c431517dd4a22d7fc19fd6f7bb9f8460c07d"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 19,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 14
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "a9eaf5338bcb9fb780592df803bb0186166fc2118e96da47bb21a6aecddcd5b1",
+        "interaction_hash": "a9eaf5338bcb9fb780592df803bb0186166fc2118e96da47bb21a6aecddcd5b1"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 20,
+      "tool_based": {
+        "success": false,
+        "matches": 1,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 11
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "656638bd3a4f6f3b143bdce949008e33caf5e3c7a673c166f46e8919226ce422",
+        "interaction_hash": "f278a3edae6e7ea0722b4bcb2c883c00bfb9b620163c67097ea2ee94d5825dbd"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 21,
+      "tool_based": {
+        "success": false,
+        "matches": 1,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 6
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "c0e8b37b47e841112dda0e8caa98a302c0f85770e6e67247dab1b7ec24938a5c",
+        "interaction_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 22,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 16
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "44933307a0919984e08ea6703c81952ff8576631660be1dfeecf452fa13494f3",
+        "interaction_hash": "44933307a0919984e08ea6703c81952ff8576631660be1dfeecf452fa13494f3"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 23,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 8
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "55f5f599b542343b8a979d7c28606d5a526a16622143ef16dd390951906ccb13",
+        "interaction_hash": "55f5f599b542343b8a979d7c28606d5a526a16622143ef16dd390951906ccb13"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 24,
+      "tool_based": {
+        "success": true,
+        "matches": 4,
+        "total_gt_calls": 4,
+        "total_interaction_calls": 20
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "1a3f3a2366b1fdc737848547b37993a288e08c91ff23f6bcdc45098c8699c7c4",
+        "interaction_hash": "1a3f3a2366b1fdc737848547b37993a288e08c91ff23f6bcdc45098c8699c7c4"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 25,
+      "tool_based": {
+        "success": true,
+        "matches": 3,
+        "total_gt_calls": 3,
+        "total_interaction_calls": 26
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "081ad42ea0e25750b9cd674f53dbcb7611d96f3d33da2b1198c0f41a4237f60a",
+        "interaction_hash": "081ad42ea0e25750b9cd674f53dbcb7611d96f3d33da2b1198c0f41a4237f60a"
+      },
+      "joint_success": true,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 26,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 13
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "5f26dcef8a7ebf28e4449c07bb113706c63bb7f3ffa36e15a25ad8ecb229c28b",
+        "interaction_hash": "5f26dcef8a7ebf28e4449c07bb113706c63bb7f3ffa36e15a25ad8ecb229c28b"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 27,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 10
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "d5f9af23d5e2c613856e176c9337c52e9c9e7ba209adcaf19dc4f51ddd557a34",
+        "interaction_hash": "d5f9af23d5e2c613856e176c9337c52e9c9e7ba209adcaf19dc4f51ddd557a34"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 28,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 6
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "8a2e2120e8e953aff7208c63e437709672ab403095ee58fe40ba15ee6ed427ab",
+        "interaction_hash": "7b96b4cfd77276e15ad02abc7a07c533d0bce887e3431e6b9f83051958cb50a5"
+      },
+      "joint_success": false,
+      "user_has_issue": true
+    },
+    {
+      "task_id": 29,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 8
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "60cc5a8718d5fb6aacbf373065bf5aff0abf23e57a70caa76bcfb46cd5a92f01",
+        "interaction_hash": "60cc5a8718d5fb6aacbf373065bf5aff0abf23e57a70caa76bcfb46cd5a92f01"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 30,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 7
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "153f03ad0ef1c9dd988701908b35173fa9696f71a0d31950324aab9487687e20",
+        "interaction_hash": "153f03ad0ef1c9dd988701908b35173fa9696f71a0d31950324aab9487687e20"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 31,
+      "tool_based": {
+        "success": true,
+        "matches": 2,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 12
+      },
+      "result_based": {
+        "success": true,
+        "gt_hash": "d4c6355377799d50353531e99a2c800b38fae9c63829db4a9b43dd367b25b629",
+        "interaction_hash": "d4c6355377799d50353531e99a2c800b38fae9c63829db4a9b43dd367b25b629"
+      },
+      "joint_success": true,
+      "user_has_issue": false
+    },
+    {
+      "task_id": 32,
+      "tool_based": {
+        "success": false,
+        "matches": 0,
+        "total_gt_calls": 2,
+        "total_interaction_calls": 8
+      },
+      "result_based": {
+        "success": false,
+        "gt_hash": "1230cdc1f46d4df1a66e1fcf8fa503824fafc6697a8d7f02adf052225e3cca54",
+        "interaction_hash": "47f255bdb9a5639ea15a6dabfdcc35281502402f55ee2c7044adf8705dcac6a9"
+      },
+      "joint_success": false,
+      "user_has_issue": false
+    }
+  ],
+  "micro_tool_stats": {
+    "total_correct_calls": 63,
+    "total_ground_truth_calls": 79,
+    "total_interaction_calls": 433,
+    "micro_accuracy": 0.7974683544303798,
+    "task_count": 32,
+    "avg_task_accuracy": 0.7708333333333334
+  },
+  "performance_metrics": {
+    "avg_user_response_time": 29.62950036674738,
+    "avg_agent_response_time": 237.9451643228531,
+    "avg_tokens_consumed": 0.0,
+    "avg_rounds_count": 3.1875,
+    "avg_input_tokens": 64140.5625,
+    "avg_output_tokens": 3297.75,
+    "avg_tool_calls_count": 13.53125,
+    "avg_user_performance": {
+      "original_role_consistency_avg": 0.0,
+      "original_instruction_following_avg": 0.0,
+      "original_resilience_avg": 0.0,
+      "original_contextual_robustness_avg": 0.0,
+      "final_role_consistency_avg": 0.0,
+      "final_instruction_following_avg": 0.0,
+      "final_resilience_avg": 0.0,
+      "final_contextual_robustness_avg": 0.0
+    }
+  },
+  "scenario_stats": {
+    "per_scenario": [
+      {
+        "task_id": 1,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 2,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 3,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 4,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 5,
+        "tool_calls": 5,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 6,
+        "tool_calls": 2,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 7,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 8,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 9,
+        "tool_calls": 2,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 10,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 11,
+        "tool_calls": 4,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 12,
+        "tool_calls": 4,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 13,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 14,
+        "tool_calls": 5,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 15,
+        "tool_calls": 2,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 16,
+        "tool_calls": 1,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 17,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 18,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 19,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 20,
+        "tool_calls": 2,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 21,
+        "tool_calls": 4,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 22,
+        "tool_calls": 4,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 23,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 24,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 25,
+        "tool_calls": 4,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 26,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 27,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 28,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": true
+      },
+      {
+        "task_id": 29,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 30,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 31,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": true,
+        "user_has_issue": false
+      },
+      {
+        "task_id": 32,
+        "tool_calls": 3,
+        "tokens_consumed": 0,
+        "is_success": false,
+        "user_has_issue": false
+      }
+    ],
+    "success_scenarios": {
+      "total_tool_calls": 77,
+      "total_tokens": 0,
+      "count": 24,
+      "avg_tool_calls": 3.2083333333333335,
+      "avg_tokens": 0.0
+    },
+    "failure_scenarios": {
+      "total_tool_calls": 22,
+      "total_tokens": 0,
+      "count": 8,
+      "avg_tool_calls": 2.75,
+      "avg_tokens": 0.0
+    }
+  },
+  "filtered_user_issue": {
+    "user_issue_count": 18,
+    "total_valid_scenarios": 32,
+    "user_issue_ratio": 0.5625,
+    "filtered_valid_scenarios": 14,
+    "filtered_tool_based_success_count": 13,
+    "filtered_tool_based_success_rate": 0.9285714285714286,
+    "filtered_result_based_success_count": 13,
+    "filtered_result_based_success_rate": 0.9285714285714286,
+    "filtered_joint_success_count": 13,
+    "filtered_joint_success_rate": 0.9285714285714286,
+    "filtered_micro_accuracy": 0.9428571428571428,
+    "filtered_avg_task_accuracy": 0.9285714285714286
+  }
+}
