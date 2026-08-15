@@ -8,7 +8,7 @@ This repository provides the current reproduction and extended implementation fo
 
 ## 👥 Authors
 
-* Zebang Cheng<sup>*</sup>, Zhiwen Wang<sup>*</sup>, Defang Chen<sup>*</sup>, **Siyuan Mao (Project Lead)**, Peiyu Qu, Honghang Chen, Laizhong Cui<sup>†</sup>, Fei Ma<sup>†</sup>, and Qi Tian
+Zebang Cheng, Zhiwen Wang, Defang Chen<sup>*</sup>, **Siyuan Mao (Project Lead)**, Peiyu Qu, Honghang Chen, Laizhong Cui<sup>†</sup>, Fei Ma<sup>†</sup>, and Qi Tian
 
 ## 📢 News
 
