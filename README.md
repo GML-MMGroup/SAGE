@@ -6,6 +6,10 @@ SAGE (**S**tatus-**A**ware **G**rounded **E**xecution) is designed for egocentri
 
 This repository provides the current reproduction and extended implementation for EgoBench Track 2, including multi-agent interaction, temporal frame selection, generic target localization, independent bounding-box review, visual recognition constrained by a candidate catalog, Planner–Executor–Reporter tool execution, and per-stage latency and token statistics.
 
+## 👥 Authors
+
+Zebang Cheng, Zhiwen Wang, Defang Chen<sup>*</sup>, **Siyuan Mao (Project Lead)**, Peiyu Qu, Honghang Chen, Laizhong Cui<sup>†</sup>, Fei Ma<sup>†</sup>, and Qi Tian
+
 ## 📢 News
 
 [2026.07.23] 🏆🏆🏆 We achieved joint first place in the review and verification stage and secured a Challenge Paper slot at ACM Multimedia 2026 through the EgoLink Grand Challenge!
@@ -562,21 +566,6 @@ eval_result/
 | `joint_success.success_rate`                      | Whether both tool-based and result-based evaluation succeed. |
 | `micro_tool_stats.micro_accuracy`                 | Micro recall across all ground-truth tool calls.             |
 | `filtered_user_issue.filtered_joint_success_rate` | Joint success rate after excluding samples identified as simulated-user anomalies. |
-
-## ✅ Regression Tests
-
-Run the following command from the repository root:
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-The current 23 tests cover:
-
-- Frame Selector output parsing, prompts, and request parameters.
-- Generic target localization, Reviewer acceptance/correction/rejection, and fallback to the original image.
-- Model request parameters for the Visual Agent and Box Locator.
-- Per-stage latency, nested-call latency, and token statistics.
 
 ## 📋 Pre-Reproduction Checklist
 
